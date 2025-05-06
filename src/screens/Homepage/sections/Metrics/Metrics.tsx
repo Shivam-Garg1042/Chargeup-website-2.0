@@ -184,10 +184,8 @@ export const Metrics = (): JSX.Element => {
             <h2 className="font-medium text-white text-[28px] md:text-[48px] lg:text-[64px] text-center tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica]">
               Our Impact for a Better Tomorrow
             </h2>
-            <p className="mt-4 lg:mt-7 max-w-[989px] text-white text-opacity-90 text-center font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[16px] md:text-[18px] lg:text-[21.3px] leading-6 lg:leading-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation
+            <p className="mt-4 px-20 lg:mt-7 max-w-[989px] text-white text-opacity-90 text-center font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[16px] md:text-[18px] lg:text-[21.3px] leading-6 lg:leading-8">
+            Our  commitment to Sustainable Development Goals and the impact we create in the EV ecosystem
             </p>
           </div>
         </div>

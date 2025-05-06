@@ -4,6 +4,10 @@ import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    host: '0.0.0.0',     // Allow access from any device
+    port: 5173,          // Optional: default Vite port
+  },
   plugins: [react()],
   base: "./",
   css: {
