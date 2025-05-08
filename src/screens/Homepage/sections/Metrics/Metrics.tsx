@@ -191,11 +191,11 @@ export const Metrics = (): JSX.Element => {
         </div>
 
         {/* Metric cards */}
-        <div className="flex flex-wrap justify-center gap-8 relative mt-[-20px] md:mt-[-100px] lg:mt-[-85.67px]  px-4 max-w-[1610px]">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-12 relative mt-[-20px] md:mt-[-100px] lg:mt-[-85.67px]  px-4 max-w-[1610px]">
           {metricCards.map((card, index) => (
             <Card
               key={index}
-              className={` w-full sm:w-[calc(50%-8px)] lg:w-[280px] lg:h-[140px]  rounded-[20px] shadow-[0px_26.67px_66.67px_#3440541a] bg-background-colorswhite transform transition-all duration-500 hover:shadow-lg ${
+              className={` w-full sm:w-[calc(50%-8px)] lg:w-[280px] lg:h-[140px] rounded-[20px] shadow-[0px_26.67px_66.67px_#3440541a] bg-background-colorswhite transform transition-all duration-500 hover:shadow-lg ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20 "
               }`}
               style={{ 
