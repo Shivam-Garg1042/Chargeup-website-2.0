@@ -6,23 +6,32 @@ import {
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import ContactModal from "../ContactModal/Contact.tsx";
 
 export const Navbar = (): JSX.Element => {
   // State for mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // State for navbar scroll effect
   const [scrolled, setScrolled] = useState(false);
+  // State for GetStarted modal
+  const [isGetStartedOpen, setIsGetStartedOpen] = useState(false);
+  // State for active link
+  const [activeLink, setActiveLink] = useState('');
 
-  // Navigation menu items
+  // Navigation menu items from smaller component
   const navItems = [
-    { name: "Our Solution", href: "#solution" },
-    { name: "Partners", href: "#partners" },
-    { name: "News Room", href: "#news" },
-    { name: "Our Story", href: "#story" },
-    { name: "People", href: "#people" },
-    { name: "Careers", href: "#careers" },
+    { name: "Our Solutions", href: "/solutions" },
+    { name: "Partners", href: "/partners" },
+    { name: "News Room", href: "/news" },
+    { name: "Our Story", href: "/story" },
+    { name: "People", href: "/people" },
+    { name: "Careers", href: "/careers" },
   ];
-
+  const handlePlayStoreClick = () => {
+        
+    window.open('https://play.google.com/store/apps/details?id=com.chargeup.isourse', '_blank');
+};
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -69,14 +78,16 @@ export const Navbar = (): JSX.Element => {
 
   return (
     <header className={`w-full sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-white'}`}>
-      <nav className="container flex items-center justify-between py-4 md:py-6 lg:py-8 px-4 md:px-6 lg:px-8 max-w-full">
+      <nav className="container flex items-center justify-between py-4  px-3 md:py-4   md:px-12  max-w-full">
         {/* Logo with animation */}
-        <div className="relative h-[43px] transition-transform duration-300 hover:scale-105">
-          <img
-            className="h-[42px] object-cover"
-            alt="Chargeup logo"
-            src="/chargeup-logo-1-1.png"
-          />
+        <div className="relative h-[40px] transition-transform duration-300 hover:scale-105">
+          <Link to="/">
+            <img
+              className="h-[38px] object-cover"
+              alt="Chargeup logo"
+              src="/chargeup-logo-1-1.png"
+            />
+          </Link>
         </div>
 
         {/* Navigation Links - Desktop */}
@@ -84,13 +95,18 @@ export const Navbar = (): JSX.Element => {
           <NavigationMenuList className="flex space-x-1">
             {navItems.map((item, index) => (
               <NavigationMenuItem key={index}>
-                <NavigationMenuLink 
-                  href={item.href}
-                  className="group inline-flex h-12 items-center justify-center px-4 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-lg text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300"
+                <Link 
+                  to={item.href}
+                  className={`group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-lg text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300 ${
+                    activeLink === item.href ? 'text-emerald-600' : ''
+                  }`}
+                  onClick={() => setActiveLink(item.href)}
                 >
                   {item.name}
-                  <span className="absolute bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
-                </NavigationMenuLink>
+                  <span className={`absolute bottom-1 left-0 h-0.5 bg-emerald-600 transition-all duration-300 ${
+                    activeLink === item.href ? 'w-full' : 'w-0 group-hover:w-1/2 group-hover:translate-x-1/2'
+                  }`}></span>
+                </Link>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -101,7 +117,7 @@ export const Navbar = (): JSX.Element => {
           {/* Language selector - hidden on mobile */}
           <a 
             href="#language" 
-            className="hidden md:block w-10 md:h-10 lg:w-[58px] lg:h-[58px] transition-transform duration-300 hover:rotate-12"
+            className="hidden md:block w-8 md:h-8 lg:w-[48px] lg:h-[58px] transition-transform duration-300 hover:rotate-12"
           >
             <img
               className="w-full h-full"
@@ -110,21 +126,31 @@ export const Navbar = (): JSX.Element => {
             />
           </a>
 
-          {/* Get Started button - hidden on mobile */}
-          {/* <Button className="hidden md:block bg-[#f8bb25] text-black rounded-md md:rounded-lg px-4 py-6 lg:px-[22px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-center lg:text-xl shadow-[0px_1.33px_2.67px_#1018280d] hover:bg-[#f9c240] transition-all duration-300 hover:shadow-lg">
-            Get Started
-          </Button> */}
-          <button className="hidden md:block bg-[#f8bb25] text-black rounded-md md:rounded-lg px-4 py-3 lg:px-[22px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-center lg:text-xl shadow-[0px_1.33px_2.67px_#1018280d] hover:bg-[#f9c240] transition-all duration-300 hover:shadow-lg">Get Started</button>
-
+          
+          
+          
+          {/* Contact Modal */}
+          <ContactModal 
+            isOpen={isGetStartedOpen} 
+            onClose={() => setIsGetStartedOpen(false)} 
+          />
           
           {/* Download App button - hidden on mobile */}
           <Button
+            onClick={handlePlayStoreClick}
             variant="outline"
-            className="hidden md:flex gap-2 px-4 md:py-2 lg:px-[19px] lg:py-[24px] rounded-md lg:rounded-[10.67px] border border-solid border-[#0e0e0e] lg:border-2 shadow-[0px_1.33px_2.67px_#1018280d] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base lg:text-[21.3px] text-[#0e0e0e] leading-normal lg:leading-8 hover:bg-gray-100 transition-all duration-300"
+            className="hidden md:flex gap-2 px-3 md:py-2 lg:px-[16px] lg:py-[19px] rounded-md lg:rounded-[10.67px] border border-solid border-[#0e0e0e] lg:border-2 shadow-[0px_1.33px_2.67px_#1018280d] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base lg:text-[20px] text-[#0e0e0e] leading-normal lg:leading-8 hover:bg-gray-100 transition-all duration-300"
           >
             Download App
             <img className="w-4 h-4 lg:w-6 lg:h-6" alt="Play store" src="/play-store.svg" />
           </Button>
+            {/* Get Started button */}
+          <button 
+            className="hidden md:block bg-[#f8bb25] text-black rounded-md md:rounded-lg px-4 py-2 lg:px-[20px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-center lg:text-base shadow-[0px_1.33px_2.67px_#1018280d] hover:bg-[#f9c240] transition-all duration-300 hover:shadow-lg"
+            onClick={() => setIsGetStartedOpen(true)}
+          >
+            Get Started
+          </button>
 
           {/* Hamburger menu for mobile */}
           <button 
@@ -179,13 +205,16 @@ export const Navbar = (): JSX.Element => {
                     transition: `transform 0.3s ease-in-out ${index * 0.05}s, opacity 0.3s ease-in-out ${index * 0.05}s` 
                   }}
                 >
-                  <a 
-                    href={item.href} 
+                  <Link 
+                    to={item.href} 
                     className="block font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-lg text-gray-800 hover:text-emerald-600 transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      setActiveLink(item.href);
+                      setIsMobileMenuOpen(false);
+                    }}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -193,7 +222,10 @@ export const Navbar = (): JSX.Element => {
             <div className="mt-8 space-y-4">
               <Button 
                 className="w-full bg-[#f8bb25] text-black rounded-md px-4 py-3 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base shadow-sm hover:bg-[#f9c240] transition-all duration-300"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsGetStartedOpen(true);
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 Get Started
               </Button>

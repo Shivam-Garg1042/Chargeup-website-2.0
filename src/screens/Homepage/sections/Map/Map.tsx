@@ -4,9 +4,8 @@ import HighchartsReact from "highcharts-react-official";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-export default function Map() {
+export default function MapWithContentLayout() {
   const [mapData, setMapData] = useState(null);
-  const [selectedState, setSelectedState] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -59,7 +58,7 @@ export default function Map() {
       events: {
         load: function() {
           // More zoom and centered on the highlighted states
-          this.mapZoom(2.8, 1700, 1300);
+          this.mapZoom(10, 2000, 2000);
         }
       }
     },
@@ -89,9 +88,9 @@ export default function Map() {
           }
         },
         dataLabels: {
-          enabled: false // No state labels as per image
+          enabled: false
         },
-        nullColor: "#e0e0e0", // Light gray for non-highlighted states
+        nullColor: "#e0e0e0",
         borderColor: '#ffffff',
         borderWidth: 0.5
       },
@@ -105,7 +104,7 @@ export default function Map() {
           lon: coord.lon
         })),
         marker: {
-          radius: 5,
+          radius: 2.5,
           symbol: 'circle',
           fillColor: '#F8BB25',
           lineWidth: 0,
@@ -156,69 +155,68 @@ export default function Map() {
   };
 
   return (
-    <section className="w-full max-w-[1920px] mx-auto min-h-screen bg-white">
-      <div className="flex flex-col px-4 sm:px-6 lg:px-20 py-16">
-        {/* Section Header */}
-        <h2 className="text-4xl sm:text-5xl font-medium text-center mb-16">
-          Our Reach
-        </h2>
-
-        <div className="flex flex-col-reverse lg:flex-row gap-6 items-center">
-          {/* Map Section - Takes larger space on left side */}
-          <div className="relative w-full lg:w-3/5 h-[500px] lg:h-[600px]">
-            {mapData ? (
-              <HighchartsReact
-                highcharts={Highcharts}
-                constructorType="mapChart"
-                options={chartOptions}
-                containerProps={{ className: "w-full h-full" }}
+    <section className="w-full max-w-[1920px] mx-auto min-h-screen bg-white p-4 sm:p-6 lg:p-8">
+      <h2 className="text-4xl sm:text-5xl font-medium text-center mb-8">
+        Our Reach
+      </h2>
+      
+      <div className="relative w-full h-[600px]">
+        {/* L-shaped black container with map */}
+        <div className="absolute inset-0" style={{
+          clipPath: 'polygon(0% 0%, 60% 0%, 60% 50%, 100% 50%, 100% 100%, 0% 100%)',
+         
+        }}>
+          {mapData ? (
+            <HighchartsReact
+              highcharts={Highcharts}
+              constructorType="mapChart"
+              options={chartOptions}
+              containerProps={{ className: "w-full h-full" }}
+            />
+          ) : (
+            <div className="relative w-full h-full">
+              {/* Fallback map image */}
+              <img 
+                src="/api/placeholder/800/600" 
+                alt="India Map" 
+                className="w-full h-full object-contain"
               />
-            ) : (
-              <div className="relative w-full h-full">
-                {/* Fallback map image */}
-                <img 
-                  src="/api/placeholder/800/600" 
-                  alt="India Map" 
-                  className="w-full h-full object-contain"
-                />
-                <AnimatedMarkers />
-              </div>
-            )}
-          </div>
-
-          {/* Content Section - Card layout on right side */}
-          <div className="w-full lg:w-2/5 flex flex-col items-center lg:items-start space-y-8">
-            {/* Stats Cards - Side by side with white background */}
-            <div className="flex flex-row gap-6 justify-center lg:justify-start">
-              <Card className="bg-white shadow-md w-[150px]">
-                <CardContent className="p-6 flex flex-col items-center">
-                  <h3 className="text-4xl font-bold mb-1">19+</h3>
-                  <p className="text-gray-500 text-sm">Cities</p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white shadow-md w-[150px]">
-                <CardContent className="p-6 flex flex-col items-center">
-                  <h3 className="text-4xl font-bold mb-1">10+</h3>
-                  <p className="text-gray-500 text-sm">Planned Expansions</p>
-                </CardContent>
-              </Card>
+              <AnimatedMarkers />
             </div>
+          )}
+        </div>
+        
+        {/* Red container with content */}
+        <div className="absolute top-0 right-0 w-2/5 h-1/2  p-4 flex flex-col items-center justify-center space-y-4">
+          {/* Stats Cards */}
+          <div className="flex flex-row gap-4 justify-center w-full">
+            <Card className="bg-white shadow-md flex-1">
+              <CardContent className="p-4 flex flex-col items-center">
+                <h3 className="text-2xl font-bold mb-1">19+</h3>
+                <p className="text-gray-500 text-xs">Cities</p>
+              </CardContent>
+            </Card>
 
-            {/* Description */}
-            <p className="text-base text-gray-700 max-w-[480px] text-center lg:text-left">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-              veniam, quis nostrud
-            </p>
-
-            {/* CTA Button */}
-            <Button 
-              className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-6 py-2 text-base font-medium rounded-md transition-colors"
-            >
-              Get in Touch
-            </Button>
+            <Card className="bg-white shadow-md flex-1">
+              <CardContent className="p-4 flex flex-col items-center">
+                <h3 className="text-2xl font-bold mb-1">10+</h3>
+                <p className="text-gray-500 text-xs">Planned Expansions</p>
+              </CardContent>
+            </Card>
           </div>
+
+          {/* Description */}
+          <p className="text-sm text-gray-700 text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
+            tempor incididunt ut labore et dolore.
+          </p>
+
+          {/* CTA Button */}
+          <Button 
+            className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-1 text-sm font-medium rounded-md transition-colors"
+          >
+            Get in Touch
+          </Button>
         </div>
       </div>
     </section>

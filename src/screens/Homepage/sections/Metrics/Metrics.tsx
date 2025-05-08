@@ -152,7 +152,7 @@ export const Metrics = (): JSX.Element => {
     <section id="metrics-section" className="relative w-full bg-white overflow-hidden">
       <div className="flex flex-col items-center w-full">
         {/* Background with gradient */}
-        <div className="relative w-full py-32 md:h-[400px] lg:h-[503px]">
+        <div className="relative w-full py-32  lg:h-[460px]">
           <div className="absolute w-full h-full top-0 left-0 [background:radial-gradient(50%_50%_at_50%_100%,rgba(0,33,24,1)_0%,rgba(0,40,29,1)_53%,rgba(2,2,2,1)_100%)]" />
           <div className="absolute w-full h-[30%] bottom-0 left-0 [background:radial-gradient(50%_50%_at_51%_0%,rgba(6,91,66,1)_0%,rgba(2,4,3,1)_100%)]" />
           <div className="absolute w-full h-[30%] bottom-0 left-0 bg-[#00000066] backdrop-blur-[2px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(2px)_brightness(100%)]" />
@@ -184,40 +184,40 @@ export const Metrics = (): JSX.Element => {
             <h2 className="font-medium text-white text-[28px] md:text-[48px] lg:text-[64px] text-center tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica]">
               Our Impact for a Better Tomorrow
             </h2>
-            <p className="mt-4 px-20 lg:mt-7 max-w-[989px] text-white text-opacity-90 text-center font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[16px] md:text-[18px] lg:text-[21.3px] leading-6 lg:leading-8">
+            <p className="mt-4 md:px-[20px] lg:mt-7 max-w-[989px] text-white text-opacity-90 text-center font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[16px] md:text-[18px] lg:text-[21.3px] leading-6 lg:leading-8">
             Our  commitment to Sustainable Development Goals and the impact we create in the EV ecosystem
             </p>
           </div>
         </div>
 
         {/* Metric cards */}
-        <div className="flex flex-wrap justify-center gap-8 max-w-[1493.33px] relative mt-[-40px] md:mt-[-80px] lg:mt-[-106.67px] z-10 px-4">
+        <div className="flex flex-wrap justify-center gap-8 relative mt-[-20px] md:mt-[-100px] lg:mt-[-85.67px]  px-4 max-w-[1610px]">
           {metricCards.map((card, index) => (
             <Card
               key={index}
-              className={`w-full sm:w-[calc(50%-8px)] lg:w-[341.33px] rounded-[20px] shadow-[0px_26.67px_66.67px_#3440541a] bg-background-colorswhite transform transition-all duration-500 hover:shadow-lg ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+              className={` w-full sm:w-[calc(50%-8px)] lg:w-[280px] lg:h-[140px]  rounded-[20px] shadow-[0px_26.67px_66.67px_#3440541a] bg-background-colorswhite transform transition-all duration-500 hover:shadow-lg ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20 "
               }`}
               style={{ 
                 animationDelay: `${index * 150}ms`,
                 transitionDelay: `${index * 150}ms` 
               }}
             >
-              <CardContent className="flex flex-col items-center justify-center p-[20px] md:p-[26.67px]">
+              <CardContent className="flex flex-col items-center justify-center p-[16px] md:p-[8px]">
                 {/* Icon at the top */}
-                <div className="mb-2 opacity-0 animate-fadeIn" style={{ animationDelay: `${(index * 150) + 500}ms`, animationFillMode: 'forwards' }}>
+                {/* <div className="mb-2 opacity-0 animate-fadeIn" style={{ animationDelay: `${(index * 150) + 500}ms`, animationFillMode: 'forwards' }}>
                   {card.icon}
-                </div>
+                </div> */}
                 
                 <div className="flex items-center justify-center">
-                  <span className="mt-[-1.33px] text-[36px] md:text-[48px] lg:text-[64px] text-center tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] font-medium text-text-colors950">
+                  <span className="mt-[-1.33px] text-[36px] md:text-[48px] lg:text-[48px] text-center tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] font-medium text-text-colors950">
                     {isVisible ? formatCount(card.key, counts[card.key]) : "0"}
                   </span>
-                  <span className="mt-[-1.33px] text-[36px] md:text-[48px] lg:text-[64px] text-center tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] font-medium text-black-600">
+                  <span className="mt-[-1.33px] text-[36px] md:text-[48px] lg:text-[48px] text-center tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] font-medium text-black-600">
                     {card.suffix}
                   </span>
                 </div>
-                <div className="font-['Plus_Jakarta_Sans',Helvetica] font-normal text-text-colors500 text-lg md:text-xl lg:text-2xl text-center tracking-[0] leading-7 lg:leading-10">
+                <div className="font-['Plus_Jakarta_Sans',Helvetica] font-normal text-text-colors500 text-lg md:text-xl lg:text-xl text-center tracking-[0] leading-7 lg:leading-10 ">
                   {card.description}
                 </div>
               </CardContent>

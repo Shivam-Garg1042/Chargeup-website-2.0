@@ -1,9 +1,11 @@
-
 import { Button } from "../../../../components/ui/button";
 import { Separator } from "../../../../components/ui/separator";
+import ContactModal from "../ContactModal/Contact.tsx";
+import { useState } from "react";
 
 export const DivWrapper = (): JSX.Element => {
   // Navigation links data
+  const [isGetStartedOpen, setIsGetStartedOpen] = useState(false);
   const firstNavLinks = [
     { title: "Our Story", id: "our-story" },
     { title: "Partners", id: "partners" },
@@ -18,101 +20,106 @@ export const DivWrapper = (): JSX.Element => {
 
   // Footer links data
   const footerLinks = [
-    { title: "Customer Service", id: "customer-service" },
-    { title: "Terms & Conditions", id: "terms" },
-    { title: "Privacy Policy", id: "privacy" },
+    { title: "Privacy Policy", id: "https://echargeup.com/privacy-policy/" },
+    { title: "Refund & Cancellation Policy", id: "https://echargeup.com/refund-and-cancellation-policy/" },
+    // { title: "Terms & Conditions", id: "https://echargeup.com/refund-and-cancellation-policy/" },
+    { title : "Corporate Governance", id: "https://echargeup.com/corporate-governance/" },
+    
   ];
 
   // Social media links data
   const socialLinks = [
-    { icon: "/facebook.svg", alt: "Facebook", id: "facebook" },
-    { icon: "/instagram.svg", alt: "Instagram", id: "instagram" },
-    { icon: "/twitter.svg", alt: "Twitter", id: "twitter" },
+    { icon: "/facebook.svg", alt: "Facebook", id: "https://www.facebook.com/echargeup" },
+    { icon: "/instagram.svg", alt: "Instagram", id: "https://www.instagram.com/e_chargeup/" },
+    { icon: "/twitter.svg", alt: "Twitter", id: "https://x.com/echargeup" },
   ];
 
   return (
-    <footer className="flex flex-col items-center justify-center gap-[54px] pt-[93.33px] pb-0 px-5 bg-background-colorsgray-white-bg w-full">
-      <div className="flex items-center justify-between w-full max-w-[1580px]">
-        <div className="flex items-center gap-[217.33px] flex-1">
-          {/* Logo and description */}
-          <div className="flex flex-col items-start gap-10">
-            <div className="relative w-[250px] h-[43px]">
+    <footer className="flex flex-col items-center w-full  px-4 md:px-6 lg:px-8 bg-[#F9F9FB]">
+      <div className="w-full max-w-7xl">
+        {/* Main footer content */}
+        <div className="flex flex-col md:flex-row justify-between py-8 gap-8">
+          {/* Logo and description column */}
+          <div className="flex flex-col gap-4 max-w-sm">
+            <div className="relative h-10 w-40">
               <img
-                className="absolute w-[333px] h-14 top-[3px] left-0 object-cover"
+                className="object-contain"
                 alt="Chargeup logo"
                 src="/chargeup-logo-1-1.png"
               />
             </div>
-
-            <p className="w-[356px] font-normal text-[#656565] text-xl leading-8 font-['Plus_Jakarta_Sans',Helvetica]">
-              Experience seamless, efficient, and hassle-free EV support
-              designed to keep you moving without interruptions.
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+              Experience seamless, efficient, and hassle-free EV support designed to keep you moving without interruptions.
             </p>
           </div>
 
-          {/* Navigation links */}
-          <div className="flex items-start gap-[133.33px] h-[212px]">
-            {/* First column of links */}
-            <nav className="flex flex-col items-start justify-center gap-[21.33px]">
+          {/* Navigation links - center columns */}
+          <div className="flex justify-start gap-12 md:gap-16 lg:gap-24">
+            {/* First nav column */}
+            <div className="flex flex-col gap-2">
               {firstNavLinks.map((link) => (
                 <a
                   key={link.id}
                   href={`#${link.id}`}
-                  className="font-normal text-[#454545] text-[21.3px] leading-8 font-['Plus_Jakarta_Sans',Helvetica]"
+                  className="text-gray-700 text-base md:text-lg hover:text-gray-900"
                 >
                   {link.title}
                 </a>
               ))}
-            </nav>
-
-            {/* Second column of links */}
-            <nav className="flex flex-col items-start justify-center gap-[21.33px]">
+            </div>
+            
+            {/* Second nav column */}
+            <div className="flex flex-col gap-2">
               {secondNavLinks.map((link) => (
                 <a
                   key={link.id}
                   href={`#${link.id}`}
-                  className="font-normal text-[#454545] text-[21.3px] leading-8 font-['Plus_Jakarta_Sans',Helvetica]"
+                  className="text-gray-700 text-base md:text-lg hover:text-gray-900"
                 >
                   {link.title}
                 </a>
               ))}
-            </nav>
+            </div>
           </div>
-        </div>
 
-        {/* Contact and social media section */}
-        <div className="flex flex-col w-[278px] h-[246px] items-center justify-between">
-          <div className="flex flex-col items-start gap-4">
-            <Button className="w-[216px] h-[58px] bg-[#f8bb25] rounded-[10px] text-[#0c0c0c] text-xl font-semibold shadow-[0px_1.33px_2.67px_#1018280d] font-['Plus_Jakarta_Sans',Helvetica]">
+          {/* Contact button and social icons */}
+          <div className="flex flex-col gap-8 items-start md:items-start">
+            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 text-base font-medium rounded-md px-6 py-2">
+              {/* onClick={() => setIsGetStartedOpen(true)} */}
               Contact Us
             </Button>
-          </div>
-
-          <div className="flex items-center justify-center gap-[18.67px] w-full">
-            {socialLinks.map((social) => (
-              <a key={social.id} href={`#${social.id}`}>
-                <img className="w-20 h-20" alt={social.alt} src={social.icon} />
-              </a>
-            ))}
+            
+            <div className="flex gap-2 md:gap-4">
+              {socialLinks.map((social) => (
+                <a 
+                  key={social.id} 
+                  href={`${social.id}`}
+                  target="_blank"
+                  className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-200 "
+                >
+                  <img className="w-8 h-8" alt={social.alt} src={social.icon} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Footer bottom section */}
-      <div className="w-full max-w-[1580px]">
-        <Separator className="border-t-[1.33px] border-[#d6d6d6]" />
+        {/* Separator line */}
+        <Separator className="bg-gray-200" />
 
-        <div className="flex items-start justify-between py-8">
-          <p className="font-normal text-text-colors950 text-2xl leading-[37.3px] font-['Plus_Jakarta_Sans',Helvetica]">
-            Copyright @ 2025 CHARGEUP , All rights reserved.
+        {/* Footer bottom section */}
+        <div className="flex flex-col md:flex-row justify-between py-4 gap-4 text-sm md:text-[18px]">
+          <p className="text-gray-800">
+            Copyright @ 2025 CHARGEUP, All rights reserved.
           </p>
 
-          <div className="flex items-start gap-[66.67px]">
+          <div className="flex flex-wrap gap-4 md:gap-16">
             {footerLinks.map((link) => (
               <a
                 key={link.id}
-                href={`#${link.id}`}
-                className="font-normal text-text-colors950 text-2xl leading-[37.3px] font-['Plus_Jakarta_Sans',Helvetica]"
+                href={`${link.id}`}
+                target="_blank"
+                className="text-gray-800 hover:text-gray-900"
               >
                 {link.title}
               </a>
