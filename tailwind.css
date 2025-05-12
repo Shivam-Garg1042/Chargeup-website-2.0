@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 @tailwind components;
 @tailwind utilities;
 
@@ -6,6 +7,7 @@
     all: unset;
   }
 }
+
 
 :root {
   --background-colorsgray-white-bg: rgba(249, 249, 251, 1);

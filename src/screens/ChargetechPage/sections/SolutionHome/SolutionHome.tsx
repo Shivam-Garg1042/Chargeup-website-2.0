@@ -9,10 +9,10 @@ export const SolutionHome = (): JSX.Element => {
         <CardContent className="flex flex-col items-start p-10 sm:p-8 md:p-12 lg:py-16 lg:px-24">
           <div className="flex flex-col items-start gap-6 md:gap-8 w-full">
             <div className="flex flex-col items-start gap-4 md:gap-6">
-              <h1 className="text-3xl lg:px-[24px] md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-white tracking-tight font-['Plus_Jakarta_Sans',Helvetica]">
+              <h1 className="md:w-2/3 text-3xl lg:px-[24px] md:text-4xl  xl:text-5xl font-semibold text-white tracking-tight font-['Plus_Jakarta_Sans',Helvetica] mb-4">
                 Intelligent Battery Management for a Sustainable Future
               </h1>
-              <p className="text-sm lg:px-[24px] sm:text-base md:text-lg lg:text-xl font-normal text-[#fcfcfc] leading-relaxed font-['Plus_Jakarta_Sans',Helvetica]">
+              <p className="md:w-2/3 text-sm lg:px-[20px] sm:text-base md:text-lg  font-normal text-[#fcfcfc] leading-relaxed font-['Plus_Jakarta_Sans',Helvetica]">
                 An IoT and AI-first platform enabling efficient battery leasing,
                 swapping, predictive maintenance, and enhanced collaboration
                 across the EV ecosystem.

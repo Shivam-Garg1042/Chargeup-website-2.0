@@ -23,7 +23,7 @@ export const Navbar = (): JSX.Element => {
   const navItems = [
     { name: "Our Solutions", href: "/solutions" },
     { name: "Partners", href: "/partners" },
-    { name: "News Room", href: "/news" },
+    // { name: "News Room", href: "/news" },
     { name: "Our Story", href: "/story" },
     { name: "People", href: "/people" },
     { name: "Careers", href: "/careers" },
@@ -78,12 +78,12 @@ export const Navbar = (): JSX.Element => {
 
   return (
     <header className={`w-full sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-white'}`}>
-      <nav className="container flex items-center justify-between py-4  px-3 md:py-4   md:px-12  max-w-full">
+      <nav className="container flex items-center justify-between py-4  px-3 md:py-4   md:px-20  max-w-full">
         {/* Logo with animation */}
         <div className="relative h-[40px] transition-transform duration-300 hover:scale-105">
           <Link to="/">
             <img
-              className="h-[38px] object-cover"
+              className="h-[36px] lg:px-4 object-cover"
               alt="Chargeup logo"
               src="/chargeup-logo-1-1.png"
             />
@@ -92,7 +92,7 @@ export const Navbar = (): JSX.Element => {
 
         {/* Navigation Links - Desktop */}
         <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList className="flex space-x-1">
+          <NavigationMenuList className="flex space-x-2">
             {navItems.map((item, index) => (
               <NavigationMenuItem key={index}>
                 <Link 
@@ -104,7 +104,7 @@ export const Navbar = (): JSX.Element => {
                 >
                   {item.name}
                   <span className={`absolute bottom-1 left-0 h-0.5 bg-emerald-600 transition-all duration-300 ${
-                    activeLink === item.href ? 'w-full' : 'w-0 group-hover:w-1/2 group-hover:translate-x-1/2'
+                    activeLink === item.href ? 'w-1/2 translate-x-1/2' : 'w-0 group-hover:w-1/2 group-hover:translate-x-1/2'
                   }`}></span>
                 </Link>
               </NavigationMenuItem>
@@ -117,7 +117,7 @@ export const Navbar = (): JSX.Element => {
           {/* Language selector - hidden on mobile */}
           <a 
             href="#language" 
-            className="hidden md:block w-8 md:h-8 lg:w-[48px] lg:h-[58px] transition-transform duration-300 hover:rotate-12"
+            className="hidden md:block w-8 md:h-8 lg:w-[44px] lg:h-[50px] transition-transform duration-300 hover:rotate-12"
           >
             <img
               className="w-full h-full"
@@ -139,14 +139,14 @@ export const Navbar = (): JSX.Element => {
           <Button
             onClick={handlePlayStoreClick}
             variant="outline"
-            className="hidden md:flex gap-2 px-3 md:py-2 lg:px-[16px] lg:py-[19px] rounded-md lg:rounded-[10.67px] border border-solid border-[#0e0e0e] lg:border-2 shadow-[0px_1.33px_2.67px_#1018280d] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base lg:text-[20px] text-[#0e0e0e] leading-normal lg:leading-8 hover:bg-gray-100 transition-all duration-300"
+            className="hidden md:flex gap-2 px-3 md:py-2 lg:px-[12px] lg:py-[14px] rounded-md lg:rounded-[10.67px] border border-solid border-[#0e0e0e] lg:border-2 shadow-[0px_1.33px_2.67px_#1018280d] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base lg:text-[18px] text-[#0e0e0e] leading-normal lg:leading-8 hover:bg-gray-100 transition-all duration-300"
           >
             Download App
             <img className="w-4 h-4 lg:w-6 lg:h-6" alt="Play store" src="/play-store.svg" />
           </Button>
             {/* Get Started button */}
           <button 
-            className="hidden md:block bg-[#f8bb25] text-black rounded-md md:rounded-lg px-4 py-2 lg:px-[20px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-center lg:text-base shadow-[0px_1.33px_2.67px_#1018280d] hover:bg-[#f9c240] transition-all duration-300 hover:shadow-lg"
+            className="hidden md:block bg-[#f8bb25] text-black rounded-md md:rounded-lg px-4 py-2 lg:py-[7px] lg:px-[20px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-center lg:text-base shadow-[0px_1.33px_2.67px_#1018280d] hover:bg-[#f9c240] transition-all duration-300 hover:shadow-lg"
             onClick={() => setIsGetStartedOpen(true)}
           >
             Get Started
@@ -233,7 +233,7 @@ export const Navbar = (): JSX.Element => {
               <Button
                 variant="outline"
                 className="w-full flex justify-center gap-2 px-4 py-3 rounded-md border border-solid border-[#0e0e0e] shadow-sm font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base text-[#0e0e0e] hover:bg-gray-100 transition-all duration-300"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={handlePlayStoreClick}
               >
                 Download App
                 <img className="w-5 h-5" alt="Play store" src="/play-store.svg" />

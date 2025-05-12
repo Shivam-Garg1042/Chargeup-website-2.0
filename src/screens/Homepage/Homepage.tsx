@@ -12,6 +12,17 @@ import { SolutionHome } from '../ChargetechPage/sections/SolutionHome/SolutionHo
 import { Challenges } from '../ChargetechPage/sections/Challeges/Challenges.tsx';
 import { Pillars } from '../ChargetechPage/sections/Pillars/Pillars.tsx';
 import FeaturesSection from '../ChargetechPage/sections/KeyFeatures/KeyFeatures.tsx';
+import {PartnersHome }  from '../PartnerPage/sections/PartnersHome/PartnersHome.tsx';
+import { OurPartners } from '../PartnerPage/sections/OurPartners/OurPartners.tsx';
+import { Benefits } from '../PartnerPage/sections/Benefits/Benefits.tsx';
+import { Oems } from '../PartnerPage/sections/OEMs/OEMs.tsx';
+import HowToJoin  from '../PartnerPage/sections/HowToJoin/HowToJoin.tsx';
+import  VisionMission from '../StoryPage/VisionMission/VisionMission.tsx';
+import { NewsPage } from '../StoryPage/NewsPage/NewsPage.tsx';
+import Investor  from '../StoryPage/Investor/Investor.tsx';
+import  Wrapper from '../StoryPage/NewsPage/Wrapper.tsx';
+import TeamGrid from '../PeoplePage/Team/Team.tsx';
+
 
 export const Homepage = (): JSX.Element => {
   return (
@@ -36,6 +47,34 @@ export const Homepage = (): JSX.Element => {
       <FeaturesSection/>
       {/* <Challenges/>
       <Pillars/> */}
+      
+      </>
+    }></Route>
+    <Route path = "/partners" element={
+      <>
+      
+      {/* <PartnersHome/> */}
+      <OurPartners/>
+      <Benefits/>
+      <Oems/>
+      <HowToJoin/>
+      
+      </>
+    }></Route>
+    <Route path = "/story" element={
+      <>
+      
+      <VisionMission/>
+      <Investor/>
+      <Wrapper/>
+      <NewsPage/>
+      
+      </>
+    }></Route>
+    <Route path = "/people" element={
+      <>
+      
+      {/* <TeamGrid/> */}
       
       </>
     }></Route>

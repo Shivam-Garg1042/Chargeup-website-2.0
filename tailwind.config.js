@@ -69,7 +69,9 @@ module.exports = {
           '"Segoe UI Emoji"',
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
+       
         ],
+        Cedarville: ["Cedarville Cursive", 'cursive'],
       },
       keyframes: {
         "accordion-down": {
