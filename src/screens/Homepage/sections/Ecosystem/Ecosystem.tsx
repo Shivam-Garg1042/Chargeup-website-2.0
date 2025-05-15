@@ -7,7 +7,7 @@ import investor3 from "/investor3.jpg";
 import recycler1 from "/recycler1.png";
 import recycler2 from "/recycler2.png";
 import techpartner1 from "/techpartner1.png";
-
+import { Link } from "react-router-dom";
 export default function PartnerEcosystem() {
   // Partner logos data for mapping
   const partnerLogos = [
@@ -16,13 +16,7 @@ export default function PartnerEcosystem() {
     { src: investor3, alt: "Mahindra Logo", width: 160 },
     { src: recycler1, alt: "Oppo Logo", width: 150 },
     { src: recycler2, alt: "Location Logo", width: 150 },
-    { src: techpartner1, alt: "Samsung Logo", width: 150 },
-    // { src: "/logos-1.svg", alt: "Amazon Logo", width: 120 },
-    // { src: "/logos-2.svg", alt: "Coca Cola Logo", width: 150 },
-    // { src: "/logos.svg", alt: "Mahindra Logo", width: 160 },
-    // { src: "/logos-4.svg", alt: "Oppo Logo", width: 130 },
-    // { src: "/logos-3.svg", alt: "Location Logo", width: 140 },
-    // { src: "/logos-5.svg", alt: "Samsung Logo", width: 150 }
+    { src: techpartner1, alt: "Samsung Logo", width: 150 }
   ];
 
   return (
@@ -83,12 +77,14 @@ export default function PartnerEcosystem() {
                   whileHover={{ scale: 1.05 }}
                   className="flex flex-col items-center cursor-pointer"
                 >
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#F8BB25] rounded-full flex items-center justify-center">
+                  <Link to="/partners#ourPartners">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#F8BB25] rounded-full flex items-center justify-center ">
+                    
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <span className="mt-2 text-sm sm:text-base font-medium">View All</span>
+                  <span className="mt-3 text-sm sm:text-base font-medium">View All</span></Link>
                 </motion.div>
               </CardContent>
             </Card>

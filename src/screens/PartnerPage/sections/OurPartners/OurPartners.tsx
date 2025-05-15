@@ -90,7 +90,7 @@ export const OurPartners = (): JSX.Element => {
   };
 
   return (
-    <section className="flex flex-col w-full items-center gap-2 py-8 px-4 md:px-12 lg:px-24 bg-gray-50">
+    <section id="ourPartners" className="flex flex-col w-full items-center gap-2 py-8 px-4 md:px-12 lg:px-24 bg-gray-50">
       <div className="flex flex-col w-full max-w-7xl items-center gap-16">
         {/* Section Header */}
         <div className="w-full text-center">

@@ -56,9 +56,12 @@ export default function MapWithContentLayout() {
       map: mapData,
       backgroundColor: 'transparent',
       events: {
-        load: function() {
-          // More zoom and centered on the highlighted states
-          this.mapZoom(10, 2000, 2000);
+        load: function () {
+          const chart = this;
+          chart.mapView.setView(
+            [80, 29], // [longitude, latitude] - center between Delhi and MP
+            6// Zoom level - adjust as needed (lower = more zoomed out)
+          );
         }
       }
     },
@@ -104,11 +107,12 @@ export default function MapWithContentLayout() {
           lon: coord.lon
         })),
         marker: {
-          radius: 2.5,
+          radius: 3,
           symbol: 'circle',
           fillColor: '#F8BB25',
           lineWidth: 0,
           lineColor: '#F8BB25'
+          
         },
         dataLabels: {
           enabled: false
@@ -155,12 +159,12 @@ export default function MapWithContentLayout() {
   };
 
   return (
-    <section className="w-full max-w-[1920px] mx-auto min-h-screen bg-white p-4 sm:p-6 lg:p-8">
+    <section className="w-full max-w-[1400px] md:px-12 min-h-screen bg-white -mb-4  ">
       <h2 className="text-4xl sm:text-5xl font-medium text-center mb-8">
         Our Reach
       </h2>
       
-      <div className="relative w-full h-[600px]">
+      <div className="relative w-full h-[750px]">
         {/* L-shaped black container with map */}
         <div className="absolute inset-0" style={{
           clipPath: 'polygon(0% 0%, 60% 0%, 60% 50%, 100% 50%, 100% 100%, 0% 100%)',
@@ -175,45 +179,40 @@ export default function MapWithContentLayout() {
             />
           ) : (
             <div className="relative w-full h-full">
-              {/* Fallback map image */}
-              <img 
-                src="/api/placeholder/800/600" 
-                alt="India Map" 
-                className="w-full h-full object-contain"
-              />
+              
               <AnimatedMarkers />
             </div>
           )}
         </div>
         
         {/* Red container with content */}
-        <div className="absolute top-0 right-0 w-2/5 h-1/2  p-4 flex flex-col items-center justify-center space-y-4">
+        <div className="absolute top-0 right-0 w-2/5 h-1/2   flex flex-col items-start justify-center space-y-8">
           {/* Stats Cards */}
-          <div className="flex flex-row gap-4 justify-center w-full">
-            <Card className="bg-white shadow-md flex-1">
+          <div className="flex flex-row gap-8 justify-center w-full ">
+            <Card className="bg-white shadow-xl flex-1 h-28">
               <CardContent className="p-4 flex flex-col items-center">
-                <h3 className="text-2xl font-bold mb-1">19+</h3>
-                <p className="text-gray-500 text-xs">Cities</p>
+                <h3 className="text-3xl font-bold mb-1">19+</h3>
+                <p className="text-gray-500 text-base">Cities</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white shadow-md flex-1">
+            <Card className="bg-white shadow-xl flex-1 h-28">
               <CardContent className="p-4 flex flex-col items-center">
-                <h3 className="text-2xl font-bold mb-1">10+</h3>
-                <p className="text-gray-500 text-xs">Planned Expansions</p>
+                <h3 className="text-3xl font-bold mb-1">10+</h3>
+                <p className="text-gray-500 text-base">Planned Expansions</p>
               </CardContent>
             </Card>
           </div>
 
           {/* Description */}
-          <p className="text-sm text-gray-700 text-center">
+          <p className="text-lg text-gray-700 ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
             tempor incididunt ut labore et dolore.
           </p>
 
           {/* CTA Button */}
           <Button 
-            className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-1 text-sm font-medium rounded-md transition-colors"
+            className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-3 text-lg font-medium rounded-lg transition-colors "
           >
             Get in Touch
           </Button>

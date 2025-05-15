@@ -149,7 +149,7 @@ export const Metrics = (): JSX.Element => {
   };
 
   return (
-    <section id="metrics-section" className="relative w-full bg-white overflow-hidden">
+    <section id="metrics-section" className="relative w-full bg-white overflow-hidden ">
       <div className="flex flex-col items-center w-full">
         {/* Background with gradient */}
         <div className="relative w-full py-32  lg:h-[460px]">

@@ -119,7 +119,8 @@ export default function NewsPage() {
               </CardContent>
             </Card>
             
-            <div className="flex flex-col items-start gap-4 md:gap-6 lg:gap-12 self-stretch flex-1">
+            <div className="flex flex-col items-start justify-between self-stretch flex-1 md:min-h-[240px]">
+
               <div className="flex flex-col items-start gap-2 md:gap-3 lg:gap-[13px]">
                 <h2 className="font-medium text-text-colors950 text-xl md:text-2xl  leading-tight">
                   {article.title}
@@ -129,8 +130,9 @@ export default function NewsPage() {
                 </p>
               </div>
               
-              <a href={article.link} className="flex items-center gap-2 md:gap-4 lg:gap-[21px] no-underline">
-                <span className="font-semibold text-[#FABA25] text-base md:text-lg lg:text-xl leading-6 whitespace-nowrap">
+              <a href={article.link} className="mt-2 md:mb-4 flex items-center gap-2 md:gap-4 lg:gap-[21px] no-underline">
+
+                <span className=" font-semibold text-[#FABA25] text-base md:text-lg lg:text-xl leading-6 whitespace-nowrap ">
                   Read Now
                 </span>
                 <span className="text-[#f48900]">

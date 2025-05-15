@@ -18,7 +18,7 @@ import { Benefits } from '../PartnerPage/sections/Benefits/Benefits.tsx';
 import { Oems } from '../PartnerPage/sections/OEMs/OEMs.tsx';
 import HowToJoin  from '../PartnerPage/sections/HowToJoin/HowToJoin.tsx';
 import  VisionMission from '../StoryPage/VisionMission/VisionMission.tsx';
-import NewsPage from '../StoryPage/NewsPage/NewsPage.tsx';
+import  NewsPage from '../StoryPage/NewsPage/NewsPage.tsx';
 import Investor  from '../StoryPage/Investor/Investor.tsx';
 import  Wrapper from '../StoryPage/NewsPage/Wrapper.tsx';
 // import TeamGrid from '../PeoplePage/Team/Team.tsx';
@@ -26,8 +26,25 @@ import OpenPositions from '../PeoplePage/Career/Career.tsx';
 import Career from '../PeoplePage/Career/Career.tsx';
 import {CultureAtChargeUp} from '../PeoplePage/Culture/Culture.tsx';
 import Team from '../PeoplePage/Team/Team.tsx';
-import ChargeupJourney from '../StoryPage/HeadingByAnima/HeadingByAnima.tsx';
+import ChargeupJourney from '../StoryPage/ChargeupJourney/ChargeupJourney.tsx';
 
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+const ScrollToHash = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  return null;
+};
 
 export const Homepage = (): JSX.Element => {
   return (
@@ -59,6 +76,7 @@ export const Homepage = (): JSX.Element => {
       <>
       
       {/* <PartnersHome/> */}
+      <ScrollToHash />
       <OurPartners/>
       <Benefits/>
       <Oems/>

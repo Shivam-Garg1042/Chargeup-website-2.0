@@ -78,11 +78,11 @@ export default function TestimonialSection() {
 
   return (
     <section className="w-full bg-white">
-      <div className="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24">
+      <div className="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto px-6 md:px-4 py-16 md:py-24 md:mt-10 ">
         {/* Video testimonial card - matching the reference image */}
-        <div className="flex flex-col w-full md:w-[45%] items-start gap-4">
+        <div className="flex flex-col w-full md:w-[40%] items-start gap-3">
           <div 
-            className="w-full aspect-video bg-gray-600 flex items-center justify-center cursor-pointer"
+            className="w-full aspect-video bg-[#717171] flex items-center justify-center cursor-pointer rounded-3xl relative"
             onClick={handleVideoPlay}
           >
             <Button
@@ -105,13 +105,13 @@ export default function TestimonialSection() {
         </div>
 
         {/* Testimonial content - matching the reference image */}
-        <div className="flex flex-col w-full md:w-[50%] mt-8 md:mt-0">
+        <div className="flex flex-col w-full md:w-[55%] mt-8 md:mt-0">
           <h2 className="font-medium text-black text-3xl md:text-4xl lg:text-5xl mb-6">
             {currentTestimonial.heading}
           </h2>
 
-          <div className="border-l border-gray-800 pl-6">
-            <p className="text-gray-800 font-normal text-base leading-relaxed mb-6">
+          <div className="border-l border-gray-800 pl-6 md:mt-3">
+            <p className="text-gray-800 font-normal md:text-lg text-base leading-relaxed mb-6 md:pr-8">
               {currentTestimonial.content}
             </p>
 
