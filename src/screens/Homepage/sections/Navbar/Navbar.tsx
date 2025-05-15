@@ -21,12 +21,14 @@ export const Navbar = (): JSX.Element => {
 
   // Navigation menu items from smaller component
   const navItems = [
+   
     { name: "Our Solutions", href: "/solutions" },
     { name: "Partners", href: "/partners" },
     // { name: "News Room", href: "/news" },
     { name: "Our Story", href: "/story" },
     { name: "People", href: "/people" },
-    { name: "Careers", href: "/careers" },
+     { name: "About Us", href: "/" },
+    
   ];
   const handlePlayStoreClick = () => {
         

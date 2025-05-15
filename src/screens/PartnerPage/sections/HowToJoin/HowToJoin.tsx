@@ -1,4 +1,4 @@
-import React from "react";
+  
 
 export default function HowToJoin() {
   const steps = [
@@ -20,7 +20,7 @@ export default function HowToJoin() {
   ];
 
   return (
-    <section className="w-full px-4 py-6 md:py-14">
+    <section className="w-full px-4 py-6 md:py-14 md:mb-10 md:mt-5">
       <div className="max-w-7xl mx-auto">
         {/* Header with title and button */}
         <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-10 md:mb-16 relative w-full">

@@ -18,10 +18,15 @@ import { Benefits } from '../PartnerPage/sections/Benefits/Benefits.tsx';
 import { Oems } from '../PartnerPage/sections/OEMs/OEMs.tsx';
 import HowToJoin  from '../PartnerPage/sections/HowToJoin/HowToJoin.tsx';
 import  VisionMission from '../StoryPage/VisionMission/VisionMission.tsx';
-import { NewsPage } from '../StoryPage/NewsPage/NewsPage.tsx';
+import NewsPage from '../StoryPage/NewsPage/NewsPage.tsx';
 import Investor  from '../StoryPage/Investor/Investor.tsx';
 import  Wrapper from '../StoryPage/NewsPage/Wrapper.tsx';
-import TeamGrid from '../PeoplePage/Team/Team.tsx';
+// import TeamGrid from '../PeoplePage/Team/Team.tsx';
+import OpenPositions from '../PeoplePage/Career/Career.tsx';
+import Career from '../PeoplePage/Career/Career.tsx';
+import {CultureAtChargeUp} from '../PeoplePage/Culture/Culture.tsx';
+import Team from '../PeoplePage/Team/Team.tsx';
+import ChargeupJourney from '../StoryPage/HeadingByAnima/HeadingByAnima.tsx';
 
 
 export const Homepage = (): JSX.Element => {
@@ -63,7 +68,7 @@ export const Homepage = (): JSX.Element => {
     }></Route>
     <Route path = "/story" element={
       <>
-      
+      <ChargeupJourney/>
       <VisionMission/>
       <Investor/>
       <Wrapper/>
@@ -74,7 +79,10 @@ export const Homepage = (): JSX.Element => {
     <Route path = "/people" element={
       <>
       
-      {/* <TeamGrid/> */}
+      
+      <Team/> 
+      <CultureAtChargeUp/>
+      <OpenPositions/>
       
       </>
     }></Route>

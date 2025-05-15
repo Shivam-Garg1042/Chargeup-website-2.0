@@ -5,8 +5,9 @@ export default function Investor() {
   // Investor data
   const investors = [
     { id: 1, logo: "/investor1.png", since: "Investor Since 2021" },
-    { id: 2, logo: "/investor2.png", since: "Investor Since 2021" ,width:180},
-    { id: 3, logo: "/investor3.jpg", since: "Investor Since 2021" },
+    { id: 2, logo: "/investor3.jpg", since: "Investor Since 2021" },
+    { id: 3, logo: "/investor2.png", since: "Investor Since 2021" ,width:180},
+    
   ];
 
   
@@ -36,9 +37,9 @@ export default function Investor() {
                   alt="Investor logo"
                   src={investor.logo}
                 />
-                <p className="font-Cedarville text-[#1b4748] text-[35px] text-center leading-[55px]">
+                {/* <p className=" text-[#1b4748] text-[30px] text-center leading-[55px]">
                   {investor.since}
-                </p>
+                </p> */}
               </CardContent>
             </Card>
           ))}
