@@ -1,63 +1,65 @@
-import { ChevronRightIcon } from "lucide-react";
-import React from "react";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbList,
   BreadcrumbSeparator,
-} from "../../../../components/ui/breadcrumb.tsx"
-import { Button } from "../../../../components/ui/button.tsx";
+} from "../../../../components/ui/breadcrumb";
+import { Button } from "../../../../components/ui/button";
+import { Card, CardContent } from "../../../../components/ui/card";
 
-export const PartnersHome = (): JSX.Element => {
+export default function PartnersHome(): JSX.Element {
   return (
-    <section className="flex flex-col items-center justify-center gap-[13.33px] py-12 px-8 md:pt-[50px] md:pb-32 md:px-32 w-full">
-      <div className="relative w-full rounded-[20px] bg-[url(/mask-group.png)] bg-cover bg-center min-h-[599px]">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <Breadcrumb className="pt-[98px] pl-[100px]">
-            <BreadcrumbList>
+    <section className="flex flex-col items-center justify-center pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-8 md:pb-12 lg:pb-16 px-4 sm:px-6 md:px-8 lg:px-8 relative ">
+      <Card className="relative w-full h-[300px]  md:h-[420px] rounded-2xl bg-[url(/mask-group.png)] bg-cover bg-center border-none overflow-hidden bg-[#1B4748] px-4 md:px-12 ">
+        <CardContent className="p-0 h-full relative">
+          {/* <div className="absolute top-6 sm:top-8 md:top-10 lg:top-12 left-4 sm:left-6 md:left-8 lg:left-12">
+            <Breadcrumb>
+            <div className="px-1 md:mt-5 mt-4  flex items-center space-x-2 sm:space-x-3 md:space-x-4">
               <BreadcrumbItem>
                 <BreadcrumbLink
                   href="/"
-                  className="font-normal text-white text-lg leading-[26.7px]"
+                  className="font-normal text-white text-sm md:text-base lg:text-lg"
                 >
                   Home
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator>
-                <ChevronRightIcon className="h-4 w-[35px] text-white" />
-              </BreadcrumbSeparator>
+              
+                <img
+                  className="w-4 h-3 sm:w-5 sm:h-4 lg:w-6 lg:h-4"
+                  alt="Breadcrumb separator"
+                  src="/vector-6.svg"
+                />
+             
               <BreadcrumbItem>
                 <BreadcrumbLink
-                  href="#"
-                  className="font-bold text-[#f48900] text-lg leading-[26.7px]"
+                  href="/partners"
+                  className="font-bold text-[#f48900] text-sm md:text-base lg:text-lg"
                 >
-                  Patners
+                  Partners
                 </BreadcrumbLink>
               </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-
-          <div className="flex flex-col w-full md:w-[860px] items-start gap-[42.67px] pt-[77px] pl-[100px]">
-            <div className="flex flex-col w-full md:w-[849px] items-start gap-8">
-              <h1 className="font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-white text-4xl md:text-[64px] tracking-[-1.28px] leading-tight">
-                Chargeup Partners
+              </div>
+            </Breadcrumb>
+          </div> */}
+          
+          <div className="flex flex-col items-start gap-4 md:gap-4  absolute top-10 sm:top-14 md:top-20 lg:top-20 left-4 sm:left-6 md:left-8 lg:left-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 mt-3">
+            <div className="flex flex-col items-start gap-2 sm:gap-3 md:gap-4 lg:gap-8">
+              <h1 className="font-semibold text-white text-3xl sm:text-4xl md:text-5xl  tracking-tight">
+                Scaling growth with Our Partners
               </h1>
-
-              <p className="font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[#fcfcfc] text-lg md:text-[22px] leading-8 max-w-[734.67px]">
-                Unlock growth together by joining forces with Chargeup, where
-                innovation meets collaboration for unparalleled success.
+              <p className="font-normal text-[#fcfcfc] text-sm sm:text-base md:text-xl  max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl">
+                Our impact goes beyond drivers — enabling growth for NBFCs, OEMs, and dealers who power the ecosystem with us.
               </p>
             </div>
-
-            <div className="flex items-start gap-4">
-              <Button className="bg-[#f8bb25] text-[#0e0e0e] hover:bg-[#f8bb25]/90 rounded-[10px] px-[21.33px] py-[13.33px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-xl shadow-[0px_1.33px_2.67px_#1018280d]">
+            <div className="mt-2 sm:mt-4 md:mt-6 lg:mt-8">
+              <Button className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-3 lg:px-6 lg:py-4 bg-[#f8bb25] hover:bg-[#f8bb25]/90 rounded-lg font-semibold text-[#0e0e0e] text-sm sm:text-base md:text-lg ">
                 Become a Partner
               </Button>
             </div>
           </div>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </section>
   );
-};
+}

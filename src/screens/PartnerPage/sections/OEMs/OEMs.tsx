@@ -11,7 +11,7 @@ export const Oems = (): JSX.Element => {
       subtitle: "Battery & Vehicle",
       iconSrc: "/group-76.png",
       description:
-        "Collaborate with Chargeup to power the future of electric mobility. From charging infrastructure integration to fleet enablement and data intelligence, we help OEMs enhance performance, accelerate deployment, and unlock new revenue streams.",
+        "Power the EV future. Boost performance, speed up deployment, and unlock new revenue with Chargeup’s data-driven EV solutions.",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ export const Oems = (): JSX.Element => {
       subtitle: "Battery & Vehicle",
       iconSrc: "/group-76-1.png",
       description:
-        "Partner with Chargeup to finance the EV revolution. Our platform offers visibility into vehicle usage, repayment patterns, and risk insights—enabling smarter lending and stronger asset control.",
+        "Smarter EV financing. Gain insights into usage, repayments, and risk for better lending and asset control.",
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ export const Oems = (): JSX.Element => {
       subtitle: "Battery & Vehicle",
       iconSrc: "/group-76-2.png",
       description:
-        "Partner with Chargeup to finance the EV revolution. Our platform offers visibility into vehicle usage, repayment patterns, and risk insights—enabling smarter lending and stronger asset control.",
+        "Accelerate EV growth. Leverage Chargeup's platform for visibility, smarter lending, and stronger control.",
     },
   ];
 
@@ -68,13 +68,20 @@ export const Oems = (): JSX.Element => {
                 </div>
 
                 {/* Card Footer with Call to Action */}
-                <div className="flex items-center text-[#f48900] mt-auto">
+                {/* <div className="flex items-center text-[#f48900] mt-auto">
                   <a href ="" className="font-medium text-sm md:text-base px-3">View Benefits</a>
                   <ChevronRightIcon className="w-4 h-4 ml-2" />
-                </div>
+                </div> */}
               </CardContent>
             </Card>
+            
           ))}
+        </div>
+        <div className=" justify-center  items-center mb-10 md:mb-16 relative w-full">
+          <div className="w-full sm:w-auto"></div> {/* Spacer for centering */}
+          <button className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium sm:ml-auto sm:mx-2">
+            Apply Now
+          </button>
         </div>
       </div>
     </section>

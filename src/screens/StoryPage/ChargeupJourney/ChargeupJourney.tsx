@@ -14,23 +14,23 @@ export default function ChargeupJourney() {
     },
     {
       year: "2021",
-      title: "1000+ Drivers in",
-      description: "Collaborate with Chargeup to power the future of electric mobility. From charging infrastructure integration to fleet enablement and data intelligence, we help OEMs enhance performance, accelerate deployment, and unlock new revenue streams."
+      title: "1,000 active drivers reached ~ Sep",
+      description: "Early traction proved strong product-market fit "
     },
     {
       year: "2022",
-      title: "\"EV Startup of the Year\" ~",
-      description: "Collaborate with Chargeup to power the future of electric mobility. From charging infrastructure integration to fleet enablement and data intelligence, we help OEMs enhance performance, accelerate deployment, and unlock new revenue streams."
+      title: "$2.5M Pre-Series A funding raised (existing investors) ~ Dec",
+      description: "Continued backing underscored investor confidence"
     },
     {
-      year: "2023",
-      title: "Deployed in 19 Cities ~",
-      description: "Collaborate with Chargeup to power the future of electric mobility. From charging infrastructure integration to fleet enablement and data intelligence, we help OEMs enhance performance, accelerate deployment, and unlock new revenue streams."
+      year: "2024",
+      title: " Partnership with 1st NBFC Partner ~ Jan",
+      description: " Ascend Capital (NBFC) – Unlocking financing access for thousands of drivers"
     },
     {
-      year: "",
-      title: "And yet, our Journey has Just Begun",
-      description: "— Watch us grow —"
+      year: "2024",
+      title: "EBITDA positive, 7,000 drivers across 16 cities ` Dec",
+      description: "— Scaled sustainably while deepening market presence —"
     }
   ];
 

@@ -17,9 +17,9 @@ export const HeroSections = () => {
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl md:text-6xl lg:text-8xl font-semibold text-background-colorswhite text-center tracking-[-1.92px] leading-[1.2] max-w-[1502px] font-['Plus_Jakarta_Sans',Helvetica]"
+              className="text-3xl md:text-6xl lg:text-7xl font-semibold text-background-colorswhite text-center tracking-[-1.92px] leading-[1.2] max-w-[1502px] font-['Plus_Jakarta_Sans',Helvetica]"
             >
-              Powering Smarter EV Ecosystems
+              Driver 1st Fi-Ne-Tech Platform
             </motion.h1>
 
             <motion.p 
@@ -28,9 +28,7 @@ export const HeroSections = () => {
               transition={{ delay: 0.3 }}
               className="text-base md:text-[21.3px] font-normal text-text-colors25 text-center leading-8 max-w-[792px] font-['Plus_Jakarta_Sans',Helvetica]"
             >
-              From financing to charging enablement, Chargeup helps drivers,
-              OEMs, and partners accelerate the shift to electric with scalable,
-              tech-driven solutions.
+              Powering Last Mile Drivers with Higher Earnings
             </motion.p>
           </div>
 

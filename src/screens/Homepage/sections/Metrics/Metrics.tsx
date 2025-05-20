@@ -181,11 +181,11 @@ export const Metrics = (): JSX.Element => {
 
           {/* Title and subtitle */}
           <div className="absolute top-[40px] md:top-[80px] lg:top-[120px] left-0 w-full flex flex-col items-center px-4 z-10">
-            <h2 className="font-medium text-white text-[28px] md:text-[48px] lg:text-[64px] text-center tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica]">
-              Our Impact for a Better Tomorrow
+            <h2 className="font-medium text-white text-[28px] md:text-[48px] lg:text-[54px] text-center tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica]">
+              Every Ride Drives Impact - for Drivers and the Earth
             </h2>
             <p className="mt-4 md:px-[20px] lg:mt-7 max-w-[989px] text-white text-opacity-90 text-center font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[16px] md:text-[18px] lg:text-[21.3px] leading-6 lg:leading-8">
-            Our  commitment to Sustainable Development Goals and the impact we create in the EV ecosystem
+            People + Planet First. From empowering thousands of drivers to cutting carbon emissions, our rides move more than people, they move change.
             </p>
           </div>
         </div>

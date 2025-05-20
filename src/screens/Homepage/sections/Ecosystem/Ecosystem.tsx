@@ -21,7 +21,7 @@ export default function PartnerEcosystem() {
 
   return (
     <section className="w-full bg-white overflow-hidden">
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1920px]  px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center py-12 sm:py-16">
           {/* Title with dots */}
           <motion.div 
@@ -37,7 +37,7 @@ export default function PartnerEcosystem() {
             </div>
             
             <h2 className="text-xl sm:text-2xl font-bold text-[#F48900]">
-              OUR PARTNER ECOSYSTEM
+              OUR PARTNERS
             </h2>
             
             <div className="flex gap-2">

@@ -64,7 +64,7 @@ export default function VisionMission() {
             </div>
             
             {/* Image placeholder - moves below text on mobile */}
-            <div className="w-full md:max-w-xs lg:max-w-sm h-64 bg-gray-800 rounded-lg mt-4 md:mt-0"></div>
+            <div className="w-full md:max-w-xs lg:max-w-sm h-60 bg-gray-800 rounded-2xl mt-4 md:mt-0"></div>
           </div>
         </div>
       </div>

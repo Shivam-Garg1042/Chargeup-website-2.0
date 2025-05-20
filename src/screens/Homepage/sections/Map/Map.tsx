@@ -107,7 +107,7 @@ export default function MapWithContentLayout() {
           lon: coord.lon
         })),
         marker: {
-          radius: 3,
+          radius: 3.25,
           symbol: 'circle',
           fillColor: '#F8BB25',
           lineWidth: 0,
@@ -159,10 +159,10 @@ export default function MapWithContentLayout() {
   };
 
   return (
-    <section className="w-full max-w-[1400px] md:px-12 min-h-screen bg-white -mb-4  ">
-      <h2 className="text-4xl sm:text-5xl font-medium text-center mb-8">
+    <section className="w-full max-w-[1400px] md:px-12 min-h-screen bg-white -mb-24 mt-16 ">
+      {/* <h2 className="text-4xl sm:text-5xl font-medium text-center mb-8">
         Our Reach
-      </h2>
+      </h2> */}
       
       <div className="relative w-full h-[750px]">
         {/* L-shaped black container with map */}
@@ -191,14 +191,14 @@ export default function MapWithContentLayout() {
           <div className="flex flex-row gap-8 justify-center w-full ">
             <Card className="bg-white shadow-xl flex-1 h-28">
               <CardContent className="p-4 flex flex-col items-center">
-                <h3 className="text-3xl font-bold mb-1">19+</h3>
+                <h3 className="text-3xl font-bold mb-1">16+</h3>
                 <p className="text-gray-500 text-base">Cities</p>
               </CardContent>
             </Card>
 
             <Card className="bg-white shadow-xl flex-1 h-28">
               <CardContent className="p-4 flex flex-col items-center">
-                <h3 className="text-3xl font-bold mb-1">10+</h3>
+                <h3 className="text-3xl font-bold mb-1">9+</h3>
                 <p className="text-gray-500 text-base">Planned Expansions</p>
               </CardContent>
             </Card>
@@ -206,16 +206,23 @@ export default function MapWithContentLayout() {
 
           {/* Description */}
           <p className="text-lg text-gray-700 ">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-            tempor incididunt ut labore et dolore.
+            Serving 18+ Pincodes
+through our dealer network
           </p>
 
           {/* CTA Button */}
+          <div className="flex flex-row gap-4">
           <Button 
             className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-3 text-lg font-medium rounded-lg transition-colors "
           >
-            Get in Touch
+            Become a Partner
           </Button>
+          <Button 
+            className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-3 text-lg font-medium rounded-lg transition-colors "
+          >
+            Become a Driver
+          </Button>
+          </div>
         </div>
       </div>
     </section>

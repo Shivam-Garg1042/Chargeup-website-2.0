@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "../../../../components/ui/button";
-import { Separator } from "../../../../components/ui/separator";
+
 
 export const OurPartners = (): JSX.Element => {
   // Partner category data
@@ -11,35 +11,34 @@ export const OurPartners = (): JSX.Element => {
       id: 1,
       name: "NBFCs",
       description:
-        "Original equipment manufacturer helps the company with high yield products",
+        "Smarter financing with real-time driver and battery data",
     },
-    { id: 2, name: "OEM", description: "Original equipment manufacturer helps the company with high yield products" },
-    { id: 3, name: "Dealers", description: "Original equipment manufacturer helps the company with high yield products" },
+    { id: 2, name: "OEM", description: "Scale EV adoption with smart battery integration" },
+    { id: 3, name: "Dealers", description: "Boost sales with bundled EV and charging solutions" },
   ];
 
   // Partner logos data - organized by category
   const logosByCategory = {
     "NBFCs": [
-      { id: 1, type: "inverted", name: "INVERTED" },
-      { id: 2, type: "inverted", name: "INVERTED"  },
-      { id: 3, type: "inverted", name: "INVERTED"  },
-      { id: 4,type: "inverted", name: "INVERTED"  },
-      // { id: 5, type: "inverted", name: "INVERTED" },
-      // { id: 6, type: "brand", name: "mahindra" },
-      // { id: 7, type: "brand", name: "samsung" },
-      // { id: 8, type: "brand", name: "oppo" },
+      { id: 1, type: "image", imgUrl: "/nbfc1.png" },
+      { id: 2, type: "image",imgUrl: "/nbfc2.png"  },
+      // { id: 3, type: "image", imgUrl:"/nbfc3.png"  },
+      { id: 4,type: "image", imgUrl: "/nbfc5.png"  },
+      { id: 5, type: "image", imgUrl: "/nbfc4.png" },
     ],
     "OEM": [
-      { id: 1, type: "inverted", name: "INVERTED"  },
-      // { id: 2, type: "brand", name: "oppo" },
-      // { id: 3, type: "inverted", name: "INVERTED" },
-      // { id: 4, type: "brand", name: "mahindra" },
+      { id: 1, type: "image", imgUrl: "/oem1.png"  },
+      { id: 2, type: "image", imgUrl: "oem2.png" },
+      { id: 3, type: "image", imgUrl: "oem3.png" },
+      { id: 4, type: "image", imgUrl: "oem4.jpg" },
     ],
     "Dealers": [
-      // { id: 1, type: "brand", name: "oppo" },
-      { id: 2, type: "inverted", name: "INVERTED" },
-      // { id: 3, type: "brand", name: "samsung" },
-      // { id: 4, type: "brand", name: "mahindra" },
+      { id: 1, type: "image", imgUrl: "/recycler1.png"},
+      { id: 2, type: "image", imgUrl: "/recycler2.png" },
+      { id: 3, type: "image", imgUrl: "/insurer1.png" },
+      { id: 4, type: "image", imgUrl: "/insurer2.png" },
+      // { id: 5, type: "image", imgUrl: "/investor1.png" },
+      
     ]
   };
 
@@ -59,45 +58,29 @@ export const OurPartners = (): JSX.Element => {
   );
 
   // Render brand logo component
-  const BrandLogo = ({ name }) => {
+  const LogoImage  = ({ imgUrl  }) => {
     // Simple logo renderer based on brand name
-    switch (name.toLowerCase()) {
-      case 'mahindra':
-        return (
-          <div className="w-36 h-16 flex items-center justify-center">
-            <div className="text-xl font-semibold text-gray-700">mahindra</div>
-          </div>
-        );
-      case 'samsung':
-        return (
-          <div className="w-36 h-16 flex items-center justify-center">
-            <div className="text-xl font-bold tracking-wide text-gray-800">SAMSUNG</div>
-          </div>
-        );
-      case 'oppo':
-        return (
-          <div className="w-36 h-16 flex items-center justify-center">
-            <div className="text-xl font-semibold tracking-wider text-gray-700">OPPO</div>
-          </div>
-        );
-      default:
-        return (
-          <div className="w-36 h-16 flex items-center justify-center">
-            <div className="text-xl font-semibold text-gray-700">{name}</div>
-          </div>
-        );
-    }
+    return (
+      <div className="w-40 h-36 flex items-center justify-center">
+        <img 
+          src={imgUrl} 
+          alt="Partner Logo" 
+          className="max-w-full max-h-full object-contain h-full w-full"
+        />
+      </div>
+    );
   };
 
+
   return (
-    <section id="ourPartners" className="flex flex-col w-full items-center gap-2 py-8 px-4 md:px-12 lg:px-24 bg-gray-50">
+    <section id="ourPartners" className="flex flex-col w-full items-center gap-2 py-8 px-4 md:px-12 lg:px-24 bg-gray-40">
       <div className="flex flex-col w-full max-w-7xl items-center gap-16">
         {/* Section Header */}
-        <div className="w-full text-center">
+        {/* <div className="w-full text-center">
           <h2 className="font-medium text-4xl  lg:text-5xl text-[#010101] tracking-tight">
             Meet our Partners
           </h2>
-        </div>
+        </div> */}
 
         {/* Main Content Area */}
         <div className="flex flex-col md:flex-row w-full gap-8 md:gap-12">
@@ -130,13 +113,13 @@ export const OurPartners = (): JSX.Element => {
 
 
           {/* Right Side - Partner Logos Grid */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 flex-1">
+          <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-20 flex-1">
             {logosByCategory[activeCategory].map((logo) => (
               <div key={logo.id} className="flex items-center justify-center">
                 {logo.type === "inverted" ? (
                   <InvertedLogo />
                 ) : (
-                  <BrandLogo name={logo.name} />
+                  <LogoImage imgUrl={logo.imgUrl} />
                 )}
               </div>
             ))}

@@ -4,9 +4,10 @@ import { Card, CardContent } from "../../../components/ui/card";
 export default function Investor() {
   // Investor data
   const investors = [
-    { id: 1, logo: "/investor1.png", since: "Investor Since 2021" },
     { id: 2, logo: "/investor3.jpg", since: "Investor Since 2021" },
-    { id: 3, logo: "/investor2.png", since: "Investor Since 2021" ,width:180},
+    { id: 1, logo: "/investor1.png", since: "Investor Since 2021" },
+    
+    { id: 3, logo: "/investor2.png", since: "Investor Since 2021"},
     
   ];
 
@@ -14,7 +15,7 @@ export default function Investor() {
   
 
   return (
-    <section className="flex flex-col w-full items-center justify-center gap-2 bg-gray-50 pb-12 md:pb-16">
+    <section className="flex flex-col w-full items-center justify-center gap-2 bg-gray-50 pb-12 md:pb-20">
       {/* Investors Section */}
       <div className="w-full flex flex-col items-center">
         <div className="w-full flex flex-col items-center justify-center gap-3 md:pt-[70px] pb-[30px] md:pb-[50px]">
@@ -33,7 +34,7 @@ export default function Investor() {
             >
               <CardContent className="flex flex-col items-center justify-center gap-2 p-0 w-full h-full">
                 <img
-                  className="w-[270px] h-[195px]"
+                  className="w-[220px] h-[190px]"
                   alt="Investor logo"
                   src={investor.logo}
                 />
