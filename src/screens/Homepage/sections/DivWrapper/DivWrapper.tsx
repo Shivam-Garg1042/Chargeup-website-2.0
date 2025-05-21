@@ -2,6 +2,7 @@ import { Button } from "../../../../components/ui/button";
 import { Separator } from "../../../../components/ui/separator";
 import ContactModal from "../ContactModal/Contact.tsx";
 import { useState } from "react";
+import { MapPin,Phone ,Mail } from "lucide-react";
 
 export const DivWrapper = (): JSX.Element => {
   // Navigation links data
@@ -48,9 +49,23 @@ export const DivWrapper = (): JSX.Element => {
                 src="/chargeup-logo-1-1.png"
               />
             </div>
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-              Experience seamless, efficient, and hassle-free EV support designed to keep you moving without interruptions.
+            <a href = "https://maps.app.goo.gl/3PDKab7FuiXp9roz6" target="_blank" rel="noopener noreferrer" className="text-2xl">
+          <p className="text-base flex gap-2">
+            <MapPin/>
+            <span>300/3, 1st Floor, 
+            
+            MG Road, Sultanpur,
+            
+            New Delhi – 110030
+            </span>
+          </p></a>
+          <p className="text-base flex items-center gap-2 ">
+            <Phone/> 18001230181
             </p>
+            
+            <p className="text-base flex items-center gap-2 mt-1 ">
+            <Mail/> info@echargeup.com
+          </p>
           </div>
 
           {/* Navigation links - center columns */}

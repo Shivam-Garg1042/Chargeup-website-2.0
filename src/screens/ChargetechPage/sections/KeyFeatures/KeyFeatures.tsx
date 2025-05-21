@@ -7,30 +7,31 @@ export default function CoreBenefitPlan() {
       id: 1,
       title: "Finance",
       description:
-        "No more driving around looking for seeking drivers. Skip the cold intros—get connected to high-intent buyers actively looking for the right vehicle.",
+        "Chargeup Finance offers paperless EV & battery loans approved in 4 hours—pay-as-you-earn financing",
       iconSrc: "/group-76.png",
-    },
-    {
-      id: 2,
-      title: "Tech",
-      description:
-        "Access dynamic inventory metrics, usage trends, and conversion data to make informed decisions on product design, city-level inventory, and marketing efforts.",
-      iconSrc: "/group-76-1.png",
     },
     {
       id: 3,
       title: "Network",
       description:
-        "Easily set and manage your EV models through APIs or our OEM partner portal. Update specifications, stock, and pricing without friction.",
+         "A trusted network of local dealer partners powers our asset-light distribution, offering easy EV ownership along with repair, resale, and replacement",
       iconSrc: "/group-76-2.png",
     },
+    {
+      id: 2,
+      title: "Tech",
+      description:
+        "Chargeup Asset management offers 365 days EV uptime through our predictive tech that monitors real time behaviour of battery and driver, preventing breakdowns, and payment defaults.",
+      iconSrc: "/group-76-1.png",
+    },
+    
   ];
 
   return (
     <section className="flex flex-col w-full items-center justify-center py-8 px-4 bg-gray-50">
       {/* Section Title */}
       <h2 className="text-3xl md:text-4xl font-medium text-center mb-16">
-        Key Features
+       Enabling <span className="text-[#f8bb25]">EV ownerships with higher earnings</span>
       </h2>
 
       {/* Cards Container */}

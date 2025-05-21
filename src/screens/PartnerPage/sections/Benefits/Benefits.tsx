@@ -3,12 +3,10 @@ import { Card, CardContent } from "../../../../components/ui/card";
 
 export const Benefits = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-center gap-8 bg-[#bec9b8] ">
-      <img
-        className="w-full"
-        alt="Decorative wave pattern"
-        src="/rectangle-4146.svg"
-      />
+    <section className="flex flex-col w-full items-center gap-8 bg-[#bec9b8] mt-10">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1725" height="140" viewBox="0 0 1920 157" fill="none">
+  <path d="M0 0.333008H1920V10.3604C1920 339.166 849 10.3604 0 10.3604V0.333008Z" fill="white"/>
+</svg>
 
       <Card className="border-none bg-transparent shadow-none w-full max-w-[1706px] px-10">
         <CardContent className="p-0">

@@ -19,7 +19,7 @@ export const HeroSections = () => {
               transition={{ duration: 0.5 }}
               className="text-3xl md:text-6xl lg:text-7xl font-semibold text-background-colorswhite text-center tracking-[-1.92px] leading-[1.2] max-w-[1502px] font-['Plus_Jakarta_Sans',Helvetica]"
             >
-              Driver 1st Fi-Ne-Tech Platform
+              Driver First Fi-Ne-Tech Platform
             </motion.h1>
 
             <motion.p 

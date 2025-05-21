@@ -8,28 +8,28 @@ export default function ChargeupJourney() {
   
   const milestones = [
     {
-      year: "2019",
-      title: "Founded in",
-      description: "Collaborate with Chargeup to power the future of electric mobility. From charging infrastructure integration to fleet enablement and data intelligence, we help OEMs enhance performance, accelerate deployment, and unlock new revenue streams."
+      year: "",
+      title: "Founded in 2019",
+      description: "Laid the foundation to transform EV mobility and driver livelihoods."
     },
     {
-      year: "2021",
-      title: "1,000 active drivers reached ~ Sep",
-      description: "Early traction proved strong product-market fit "
+      year: "Sep 2021",
+      title: "1,000 active drivers reached",
+      description: "Early traction proved strong product-market fit."
     },
     {
-      year: "2022",
-      title: "$2.5M Pre-Series A funding raised (existing investors) ~ Dec",
+      year: "Dec 2022",
+      title: "$2.5M Pre-Series A funding raised (existing investors)",
       description: "Continued backing underscored investor confidence"
     },
     {
-      year: "2024",
-      title: " Partnership with 1st NBFC Partner ~ Jan",
-      description: " Ascend Capital (NBFC) – Unlocking financing access for thousands of drivers"
+      year: "Jan 2024",
+      title: " Partnership with 1st NBFC Partner : Ascend Capital (NBFC)",
+      description: " Unlocking financing access for thousands of drivers"
     },
     {
-      year: "2024",
-      title: "EBITDA positive, 7,000 drivers across 16 cities ` Dec",
+      year: "Dec 2024",
+      title: "EBITDA positive, 7,000 drivers across 16 cities",
       description: "— Scaled sustainably while deepening market presence —"
     }
   ];
@@ -157,10 +157,14 @@ export default function ChargeupJourney() {
       <div className="w-full md:w-3/4 border-none shadow-none">
         <div className="flex flex-col items-center justify-center py-0 px-6 md:px-0 max-w-4xl mx-auto">
           <div className="flex flex-col items-start md:gap-8 gap-4 w-full">
-            <h2 className="w-full font-sans text-4xl md:text-5xl  text-center leading-tight text-gray-900">
-              <span className="font-medium">{milestones[activeIndex].title} </span>
-              <span className="font-bold">{milestones[activeIndex].year}</span>
+            <h2 className="w-full font-sans text-2xl md:text-2xl  text-center leading-tight text-gray-900">
+              <span className="font-medium">{milestones[activeIndex].year} </span>
             </h2>
+            <h3 className="w-full font-sans text-4xl md:text-5xl  text-center leading-tight text-gray-900">
+
+              <span className="font-medium">{milestones[activeIndex].title} </span>
+              {/* <span className="font-bold">{milestones[activeIndex].year}</span> */}
+            </h3>
             <p className="w-full font-sans font-normal text-lg md:text-xl lg:text-2xl text-center leading-relaxed text-gray-600">
               {milestones[activeIndex].description}
             </p>

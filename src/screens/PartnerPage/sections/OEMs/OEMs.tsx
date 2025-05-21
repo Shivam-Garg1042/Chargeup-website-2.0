@@ -77,13 +77,14 @@ export const Oems = (): JSX.Element => {
             
           ))}
         </div>
-        <div className=" justify-center  items-center mb-10 md:mb-16 relative w-full">
-          <div className="w-full sm:w-auto"></div> {/* Spacer for centering */}
-          <button className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium sm:ml-auto sm:mx-2">
+        
+      </div>
+        <div className="flex justify-center items-center mt-16 mb-16 w-full">
+          <button className="bg-yellow-400 text-black text-xl px-8 py-4 rounded-xl font-semibold shadow-lg hover:bg-yellow-300 transition">
             Apply Now
           </button>
         </div>
-      </div>
+
     </section>
   );
 };

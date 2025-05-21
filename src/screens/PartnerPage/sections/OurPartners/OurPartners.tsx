@@ -13,7 +13,7 @@ export const OurPartners = (): JSX.Element => {
       description:
         "Smarter financing with real-time driver and battery data",
     },
-    { id: 2, name: "OEM", description: "Scale EV adoption with smart battery integration" },
+    { id: 2, name: "OEMs", description: "Scale EV adoption with smart battery integration" },
     { id: 3, name: "Dealers", description: "Boost sales with bundled EV and charging solutions" },
   ];
 

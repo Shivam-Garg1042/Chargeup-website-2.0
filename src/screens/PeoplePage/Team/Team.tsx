@@ -121,8 +121,11 @@ export default function Team() {
       <div className="flex flex-col items-center w-full max-w-7xl px-2 md:px-1 md:mb-7">
         <header className="mb-10">
           <h2 className="font-medium text-gray-900 text-2xl md:text-3xl text-center leading-tight max-w-[400px] md:mb-4">
-            The steadfast strength and unity of our team.
+            The Charge(d)up team
           </h2>
+          <h4 className="font-medium text-gray-600 text:lg md:text-xl  text-center leading-tight max-w-[400px] md:mb-4">
+            The spirit that drives us forward
+          </h4>
         </header>
 
         <div className="flex flex-col gap-6 w-full">

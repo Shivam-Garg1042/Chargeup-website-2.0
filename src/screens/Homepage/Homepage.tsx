@@ -59,8 +59,9 @@ export const Homepage = (): JSX.Element => {
       <Map/>
       
       <Metrics/>
-      <PartnerEcosystem/> 
+      
       <TestimonialSections/>
+      <PartnerEcosystem/> 
       <VideoCarouselSection/>
       </>
     }>

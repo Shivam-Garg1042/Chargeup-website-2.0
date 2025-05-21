@@ -1,16 +1,18 @@
-import React from "react";
 
 export const Challenges = (): JSX.Element => {
   const challengesData = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "EV Downtime & Battery Issues ~ Limit daily earnings and reduce asset productivity.",
+    "Lack of Asset & Driver Control ~ No real-time visibility or digital monitoring.",
+    "Limited Credit History ~ Drivers often lack formal credit scores, making evaluation difficult.",
+    "Risky Asset Underwriting ~ Unestablished resale market making the residual value uncertain."
   ];
 
   const solutionsData = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "365 days running assurance assisted by Chargeup Tech.",
+    "Remote Tracking and Immobilization.",
+    "Tech enabled risk score to measure Intent.",
+    "Lower interest w/ longer tenure - 24% / 24 months.",
+    "No waiting for repair or replacement with a trusted dealer network."
   ];
 
   return (
@@ -21,7 +23,7 @@ export const Challenges = (): JSX.Element => {
         {/* Challenges Section */}
         <div className="flex-1 relative">
           <div className="bg-[#f8bb25] rounded-3xl p-8 h-full">
-            <h2 className="text-3xl font-bold mb-8">Challenges</h2>
+            <h2 className="text-3xl font-bold mb-8">Industry Challenges</h2>
             <div className="space-y-6">
               {challengesData.map((challenge, index) => (
                 <div 
@@ -30,8 +32,8 @@ export const Challenges = (): JSX.Element => {
                     index % 2 === 1 ? 'bg-[#fbe18f]' : ''
                   }`}
                 >
-                  <p className="text-gray-800">
-                    {index + 1}. {challenge}
+                  <p className="text-gray-800 md:text-lg">
+                     {challenge}
                   </p>
                 </div>
               ))}
@@ -54,8 +56,8 @@ export const Challenges = (): JSX.Element => {
                     index % 2 === 1 ? 'bg-[#3D8785]' : ''
                   }`}
                 >
-                  <p className="text-white">
-                    {index + 1}. {solution}
+                  <p className="text-white md:text-lg">
+                    {solution}
                   </p>
                 </div>
               ))}

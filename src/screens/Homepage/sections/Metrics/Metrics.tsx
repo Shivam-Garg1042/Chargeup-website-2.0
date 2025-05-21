@@ -152,7 +152,7 @@ export const Metrics = (): JSX.Element => {
     <section id="metrics-section" className="relative w-full bg-white overflow-hidden ">
       <div className="flex flex-col items-center w-full">
         {/* Background with gradient */}
-        <div className="relative w-full py-32  lg:h-[460px]">
+        <div className="relative w-full py-32  lg:h-[420px]">
           <div className="absolute w-full h-full top-0 left-0 [background:radial-gradient(50%_50%_at_50%_100%,rgba(0,33,24,1)_0%,rgba(0,40,29,1)_53%,rgba(2,2,2,1)_100%)]" />
           <div className="absolute w-full h-[30%] bottom-0 left-0 [background:radial-gradient(50%_50%_at_51%_0%,rgba(6,91,66,1)_0%,rgba(2,4,3,1)_100%)]" />
           <div className="absolute w-full h-[30%] bottom-0 left-0 bg-[#00000066] backdrop-blur-[2px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(2px)_brightness(100%)]" />
@@ -180,12 +180,12 @@ export const Metrics = (): JSX.Element => {
           </div>
 
           {/* Title and subtitle */}
-          <div className="absolute top-[40px] md:top-[80px] lg:top-[120px] left-0 w-full flex flex-col items-center px-4 z-10">
+          <div className="absolute top-[40px] md:top-[80px] lg:top-[100px] left-0 w-full flex flex-col items-center px-4 z-10">
             <h2 className="font-medium text-white text-[28px] md:text-[48px] lg:text-[54px] text-center tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica]">
-              Every Ride Drives Impact - for Drivers and the Earth
+              Every Ride Drives Impact 
             </h2>
             <p className="mt-4 md:px-[20px] lg:mt-7 max-w-[989px] text-white text-opacity-90 text-center font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[16px] md:text-[18px] lg:text-[21.3px] leading-6 lg:leading-8">
-            People + Planet First. From empowering thousands of drivers to cutting carbon emissions, our rides move more than people, they move change.
+            For Drivers and the Earth
             </p>
           </div>
         </div>

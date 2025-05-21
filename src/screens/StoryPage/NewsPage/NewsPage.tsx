@@ -102,7 +102,7 @@ export default function NewsPage() {
   const currentArticles = articlesData.slice(0, visibleArticles);
 
   return (
-    <section className="flex flex-col items-center justify-start px-4 md:px-8 lg:px-[134px]  py-12 w-full mb-6 md:mb-12">
+    <section className="flex flex-col items-center justify-start px-4 md:px-8 lg:px-[134px]  pb-16 md:pb-20 w-full   bg-[#bec9b8]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 w-full mb-12">
         {currentArticles.map((article) => (
           <div key={article.id} className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-10">
@@ -147,7 +147,7 @@ export default function NewsPage() {
       {visibleArticles < articlesData.length && (
         <Button 
           onClick={handleLoadMore}
-          className="bg-[#f48900] hover:bg-[#e07a00] text-white font-medium px-6 py-5 rounded-md text-base md:text-lg mt-6"
+          className="bg-[#f48900] hover:bg-[#e07a00] text-white font-medium px-6 py-5 rounded-md text-base md:text-lg mt-2"
         >
           Load More
         </Button>

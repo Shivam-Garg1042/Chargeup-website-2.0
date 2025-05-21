@@ -14,13 +14,13 @@ export default function Wrapper() {
         <div className="w-full px-6 md:px-[150px] flex flex-col justify-center pb-12">
           <div className="max-w-4xl flex flex-col gap-5">
             <h2 className="font-bold text-4xl md:text-[50px] text-x-900 tracking-tight leading-tight md:leading-[80px]">
-              Latest News on Chargeup
+              Chargeup in the News
             </h2>
-            <p className="text-lg md:text-[20px] text-[#686868] leading-8 max-w-[734px]">
+            {/* <p className="text-lg md:text-[20px] text-[#686868] leading-8 max-w-[734px]">
               Find all the important media &amp; news announcements by ChargeUp
               here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

@@ -11,16 +11,16 @@ export default function VisionMission() {
       content: {
         title: "Chargeup Vision for the Future",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla",
+          "To become the largest platform empowering millions of last-mile drivers to be self-reliant and financially independent",
       },
     },
     {
       id: "mission",
       label: "Our Mission",
       content: {
-        title: "ChargeUp Mission for the Future",
+        title: " Million Driver by 2030",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla",
+          "Chargeup is not just enabling EV adoption, it’s building the digital infrastructure of India’s new driver economy that simplifies EV ownership and increases their daily earnings",
       },
     },
   ];

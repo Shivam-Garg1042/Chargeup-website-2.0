@@ -15,11 +15,12 @@ export const CultureAtChargeUp = (): JSX.Element => {
   return (
     <div className="flex flex-col w-full relative bg-gray-50 ">
       {/* Culture at ChargeUp Section */}
-      <section className="flex flex-col w-full items-start px-6 lg:px-[120px] py-[40px] lg:py-[100px] relative bg-[#041620] ">
+      <section className="flex flex-col w-full items-start px-6 lg:px-[120px] py-[40px] lg:py-[10 0px] relative bg-[#041620] ">
         <div className="flex flex-col w-full items-center gap-[40px] md:gap-[80px]">
           <div className="flex flex-col w-full items-center">
-            <h2 className="font-['Raleway',Helvetica] font-medium text-white text-[40px] md:text-[49px] text-center tracking-[-1px] leading-[60px] md:leading-[0px]">
-              Culture at ChargeUp
+            <h2 className="font-['Raleway',Helvetica] font-medium text-white text-[40px] md:text-[49px] text-center tracking-[-1px] leading-[60px] md:leading-[0px] md:mt-10">
+              How we roll
+
             </h2>
           </div>
 
