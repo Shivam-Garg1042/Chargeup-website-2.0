@@ -75,7 +75,7 @@ const articlesData = [
   }
 ];
 
-// ChevronRight SVG component
+// ChevronRight SVG 
 const ChevronRightIcon = () => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -113,9 +113,9 @@ export default function NewsPage() {
                   alt={article.title}
                   className="absolute inset-0 w-full h-full object-cover opacity-90"
                 />
-                <Badge className="relative z-10 bg-white text-[#1b4748] font-normal rounded-[5px] px-3 py-2">
+                {/* <Badge className="relative z-10 bg-white text-[#1b4748] font-normal rounded-[5px] px-3 py-2">
                   {article.date}
-                </Badge>
+                </Badge> */}
               </CardContent>
             </Card>
             
@@ -132,10 +132,10 @@ export default function NewsPage() {
               
               <a href={article.link} className="mt-2 md:mb-4 flex items-center gap-2 md:gap-4 lg:gap-[21px] no-underline">
 
-                <span className=" font-semibold text-[#FABA25] text-base md:text-lg lg:text-xl leading-6 whitespace-nowrap ">
+                <span className=" font-semibold text-[#07584D] text-base md:text-lg lg:text-xl leading-6 whitespace-nowrap ">
                   Read Now
                 </span>
-                <span className="text-[#f48900]">
+                <span className="text-[#07584D]">
                   <ChevronRightIcon />
                 </span>
               </a>
@@ -144,14 +144,14 @@ export default function NewsPage() {
         ))}
       </div>
 
-      {visibleArticles < articlesData.length && (
+      {/* {visibleArticles < articlesData.length && (
         <Button 
           onClick={handleLoadMore}
           className="bg-[#f48900] hover:bg-[#e07a00] text-white font-medium px-6 py-5 rounded-md text-base md:text-lg mt-2"
         >
           Load More
         </Button>
-      )}
+      )} */}
     </section>
   );
 }

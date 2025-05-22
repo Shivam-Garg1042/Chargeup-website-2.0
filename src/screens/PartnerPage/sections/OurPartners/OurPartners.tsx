@@ -11,10 +11,10 @@ export const OurPartners = (): JSX.Element => {
       id: 1,
       name: "NBFCs",
       description:
-        "Smarter financing with real-time driver and battery data",
+        "Enjoys secured financing with Chargeup",
     },
-    { id: 2, name: "OEMs", description: "Scale EV adoption with smart battery integration" },
-    { id: 3, name: "Dealers", description: "Boost sales with bundled EV and charging solutions" },
+    { id: 2, name: "OEMs", description: "Enjoys uptime assurance with Chargeup" },
+    { id: 3, name: "Dealers", description: "Enjoys accelerated growth with Chargeup" },
   ];
 
   // Partner logos data - organized by category
@@ -26,7 +26,7 @@ export const OurPartners = (): JSX.Element => {
       { id: 4,type: "image", imgUrl: "/nbfc5.png"  },
       { id: 5, type: "image", imgUrl: "/nbfc4.png" },
     ],
-    "OEM": [
+    "OEMs": [
       { id: 1, type: "image", imgUrl: "/oem1.png"  },
       { id: 2, type: "image", imgUrl: "oem2.png" },
       { id: 3, type: "image", imgUrl: "oem3.png" },
@@ -61,7 +61,7 @@ export const OurPartners = (): JSX.Element => {
   const LogoImage  = ({ imgUrl  }) => {
     // Simple logo renderer based on brand name
     return (
-      <div className="w-40 h-36 flex items-center justify-center">
+      <div className="w-40 h-36 md:w-44 md:h-40 flex items-center justify-center">
         <img 
           src={imgUrl} 
           alt="Partner Logo" 

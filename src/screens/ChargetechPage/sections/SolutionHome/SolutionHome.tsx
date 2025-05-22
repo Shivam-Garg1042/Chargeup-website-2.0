@@ -8,14 +8,14 @@ export const SolutionHome = (): JSX.Element => {
       <Card className="w-full bg-[#041620] rounded-lg md:rounded-xl lg:rounded-2xl border-none">
         <CardContent className="flex flex-col items-start p-10 sm:p-8 md:p-12 lg:py-16 lg:px-24">
           <div className="flex flex-col items-start gap-6 md:gap-8 w-full">
-            <div className="flex flex-col items-start gap-4 md:gap-1">
+            <div className="flex flex-col items-start gap-1 ">
               <p className="md:w-2/3 text-sm lg:px-[24px] sm:text-base md:text-lg  font-normal text-[#fcfcfc] leading-relaxed font-['Plus_Jakarta_Sans',Helvetica]">
-                From Ownership Barriers to Revenue Loss
+                Enabling easy EV ownership via
               </p>
               <h1 className="md:w-full text-3xl lg:px-[24px] md:text-4xl  xl:text-[44px] font-semibold text-white tracking-tight font-['Plus_Jakarta_Sans',Helvetica] mb-4">
-                 Fi-Ne-Tech Platform That Powers Last-Mile EV Success
+                 Fi-Ne-Tech Platform 
               </h1>
-              <p className="md:w-2/3 text-sm lg:px-[24px] sm:text-base md:text-lg  font-normal text-[#ffffff] leading-relaxed  md:mt-6">
+              <p className="md:w-2/3 text-sm lg:px-[24px] sm:text-base md:text-lg  font-normal text-[#ffffff] leading-relaxed mt-3 md:mt-6">
                Offering Financial services and Asset management integrated with NBFCs, OEMs and dealers, to offer a single stop solution.
 
               </p>

@@ -16,7 +16,7 @@ export const Benefits = (): JSX.Element => {
             </h2>
 
             <p className="max-w-[984px] font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[#646464] text-[18px] text-center leading-8 mb-12">
-              Chargeup is a platform built for scalable, tech-driven growth. With deep driver access, smart battery data, and strong last-mile presence, we help NBFCs reduce risk, OEMs boost adoption, and dealers grow sales — all through a proven ecosystem model.
+              Chargeup is a platform built for scalable, tech-driven growth. With deep driver access, we help NBFCs reduce risk, OEMs for fast product adoption, and dealers for higher growth.
             </p>
           </div>
         </CardContent>

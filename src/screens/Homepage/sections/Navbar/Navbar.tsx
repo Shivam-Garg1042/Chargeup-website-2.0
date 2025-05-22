@@ -27,7 +27,7 @@ export const Navbar = (): JSX.Element => {
     // { name: "News Room", href: "/news" },
     { name: "Our Story", href: "/story" },
     { name: "People", href: "/people" },
-     { name: "About Us", href: "/" },
+    //  { name: "About Us", href: "/" },
     
   ];
   const handlePlayStoreClick = () => {
@@ -117,7 +117,7 @@ export const Navbar = (): JSX.Element => {
         {/* Right side buttons */}
         <div className="flex items-center gap-2 md:gap-3">
           {/* Language selector - hidden on mobile */}
-          <a 
+          {/* <a 
             href="#language" 
             className="hidden md:block w-8 md:h-8 lg:w-[44px] lg:h-[50px] transition-transform duration-300 hover:rotate-12"
           >
@@ -126,7 +126,7 @@ export const Navbar = (): JSX.Element => {
               alt="Language circle"
               src="/language-circle.svg"
             />
-          </a>
+          </a> */}
 
           
           

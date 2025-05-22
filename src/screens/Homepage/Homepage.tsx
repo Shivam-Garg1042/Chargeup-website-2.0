@@ -72,7 +72,7 @@ export const Homepage = (): JSX.Element => {
       <SolutionHome/>
       <FeaturesSection/>
       <Challenges/>
-      {/* <Pillars/> */}
+      <Pillars/>
       
       </>
     }></Route>

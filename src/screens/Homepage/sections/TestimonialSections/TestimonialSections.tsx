@@ -209,8 +209,8 @@ export default function TestimonialSection() {
     {
       driver: {
         name: "Mr. Narayan",
-        location: "Driver from Odisha",
-        image: "/api/placeholder/400/320" // Placeholder image
+        location: "Driver from Noida",
+        image: "/driver1.png" // Placeholder image
       },
       heading: "Narayan is earning better",
       content: "When banks said no and private lenders asked for too much, Chargeup stepped in and my loan was approved in 48 hours, the EMI fits my income, and today I'm earning more than ever."
@@ -219,19 +219,19 @@ export default function TestimonialSection() {
       driver: {
         name: "Mr Omprakash",
         location: "Driver from Delhi",
-        image: "/api/placeholder/400/320" // Placeholder image
+        image: "/driver3.png" // Placeholder image
       },
       heading: "Omprakash is saving more",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla"
+      content: "Before Chargeup, battery problems often kept me off the road and losing money. Now, with their quick support, I can run every day and earn more without worry"
     },
     {
       driver: {
-        name: "Mr. Sunil Patel",
-        location: "Driver from Mumbai",
-        image: "/api/placeholder/400/320" // Placeholder image
+        name: "Mrs. Sita",
+        location: "Driver from NCR",
+        image: "/driver2.png" // Placeholder image
       },
-      heading: "Life as a Partner Driver",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla"
+      heading: "Sita is staying safe",
+      content: "The other night, as I was finishing work, some people beat me up and stole my rickshaw. I was distraught — without it, I couldn’t work and would spend months chasing insurance. But thanks to Chargeup, I got it back. They remotely immobilised my battery and tracked my rickshaw’s location, helping me recover it quickly."
     }
   ];
 
@@ -275,8 +275,8 @@ export default function TestimonialSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="w-full bg-white">
-      <div className="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto px-6 md:px-4 py-16 md:py-12 ">
+    <section className="w-full ">
+      <div className="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto px-6 md:px-4 py-16 md:py-12 mt-10 ">
         {/* Image testimonial card - replacing the video with an image */}
         <div className="flex flex-col w-full md:w-[40%] items-start gap-3">
           <div 

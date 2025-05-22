@@ -39,9 +39,9 @@ export const DivWrapper = (): JSX.Element => {
     <footer className="flex flex-col items-center w-full  px-4 md:px-6 lg:px-8 bg-[#F9F9FB]">
       <div className="w-full max-w-7xl">
         {/* Main footer content */}
-        <div className="flex flex-col md:flex-row justify-between py-8 gap-8">
+        <div className="flex flex-col md:flex-row justify-between py-8 gap-4">
           {/* Logo and description column */}
-          <div className="flex flex-col gap-4 max-w-sm">
+          <div className="flex flex-col gap-4 max-w-lg">
             <div className="relative h-10 w-40">
               <img
                 className="object-contain"
@@ -98,8 +98,8 @@ export const DivWrapper = (): JSX.Element => {
           </div>
 
           {/* Contact button and social icons */}
-          <div className="flex flex-col gap-8 items-start md:items-start">
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 text-base font-medium rounded-md px-6 py-2">
+          <div className="flex flex-col gap-8 items-start md:items-start ">
+            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 text-base font-medium rounded-md px-6 py-2 ml-4">
               {/* onClick={() => setIsGetStartedOpen(true)} */}
               Contact Us
             </Button>

@@ -10,29 +10,52 @@ export default function ChargeupJourney() {
     {
       year: "",
       title: "Founded in 2019",
-      description: "Laid the foundation to transform EV mobility and driver livelihoods."
+      description: "Laid the foundation to transform EV mobility and driver livelihoods",
+      highlight: "2019"
     },
     {
       year: "Sep 2021",
       title: "1,000 active drivers reached",
-      description: "Early traction proved strong product-market fit."
+      description: "Early traction proved strong product-market fit",
+      highlight: "1,000"
     },
     {
       year: "Dec 2022",
-      title: "$2.5M Pre-Series A funding raised (existing investors)",
-      description: "Continued backing underscored investor confidence"
+      title: "$2.5M Pre-Series A funding raised ",
+      description: "Continued backing underscored investor confidence",
+      highlight: "$2.5M"
     },
     {
       year: "Jan 2024",
-      title: " Partnership with 1st NBFC Partner : Ascend Capital (NBFC)",
-      description: " Unlocking financing access for thousands of drivers"
+      title: " Partnership with 1st NBFC Partner : Ascend Capital ",
+      description: " Unlocking financing access for thousands of drivers",
+      highlight: "1st"
     },
     {
       year: "Dec 2024",
       title: "EBITDA positive, 7,000 drivers across 16 cities",
-      description: "— Scaled sustainably while deepening market presence —"
+      description: "Scaled sustainably while deepening market presence",
+      highlight: "7,000"
     }
   ];
+
+  // Helper function to highlight numbers in text
+  const highlightNumbers = (text, highlightValue) => {
+    const parts = text.split(new RegExp(`(${highlightValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'));
+    return parts.map((part, index) => {
+      if (part.toLowerCase() === highlightValue.toLowerCase()) {
+        return (
+          <span 
+            key={index} 
+            className="font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded"
+          >
+            {part}
+          </span>
+        );
+      }
+      return part;
+    });
+  };
 
   // Auto-scroll functionality
   useEffect(() => {
@@ -44,7 +67,7 @@ export default function ChargeupJourney() {
           setFillPercentage(nextIndex * 25);
           return nextIndex;
         });
-      }, 5000); // Change milestone every 5 seconds
+      }, 2000); // Change milestone every 5 seconds
     };
 
     if (autoScrolling.current) {
@@ -160,10 +183,10 @@ export default function ChargeupJourney() {
             <h2 className="w-full font-sans text-2xl md:text-2xl  text-center leading-tight text-gray-900">
               <span className="font-medium">{milestones[activeIndex].year} </span>
             </h2>
-            <h3 className="w-full font-sans text-4xl md:text-5xl  text-center leading-tight text-gray-900">
-
-              <span className="font-medium">{milestones[activeIndex].title} </span>
-              {/* <span className="font-bold">{milestones[activeIndex].year}</span> */}
+            <h3 className="w-full font-sans text-4xl md:text-4xl  text-center leading-tight text-gray-900">
+              <span className="font-medium">
+                {highlightNumbers(milestones[activeIndex].title, milestones[activeIndex].highlight)}
+              </span>
             </h3>
             <p className="w-full font-sans font-normal text-lg md:text-xl lg:text-2xl text-center leading-relaxed text-gray-600">
               {milestones[activeIndex].description}

@@ -20,9 +20,9 @@ export default function PartnerEcosystem() {
   ];
 
   return (
-    <section className="w-full bg-white overflow-hidden">
+    <section className="w-full bg-white overflow-hidden -mb-20">
       <div className="max-w-[1920px]  px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center py-12 sm:py-16">
+        <div className="flex flex-col items-center py-12 sm:py-20 ">
           {/* Title with dots */}
           <motion.div 
             initial={{ y: -20, opacity: 0 }}
@@ -36,7 +36,7 @@ export default function PartnerEcosystem() {
               <div className="w-4 h-4 rounded-full bg-black"></div>
             </div>
             
-            <h2 className="text-xl sm:text-2xl font-bold text-[#F48900]">
+            <h2 className="text-xl sm:text-3xl font-bold text-[#F48900]">
               OUR PARTNERS
             </h2>
             

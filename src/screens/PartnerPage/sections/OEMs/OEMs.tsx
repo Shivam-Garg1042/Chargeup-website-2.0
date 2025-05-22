@@ -5,29 +5,29 @@ import { Card, CardContent } from "../../../../components/ui/card";
 export const Oems = (): JSX.Element => {
   // Data for partner cards
   const partnerCards = [
-    {
-      id: 1,
-      title: "OEMs",
-      subtitle: "Battery & Vehicle",
-      iconSrc: "/group-76.png",
-      description:
-        "Power the EV future. Boost performance, speed up deployment, and unlock new revenue with Chargeup’s data-driven EV solutions.",
-    },
+    
     {
       id: 2,
       title: "NBFCs",
       subtitle: "Battery & Vehicle",
       iconSrc: "/group-76-1.png",
       description:
-        "Smarter EV financing. Gain insights into usage, repayments, and risk for better lending and asset control.",
+        "Make your lending smart with asset management, default management and resale network.",
     },
     {
+      id: 1,
+      title: "OEMs",
+      subtitle: "Battery & Vehicle",
+      iconSrc: "/group-76.png",
+      description:
+          "Increase your asset performance & brand equity through Chargeup 365 days running assurance and predictive tech, overall increasing asset life."},
+    {
       id: 3,
-      title: "Others",
+      title: "Dealers",
       subtitle: "Battery & Vehicle",
       iconSrc: "/group-76-2.png",
       description:
-        "Accelerate EV growth. Leverage Chargeup's platform for visibility, smarter lending, and stronger control.",
+        "Invest less earn more with a future ready business solution",
     },
   ];
 

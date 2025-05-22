@@ -7,59 +7,59 @@ export default function Team() {
     { 
       name: "Varun Goenka", 
       position: "Chief Executive Officer", 
-      image: "/employee1.webp",
+      image: "/5.png",
       bio: "Oversees the business strategy, execution and vision for the organization",
       linkedin: "https://linkedin.com/in/username1"
     },
     { 
-      name: "First Last Name", 
-      position: "Position", 
-      image: "/image-30-7.png",
+      name: "Satish Mittal", 
+      position: "Chief Digital Officer", 
+      image: "/1.png",
       bio: "Passionate professional with over 10 years of experience in the industry.",
       linkedin: "https://linkedin.com/in/username2"
     },
+    // { 
+    //   name: "Arun ", 
+    //   position: "Chief Financial Officer", 
+    //   image: "/7.jpg",
+    //   bio: "Award-winning expert recognized for innovative approaches and creative solutions.",
+    //   linkedin: "https://linkedin.com/in/username3"
+    // },
     { 
-      name: "First Last Name", 
-      position: "Position", 
-      image: "/image-30-7.png",
-      bio: "Award-winning expert recognized for innovative approaches and creative solutions.",
-      linkedin: "https://linkedin.com/in/username3"
-    },
-    { 
-      name: "First Last Name", 
-      position: "Position", 
-      image: "/image-30-7.png",
+      name: "Swati Mudgal", 
+      position: "Chief Human Resource Officer", 
+      image: "/2.png",
       bio: "Results-driven professional with a background in both technical and managerial roles.",
       linkedin: "https://linkedin.com/in/username4"
     },
     { 
-      name: "First Last Name", 
-      position: "Position", 
-      image: "/image-30-7.png",
+      name: "Anmol Chouksey", 
+      position: "Chief of Staff", 
+      image: "/3.png",
       bio: "Former industry leader with expertise in digital transformation.",
       linkedin: "https://linkedin.com/in/username5"
     },
-    { 
-      name: "First Last Name", 
-      position: "Position", 
-      image: "/image-30-7.png",
-      bio: "Brings a unique perspective with international experience across three continents.",
-      linkedin: "https://linkedin.com/in/username6"
-    },
-    { 
-      name: "First Last Name", 
-      position: "Position", 
-      image: "/image-30-7.png",
-      bio: "Pioneer in sustainable practices with a commitment to environmental responsibility.",
-      linkedin: "https://linkedin.com/in/username7"
-    },
-    { 
-      name: "First Last Name", 
-      position: "Position", 
-      image: "/image-30-7.png",
-      bio: "Technology enthusiast with deep knowledge of emerging trends.",
-      linkedin: "https://linkedin.com/in/username8"
-    },
+    // { 
+    //   name: "Sunil Singh", 
+    //   position: "Position", 
+    //   image: "/4.png",
+    //   bio: "Brings a unique perspective with international experience across three continents.",
+    //   linkedin: "https://linkedin.com/in/username6"
+    // },
+    // { 
+    //   name: "First Last Name", 
+    //   position: "Position", 
+    //   image: "/image-30-7.png",
+    //   bio: "Pioneer in sustainable practices with a commitment to environmental responsibility.",
+    //   linkedin: "https://linkedin.com/in/username7"
+    // },
+    // { 
+    //   name: "First Last Name", 
+    //   position: "Position", 
+    //   image: "/image-30-7.png",
+    //   bio: "Technology enthusiast with deep knowledge of emerging trends.",
+    //   linkedin: "https://linkedin.com/in/username8"
+    // },
   ];
 
   // Component for individual team member card with hover effect
@@ -76,7 +76,7 @@ export default function Team() {
       >
         <div className="flex items-center justify-center w-full">
           <img
-            className=" object-fit h-36 md:h-40 lg:h-64  rounded-t-lg w-36 md:w-60 lg:w-60 "
+            className=" object-contain h-36 md:h-40 lg:h-64  rounded-t-lg w-36 md:w-60 lg:w-60 "
             alt={`${member.name} photo`}
             src={member.image}
           />
@@ -123,9 +123,7 @@ export default function Team() {
           <h2 className="font-medium text-gray-900 text-2xl md:text-3xl text-center leading-tight max-w-[400px] md:mb-4">
             The Charge(d)up team
           </h2>
-          <h4 className="font-medium text-gray-600 text:lg md:text-xl  text-center leading-tight max-w-[400px] md:mb-4">
-            The spirit that drives us forward
-          </h4>
+          
         </header>
 
         <div className="flex flex-col gap-6 w-full">
