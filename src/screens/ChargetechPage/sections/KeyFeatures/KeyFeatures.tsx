@@ -8,7 +8,7 @@ export default function KeyFeatures() {
       title: "Finance",
       description:
         "Enabling paperless EV loans to last mile drivers with no or low credit score.",
-      iconSrc: "/group-76.png",
+      iconSrc: "/financel.png",
       banner: "Lower interest w/ longer tenure ~24% / 24 months"
     },
     {
@@ -16,7 +16,7 @@ export default function KeyFeatures() {
       title: "Network",
       description:
          "Our trusted extensive network of dealer, partners enabling instact access to repair, resale, and replacement.",
-      iconSrc: "/group-76-2.png",
+      iconSrc: "/networkl.png",
       banner: "Single point bundle solution"
     },
     {
@@ -24,7 +24,7 @@ export default function KeyFeatures() {
       title: "Tech",
       description:
         "Predictive Tech offering real-time asset management enabling EV uptime and increasing asset life.",
-      iconSrc: "/group-76-1.png",
+      iconSrc: "/techl.png",
       banner: "365 Days running assurance "
     },
   ];
