@@ -7,8 +7,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "background-colorsgray-white-bg":
-          "var(--background-colorsgray-white-bg)",
+        shamrock: "#0F9547",
+        seagreen: "#0D8948",
+        darkspring: "#0C7D49",
+        darkspringalt: "#0A704A",
+        castleton: "#08644B",
+        brunswick: "#07584D",
+        midnight: "#054C4E",
+        midnightalt: "#033F4F",
+        prussian: "#023350",
+        oxford: "#002751",
+        "background-colorsgray-white-bg": "var(--background-colorsgray-white-bg)",
         "background-colorswhite": "var(--background-colorswhite)",
         dark: "var(--dark)",
         "device-bg": "var(--device-bg)",
@@ -69,7 +78,6 @@ module.exports = {
           '"Segoe UI Emoji"',
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
-       
         ],
         Cedarville: ["Cedarville Cursive", 'cursive'],
       },
@@ -82,10 +90,25 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        },
+        slideIn: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' }
+        },
+        scaleUp: {
+          '0%': { transform: 'scale(0.95)' },
+          '100%': { transform: 'scale(1)' }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'fadeIn': 'fadeIn 0.5s ease-out',
+        'slideIn': 'slideIn 0.5s ease-out',
+        'scaleUp': 'scaleUp 0.3s ease-out'
       },
     },
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
