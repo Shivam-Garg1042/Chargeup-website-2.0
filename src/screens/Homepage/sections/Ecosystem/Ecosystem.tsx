@@ -31,19 +31,19 @@ export default function PartnerEcosystem() {
             className="flex items-center gap-4 mb-4"
           >
             <div className="flex gap-2">
-              <div className="w-2 h-2 mt-1 rounded-full bg-[#F8BB25]"></div>
-              <div className="w-3 h-3 mt-0.5 rounded-full bg-[#F48900]"></div>
-              <div className="w-4 h-4 rounded-full bg-black"></div>
+              <div className="w-2 h-2 mt-1 rounded-full bg-[#0D8948]"></div>
+              <div className="w-3 h-3 mt-0.5 rounded-full bg-[#07584D]"></div>
+              <div className="w-4 h-4 rounded-full bg-[#002751]"></div>
             </div>
             
-            <h2 className="text-xl sm:text-3xl font-bold text-[#F48900]">
+            <h2 className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-[#0D8948] to-[#002751] bg-clip-text text-transparent">
               OUR PARTNERS
             </h2>
             
             <div className="flex gap-2">
-              <div className="w-4 h-4  rounded-full bg-black"></div>
-              <div className="w-3 h-3 mt-0.5  rounded-full bg-[#F48900]"></div>
-              <div className="w-2 h-2 mt-1 rounded-full bg-[#F8BB25]"></div>
+              <div className="w-4 h-4 rounded-full bg-[#002751]"></div>
+              <div className="w-3 h-3 mt-0.5 rounded-full bg-[#07584D]"></div>
+              <div className="w-2 h-2 mt-1 rounded-full bg-[#0D8948]"></div>
             </div>
           </motion.div>
 
@@ -78,7 +78,7 @@ export default function PartnerEcosystem() {
                   className="flex flex-col items-center cursor-pointer"
                 >
                   <Link to="/partners#ourPartners">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#F8BB25] rounded-full flex items-center justify-center ">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#0D8948] rounded-full flex items-center justify-center ">
                     
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

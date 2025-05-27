@@ -6,7 +6,7 @@ import TestimonialSections from "./sections/TestimonialSections/TestimonialSecti
 import { WhyChooseUs } from "./sections/WhyChooseUs/WhyChooseUs.tsx";
 import   PartnerEcosystem  from "./sections/Ecosystem/Ecosystem.tsx";
 import Map  from "./sections/Map/Map.tsx";
-import {HeroSections}   from "./sections/HeroSections/HeroSections.tsx";
+import HeroSections   from "./sections/HeroSections/HeroSections.tsx";
 import  KeyFeatures  from '../ChargetechPage/sections/KeyFeatures/KeyFeatures.tsx';
 import { SolutionHome } from '../ChargetechPage/sections/SolutionHome/SolutionHome.tsx';
 import { Challenges } from '../ChargetechPage/sections/Challeges/Challenges.tsx';
@@ -30,6 +30,10 @@ import ChargeupJourney from '../StoryPage/ChargeupJourney/ChargeupJourney.tsx';
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import VideoCarouselSection from './sections/Video/Video.tsx';
+import GalleryWrapper from './sections/testimony/GalleryWrapper.tsx';
+import ScrollToTop from './ScrollToTop.tsx';
+import { Section } from 'lucide-react';
+
 
 const ScrollToHash = () => {
   const location = useLocation();
@@ -49,6 +53,8 @@ const ScrollToHash = () => {
 export const Homepage = (): JSX.Element => {
   return (
     <Router>
+      <ScrollToTop/>
+      <ScrollToHash />
     <Navbar/>
     <Routes>
     <Route path="/" element={
@@ -59,6 +65,9 @@ export const Homepage = (): JSX.Element => {
       <Map/>
       
       <Metrics/>
+      <GalleryWrapper/>
+    
+      
       
       <TestimonialSections/>
       <PartnerEcosystem/> 
@@ -69,7 +78,10 @@ export const Homepage = (): JSX.Element => {
 
     <Route path = "/solutions" element={
       <>
+      <section id="solutions">
       <SolutionHome/>
+      </section>
+
       <FeaturesSection/>
       <Challenges/>
       <Pillars/>
@@ -79,8 +91,10 @@ export const Homepage = (): JSX.Element => {
     <Route path = "/partners" element={
       <>
       
-      <PartnersHome/>
-      <ScrollToHash />
+      <section id="partners">
+  <PartnersHome />
+</section>
+      
       <OurPartners/>
       <Benefits/>
       <Oems/>
@@ -90,7 +104,9 @@ export const Homepage = (): JSX.Element => {
     }></Route>
     <Route path = "/story" element={
       <>
-      <ChargeupJourney/>
+      <section id="story">
+      <ChargeupJourney />
+    </section>
       <VisionMission/>
       <Investor/>
       <Wrapper/>
@@ -102,7 +118,9 @@ export const Homepage = (): JSX.Element => {
       <>
       
       
-      <Team/> 
+      <section id="people">
+  <Team />
+</section> 
       <CultureAtChargeUp/>
       <OpenPositions/>
       

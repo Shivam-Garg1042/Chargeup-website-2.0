@@ -1,98 +1,366 @@
-export const Challenges = (): JSX.Element => {
+import React, { useState } from 'react';
+import { ArrowRight, Zap, AlertTriangle } from 'lucide-react';
+
+export const Challenges = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const challengesData = [
     {
-      title: "EV Downtime & Battery Issues",
-      description: "Limit daily earnings and reduce asset productivity."
+      title: "EV Downtime",
+      subtitle: "Limit daily earnings and reduce asset productivity.",
+      impact: "40% Loss",
+      visual: (
+        <div className="relative w-full h-32 bg-gradient-to-br from-red-100 to-red-50 rounded-xl flex items-center justify-center">
+          <div className="relative">
+            {/* Dead Battery Icon */}
+            <div className="w-16 h-10 bg-red-400 rounded-md flex items-center justify-center relative">
+              <div className="w-2 h-6 bg-red-600 rounded-r-sm absolute -right-1"></div>
+              <div className="text-white text-xs font-bold">X</div>
+            </div>
+            {/* Warning indicators */}
+            <div className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+            <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      )
     },
     {
-      title: "Lack of Asset & Driver Control",
-      description: "No real-time visibility or digital monitoring."
+      title: "No Control",
+      subtitle: "No real-time visibility or digital monitoring.",
+      impact: "Blind Spots",
+      visual: (
+        <div className="relative w-full h-32 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center">
+          <div className="relative">
+            {/* Blind eye */}
+            <div className="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center relative">
+              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                <div className="w-4 h-4 bg-orange-600 rounded-full relative">
+                  <div className="absolute inset-0 bg-orange-800 rounded-full animate-ping opacity-30"></div>
+                </div>
+              </div>
+              {/* Slash through eye */}
+              <div className="absolute inset-0 w-full h-0.5 bg-red-500 rotate-45 rounded-full"></div>
+            </div>
+            {/* Question marks */}
+            <div className="absolute -top-3 -right-3 text-orange-600 text-lg font-bold animate-bounce">?</div>
+            <div className="absolute -bottom-3 -left-3 text-orange-500 text-sm font-bold animate-bounce">?</div>
+          </div>
+        </div>
+      )
     },
     {
-      title: "Limited Credit History",
-      description: "Drivers often lack formal credit scores, making evaluation difficult."
+      title: "Credit Gap",
+      subtitle: "Drivers often lack formal credit scores, making evaluation difficult.",
+      impact: "70% Rejected",
+      visual: (
+        <div className="relative w-full h-32 bg-gradient-to-br from-red-100 to-pink-50 rounded-xl flex items-center justify-center">
+          <div className="relative">
+            {/* Broken credit card */}
+            <div className="w-16 h-10 bg-red-400 rounded-lg relative overflow-hidden">
+              <div className="w-full h-2 bg-red-600 mt-2"></div>
+              <div className="w-8 h-1 bg-red-600 mt-1 ml-1"></div>
+              {/* Crack */}
+              <div className="absolute inset-0 border-2 border-red-600 border-dashed rounded-lg"></div>
+              <div className="absolute top-0 left-1/2 w-0.5 h-full bg-red-600 transform rotate-12"></div>
+            </div>
+            {/* Rejection X */}
+            <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-xs font-bold">✕</span>
+            </div>
+          </div>
+        </div>
+      )
     },
     {
-      title: "Risky Asset Underwriting",
-      description: "Unestablished resale market making the residual value uncertain."
+      title: "High Risk",
+      subtitle: "Unestablished resale market making the residual value uncertain.",
+      impact: "Unknown ROI",
+      visual: (
+        <div className="relative w-full h-32 bg-gradient-to-br from-orange-100 to-yellow-50 rounded-xl flex items-center justify-center">
+          <div className="relative">
+            {/* Declining graph */}
+            <div className="w-16 h-12 relative">
+              <svg className="w-full h-full" viewBox="0 0 60 40">
+                <polyline
+                  fill="none"
+                  stroke="#F97316"
+                  strokeWidth="3"
+                  points="5,35 15,25 25,30 35,15 45,25 55,35"
+                  className="animate-pulse"
+                />
+                <circle cx="15" cy="25" r="2" fill="#F97316" />
+                <circle cx="25" cy="30" r="2" fill="#F97316" />
+                <circle cx="35" cy="15" r="2" fill="#F97316" />
+                <circle cx="45" cy="25" r="2" fill="#F97316" />
+              </svg>
+            </div>
+            {/* Warning triangle */}
+            <div className="absolute -top-2 -right-2">
+              <AlertTriangle className="w-5 h-5 text-orange-500 animate-pulse" />
+            </div>
+          </div>
+        </div>
+      )
     }
   ];
 
   const solutionsData = [
     {
-      title: "Chargeup 365 days running assurance",
-      description: "Enabling driver to run more earn more"
+      title: "365 Days",
+      subtitle: "Enabling driver to run more earn more.",
+      benefit: "99.9% Uptime",
+      visual: (
+        <div className="relative w-full h-32 bg-gradient-to-br from-[#0F9547]/20 to-[#0D8948]/10 rounded-xl flex items-center justify-center">
+          <div className="relative">
+            {/* Healthy battery with charging */}
+            <div className="w-16 h-10 bg-[#0F9547] rounded-md flex items-center justify-center relative">
+              <div className="w-2 h-6 bg-[#0D8948] rounded-r-sm absolute -right-1"></div>
+              <div className="text-white text-xs font-bold">⚡</div>
+              {/* Charging animation */}
+              <div className="absolute inset-0 bg-[#0C7D49] rounded-md animate-pulse opacity-30"></div>
+            </div>
+            {/* Success indicators */}
+            <div className="absolute -top-2 -right-2 w-4 h-4 bg-[#0F9547] rounded-full flex items-center justify-center">
+              <span className="text-white text-xs">✓</span>
+            </div>
+            <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-[#0D8948] rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      )
     },
     {
-      title: "Chargeup default management",
-      description: "Enabling real time tracking and remote Immobilization."
+      title: "Real-time",
+      subtitle: "Enabling real time tracking and remote Immobilization.",
+      benefit: "Full Visibility",
+      visual: (
+        <div className="relative w-full h-32 bg-gradient-to-br from-[#0D8948]/20 to-[#0C7D49]/10 rounded-xl flex items-center justify-center">
+          <div className="relative">
+            {/* All-seeing eye with radar */}
+            <div className="w-12 h-12 bg-[#0D8948] rounded-full flex items-center justify-center relative">
+              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                <div className="w-4 h-4 bg-[#0C7D49] rounded-full"></div>
+              </div>
+              {/* Radar circles */}
+              <div className="absolute inset-0 border-2 border-[#0D8948] rounded-full animate-ping opacity-30"></div>
+              <div className="absolute inset-0 border border-[#0C7D49] rounded-full animate-ping opacity-20" style={{animationDelay: '0.5s'}}></div>
+            </div>
+            {/* Signal indicators */}
+            <div className="absolute -top-3 -right-3 flex space-x-1">
+              <div className="w-1 h-3 bg-[#0F9547] rounded-full animate-pulse"></div>
+              <div className="w-1 h-4 bg-[#0D8948] rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+              <div className="w-1 h-5 bg-[#0C7D49] rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+            </div>
+          </div>
+        </div>
+      )
     },
     {
-      title: "Chargeup digital underwriting",
-      description: "Enabling access to credit beyond Cibil"
+      title: "AI Credit",
+      subtitle: "Enabling access to credit beyond Cibi.",
+      benefit: "Smart Scoring",
+      visual: (
+        <div className="relative w-full h-32 bg-gradient-to-br from-[#0C7D49]/20 to-[#0A704A]/10 rounded-xl flex items-center justify-center">
+          <div className="relative">
+            {/* Smart credit card with AI brain */}
+            <div className="w-16 h-10 bg-[#0C7D49] rounded-lg relative overflow-hidden">
+              <div className="w-full h-2 bg-[#0A704A] mt-2"></div>
+              <div className="w-8 h-1 bg-[#0A704A] mt-1 ml-1"></div>
+              {/* AI chip */}
+              <div className="absolute top-1 right-1 w-3 h-3 bg-[#0F9547] rounded-sm flex items-center justify-center">
+                <div className="w-1 h-1 bg-white rounded-full"></div>
+              </div>
+            </div>
+            {/* Brain neurons */}
+            <div className="absolute -top-2 -right-2 w-6 h-6">
+              <svg viewBox="0 0 24 24" className="w-full h-full text-[#0F9547]">
+                <circle cx="6" cy="6" r="1" fill="currentColor" className="animate-pulse" />
+                <circle cx="18" cy="6" r="1" fill="currentColor" className="animate-pulse" style={{animationDelay: '0.2s'}} />
+                <circle cx="6" cy="18" r="1" fill="currentColor" className="animate-pulse" style={{animationDelay: '0.4s'}} />
+                <circle cx="18" cy="18" r="1" fill="currentColor" className="animate-pulse" style={{animationDelay: '0.6s'}} />
+                <path d="M6 6L18 6M6 6L6 18M18 6L18 18M6 18L18 18" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      )
     },
     {
-      title: "Chargeup Network",
-      description: "One stop solution for repair resale and replacement"
+      title: "Complete",
+      subtitle: "One stop solution for repair resale and replacement.",
+      benefit: "One-Stop Shop",
+      visual: (
+        <div className="relative w-full h-32 bg-gradient-to-br from-[#0A704A]/20 to-[#08644B]/10 rounded-xl flex items-center justify-center">
+          <div className="relative">
+            {/* Network hub */}
+            <div className="w-10 h-10 bg-[#0A704A] rounded-full flex items-center justify-center relative">
+              <div className="w-4 h-4 bg-white rounded-full"></div>
+              {/* Connected nodes */}
+              <div className="absolute -top-4 -left-4 w-3 h-3 bg-[#0F9547] rounded-full"></div>
+              <div className="absolute -top-4 -right-4 w-3 h-3 bg-[#0D8948] rounded-full"></div>
+              <div className="absolute -bottom-4 -left-4 w-3 h-3 bg-[#0C7D49] rounded-full"></div>
+              <div className="absolute -bottom-4 -right-4 w-3 h-3 bg-[#08644B] rounded-full"></div>
+              {/* Connecting lines */}
+              <div className="absolute inset-0">
+                <svg className="w-20 h-20 -translate-x-5 -translate-y-5" viewBox="0 0 80 80">
+                  <line x1="40" y1="40" x2="20" y2="20" stroke="#0A704A" strokeWidth="1" opacity="0.5" className="animate-pulse" />
+                  <line x1="40" y1="40" x2="60" y2="20" stroke="#0A704A" strokeWidth="1" opacity="0.5" className="animate-pulse" style={{animationDelay: '0.2s'}} />
+                  <line x1="40" y1="40" x2="20" y2="60" stroke="#0A704A" strokeWidth="1" opacity="0.5" className="animate-pulse" style={{animationDelay: '0.4s'}} />
+                  <line x1="40" y1="40" x2="60" y2="60" stroke="#0A704A" strokeWidth="1" opacity="0.5" className="animate-pulse" style={{animationDelay: '0.6s'}} />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
     }
   ];
 
   return (
-    <div className=" mx-auto px-4 py-12 max-w-7xl ">
-      <h1 className="text-4xl font-bold text-center mb-12">Our Value <span className="text-yellow-400">Propositions</span></h1>
-      
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* Challenges Section */}
-        <div className="flex-1 relative">
-          <div className="bg-yellow-400 rounded-3xl p-8 h-full">
-            <h2 className="text-3xl font-bold mb-8">Industry Challenges</h2>
-            <div className="space-y-6">
-              {challengesData.map((challenge, index) => (
-                <div 
-                  key={index} 
-                  className={`p-6 rounded-xl ${
-                    index % 2 === 1 ? 'bg-yellow-300' : ''
-                  }`}
-                >
-                  <h3 className="font-bold text-gray-800 md:text-lg mb-2">
-                    {challenge.title}
-                  </h3>
-                  <p className="text-gray-700 md:text-base">
-                    {challenge.description}
-                  </p>
-                </div>
-              ))}
+    <div className="mx-auto px-4 py-12 max-w-7xl">
+      {/* Header with visual elements */}
+      <div className="text-center mb-4 relative">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 w-32 h-32 bg-gradient-to-br from-[#0F9547]/10 to-[#0A704A]/5 rounded-full blur-3xl"></div>
+        <h1 className="text-5xl font-bold mb-4 relative z-10">
+          From <span className="text-red-500">Problems</span> to <span className="text-[#0F9547]">Solutions</span>
+        </h1>
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="w-16 h-1 bg-red-400 rounded-full"></div>
+          <ArrowRight className="w-8 h-8 text-gray-400" />
+          <div className="w-16 h-1 bg-[#0F9547] rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Visual comparison */}
+      <div className="grid lg:grid-cols-2 gap-16 items-start">
+        
+        {/* Problems Side */}
+        <div className="space-y-8">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-3 mb-2 p-4 bg-red-50 rounded-2xl">
+              <Zap className="w-8 h-8 text-red-500" />
+              <h2 className="text-2xl font-bold text-gray-800">Industry Problems</h2>
             </div>
           </div>
-          <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
-            <div className="w-8 h-8 bg-yellow-400 transform rotate-45"></div>
+
+          <div className="grid gap-2">
+            {challengesData.map((challenge, index) => (
+              <div
+                key={index}
+                className="group relative bg-white rounded-2xl border-2 border-red-100 hover:border-red-300 transition-all duration-300 hover:shadow-xl cursor-pointer overflow-hidden flex flex-row"
+                onMouseEnter={() => setHoveredIndex(`challenge-${index}`)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {/* Visual Section */}
+                <div className="p-4 w-1/3">
+                  {challenge.visual}
+                </div>
+                
+                {/* Text Section */}
+                <div className="px-1 pb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-bold text-xl text-gray-800 m-3">{challenge.title}</h3>
+                    <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                      {challenge.impact}
+                    </span>
+                  </div>
+                  <p className="text-gray-600 font-medium ml-4">{challenge.subtitle}</p>
+                </div>
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Solutions Section */}
-        <div className="flex-1">
-          <div className="bg-teal-700 rounded-3xl p-8 h-full">
-            <h2 className="text-3xl font-bold mb-8 text-white">Our Solutions</h2>
-            <div className="space-y-6">
-              {solutionsData.map((solution, index) => (
-                <div 
-                  key={index} 
-                  className={`p-6 rounded-xl ${
-                    index % 2 === 1 ? 'bg-teal-600' : ''
-                  }`}
-                >
-                  <h3 className="font-bold text-white md:text-lg mb-2">
-                    {solution.title}
-                  </h3>
-                  <p className="text-gray-200 md:text-base">
-                    {solution.description}
-                  </p>
-                </div>
-              ))}
+        {/* Solutions Side */}
+        <div className="space-y-4">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-3 mb-6 p-4 bg-[#0F9547]/10 rounded-2xl">
+              <div className="w-8 h-8 bg-[#0F9547] rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">✓</span>
+              </div>
+              <h2 className="text-2xl font-bold text-gray-800">Our Solutions</h2>
             </div>
+          </div>
+
+          <div className="grid gap-2">
+            {solutionsData.map((solution, index) => (
+              <div
+                key={index}
+                className="group relative bg-white rounded-2xl border-2 border-[#0F9547]/20 hover:border-[#0F9547] transition-all duration-300 hover:shadow-xl cursor-pointer overflow-hidden flex flex-row"
+                onMouseEnter={() => setHoveredIndex(`solution-${index}`)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {/* Visual Section */}
+                <div className="p-4 w-1/3">
+                  {solution.visual}
+                </div>
+                
+                {/* Text Section */}
+                <div className="px-1 pb-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-bold text-xl text-gray-800 m-3">{solution.title}</h3>
+                    <span className="bg-[#0F9547]/10 text-[#0F9547] px-3 py-1 rounded-full text-sm font-semibold ">
+                      {solution.benefit}
+                    </span>
+                  </div>
+                  <p className="text-gray-600 font-medium m-3">{solution.subtitle}</p>
+                </div>
+
+                {/* Success indicator */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-6 h-6 bg-[#0F9547] rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs">✓</span>
+                  </div>
+                </div>
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-[#0F9547]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Bottom Impact Visual */}
+      {/* <div className="mt-20 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="relative group">
+            <div className="w-20 h-20 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span className="text-3xl">❌</span>
+            </div>
+            <div className="font-bold text-2xl text-red-500 mb-1">4</div>
+            <div className="text-gray-600 text-sm">Major Issues</div>
+          </div>
+          
+          <div className="relative group">
+            <div className="w-20 h-20 mx-auto mb-4 bg-[#0F9547]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span className="text-3xl">✅</span>
+            </div>
+            <div className="font-bold text-2xl text-[#0F9547] mb-1">4</div>
+            <div className="text-gray-600 text-sm">Smart Solutions</div>
+          </div>
+          
+          <div className="relative group">
+            <div className="w-20 h-20 mx-auto mb-4 bg-[#0D8948]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span className="text-3xl">🔄</span>
+            </div>
+            <div className="font-bold text-2xl text-[#0D8948] mb-1">365</div>
+            <div className="text-gray-600 text-sm">Days Active</div>
+          </div>
+          
+          <div className="relative group">
+            <div className="w-20 h-20 mx-auto mb-4 bg-[#0A704A]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span className="text-3xl">💯</span>
+            </div>
+            <div className="font-bold text-2xl text-[#0A704A] mb-1">100%</div>
+            <div className="text-gray-600 text-sm">Digital</div>
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 };
+
+export default Challenges;  

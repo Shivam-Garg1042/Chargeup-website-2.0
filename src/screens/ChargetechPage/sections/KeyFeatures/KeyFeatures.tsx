@@ -12,6 +12,14 @@ export default function KeyFeatures() {
       banner: "Lower interest w/ longer tenure ~24% / 24 months"
     },
     {
+      id: 2,
+      title: "Tech",
+      description:
+        "Predictive tech offering real-time asset management enabling EV uptime and increasing asset life.",
+      iconSrc: "/techl.png",
+      banner: "365 Days running assurance "
+    },
+    {
       id: 3,
       title: "Network",
       description:
@@ -19,21 +27,14 @@ export default function KeyFeatures() {
       iconSrc: "/networkl.png",
       banner: "Single point bundle solution"
     },
-    {
-      id: 2,
-      title: "Tech",
-      description:
-        "Predictive Tech offering real-time asset management enabling EV uptime and increasing asset life.",
-      iconSrc: "/techl.png",
-      banner: "365 Days running assurance "
-    },
+    
   ];
 
   return (
     <section className="flex flex-col w-full items-center justify-center py-8 px-4 bg-gray-50">
       {/* Section Title */}
       <h2 className="text-3xl md:text-4xl font-medium text-center mb-16">
-       Platform <span className="text-[#f8bb25]">Key Features</span>
+        Chargeup <span className="text-[#0A704A]">Platform</span>
       </h2>
 
       {/* Cards Container */}

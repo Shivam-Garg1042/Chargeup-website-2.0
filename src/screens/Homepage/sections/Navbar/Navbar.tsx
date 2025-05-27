@@ -148,7 +148,7 @@ export const Navbar = (): JSX.Element => {
           </Button>
             {/* Get Started button */}
           <button 
-            className="hidden md:block bg-[#f8bb25] text-black rounded-md md:rounded-lg px-4 py-2 lg:py-[7px] lg:px-[20px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-center lg:text-base shadow-[0px_1.33px_2.67px_#1018280d] hover:bg-[#f9c240] transition-all duration-300 hover:shadow-lg"
+            className="hidden md:block bg-[#0D8948] text-white rounded-md md:rounded-lg px-4 py-2 lg:py-[7px] lg:px-[20px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-center lg:text-base shadow-[0px_1.33px_2.67px_#1018280d] hover:bg-[#023350] transition-all duration-300 hover:shadow-lg"
             onClick={() => setIsGetStartedOpen(true)}
           >
             Get Started

@@ -21,7 +21,8 @@
     // Function to get YouTube thumbnail URL
     const getYouTubeThumbnail = (url) => {
       const videoId = extractYouTubeId(url);
-      return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : "/api/placeholder/400/225";
+      return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "/thumbnail.png";
+
     };
 
     // Function to get YouTube embed URL
@@ -49,7 +50,7 @@
         title: "Azaadi Ki Awaaz: Chargeup Ka Vishwas #independenceday #78thindependenceday",
         description: "Celebrating freedom and independence with Chargeup",
         url: "https://youtu.be/qkccV1xW8iE?si=NgCMO918GlJ-unrt"
-      },
+      },    
       {
         id: 4,
         title: "Pratibha Das - Ek Atmanirbhar Mahila E-rickshaw chalak ki Kahani | Badlav Ki Lehar",
@@ -153,19 +154,19 @@
           {/* Section title */}
           <div className="flex flex-row items-center justify-center py-12 sm:py-12 gap-4">     
             <div className="flex gap-2">
-              <div className="w-2 h-2 mt-1 rounded-full bg-yellow-400"></div>
-              <div className="w-3 h-3 mt-0.5 rounded-full bg-orange-500"></div>
-              <div className="w-4 h-4 rounded-full bg-black"></div>
+              <div className="w-2 h-2 mt-1 rounded-full bg-[#0D8948]"></div>
+              <div className="w-3 h-3 mt-0.5 rounded-full bg-[#07584D]"></div>
+              <div className="w-4 h-4 rounded-full bg-[#002751]"></div>
             </div>
             
-            <h2 className="text-xl sm:text-3xl font-bold text-orange-500">
+            <h2 className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-[#0D8948] to-[#002751] bg-clip-text text-transparent">
               CHARGEUP STORIES
             </h2>
             
             <div className="flex gap-2">
-              <div className="w-4 h-4 rounded-full bg-black"></div>
-              <div className="w-3 h-3 mt-0.5 rounded-full bg-orange-500"></div>
-              <div className="w-2 h-2 mt-1 rounded-full bg-yellow-400"></div>
+              <div className="w-4 h-4 rounded-full bg-[#002751]"></div>
+              <div className="w-3 h-3 mt-0.5 rounded-full bg-[#07584D]"></div>
+              <div className="w-2 h-2 mt-1 rounded-full bg-[#0D8948]"></div>
             </div>
           </div>
           
@@ -210,22 +211,22 @@
                               alt={video.title}
                               className="w-full h-full object-cover"
                               onError={(e) => {
-                                e.target.src = "/api/placeholder/400/225";
+                                (e.target as HTMLImageElement).src = "/thumbnail.png";
                               }}
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-60 transition-all duration-300">
-                              <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-orange-500 text-white group-hover:scale-110 transition-transform duration-300">
+                              {/* <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-orange-500 text-white group-hover:scale-110 transition-transform duration-300">
                                 <Play className="h-6 w-6 md:h-8 md:w-8 ml-1" />
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                           <div className="mt-4 md:mt-6 px-1">
                             <h3 className="text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-2 line-clamp-2">
                               {video.title}
                             </h3>
-                            <p className="text-sm md:text-base text-gray-600 line-clamp-2">
+                            {/* <p className="text-sm md:text-base text-gray-600 line-clamp-2">
                               {video.description}
-                            </p>
+                            </p> */}
                           </div>
                         </div>
                       );
@@ -245,8 +246,8 @@
                   onClick={() => setCurrentPage(index)}
                   className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
                     index === currentPage 
-                      ? "w-6 md:w-8 bg-orange-500" 
-                      : "bg-gray-300 hover:bg-orange-300"
+                      ? "w-6 md:w-8 bg-[#002751]" 
+                      : "bg-gray-300 hover:bg-[#0F9547]"
                   }`}
                   aria-label={`Go to page ${index + 1}`}
                 />

@@ -46,7 +46,7 @@ const JobDetails = ({ title, location, requirements, responsibilities, skills, g
         <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
         <div className="text-gray-600">{location}</div>
       </div>
-      <button className="mt-4 md:mt-0 bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-medium py-2 px-6 rounded text-[18px]">
+      <button className="mt-4 md:mt-0 bg-[#0A704A] hover:bg-yellow-500 text-white font-medium py-2 px-6 rounded text-[18px]">
         Apply
       </button>
     </div>
@@ -244,7 +244,7 @@ export default function OpenPositions(){
     .find(role => role.id === selectedRole);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
+    <section id="careers" className="min-h-screen bg-gray-100 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl  text-center mb-16">Open Positions</h1>
         
@@ -287,7 +287,7 @@ export default function OpenPositions(){
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -53,7 +53,7 @@ export default function PartnersHome(): JSX.Element {
               </p>
             </div>
             <div className="mt-2 sm:mt-4 md:mt-6 lg:mt-8">
-              <Button className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-3 lg:px-6 lg:py-4 bg-[#f8bb25] hover:bg-[#f8bb25]/90 rounded-lg font-semibold text-[#0e0e0e] text-sm sm:text-base md:text-lg ">
+              <Button className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-3 lg:px-6 lg:py-4 bg-[#0A704A] hover:bg-[#f8bb25]/90 rounded-lg font-semibold text-[#ffffff] text-sm sm:text-base md:text-lg ">
                 Become a Partner
               </Button>
             </div>

@@ -3,27 +3,28 @@ import { Separator } from "../../../../components/ui/separator";
 import ContactModal from "../ContactModal/Contact.tsx";
 import { useState } from "react";
 import { MapPin,Phone ,Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const DivWrapper = (): JSX.Element => {
   // Navigation links data
   const [isGetStartedOpen, setIsGetStartedOpen] = useState(false);
   const firstNavLinks = [
-    { title: "Our Story", id: "our-story" },
-    { title: "Partners", id: "partners" },
-    { title: "Drivers", id: "drivers" },
+    { title: "Our Story", id: "/story#story" },
+    { title: "Partners", id: "/partners#partners" },
+    { title: "People", id: "/people#people" },
   ];
 
   const secondNavLinks = [
-    { title: "Careers", id: "careers" },
-    { title: "News Room", id: "news-room" },
-    { title: "ChargeTech", id: "chargetech" },
+    { title: "Careers", id: "/people#careers" },
+    { title: "News Room", id: "/story#news-room" },
+    { title: "Our Solution", id: "/solutions/#solutions" },
   ];
 
   // Footer links data
   const footerLinks = [
     { title: "Privacy Policy", id: "https://echargeup.com/privacy-policy/" },
     { title: "Refund & Cancellation Policy", id: "https://echargeup.com/refund-and-cancellation-policy/" },
-    // { title: "Terms & Conditions", id: "https://echargeup.com/refund-and-cancellation-policy/" },
+    { title: "Terms & Conditions", id: "https://echargeup.com/terms_and_conditions/" },
     { title : "Corporate Governance", id: "https://echargeup.com/corporate-governance/" },
     
   ];
@@ -73,33 +74,33 @@ export const DivWrapper = (): JSX.Element => {
             {/* First nav column */}
             <div className="flex flex-col gap-2">
               {firstNavLinks.map((link) => (
-                <a
+                <Link
                   key={link.id}
-                  href={`#${link.id}`}
+                  to={link.id}
                   className="text-gray-700 text-base md:text-lg hover:text-gray-900"
                 >
                   {link.title}
-                </a>
+                </Link>
               ))}
             </div>
             
             {/* Second nav column */}
             <div className="flex flex-col gap-2">
               {secondNavLinks.map((link) => (
-                <a
+                <Link
                   key={link.id}
-                  href={`#${link.id}`}
+                  to={link.id}
                   className="text-gray-700 text-base md:text-lg hover:text-gray-900"
                 >
                   {link.title}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
 
           {/* Contact button and social icons */}
           <div className="flex flex-col gap-8 items-start md:items-start ">
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 text-base font-medium rounded-md px-6 py-2 ml-4">
+            <Button className="bg-[#0D8948] text-black hover:bg-[#023350] text-base text-white font-medium rounded-md px-6 py-2 ml-4">
               {/* onClick={() => setIsGetStartedOpen(true)} */}
               Contact Us
             </Button>
@@ -128,7 +129,7 @@ export const DivWrapper = (): JSX.Element => {
             Copyright @ 2025 CHARGEUP, All rights reserved.
           </p>
 
-          <div className="flex flex-wrap gap-4 md:gap-16">
+          <div className="flex flex-wrap gap-4 md:gap-8">
             {footerLinks.map((link) => (
               <a
                 key={link.id}

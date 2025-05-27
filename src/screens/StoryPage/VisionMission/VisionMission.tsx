@@ -44,9 +44,9 @@ export default function VisionMission() {
       <div className="flex flex-col w-full max-w-screen-xl mx-auto relative z-10">
         {/* Section header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+          {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Our Purpose
-          </h1>
+          </h1> */}
           {/* <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             Driving change in the transportation industry, one driver at a time
           </p> */}

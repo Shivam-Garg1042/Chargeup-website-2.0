@@ -7,7 +7,7 @@ import {
 } from "../../../../components/ui/accordion";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-export const WhyChooseUs = (): JSX.Element => {
+export const WhyChooseUs   = (): JSX.Element => {
   // Data for the process steps
   const processSteps = [
     {

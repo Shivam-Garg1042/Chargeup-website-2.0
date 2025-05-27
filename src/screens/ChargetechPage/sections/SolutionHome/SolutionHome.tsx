@@ -16,14 +16,14 @@ export const SolutionHome = (): JSX.Element => {
                  Fi-Ne-Tech Platform 
               </h1>
               <p className="md:w-2/3 text-sm lg:px-[24px] sm:text-base md:text-lg  font-normal text-[#ffffff] leading-relaxed mt-3 md:mt-6">
-               Offering Financial services and Asset management integrated with NBFCs, OEMs and dealers, to offer a single stop solution.
+               Offering financial services and asset management integrated with NBFCs, OEMs and dealers, to offer a single stop solution.
 
               </p>
               
             </div>
             <div className="flex items-start pt-2 md:pt-4 lg:px-[24px]">
-              <Button className="bg-[#f8bb25] px-4 py-2  text-[#0e0e0e] border border-[#0e0e0e] rounded-md md:rounded-lg  text-base md:text-base lg:text-lg font-semibold font-['Plus_Jakarta_Sans',Helvetica] shadow-sm hover:bg-[#f8bb25]/90">
-                Partner with Us
+              <Button className="bg-[#0A704A] px-4 py-2  text-[#ffffff] border border-[#0e0e0e] rounded-md md:rounded-lg  text-base md:text-base lg:text-lg font-semibold font-['Plus_Jakarta_Sans',Helvetica] shadow-sm hover:bg-[#f8bb25]/90">
+                Partner with us
               </Button>
             </div>
           </div>

@@ -48,8 +48,7 @@ export default function MapWithContentLayout() {
     { name: 'Gwalior', lat: 26.2183, lon: 78.1828, importance: 'low' },
     { name: 'Ujjain', lat: 23.1765, lon: 75.7885, importance: 'low' },
     { name: 'Varanasi', lat: 25.3176, lon: 82.9739, importance: 'low' },
-    // { name: 'Ghaziabad', lat: 28.6692, lon: 77.4538, importance: 'low' },
-    // { name: 'Noida', lat: 28.5355, lon: 77.3910, importance: 'low' },
+
     { name: 'Jodhpur', lat: 26.2389, lon: 73.0243, importance: 'low' },
     { name: 'Udaipur', lat: 24.5854, lon: 73.7125, importance: 'low' },
     // { name: 'Chandigarh', lat: 30.7333, lon: 76.7794, importance: 'low' },
@@ -58,13 +57,6 @@ export default function MapWithContentLayout() {
     { name: 'Allahabad', lat: 25.4358, lon: 81.8463, importance: 'low' },
     // { name: 'Nagpur', lat: 21.1458, lon: 79.0882, importance: 'medium' },
     { name: 'Mathura', lat: 27.4924, lon: 77.6737, importance: 'low' },
-    // { name: 'Jabalpur', lat: 23.1815, lon: 79.9864, importance: 'low' },
-    // { name: 'Raipur', lat: 21.2514, lon: 81.6296, importance: 'low' },
-    // { name: 'Gorakhpur', lat: 26.7605, lon: 83.3731, importance: 'low' },
-    // { name: 'Bareilly', lat: 28.3670, lon: 79.4304, importance: 'low' },
-    // { name: 'Meerut', lat: 28.9845, lon: 77.7064, importance: 'low' },
-    // { name: 'Moradabad', lat: 28.8386, lon: 78.7733, importance: 'low' },
-    // { name: 'Dehradun', lat: 30.3165, lon: 78.0322, importance: 'low' },
     { name: 'Aligarh', lat: 27.8974, lon: 78.0880, importance: 'low' },
     { name: 'Saharanpur', lat: 29.9680, lon: 77.5510, importance: 'low' },
     { name: 'Ajmer', lat: 26.4499, lon: 74.6399, importance: 'low' },
@@ -352,7 +344,7 @@ export default function MapWithContentLayout() {
   }, [mapData]);
 
   return (
-    <section className="w-full max-w-[1400px] px-4 md:px-8 lg:px-12 min-h-screen bg-white sm:-mb-12 lg:-mb-24 mt-8 sm:mt-16 -mb-36">
+    <section className="w-full max-w-[1400px] px-4 md:px-8 lg:px-12  bg-white sm:-mb-12 lg:-mb-24 mt-8 sm:mt-16 -mb-36 min-h-screen">
       <div className={`relative w-full ${isMobile ? 'flex flex-col' : 'h-[750px]'}`}>
         {/* Map container with responsive design */}
         <div className={`${isMobile ? 'relative w-full h-[400px] mb-8' : 'absolute inset-0'}`} 
@@ -397,15 +389,15 @@ export default function MapWithContentLayout() {
 
           {/* Description */}
           <p className="text-base sm:text-lg text-gray-700">
-            Serving 180+ Pincodes through our dealer network
+            Serving 180+ pincodes through our dealer network
           </p>
 
           {/* CTA Button */}
           <div className={`flex ${isMobile ? 'flex-row w-full justify-center' : 'flex-row'} gap-4`}>
             <Button 
-              className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-3 text-lg font-medium rounded-lg transition-colors"
+              className="bg-[#0A704A] hover:bg-[#0A704A] text-white px-4 py-3 text-lg font-medium rounded-lg transition-colors"
             >
-              Partner with Us
+              Partner with us
             </Button>
             {/* <Button 
               className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-3 text-base sm:text-lg font-medium rounded-lg transition-colors"

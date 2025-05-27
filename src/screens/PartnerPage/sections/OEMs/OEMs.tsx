@@ -29,6 +29,23 @@ export const Oems = (): JSX.Element => {
       description:
         "Invest less earn more with a future ready business solution",
     },
+    {
+      id: 3,
+      title: "Insurers",
+      subtitle: "Battery & Vehicle",
+      iconSrc: "/group-76-2.png",
+      description:
+        "Invest less earn more with a future ready business solution, Invest less earn more with a future ready business solution",
+    },
+    {
+      id: 3,
+      title: "Recuclers",
+      subtitle: "Battery & Vehicle",
+      iconSrc: "/group-76-2.png",
+      description:
+        "Invest less earn more with a future ready business solution,Invest less earn more with a future ready business solution",
+    },
+   
   ];
 
   return (
@@ -63,7 +80,7 @@ export const Oems = (): JSX.Element => {
                 </div>
 
                 {/* Card Description */}
-                <div className="text-sm md:text-base text-gray-600 mb-6 flex-grow px-3">
+                <div className="text-base md:text-lg text-gray-600 mb-6 flex-grow px-3">
                   {card.description}
                 </div>
 
@@ -80,7 +97,7 @@ export const Oems = (): JSX.Element => {
         
       </div>
         <div className="flex justify-center items-center mt-16 mb-16 w-full">
-          <button className="bg-yellow-400 text-black text-xl px-8 py-4 rounded-xl font-semibold shadow-lg hover:bg-yellow-300 transition">
+          <button className="bg-[#0A704A] text-white text-xl px-8 py-4 rounded-xl font-semibold shadow-lg hover:bg-yellow-300 transition">
             Apply Now
           </button>
         </div>

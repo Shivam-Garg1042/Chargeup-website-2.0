@@ -20,11 +20,11 @@ export const Metrics = (): JSX.Element => {
       key: "co2",
       value: "1",
       suffix: " Lac+",
-      description: "CO₂ Emission Saved",
+      description: "CO₂ emission saved",
       targetValue: 1,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
-          <Leaf size={36} className="text-white" />
+          <Leaf size={44} className="text-white" />
         </div>
       ),
     },
@@ -36,7 +36,7 @@ export const Metrics = (): JSX.Element => {
       targetValue: 8,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
-          <Route size={36} className="text-white" />
+          <Route size={44} className="text-white" />
         </div>
       ),
     },
@@ -44,11 +44,11 @@ export const Metrics = (): JSX.Element => {
       key: "income",
       value: "7.8",
       suffix: "K+",
-      description: "Driver Income Generated",
+      description: "Driver income generated",
       targetValue: 7.8,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
-          <Banknote size={36} className="text-white" />
+          <Banknote size={44} className="text-white" />
         </div>
       ),
     },
@@ -60,7 +60,7 @@ export const Metrics = (): JSX.Element => {
       targetValue: 5000,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
-          <Users size={36} className="text-white" />
+          <Users size={44} className="text-white" />
         </div>
       ),
     },
@@ -172,30 +172,30 @@ export const Metrics = (): JSX.Element => {
           {/* Title and subtitle */}
           <div className="absolute top-[40px] sm:top-[40px] md:top-[60px] lg:top-[100px] left-0 w-full flex flex-col items-center px-4 ">
             <h2 className="font-medium text-white text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] px-4 sm:px-8 md:px-12">
-              Creating impact with every Ride 
+              Creating impact with every ride 
             </h2>
           </div>
         </div>
 
         {/* Metric cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 relative mt-[70px] sm:mt-[-80px] md:mt-[-90px] lg:mt-[-85px] px-4 sm:px-6 md:px-8 max-w-[1320px] w-full h-full mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 lg:gap-8 relative mt-[70px] sm:mt-[-80px] md:mt-[-90px] lg:mt-[-85px] px-4 sm:px-6 md:px-8 max-w-[1320px] w-full h-full lg:h-[150px] mb-6 md:mb-8">
           {metricCards.map((card, index) => (
             <div key={index} className="relative flex justify-center">
               {/* Half-in-half-out icon */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 -top-6 z-10">
+              <div className="absolute left-1/2 transform -translate-x-1/2 -top-7 z-10">
                 {card.icon}
               </div>
               
               <Card
                 className={`w-full rounded-[20px] shadow-[1px_16px_16px_#3440541a] bg-background-colorswhite transform transition-all duration-500 hover:shadow-lg ${
-                  isVisible ? "opacity-100 translate-y-1" : "opacity-0 translate-y-10"
+                  isVisible ? "opacity-100 translate-y-3" : "opacity-0 translate-y-10"
                 }`}
                 style={{ 
                   animationDelay: `${index * 150}ms`,
                   transitionDelay: `${index * 150}ms` 
                 }}
               >
-                <CardContent className="flex flex-col items-center justify-center p-4 pt-8">
+                <CardContent className="flex flex-col items-center justify-center p-4 pt-8 gap-2">
                   <div className="flex items-center justify-center">
                     <span className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-center tracking-[-0.5px] sm:tracking-[-0.8px] lg:tracking-[-1.2px] leading-[1.2] font-['Plus_Jakarta_Sans',Helvetica] font-medium text-text-colors950">
                       {isVisible ? formatCount(card.key, counts[card.key]) : "0"}
@@ -206,7 +206,7 @@ export const Metrics = (): JSX.Element => {
                   </div>
                   <div className="font-['Plus_Jakarta_Sans',Helvetica] font-normal text-text-colors500 text-sm sm:text-base md:text-lg lg:text-xl text-center tracking-[0] leading-6 lg:leading-7">
                     {card.key === "co2" ? (
-                      <>CO<sub>2</sub> Emission Saved</>
+                      <>CO<sub>2</sub> emission saved</>
                     ) : (
                       card.description
                     )}

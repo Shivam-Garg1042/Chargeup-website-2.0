@@ -12,11 +12,11 @@ export const Benefits = (): JSX.Element => {
         <CardContent className="p-0">
           <div className="flex flex-col items-center justify-center gap-8 max-w-[1142px] mx-auto">
             <h2 className="font-['Plus_Jakarta_Sans',Helvetica] font-medium text-[#010101]  text-[40px] lg:text-[48px] text-center tracking-[-1.16px] leading-[58.6px]">
-              Why Partner with Chargeup
+              Why Partner with Chargeup?
             </h2>
 
-            <p className="max-w-[984px] font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[#646464] text-[18px] text-center leading-8 mb-12">
-              Chargeup is a platform built for scalable, tech-driven growth. With deep driver access, we help NBFCs reduce risk, OEMs for fast product adoption, and dealers for higher growth.
+            <p className="max-w-[620px] font-['Plus_Jakarta_Sans',Helvetica] font-normal text-[#646464] text-[19px] text-center leading-8 mb-12">
+              Chargeup is a platform built for scalable, tech-driven growth.<br></br> With deep driver access, we help NBFCs reduce risk, OEMs for fast product adoption, and dealers for higher growth.
             </p>
           </div>
         </CardContent>

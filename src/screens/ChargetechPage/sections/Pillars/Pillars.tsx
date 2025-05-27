@@ -1,131 +1,317 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export const Pillars = (): JSX.Element => {
-  // Data for the feature sections
+export const Pillars = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Data for the feature sections - reduced to 4 pillars
   const pillars = [
     {
       id: "01",
       title: "Platform Objective",
       description: "Seamless EV battery leasing, acquisition, financing, and more—powered by an IoT + AI-first platform built for speed and scale.",
-      position: "right",
-      color: "#041620"
+      icon: "🚀",
+      color: "#0F9547",
+      imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
     },
     {
-      id: "02",
+      id: "02", 
       title: "Mobile-First Design",
       description: "Native apps for drivers, dealers, and teams—fully integrated with ERP/CRM systems for smooth operations and control on the go.",
-      position: "left",
-      color: "#1b4748"
+      icon: "📱",
+      color: "#0C7D49",
+      imageUrl: "https://images.unsplash.com/photo-1512941675424-b1c1e1dd2c45?w=400&h=300&fit=crop"
     },
     {
       id: "03",
-      title: "Smart Battery Features",
+      title: "Smart Battery Features", 
       description: "Real-time location, health, and performance insights—thanks to batteries equipped with Intellicar + MMI-powered IoT.",
-      position: "right",
-      color: "#296968"
+      icon: "🔋",
+      color: "#0A704A",
+      imageUrl: "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=400&h=300&fit=crop"
     },
     {
       id: "04",
-      title: "Robust Data Infrastructure",
-      description: "GCP-hosted data lake + advanced analytics deliver actionable insights to stakeholders across the EV value chain.",
-      position: "left",
-      color: "#218381"
-    },
-    {
-      id: "05",
       title: "ML-Powered Intelligence",
       description: "From predicting battery lifespan to credit risk scoring—we use machine learning to drive smarter decisions.",
-      position: "right",
-      color: "#6eaead"
-    },
-    {
-      id: "06",
-      title: "Integrated Ecosystem",
-      description: "A plug-and-play framework connecting NBFCs, OEMs, and EV drivers for seamless collaboration and growth.",
-      position: "left",
-      color: "#bec9b8"
-    },
+      icon: "🧠",
+      color: "#07584D",
+      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop"
+    }
   ];
 
+  // Auto-advance through pillars
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % pillars.length);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [pillars.length]);
+
   return (
-    <section className="bg-[#f9f9f9] py-16 px-4 md:px-8 lg:px-16">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-medium mb-3">Our Technology Pillars</h2>
-          <p className="text-gray-600 text-xl">A peek into the core engine driving Chargeup's scalable EV ecosystem</p>
-        </div>
+    <section className="bg-gradient-to-br from-gray-50 to-white py-20 px-0 overflow-hidden min-h-screen flex items-center">
+      <div className="w-full flex">
+        {/* Left Side - Large Creative Circles */}
+        <div className="relative w-80 h-screen flex items-center bg-gradient-to-br from-[#0F9547]/5 via-[#0C7D49]/3 to-[#07584D]/5">
+          {/* Animated background patterns */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Floating geometric shapes */}
+            <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-[#0F9547]/10 to-[#0C7D49]/10 rounded-2xl rotate-45 animate-pulse"></div>
+            <div className="absolute top-40 left-20 w-16 h-16 bg-gradient-to-br from-[#0C7D49]/10 to-[#0A704A]/10 rounded-full animate-bounce" style={{ animationDuration: '3s' }}></div>
+            <div className="absolute bottom-32 left-5 w-12 h-12 bg-gradient-to-br from-[#0A704A]/10 to-[#07584D]/10 rounded-lg rotate-12 animate-pulse"></div>
+            <div className="absolute bottom-20 left-32 w-8 h-8 bg-gradient-to-br from-[#07584D]/10 to-[#0F9547]/10 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+            
+            {/* Gradient overlay lines */}
+            <div className="absolute top-0 left-16 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0F9547]/20 to-transparent"></div>
+            <div className="absolute top-0 left-32 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0C7D49]/15 to-transparent"></div>
+            <div className="absolute top-0 left-48 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0A704A]/10 to-transparent"></div>
+          </div>
 
-        {/* Pillars Timeline */}
-        <div className="relative">
-          {/* Center vertical line for desktop */}
-          <div className="hidden md:block absolute left-1/2 top-0 w-1 bg-gradient-to-b from-[#041620] via-[#218381] to-[#bec9b8] h-full transform -translate-x-1/2"></div>
+          {/* Semi-circle container */}
+          <div className="relative w-80 h-96 z-10">
+            {pillars.map((pillar, index) => {
+              // Position circles in a semi-circle from top to bottom
+              const angle = (index * 45) - 67.5; // 45 degrees apart, starting from top-left
+              const radius = 140;
+              const x = Math.cos((angle * Math.PI) / 180) * radius;
+              const y = Math.sin((angle * Math.PI) / 180) * radius;
+              
+              const isActive = index === activeIndex;
+              
+              let opacity = isActive ? 1 : 0.6;
+              let scale = isActive ? 1.2 : 0.85;
+              let zIndex = isActive ? 30 : 10;
 
-          {/* Pillar items */}
-          <div className="space-y-6 md:space-y-0 relative">
-            {pillars.map((pillar, index) => (
-              <div key={pillar.id} className="md:flex md:items-center md:justify-center md:h-32 relative">
-                {/* Mobile version (stacked) */}
-                <div className="md:hidden flex items-start space-x-4 mb-8">
-                  <div className="flex-none">
-                    <div className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-xl font-bold" style={{ border: `2px solid ${pillar.color}` }}>
-                      {pillar.id}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-medium mb-1">{pillar.title}</h3>
-                    <p className="text-sm text-gray-700">{pillar.description}</p>
-                  </div>
-                </div>
+              return (
+                <div
+                  key={pillar.id}
+                  className="absolute transition-all duration-700 ease-in-out cursor-pointer"
+                  style={{
+                    left: `${x + 160}px`, // Center + offset
+                    top: `${y + 190}px`, // Center + offset
+                    transform: `translate(-50%, -50%) scale(${scale})`,
+                    opacity,
+                    zIndex,
+                  }}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  {/* Outer glow ring */}
+                  <div 
+                    className={`absolute -inset-8 rounded-full transition-all duration-700 ${
+                      isActive ? 'animate-pulse' : ''
+                    }`}
+                    style={{ 
+                      background: `radial-gradient(circle, ${pillar.color}15 0%, transparent 70%)`,
+                      filter: isActive ? 'blur(8px)' : 'blur(4px)'
+                    }}
+                  ></div>
 
-                {/* Desktop version (timeline) */}
-                <div className={`hidden md:flex md:items-center md:w-full ${
-                  pillar.position === "left" ? "flex-row" : "flex-row-reverse"
-                }`}>
-                  {/* Content */}
-                  <div className={`w-5/12 ${
-                    pillar.position === "left" ? "text-right pr-8" : "text-left pl-8"
-                  }`}>
-                    <h3 className="text-xl font-medium mb-2">{pillar.title}</h3>
-                    <p className="text-base text-gray-700">{pillar.description}</p>
-                  </div>
-
-                  {/* Circle with number */}
-                  <div className="w-10/12 flex justify-center relative">
-                    {/* Half-circle background */}
+                  {/* Main Circle */}
+                  <div 
+                    className="w-24 h-24 rounded-full flex items-center justify-center text-3xl font-bold text-white shadow-2xl relative overflow-hidden group transition-all duration-500 border-4 border-white/30"
+                    style={{ 
+                      backgroundColor: pillar.color,
+                      boxShadow: isActive ? 
+                        `0 0 60px ${pillar.color}80, 0 0 120px ${pillar.color}40, inset 0 0 20px ${pillar.color}60` : 
+                        `0 20px 40px ${pillar.color}30, inset 0 0 15px ${pillar.color}40`
+                    }}
+                  >
+                    {/* Animated inner gradient */}
                     <div 
-                      className={`absolute w-44 h-32 rounded-full ${
-                        pillar.position === "left" 
-                          ? "right-1/2 transform translate-x-1/2" 
-                          : "left-1/2 transform -translate-x-1/2"
+                      className={`absolute inset-0 bg-gradient-to-tr from-white/30 via-transparent to-white/10 rounded-full transition-transform duration-1000 ${
+                        isActive ? 'animate-spin' : 'rotate-45'
                       }`}
-                      style={{
-                        background: `linear-gradient(${pillar.position === "left" ? "90deg" : "270deg"}, ${pillar.color} 50%, transparent 50%)`,
-                        zIndex: "0"
+                      style={{ animationDuration: '4s' }}
+                    ></div>
+                    
+                    {/* Glass effect overlay */}
+                    <div className="absolute inset-2 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
+                    
+                    {/* Icon */}
+                    <span className="relative z-10 text-2xl drop-shadow-lg">{pillar.icon}</span>
+                    
+                    {/* Rotating border effect */}
+                    {isActive && (
+                      <>
+                        <div 
+                          className="absolute -inset-1 rounded-full animate-spin border-2 border-transparent"
+                          style={{ 
+                            background: `linear-gradient(45deg, ${pillar.color}, transparent, ${pillar.color}) border-box`,
+                            WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+                            WebkitMaskComposite: 'exclude',
+                            animationDuration: '3s'
+                          }}
+                        ></div>
+                        <div 
+                          className="absolute -inset-3 rounded-full animate-ping opacity-30"
+                          style={{ 
+                            border: `2px solid ${pillar.color}`,
+                            animationDuration: '2s'
+                          }}
+                        ></div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Connection line to content */}
+                  {isActive && (
+                    <div 
+                      className="absolute top-12 left-24 w-32 h-1 rounded-full animate-pulse shadow-lg"
+                      style={{ 
+                        background: `linear-gradient(90deg, ${pillar.color}, ${pillar.color}60, transparent)`
                       }}
                     ></div>
-                    
-                    {/* White circle with number */}
-                    <div className="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center text-2xl font-bold z-10 relative">
-                      {pillar.id}
-                    </div>
-                    
-                    {/* Horizontal line */}
-                    <div 
-                      className={`absolute top-1/2 h-1 w-1/2 transform -translate-y-1/2 ${
-                        pillar.position === "left" 
-                          ? "right-[calc(50%-32px)] mr-2" 
-                          : "left-[calc(50%-32px)] ml-2"
-                      }`} 
-                      style={{ backgroundColor: pillar.color }}
-                    ></div>
+                  )}
+
+                  {/* Floating number badge */}
+                  <div 
+                    className={`absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center text-sm font-bold transition-all duration-500 ${
+                      isActive ? 'scale-110 shadow-xl' : 'scale-90'
+                    }`}
+                    style={{ color: pillar.color }}
+                  >
+                    {pillar.id}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Vertical progress visualization */}
+          <div className="absolute left-12 top-32 bottom-32 w-2 rounded-full overflow-hidden">
+            <div className="w-full h-full bg-gradient-to-b from-[#0F9547]/20 via-[#0C7D49]/20 to-[#07584D]/20"></div>
+            <div 
+              className="absolute top-0 left-0 w-full bg-gradient-to-b from-[#0F9547] via-[#0C7D49] to-[#07584D] rounded-full transition-all duration-700"
+              style={{ 
+                height: `${((activeIndex + 1) / pillars.length) * 100}%`,
+                boxShadow: `0 0 20px ${pillars[activeIndex].color}60`
+              }}
+            ></div>
+          </div>
+
+          {/* Creative corner accent */}
+          <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#0F9547]/10 to-transparent rounded-br-full"></div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#07584D]/10 to-transparent rounded-tr-full"></div>
+        </div>
+
+        {/* Right Side - Content Card */}
+        <div className="flex-1 px-8 lg:px-16 flex items-center">
+          <div className="max-w-4xl w-full">
+            {/* Content Card */}
+            <div 
+              className="bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 ease-in-out transform"
+              style={{ 
+                boxShadow: `0 25px 50px -12px ${pillars[activeIndex].color}20, 0 0 0 1px ${pillars[activeIndex].color}10`
+              }}
+            >
+              <div className="grid lg:grid-cols-2 gap-0">
+                {/* Image Section */}
+                <div className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 lg:h-80">
+                  <img 
+                    src={pillars[activeIndex].imageUrl}
+                    alt={pillars[activeIndex].title}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  />
+                  
+                  {/* Overlay gradient */}
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+                  ></div>
+                  
+                  {/* Floating number badge */}
+                  <div 
+                    className="absolute top-6 left-6 w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg"
+                    style={{ backgroundColor: pillars[activeIndex].color }}
+                  >
+                    {pillars[activeIndex].id}
+                  </div>
+                </div>
+
+                {/* Text Content Section */}
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  {/* Category Badge */}
+                  <div className="mb-4">
+                    <span 
+                      className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white"
+                      style={{ backgroundColor: pillars[activeIndex].color }}
+                    >
+                      <span className="mr-2">{pillars[activeIndex].icon}</span>
+                      Technology Pillar
+                    </span>
                   </div>
 
-                  {/* Empty space for the other side */}
-                  <div className="w-5/12"></div>
+                  {/* Title */}
+                  <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 leading-tight">
+                    {pillars[activeIndex].title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                    {pillars[activeIndex].description}
+                  </p>
+
+                  {/* Feature highlights */}
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center space-x-3">
+                      <div 
+                        className="w-6 h-6 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
+                      >
+                        <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
+                      </div>
+                      <span className="text-gray-700 font-medium">Enterprise-grade security</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div 
+                        className="w-6 h-6 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
+                      >
+                        <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
+                      </div>
+                      <span className="text-gray-700 font-medium">Real-time analytics</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div 
+                        className="w-6 h-6 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
+                      >
+                        <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
+                      </div>
+                      <span className="text-gray-700 font-medium">Scalable infrastructure</span>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <button 
+                    className="inline-flex items-center px-8 py-4 rounded-2xl text-white font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105 hover:shadow-xl"
+                    style={{ 
+                      backgroundColor: pillars[activeIndex].color,
+                      boxShadow: `0 10px 25px ${pillars[activeIndex].color}30`
+                    }}
+                  >
+                    Learn More
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Progress Dots */}
+            <div className="flex justify-center mt-8 space-x-3">
+              {pillars.map((_, index) => (
+                <button
+                  key={index}
+                  className={`h-3 rounded-full transition-all duration-300 ${
+                    index === activeIndex 
+                      ? 'w-12 bg-gradient-to-r from-[#0F9547] to-[#0C7D49]' 
+                      : 'w-3 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  onClick={() => setActiveIndex(index)}
+                ></button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

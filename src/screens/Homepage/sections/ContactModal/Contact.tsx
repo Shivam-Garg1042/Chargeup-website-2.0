@@ -114,7 +114,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                     <a
                       key={index}
                       href="#"
-                      className="bg-[#F8BB25] text-white p-3 rounded-full hover:bg-[#e6aa20] transition-colors"
+                      className="bg-[#0C7D49] text-white p-3 rounded-full hover:bg-[#023350] transition-colors"
                     >
                       <Icon size={20} />
                     </a>
@@ -177,7 +177,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 bg-[#F8BB25] text-black font-semibold rounded-lg flex items-center justify-center gap-2 hover:bg-[#e6aa20] transition-colors text-lg"
+                  className="w-full py-4 bg-[#0C7D49] text-black font-semibold rounded-lg flex items-center justify-center gap-2 hover:bg-[#023350] transition-colors text-lg"
                 >
                   {loading ? 'Sending...' : 'Send Message'} 
                   {!loading && <span className="ml-1">→</span>}

@@ -97,13 +97,13 @@ export default function Team() {
           }`}
         >
           <div className="text-white flex flex-col items-center">
-            <h3 className="font-medium text-sm mb-2 text-center">{member.name}</h3>
-            <p className="text-xs text-center mb-3">{member.bio}</p>
+            <h3 className="font-medium text-lg mb-2 text-center">{member.name}</h3>
+            <p className="text-base text-center mb-3">{member.bio}</p>
             <a 
               href={member.linkedin} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 transition-colors text-xs flex items-center"
+              className="text-blue-400 hover:text-blue-300 transition-colors text-base flex items-center"
             >
               LinkedIn
               <svg className="w-3 h-3 ml-1" fill="currentColor" viewBox="0 0 24 24">
