@@ -38,7 +38,7 @@ export default function ChargeUpTimeline() {
     },
     {
       year: "2024",
-      title: "Partnership with 1st NBFC Partner: Ascend Capital",
+      title: "Partnership with Ascend Capital  ",
       description: "Unlocking financing access for thousands of drivers",
       highlight: "1st",
       icon: Building,
@@ -139,19 +139,6 @@ export default function ChargeUpTimeline() {
       <div className="max-w-7xl mx-auto relative z-10 ">
         {/* Enhanced Header */}
         <div className="text-center mb-4 md:mb-0">
-          {/* <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-            <Zap className="w-6 h-6 text-yellow-400" />
-            <span className="text-white/80 font-medium">ChargeUp Journey</span>
-          </div> */}
-          
-          {/* <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-green-400 via-teal-400 to-blue-400 bg-clip-text text-transparent">
-            Our Growth Story
-          </h1> */}
-          
-          {/* <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-            From startup to market leader - witness our exponential journey in transforming EV mobility
-          </p> */}
-
           {/* Auto-play controls */}
           {/* <button
             onClick={toggleAutoPlay}
@@ -330,7 +317,7 @@ export default function ChargeUpTimeline() {
                         
                         {/* Enhanced Year Display */}
                         <div 
-                          className={`absolute ${isTextAbove ? 'bottom-32' : 'top-32'} text-4xl md:text-5xl font-bold whitespace-nowrap transition-all duration-500 drop-shadow-lg ${
+                          className={`absolute ${isTextAbove ? 'bottom-32' : 'top-32'} text-2xl md:text-xl font-bold whitespace-nowrap transition-all duration-500 drop-shadow-lg ${
                             isActive ? 'scale-110' : ''
                           }`}
                           style={{ 
@@ -341,35 +328,25 @@ export default function ChargeUpTimeline() {
                           {milestone.year}
                         </div>
                         
-                        {/* Enhanced Caption Card */}
+                        {/* Enhanced Caption Card - Now Always Visible */}
                         <div 
-                          className={`absolute ${isTextAbove ? 'bottom-44' : 'top-44'}  md:w-[300px] transition-all duration-700 mb-8 mt-16  ${
-                            isActive ? 'scale-105 opacity-100 visible' : 'opacity-0 invisible'
+                          className={`absolute ${isTextAbove ? 'bottom-44' : 'top-44'} w-[200px] md:w-[200px] transition-all duration-700 ${
+                            isActive ? 'scale-105 opacity-100 z-20' : 'opacity-85 z-10 hover:opacity-100'
                           }`}
                         >
-                          <div className={`bg-white/95 backdrop-blur-xl rounded-3xl p-4 md:p-4 shadow-2xl border border-white/20 transition-all duration-500 ${
-                            isActive ? 'shadow-3xl' : ''
+                          <div className={`bg-white/90 backdrop-blur-xl rounded-2xl p-3 shadow-xl border border-white/20 transition-all duration-500 ${
+                            isActive ? 'shadow-2xl border-opacity-40' : 'shadow-lg'
                           }`}
                           style={{ 
                             boxShadow: isActive 
-                              ? `0 25px 50px -12px ${milestone.color}30, 0 0 0 1px ${milestone.color}20` 
-                              : '0 25px 50px -12px rgba(0,0,0,0.25)'
+                              ? `0 20px 40px -12px ${milestone.color}30, 0 0 0 1px ${milestone.color}20` 
+                              : '0 15px 30px -12px rgba(0,0,0,0.25)'
                           }}>
                             <div className="text-center">
-                              {/* <div 
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-semibold mb-4"
-                                style={{ 
-                                  background: `linear-gradient(135deg, ${milestone.color}, ${milestone.color}dd)`
-                                }}
-                              >
-                                <IconComponent className="w-4 h-4" />
-                                Milestone {milestone.value}
-                              </div> */}
-                              
-                              <div className="text-xl xl:text-2xl font-bold text-gray-800 mb-4 ">
+                              <div className="text-sm md:text-base font-bold text-gray-800 mb-2 leading-tight">
                                 {milestone.title}
                               </div>
-                              <div className="text-base xl:text-lg text-gray-600 ">
+                              <div className="text-xs md:text-sm text-gray-600 leading-relaxed">
                                 {milestone.description}
                               </div>
                             </div>
@@ -414,7 +391,7 @@ export default function ChargeUpTimeline() {
               </div>
 
               {/* Timeline Items */}
-              <div className="pl-20 space-y-12">
+              <div className="pl-20 space-y-8">
                 {milestones.map((milestone, index) => {
                   const IconComponent = milestone.icon;
                   const isActive = index === activeIndex;
@@ -429,7 +406,7 @@ export default function ChargeUpTimeline() {
                       onClick={() => handleMilestoneClick(index)}
                     >
                       {/* Timeline Point */}
-                      <div className="absolute -left-24 top-8 transform -translate-y-1/2">
+                      <div className="absolute -left-24 top-6 transform -translate-y-1/2">
                         <div className="relative flex items-center justify-center">
                           {/* Glow effects */}
                           {isActive && (
@@ -477,40 +454,31 @@ export default function ChargeUpTimeline() {
                         </div>
                       </div>
                       
-                      {/* Content Card */}
-                      <div className={`bg-white/95 backdrop-blur-xl rounded-3xl p-4 shadow-2xl border border-white/20 transition-all duration-500 ${
-                        isActive ? 'shadow-3xl transform scale-105 ' : ''
+                      {/* Content Card - Reduced size */}
+                      <div className={`bg-white/95 backdrop-blur-xl rounded-2xl p-3 md:p-1 shadow-xl border border-white/20 transition-all duration-500  ${
+                        isActive ? 'shadow-2xl transform scale-105 ' : ''
                       }`}
                       style={{ 
                         boxShadow: isActive 
-                          ? `0 25px 50px -12px ${milestone.color}30, 0 0 0 1px ${milestone.color}20` 
-                          : '0 25px 50px -12px rgba(0,0,0,0.25)'
+                          ? `0 20px 40px -12px ${milestone.color}30, 0 0 0 1px ${milestone.color}20` 
+                          : '0 15px 30px -12px rgba(0,0,0,0.25)'
                       }}>
-                        <div className="flex items-start gap-4">
+                        <div className="flex items-start gap-3">
                           <div className="flex-1">
-                            <div className="flex items-center gap-3 mb-4">
+                            <div className="flex items-center gap-2 mb-3">
                               <div 
-                                className="text-xl font-bold px-4 py-2 rounded-xl text-white shadow-lg"
+                                className="text-sm font-bold px-3 py-1 rounded-xl text-white shadow-lg"
                                 style={{ 
                                   background: `linear-gradient(135deg, ${milestone.color}, ${milestone.color}dd)`
                                 }}
                               >
                                 {milestone.year}
                               </div>
-                              {/* <div 
-                                className="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full"
-                                style={{ 
-                                  color: milestone.color,
-                                  background: `${milestone.color}20`
-                                }}
-                              >
-                                 
-                              </div> */}
                             </div>
-                            <h4 className="text-xl font-bold text-gray-800 mb-4 leading-tight">
+                            <h4 className="text-lg font-bold text-gray-800 mb-2 leading-tight">
                               {milestone.title}
                             </h4>
-                            <p className="text-base text-gray-600 leading-relaxed">
+                            <p className="text-sm text-gray-600 leading-relaxed">
                               {milestone.description}
                             </p>
                           </div>

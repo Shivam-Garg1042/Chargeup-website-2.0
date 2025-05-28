@@ -15,8 +15,8 @@ export const OurPartners = (): JSX.Element => {
     },
     { id: 2, name: "OEMs", description: "Enjoys uptime assurance with Chargeup" },
     { id: 3, name: "Dealers", description: "Enjoys accelerated growth with Chargeup" },
-    { id: 4, name: "Insurers", description: "Enjoys accelerated growth with Chargeup" },
-    { id: 5, name: "Recyclers", description: "Enjoys accelerated growth with Chargeup" },
+    // { id: 4, name: "Insurers", description: "Enjoys accelerated growth with Chargeup" },
+    // { id: 5, name: "Recyclers", description: "Enjoys accelerated growth with Chargeup" },
   ];
 
   // Partner logos data - organized by category

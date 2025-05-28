@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
@@ -13,7 +13,7 @@ export const SolutionHome = (): JSX.Element => {
                 Enabling easy EV ownership via
               </p>
               <h1 className="md:w-full text-3xl lg:px-[24px] md:text-4xl  xl:text-[44px] font-semibold text-white tracking-tight font-['Plus_Jakarta_Sans',Helvetica] mb-4">
-                 Fi-Ne-Tech Platform 
+                 Fi  Ne Tech Platform 
               </h1>
               <p className="md:w-2/3 text-sm lg:px-[24px] sm:text-base md:text-lg  font-normal text-[#ffffff] leading-relaxed mt-3 md:mt-6">
                Offering financial services and asset management integrated with NBFCs, OEMs and dealers, to offer a single stop solution.

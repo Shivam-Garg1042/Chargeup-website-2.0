@@ -1,9 +1,12 @@
 
 import { ChevronRightIcon } from "lucide-react";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { useState } from "react";
+import PartnerModal from "../PartnerContact/PartnerContact";
 
-export const Oems = (): JSX.Element => {
+export default function OEMs() {
   // Data for partner cards
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const partnerCards = [
     
     {
@@ -29,22 +32,22 @@ export const Oems = (): JSX.Element => {
       description:
         "Invest less earn more with a future ready business solution",
     },
-    {
-      id: 3,
-      title: "Insurers",
-      subtitle: "Battery & Vehicle",
-      iconSrc: "/group-76-2.png",
-      description:
-        "Invest less earn more with a future ready business solution, Invest less earn more with a future ready business solution",
-    },
-    {
-      id: 3,
-      title: "Recuclers",
-      subtitle: "Battery & Vehicle",
-      iconSrc: "/group-76-2.png",
-      description:
-        "Invest less earn more with a future ready business solution,Invest less earn more with a future ready business solution",
-    },
+    // {
+    //   id: 3,
+    //   title: "Insurers",
+    //   subtitle: "Battery & Vehicle",
+    //   iconSrc: "/group-76-2.png",
+    //   description:
+    //     "Invest less earn more with a future ready business solution, Invest less earn more with a future ready business solution",
+    // },
+    // {
+    //   id: 3,
+    //   title: "Recyclers",
+    //   subtitle: "Battery & Vehicle",
+    //   iconSrc: "/group-76-2.png",
+    //   description:
+    //     "Invest less earn more with a future ready business solution,Invest less earn more with a future ready business solution",
+    // },
    
   ];
 
@@ -97,9 +100,10 @@ export const Oems = (): JSX.Element => {
         
       </div>
         <div className="flex justify-center items-center mt-16 mb-16 w-full">
-          <button className="bg-[#0A704A] text-white text-xl px-8 py-4 rounded-xl font-semibold shadow-lg hover:bg-yellow-300 transition">
+          <button onClick={() => setIsModalOpen(true)} className="bg-[#0A704A] text-white text-xl px-8 py-4 rounded-xl font-semibold shadow-lg hover:bg-[#023350] transition">
             Apply Now
           </button>
+          <PartnerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
 
     </section>

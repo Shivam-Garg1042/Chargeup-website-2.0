@@ -3,11 +3,14 @@ import Highcharts from "highcharts/highmaps";
 import HighchartsReact from "highcharts-react-official";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import PartnerModal from "../../../PartnerPage/sections/PartnerContact/PartnerContact";
 
 export default function MapWithContentLayout() {
   const [mapData, setMapData] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   useEffect(() => {
     // Fetch India map data
@@ -29,11 +32,11 @@ export default function MapWithContentLayout() {
 
   // States data - using dark color (#001219) for highlighted states
   const stateData = [
-    { 'hc-key': 'uttar pradesh', value: 1, color: '#001219' },
-    { 'hc-key': 'madhya pradesh', value: 1, color: '#001219' },
-    { 'hc-key': 'nct of delhi', value: 1, color: '#001219' },
-    { 'hc-key': 'rajasthan', value: 1, color: '#001219' },
-    { 'hc-key': 'haryana', value: 1, color: '#001219' }
+    { 'hc-key': 'uttar pradesh', value: 19, color: '#001219' },
+    { 'hc-key': 'madhya pradesh', value: 16, color: '#001219' },
+    { 'hc-key': 'nct of delhi', value: 21, color: '#001219' },
+    { 'hc-key': 'rajasthan', value: 25, color: '#001219' },
+    { 'hc-key': 'haryana', value: 9, color: '#001219' }
   ];
 
   // Cities with marker positions
@@ -396,9 +399,12 @@ export default function MapWithContentLayout() {
           <div className={`flex ${isMobile ? 'flex-row w-full justify-center' : 'flex-row'} gap-4`}>
             <Button 
               className="bg-[#0A704A] hover:bg-[#0A704A] text-white px-4 py-3 text-lg font-medium rounded-lg transition-colors"
+              onClick={() => setIsModalOpen(true)}
             >
               Partner with us
             </Button>
+            <PartnerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+            
             {/* <Button 
               className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-3 text-base sm:text-lg font-medium rounded-lg transition-colors"
             >

@@ -144,14 +144,14 @@ export default function NewsPage() {
         ))}
       </div>
 
-      {/* {visibleArticles < articlesData.length && (
+      {visibleArticles < articlesData.length && (
         <Button 
           onClick={handleLoadMore}
-          className="bg-[#f48900] hover:bg-[#e07a00] text-white font-medium px-6 py-5 rounded-md text-base md:text-lg mt-2"
+          className="bg-[#0C7D49] hover:bg-[#033F4F] text-white font-medium px-6 py-5 rounded-md text-base md:text-lg mt-2"
         >
           Load More
         </Button>
-      )} */}
+      )}
     </section>
   );
 }

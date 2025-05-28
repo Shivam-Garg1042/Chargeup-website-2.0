@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from '../../../../components/ui/button';
+import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -89,29 +91,29 @@ export default function HeroSection() {
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#0F9547]/20 to-[#3B82F6]/20 border border-[#0F9547]/30 rounded-full backdrop-blur-sm">
               <div className="w-2 h-2 bg-[#0F9547] rounded-full animate-pulse mr-3"></div>
-              <span className="text-sm font-medium text-[#0F9547]">Driver-First Platform</span>
+              <span className="text-sm md:text-base font-medium text-[#0F9547]">Powering Last Mile Drivers with Higher Earnings</span>
             </div>
 
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Empower Your
+                  Driver First  
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-[#0F9547] via-[#3B82F6] to-[#8B5CF6] bg-clip-text text-transparent relative">
+                <span className="bg-gradient-to-r from-[#0F9547] via-[#3B82F6] to-[#8B5CF6] bg-clip-text text-transparent ">
                   Fi Ne Tech
-                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#0F9547] via-[#3B82F6] to-[#8B5CF6] rounded-full animate-pulse"></div>
+                  {/* <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#0F9547] via-[#3B82F6] to-[#8B5CF6] rounded-full animate-pulse"></div> */}
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Journey
+                  Platform
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-2xl">
-                Revolutionizing last-mile delivery with 
-                <span className="text-[#0F9547] font-semibold"> integrated financial services</span>, 
-                connecting drivers with NBFCs, OEMs, and dealers for maximum earnings potential.
+                Offering financial services and asset management integrated with   
+                <span className="text-[#0F9547] font-semibold"> NBFCs, OEMs and dealers, </span>, 
+                to offer a single stop solution.
               </p>
             </div>
 
@@ -138,30 +140,16 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-6">
-              <button className="group bg-gradient-to-r from-[#0F9547] to-[#0D8948] hover:from-[#0D8948] hover:to-[#0A704A] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg relative overflow-hidden">
-                <span className="relative z-10">Know More</span>
+              <Link to="/solutions#solutions">
+              <Button className="group bg-gradient-to-r from-[#0F9547] to-[#0D8948] hover:from-[#0D8948] hover:to-[#0A704A] text-white px-6 md:px-8 py-6 md:py-8 rounded-xl font-semibold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg relative overflow-hidden">
+                Know More
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-              {/* <button className="bg-transparent border-2 border-[#0F9547] text-[#0F9547] hover:bg-[#0F9547] hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm">
-                Watch Demo
-              </button> */}
+              </Button>
+              </Link>
+             
             </div>
 
-            {/* Stats */}
-            {/* <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#0F9547] mb-2">50K+</div>
-                <div className="text-sm text-gray-400">Active Drivers</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#3B82F6] mb-2">₹2Cr+</div>
-                <div className="text-sm text-gray-400">Earnings Facilitated</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#8B5CF6] mb-2">99.9%</div>
-                <div className="text-sm text-gray-400">Uptime</div>
-              </div>
-            </div> */}
+           
           </div>
 
           {/* Right Interactive Visualization */}

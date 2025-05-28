@@ -15,7 +15,7 @@ import FeaturesSection from '../ChargetechPage/sections/KeyFeatures/KeyFeatures.
 import PartnersHome  from '../PartnerPage/sections/PartnersHome/PartnersHome.tsx';
 import { OurPartners } from '../PartnerPage/sections/OurPartners/OurPartners.tsx';
 import { Benefits } from '../PartnerPage/sections/Benefits/Benefits.tsx';
-import { Oems } from '../PartnerPage/sections/OEMs/OEMs.tsx';
+import Oems from '../PartnerPage/sections/OEMs/OEMs.tsx';
 import HowToJoin  from '../PartnerPage/sections/HowToJoin/HowToJoin.tsx';
 import  VisionMission from '../StoryPage/VisionMission/VisionMission.tsx';
 import  NewsPage from '../StoryPage/NewsPage/NewsPage.tsx';

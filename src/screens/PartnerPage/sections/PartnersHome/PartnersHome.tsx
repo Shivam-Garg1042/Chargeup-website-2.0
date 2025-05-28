@@ -7,11 +7,15 @@ import {
 } from "../../../../components/ui/breadcrumb";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { useState } from "react";
+import PartnerModal from "../PartnerContact/PartnerContact";
+
 
 export default function PartnersHome(): JSX.Element {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section className="flex flex-col items-center justify-center pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-8 md:pb-12 lg:pb-16 px-4 sm:px-6 md:px-8 lg:px-8 relative ">
-      <Card className="relative w-full h-[300px]  md:h-[420px] rounded-2xl bg-[url(/mask-group.png)] bg-cover bg-center border-none overflow-hidden bg-[#1B4748] px-4 md:px-12 ">
+      <Card className="relative  h-[300px]  md:h-[420px] rounded-2xl bg-[url(/mask-group.png)] bg-cover bg-center border-none overflow-hidden bg-[#054C4E] px-4 md:px-12 w-full">
         <CardContent className="p-0 h-full relative">
           {/* <div className="absolute top-6 sm:top-8 md:top-10 lg:top-12 left-4 sm:left-6 md:left-8 lg:left-12">
             <Breadcrumb>
@@ -53,9 +57,12 @@ export default function PartnersHome(): JSX.Element {
               </p>
             </div>
             <div className="mt-2 sm:mt-4 md:mt-6 lg:mt-8">
-              <Button className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-3 lg:px-6 lg:py-4 bg-[#0A704A] hover:bg-[#f8bb25]/90 rounded-lg font-semibold text-[#ffffff] text-sm sm:text-base md:text-lg ">
+              <Button onClick={() => setIsModalOpen(true)}
+                className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-3 lg:px-5 lg:py-5 bg-[#0A704A] hover:bg-[#023350]/90 rounded-lg font-semibold text-[#ffffff] text-sm sm:text-base md:text-lg ">
+              
                 Become a Partner
               </Button>
+              <PartnerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             </div>
           </div>
         </CardContent>

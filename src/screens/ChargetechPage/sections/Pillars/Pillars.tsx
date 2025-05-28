@@ -49,12 +49,71 @@ export const Pillars = () => {
   }, [pillars.length]);
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-white py-20 px-0 overflow-hidden min-h-screen flex items-center">
-      <div className="w-full flex">
-        {/* Left Side - Large Creative Circles */}
-        <div className="relative w-80 h-screen flex items-center bg-gradient-to-br from-[#0F9547]/5 via-[#0C7D49]/3 to-[#07584D]/5">
-          {/* Animated background patterns */}
-          <div className="absolute inset-0 overflow-hidden">
+    <section className="bg-gradient-to-br from-gray-50 to-white py-8 md:py-20 px-0 overflow-hidden min-h-screen flex items-center">
+      <div className="w-full flex flex-col lg:flex-row">
+        {/* Mobile Header - Only visible on mobile */}
+        <div className="lg:hidden px-4 mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Our Technology Pillars</h2>
+          <p className="text-gray-600 text-center">Discover the core technologies that power our platform</p>
+        </div>
+
+        {/* Left Side - Large Creative Circles - Mobile: Horizontal scroll, Desktop: Vertical */}
+        <div className="relative lg:w-80 w-full lg:h-screen h-32 flex lg:items-center bg-gradient-to-br from-[#0F9547]/5 via-[#0C7D49]/3 to-[#07584D]/5">
+          {/* Mobile: Horizontal scroll circles */}
+          <div className="lg:hidden w-full overflow-x-auto px-4">
+            <div className="flex space-x-6 pb-4">
+              {pillars.map((pillar, index) => {
+                const isActive = index === activeIndex;
+                
+                return (
+                  <div
+                    key={pillar.id}
+                    className="flex-shrink-0 relative transition-all duration-700 ease-in-out cursor-pointer"
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    {/* Mobile Circle */}
+                    <div 
+                      className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold text-white shadow-2xl relative overflow-hidden transition-all duration-500 border-2 border-white/30 ${
+                        isActive ? 'scale-110' : 'scale-95 opacity-70'
+                      }`}
+                      style={{ 
+                        backgroundColor: pillar.color,
+                        boxShadow: isActive ? 
+                          `0 0 30px ${pillar.color}80, 0 0 60px ${pillar.color}40` : 
+                          `0 10px 20px ${pillar.color}30`
+                      }}
+                    >
+                      <span className="relative z-10 drop-shadow-lg">{pillar.icon}</span>
+                      
+                      {/* Mobile active indicator */}
+                      {isActive && (
+                        <div 
+                          className="absolute -inset-2 rounded-full animate-ping opacity-30"
+                          style={{ 
+                            border: `2px solid ${pillar.color}`,
+                            animationDuration: '2s'
+                          }}
+                        ></div>
+                      )}
+                    </div>
+
+                    {/* Mobile number badge */}
+                    <div 
+                      className={`absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white shadow-lg flex items-center justify-center text-xs font-bold transition-all duration-500 ${
+                        isActive ? 'scale-110' : 'scale-90'
+                      }`}
+                      style={{ color: pillar.color }}
+                    >
+                      {pillar.id}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Desktop: Animated background patterns */}
+          <div className="absolute inset-0 overflow-hidden hidden lg:block">
             {/* Floating geometric shapes */}
             <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-[#0F9547]/10 to-[#0C7D49]/10 rounded-2xl rotate-45 animate-pulse"></div>
             <div className="absolute top-40 left-20 w-16 h-16 bg-gradient-to-br from-[#0C7D49]/10 to-[#0A704A]/10 rounded-full animate-bounce" style={{ animationDuration: '3s' }}></div>
@@ -67,8 +126,8 @@ export const Pillars = () => {
             <div className="absolute top-0 left-48 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0A704A]/10 to-transparent"></div>
           </div>
 
-          {/* Semi-circle container */}
-          <div className="relative w-80 h-96 z-10">
+          {/* Desktop: Semi-circle container */}
+          <div className="relative w-80 h-96 z-10 hidden lg:block">
             {pillars.map((pillar, index) => {
               // Position circles in a semi-circle from top to bottom
               const angle = (index * 45) - 67.5; // 45 degrees apart, starting from top-left
@@ -177,8 +236,8 @@ export const Pillars = () => {
             })}
           </div>
 
-          {/* Vertical progress visualization */}
-          <div className="absolute left-12 top-32 bottom-32 w-2 rounded-full overflow-hidden">
+          {/* Desktop: Vertical progress visualization */}
+          <div className="absolute left-12 top-32 bottom-32 w-2 rounded-full overflow-hidden hidden lg:block">
             <div className="w-full h-full bg-gradient-to-b from-[#0F9547]/20 via-[#0C7D49]/20 to-[#07584D]/20"></div>
             <div 
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-[#0F9547] via-[#0C7D49] to-[#07584D] rounded-full transition-all duration-700"
@@ -189,24 +248,24 @@ export const Pillars = () => {
             ></div>
           </div>
 
-          {/* Creative corner accent */}
-          <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#0F9547]/10 to-transparent rounded-br-full"></div>
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#07584D]/10 to-transparent rounded-tr-full"></div>
+          {/* Desktop: Creative corner accent */}
+          <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#0F9547]/10 to-transparent rounded-br-full hidden lg:block"></div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#07584D]/10 to-transparent rounded-tr-full hidden lg:block"></div>
         </div>
 
         {/* Right Side - Content Card */}
-        <div className="flex-1 px-8 lg:px-16 flex items-center">
+        <div className="flex-1 px-4 md:px-8 lg:px-16 flex items-center">
           <div className="max-w-4xl w-full">
             {/* Content Card */}
             <div 
-              className="bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 ease-in-out transform"
+              className="bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 ease-in-out transform"
               style={{ 
                 boxShadow: `0 25px 50px -12px ${pillars[activeIndex].color}20, 0 0 0 1px ${pillars[activeIndex].color}10`
               }}
             >
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Image Section */}
-                <div className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 lg:h-80">
+                <div className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 h-48 md:h-64 lg:h-80">
                   <img 
                     src={pillars[activeIndex].imageUrl}
                     alt={pillars[activeIndex].title}
@@ -220,7 +279,7 @@ export const Pillars = () => {
                   
                   {/* Floating number badge */}
                   <div 
-                    className="absolute top-6 left-6 w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg"
+                    className="absolute top-4 left-4 md:top-6 md:left-6 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center text-white font-bold text-base md:text-lg shadow-lg"
                     style={{ backgroundColor: pillars[activeIndex].color }}
                   >
                     {pillars[activeIndex].id}
@@ -228,11 +287,11 @@ export const Pillars = () => {
                 </div>
 
                 {/* Text Content Section */}
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="p-6 md:p-8 lg:p-12 flex flex-col justify-center">
                   {/* Category Badge */}
                   <div className="mb-4">
                     <span 
-                      className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white"
+                      className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold text-white"
                       style={{ backgroundColor: pillars[activeIndex].color }}
                     >
                       <span className="mr-2">{pillars[activeIndex].icon}</span>
@@ -241,56 +300,56 @@ export const Pillars = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 leading-tight">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-gray-900 leading-tight">
                     {pillars[activeIndex].title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8">
                     {pillars[activeIndex].description}
                   </p>
 
                   {/* Feature highlights */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-2 md:space-y-3 mb-6 md:mb-8">
                     <div className="flex items-center space-x-3">
                       <div 
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
+                        className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center"
                         style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
                       >
                         <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
                       </div>
-                      <span className="text-gray-700 font-medium">Enterprise-grade security</span>
+                      <span className="text-sm md:text-base text-gray-700 font-medium">Enterprise-grade security</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div 
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
+                        className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center"
                         style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
                       >
                         <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
                       </div>
-                      <span className="text-gray-700 font-medium">Real-time analytics</span>
+                      <span className="text-sm md:text-base text-gray-700 font-medium">Real-time analytics</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div 
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
+                        className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center"
                         style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
                       >
                         <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
                       </div>
-                      <span className="text-gray-700 font-medium">Scalable infrastructure</span>
+                      <span className="text-sm md:text-base text-gray-700 font-medium">Scalable infrastructure</span>
                     </div>
                   </div>
 
                   {/* CTA Button */}
                   <button 
-                    className="inline-flex items-center px-8 py-4 rounded-2xl text-white font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105 hover:shadow-xl"
+                    className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl text-white font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105 hover:shadow-xl text-sm md:text-base w-full sm:w-auto"
                     style={{ 
                       backgroundColor: pillars[activeIndex].color,
                       boxShadow: `0 10px 25px ${pillars[activeIndex].color}30`
                     }}
                   >
                     Learn More
-                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="ml-2 w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </button>
@@ -299,14 +358,14 @@ export const Pillars = () => {
             </div>
 
             {/* Progress Dots */}
-            <div className="flex justify-center mt-8 space-x-3">
+            <div className="flex justify-center mt-6 md:mt-8 space-x-2 md:space-x-3">
               {pillars.map((_, index) => (
                 <button
                   key={index}
-                  className={`h-3 rounded-full transition-all duration-300 ${
+                  className={`h-2 md:h-3 rounded-full transition-all duration-300 ${
                     index === activeIndex 
-                      ? 'w-12 bg-gradient-to-r from-[#0F9547] to-[#0C7D49]' 
-                      : 'w-3 bg-gray-300 hover:bg-gray-400'
+                      ? 'w-8 md:w-12 bg-gradient-to-r from-[#0F9547] to-[#0C7D49]' 
+                      : 'w-2 md:w-3 bg-gray-300 hover:bg-gray-400'
                   }`}
                   onClick={() => setActiveIndex(index)}
                 ></button>
