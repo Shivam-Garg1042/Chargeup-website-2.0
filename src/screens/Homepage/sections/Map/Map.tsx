@@ -348,7 +348,7 @@ export default function MapWithContentLayout() {
   }, [mapData]);
 
   return (
-    <section className="w-full max-w-[1400px] px-4 md:px-8 lg:px-12  bg-white sm:-mb-12 lg:-mb-24 mt-8 sm:mt-16 -mb-36 min-h-screen">
+    <section className="w-full max-w-[1400px] px-4 md:px-8 lg:px-12  bg-white sm:-mb-12 lg:-mb-24 mt-8 sm:mt-16 -mb-36 h-[830px]">
       <div className={`relative w-full ${isMobile ? 'flex flex-col' : 'h-[750px]'}`}>
         {/* Map container with responsive design */}
         <div className={`${isMobile ? 'relative w-full h-[400px] mb-8' : 'absolute inset-0'}`} 
