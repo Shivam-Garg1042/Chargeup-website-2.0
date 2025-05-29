@@ -244,7 +244,7 @@ export default function OpenPositions(){
     .find(role => role.id === selectedRole);
 
   return (
-    <section id="careers" className="min-h-screen bg-gray-100 py-12 px-4">
+    <section id="careers" className="min-h-screen  py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl  text-center mb-16">Open Positions</h1>
         

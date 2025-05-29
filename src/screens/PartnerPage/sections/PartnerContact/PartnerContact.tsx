@@ -126,9 +126,9 @@ export default function PartnerModal ({ isOpen, onClose }) {
               {/* <p className="text-gray-300">Let us know about you</p> */}
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
+                <label htmlFor="name" className="block text-sm font-medium mb-0 text-gray-300">
                   Your Name
                 </label>
                 <input
@@ -139,12 +139,12 @@ export default function PartnerModal ({ isOpen, onClose }) {
                   onChange={handleChange}
                   required
                   placeholder="Name Name"
-                  className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 text-lg transition-colors"
+                  className="w-full px-0 py-2 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 text-lg transition-colors"
                 />
               </div>
               
               <div>
-                <label htmlFor="companyName" className="block text-sm font-medium mb-2 text-gray-300">
+                <label htmlFor="companyName" className="block text-sm font-medium mb-0 text-gray-300">
                   Company Name
                 </label>
                 <input
@@ -155,12 +155,12 @@ export default function PartnerModal ({ isOpen, onClose }) {
                   onChange={handleChange}
                   required
                   placeholder="Company Name"
-                  className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 text-lg transition-colors"
+                  className="w-full px-0 py-2 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 text-lg transition-colors"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-300">
+                <label htmlFor="email" className="block text-sm font-medium mb-0 text-gray-300">
                   Your Email
                 </label>
                 <input
@@ -171,12 +171,12 @@ export default function PartnerModal ({ isOpen, onClose }) {
                   onChange={handleChange}
                   required
                   placeholder="name@company.com"
-                  className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 text-lg transition-colors"
+                  className="w-full px-0 py-2 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 text-lg transition-colors"
                 />
               </div>
               
               <div>
-                <label htmlFor="contact" className="block text-sm font-medium mb-2 text-gray-300">
+                <label htmlFor="contact" className="block text-sm font-medium mb-0 text-gray-300">
                   Contact
                 </label>
                 <div className="flex items-center border-b border-gray-600 focus-within:border-orange-400 transition-colors">
@@ -196,13 +196,13 @@ export default function PartnerModal ({ isOpen, onClose }) {
                     onChange={handleChange}
                     required
                     placeholder="999 999 9999"
-                    className="flex-1 px-0 py-3 bg-transparent border-0 focus:outline-none text-white placeholder-gray-500 text-lg"
+                    className="flex-1 px-0 py-2 bg-transparent border-0 focus:outline-none text-white placeholder-gray-500 text-lg"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-300">
+                <label htmlFor="message" className="block text-sm font-medium mb-0 text-gray-300">
                   Message
                 </label>
                 <textarea
@@ -212,8 +212,8 @@ export default function PartnerModal ({ isOpen, onClose }) {
                   onChange={handleChange}
                   required
                   placeholder="Tell about your company"
-                  rows={3}
-                  className="w-full px-0 py-3 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 resize-none text-lg transition-colors"
+                  rows={2}
+                  className="w-full px-0 py-2 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 resize-none text-lg transition-colors"
                 />
               </div>
 
@@ -221,7 +221,7 @@ export default function PartnerModal ({ isOpen, onClose }) {
                 type="button"
                 onClick={handleSubmit}
                 disabled={loading}
-                className="w-full mt-8 py-4 bg-[#0D8948] hover:bg-[#08644B] text-gray-100 font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors text-lg disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full mt-8 py-3 bg-[#0D8948] hover:bg-[#08644B] text-gray-100 font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors text-lg disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading ? 'Sending...' : 'Send Message'} 
                 {!loading && <span className="text-xl">→</span>}

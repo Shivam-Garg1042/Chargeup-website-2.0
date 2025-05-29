@@ -1,8 +1,10 @@
 
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-
+import PartnerModal from "../../../PartnerPage/sections/PartnerContact/PartnerContact";
+import { useState } from "react";
 export const SolutionHome = (): JSX.Element => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section className="flex flex-col items-start justify-center p-2 lg:px-4 ">
       <Card className="w-full bg-[#041620] rounded-lg md:rounded-xl lg:rounded-2xl border-none">
@@ -22,9 +24,11 @@ export const SolutionHome = (): JSX.Element => {
               
             </div>
             <div className="flex items-start pt-2 md:pt-4 lg:px-[24px]">
-              <Button className="bg-[#0A704A] px-4 py-2  text-[#ffffff] border border-[#0e0e0e] rounded-md md:rounded-lg  text-base md:text-base lg:text-lg font-semibold font-['Plus_Jakarta_Sans',Helvetica] shadow-sm hover:bg-[#f8bb25]/90">
+              <Button onClick={() => setIsModalOpen(true)}
+              className="bg-[#0A704A] px-4 py-2  text-[#ffffff] border border-[#0e0e0e] rounded-md md:rounded-lg  text-base md:text-base lg:text-lg font-semibold font-['Plus_Jakarta_Sans',Helvetica] shadow-sm hover:bg-[#033F4F]/90">
                 Partner with us
               </Button>
+              <PartnerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             </div>
           </div>
         </CardContent>

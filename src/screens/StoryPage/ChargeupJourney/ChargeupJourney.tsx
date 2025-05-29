@@ -128,7 +128,7 @@ export default function ChargeUpTimeline() {
   const positions = getMilestonePositions();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 py-8 px-4 md:py-12 md:px-6 relative overflow-hidden ">
+    <div className=" md:h-[750px] bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 py-8 px-4 md:py-12 md:px-6 relative overflow-hidden ">
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-72 h-72 bg-green-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -493,7 +493,7 @@ export default function ChargeUpTimeline() {
         </div>
 
         {/* Progress indicator */}
-        <div className="flex justify-center mt-16 md:-mt-8 space-x-3">
+        {/* <div className="flex justify-center mt-16 md:-mt-8 space-x-3">
           {milestones.map((milestone, index) => (
             <button
               key={index}
@@ -509,7 +509,7 @@ export default function ChargeUpTimeline() {
               }}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

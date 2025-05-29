@@ -6,6 +6,7 @@ import { MapPin,Phone ,Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const DivWrapper = (): JSX.Element => {
+  
   // Navigation links data
   const [isGetStartedOpen, setIsGetStartedOpen] = useState(false);
   const firstNavLinks = [
@@ -37,7 +38,7 @@ export const DivWrapper = (): JSX.Element => {
   ];
 
   return (
-    <footer className="flex flex-col items-center w-full  px-4 md:px-6 lg:px-8 bg-[#F9F9FB]">
+    <footer className="flex flex-col items-center w-full  px-4 md:px-6 lg:px-8 bg-gray-100">
       <div className="w-full max-w-7xl">
         {/* Main footer content */}
         <div className="flex flex-col md:flex-row justify-between py-8 gap-4">
@@ -100,10 +101,16 @@ export const DivWrapper = (): JSX.Element => {
 
           {/* Contact button and social icons */}
           <div className="flex flex-col gap-8 items-start md:items-start ">
-            <Button className="bg-[#0D8948] text-black hover:bg-[#023350] text-base text-white font-medium rounded-md px-6 py-2 ml-4">
-              {/* onClick={() => setIsGetStartedOpen(true)} */}
+            <Button 
+              onClick={() => setIsGetStartedOpen(true)}
+              className="bg-[#0D8948] text-black hover:bg-[#023350] text-base text-white font-medium rounded-md px-6 py-2 ml-4"
+            >
               Contact Us
             </Button>
+            <ContactModal 
+                        isOpen={isGetStartedOpen} 
+                        onClose={() => setIsGetStartedOpen(false)} 
+                      />
             
             <div className="flex gap-2 md:gap-4">
               {socialLinks.map((social) => (
