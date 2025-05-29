@@ -133,7 +133,8 @@ export default function MapWithContentLayout() {
         type: 'mappoint',
         name: 'Major Cities',
         color: '#F8BB25',
-        data: (isMobile ? mobileCitiesCoordinates : citiesCoordinates)
+        data: (isMobile ? mobileCitiesCoordinates : citiesCoordinates).slice(0, 10)
+
           .filter(city => city.importance === 'high')
           .map(coord => ({
             name: coord.name,
@@ -372,9 +373,16 @@ export default function MapWithContentLayout() {
         </div>
         
         {/* Content container with responsive design */}
-        <div className={`${isMobile ? 'relative w-full' : isTablet ? 'absolute top-0 right-0 w-3/5 h-3/5 p-4' : 'absolute top-0 right-0 w-2/5 h-1/2 p-6'} flex flex-col items-start justify-center space-y-6`}>
+        <div className={`${isMobile ? 'relative w-full -top-8 ' : isTablet ? 'absolute top-0 right-0 w-3/5 h-3/5 p-4' : 'absolute top-0 right-0 w-2/5 h-1/2 p-6'} flex flex-col items-start justify-center space-y-6`}>
+          
+          {/* Heading */}
+          <h2 className="hidden sm:block ext-xl sm:text-4xl font-bold text-gray-800 md:mb-1">
+             Our Presence
+          </h2>
+          
           {/* Stats Cards */}
           <div className={`flex ${isMobile ? 'flex-row' : 'flex-row'} gap-4 justify-center w-full`}>
+            
             <Card className="bg-white shadow-xl flex-1 h-28">
               <CardContent className="p-4 flex flex-col items-center justify-center h-full">
                 <h3 className="text-3xl sm:text-4xl font-bold mb-1">16+</h3>
@@ -396,7 +404,7 @@ export default function MapWithContentLayout() {
           </p>
 
           {/* CTA Button */}
-          <div className={`flex ${isMobile ? 'flex-row w-full justify-center' : 'flex-row'} gap-4`}>
+          <div className={`flex ${isMobile ? 'flex-row w-full justify-center' : 'flex-row w-full align-center justify-center '} gap-4`}>
             <Button 
               className="bg-[#0A704A] hover:bg-[#0A704A] text-white px-4 py-3 text-lg font-medium rounded-lg transition-colors"
               onClick={() => setIsModalOpen(true)}

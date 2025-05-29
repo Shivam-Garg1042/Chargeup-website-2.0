@@ -22,25 +22,25 @@ export const CultureAtChargeUp = (): JSX.Element => {
     { 
       id: 4, 
       className: "w-full h-[200px] object-cover rounded-lg",
-      src: "/culture2.jpg",
+      src: "/c3.jpg",
       alt: "Work culture"
     },
     { 
       id: 5, 
       className: "w-full h-[450px] object-cover rounded-lg",
-      src: "/culture2.jpg",
+      src: "/c4.jpg",
       alt: "Team building"
     },
     { 
       id: 6, 
       className: "w-full h-[450px] object-cover rounded-lg",
-      src: "/TeamImage1.jpeg",
+      src: "/c1.jpeg",
       alt: "Company events"
     },
     { 
       id: 7, 
       className: "w-full h-[200px] object-cover rounded-lg",
-      src: "/culture1.jpg",
+      src: "/c2.jpeg",
       alt: "Workplace atmosphere"
     },
   ];

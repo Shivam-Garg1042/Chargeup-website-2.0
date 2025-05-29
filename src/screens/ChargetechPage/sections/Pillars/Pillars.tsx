@@ -73,7 +73,7 @@ export const Pillars = () => {
                   >
                     {/* Mobile Circle */}
                     <div 
-                      className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold text-white shadow-2xl relative overflow-hidden transition-all duration-500 border-2 border-white/30 ${
+                      className={`mt-2 w-20 h-20 md:w-20 md:h-20 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold text-white shadow-2xl relative overflow-hidden transition-all duration-500 border-2 border-white/30 ${
                         isActive ? 'scale-110' : 'scale-95 opacity-70'
                       }`}
                       style={{ 
@@ -121,9 +121,9 @@ export const Pillars = () => {
             <div className="absolute bottom-20 left-32 w-8 h-8 bg-gradient-to-br from-[#07584D]/10 to-[#0F9547]/10 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
             
             {/* Gradient overlay lines */}
-            <div className="absolute top-0 left-16 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0F9547]/20 to-transparent"></div>
+            {/* <div className="absolute top-0 left-16 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0F9547]/20 to-transparent"></div>
             <div className="absolute top-0 left-32 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0C7D49]/15 to-transparent"></div>
-            <div className="absolute top-0 left-48 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0A704A]/10 to-transparent"></div>
+            <div className="absolute top-0 left-48 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0A704A]/10 to-transparent"></div> */}
           </div>
 
           {/* Desktop: Semi-circle container */}
@@ -131,7 +131,7 @@ export const Pillars = () => {
             {pillars.map((pillar, index) => {
               // Position circles in a semi-circle from top to bottom
               const angle = (index * 45) - 67.5; // 45 degrees apart, starting from top-left
-              const radius = 140;
+              const radius = 180  ;
               const x = Math.cos((angle * Math.PI) / 180) * radius;
               const y = Math.sin((angle * Math.PI) / 180) * radius;
               
@@ -146,8 +146,8 @@ export const Pillars = () => {
                   key={pillar.id}
                   className="absolute transition-all duration-700 ease-in-out cursor-pointer"
                   style={{
-                    left: `${x + 160}px`, // Center + offset
-                    top: `${y + 190}px`, // Center + offset
+                    left: `${x + 110}px`, // Center + offset
+                    top: `${y + 180}px`, // Center + offset
                     transform: `translate(-50%, -50%) scale(${scale})`,
                     opacity,
                     zIndex,
@@ -167,7 +167,7 @@ export const Pillars = () => {
 
                   {/* Main Circle */}
                   <div 
-                    className="w-24 h-24 rounded-full flex items-center justify-center text-3xl font-bold text-white shadow-2xl relative overflow-hidden group transition-all duration-500 border-4 border-white/30"
+                    className="w-28 h-28 rounded-full flex items-center justify-center text-3xl font-bold text-white shadow-2xl relative overflow-hidden group transition-all duration-500 border-4 border-white/30 "
                     style={{ 
                       backgroundColor: pillar.color,
                       boxShadow: isActive ? 

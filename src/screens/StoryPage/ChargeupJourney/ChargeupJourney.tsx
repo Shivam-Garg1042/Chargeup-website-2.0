@@ -38,7 +38,7 @@ export default function ChargeUpTimeline() {
     },
     {
       year: "2024",
-      title: "Partnership with Ascend Capital  ",
+      title: "Partnership with NBFC  ",
       description: "Unlocking financing access for thousands of drivers",
       highlight: "1st",
       icon: Building,
@@ -48,7 +48,7 @@ export default function ChargeUpTimeline() {
     },
     {
       year: "2024",
-      title: "EBITDA positive, 7,000 drivers across 16 cities",
+      title: "Profitable at EBITDA level",
       description: "Scaled sustainably while deepening market presence",
       highlight: "7,000",
       icon: TrendingUp,
@@ -82,7 +82,7 @@ export default function ChargeUpTimeline() {
   const generateExponentialPath = () => {
     const points = [];
     const width = 990;
-    const height = 620;
+    const height = 600;
     const startX = 50;
     const endX = width - 120;
     const startY = height - 110;
@@ -102,7 +102,7 @@ export default function ChargeUpTimeline() {
   // Calculate positions for milestones along the exponential curve
   const getMilestonePositions = () => {
     const width = 900;
-    const height = 500;
+    const height = 370;
     const startX = 100;
     const endX = width - 120;
     const startY = height - 100;
@@ -114,7 +114,7 @@ export default function ChargeUpTimeline() {
       const exponentialValue = Math.pow(t, 3.2);
       const y = startY - (startY - endY) * exponentialValue;
       
-      const textPos = y > height * 0.45 ? 'top' : 'bottom';
+      const textPos = y > height * 0.1 ? 'top' : 'bottom';
       
       return {
         x: `${(x / width) * 91}%`,
@@ -346,9 +346,9 @@ export default function ChargeUpTimeline() {
                               <div className="text-sm md:text-base font-bold text-gray-800 mb-2 leading-tight">
                                 {milestone.title}
                               </div>
-                              <div className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                              {/* <div className="text-xs md:text-sm text-gray-600 leading-relaxed">
                                 {milestone.description}
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         </div>

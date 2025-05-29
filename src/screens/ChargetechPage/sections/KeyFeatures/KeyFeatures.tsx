@@ -9,7 +9,7 @@ export default function KeyFeatures() {
       description:
         "Enabling paperless EV loans to last mile drivers with no or low credit score.",
       iconSrc: "/financel.png",
-      banner: "Lower interest w/ longer tenure ~24% / 24 months"
+      banner: "Pay as you earn finance"
     },
     {
       id: 2,

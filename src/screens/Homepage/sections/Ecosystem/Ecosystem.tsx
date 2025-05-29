@@ -1,22 +1,17 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../../../../components/ui/card";
-import insurer1 from "/insurer1.png";
-import insurer2 from "/insurer2.png";
-import investor3 from "/investor3.jpg";
-import recycler1 from "/recycler1.png";
-import recycler2 from "/recycler2.png";
-import techpartner1 from "/techpartner1.png";
+
 import { Link } from "react-router-dom";
 export default function PartnerEcosystem() {
   // Partner logos data for mapping
   const partnerLogos = [
-      { src: insurer1, alt: "Prudent", width: 200 },
-    { src: insurer2, alt: "March", width: 150 },
-    { src: investor3, alt: "Mahindra Logo", width: 160 },
-    { src: recycler1, alt: "Oppo Logo", width: 150 },
-    { src: recycler2, alt: "Location Logo", width: 150 },
-    { src: techpartner1, alt: "Samsung Logo", width: 150 }
+      { src: "/oem3.png", alt: "Greenfuel", width: 200 },
+    { src: "/nbfc1.png", alt: "Ascend", width: 160 },
+    { src: "/oem4.jpg", alt: "Inverted", width: 80 },
+    { src: "/techpartner1.png", alt: "Oppo Logo", width: 150 },
+    { src: "/oem2.png", alt: "Eastman", width: 150 },
+    { src: "/recycler2.png", alt: "Samsung Logo", width: 150 }
   ];
 
   return (

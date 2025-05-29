@@ -14,9 +14,6 @@ export const Metrics = (): JSX.Element => {
   // Visibility state for animation triggers
   const [isVisible, setIsVisible] = useState(false);
 
-  // Background image - using the uploaded forest road image
-  const backgroundImageUrl = "/metrics.png";
-
   // Data for metric cards to enable mapping
   const metricCards = [
     {
@@ -144,24 +141,11 @@ export const Metrics = (): JSX.Element => {
   return (
     <section id="metrics-section" className="relative w-full bg-white overflow-hidden ">
       <div className="flex flex-col items-center w-full">
-        {/* Background with image */}
+        {/* Background with gradient */}
         <div className="relative w-full py-16 sm:py-20 md:py-28 lg:py-32 lg:h-[420px]">
-          {/* Background image layer */}
-          <div 
-            className="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url(${backgroundImageUrl})`,
-            }}
-          />
-          
-          {/* Dark overlay for better text readability */}
-          <div className="absolute w-full h-full top-0 left-0 bg-black/60" />
-          
-          {/* Optional: Additional gradient overlay for enhanced visual effect */}
-          <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-emerald-900/30 via-emerald-800/40 to-black/70" />
-          
-          {/* Bottom blur effect */}
-          <div className="absolute w-full h-[30%] bottom-0 left-0  backdrop-blur-[2px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(2px)_brightness(100%)]" />
+          <div className="absolute w-full h-full top-0 left-0 [background:radial-gradient(50%_50%_at_50%_100%,rgba(0,33,24,1)_0%,rgba(0,40,29,1)_53%,rgba(2,2,2,1)_100%)]" />
+          <div className="absolute w-full h-[30%] bottom-0 left-0 [background:radial-gradient(50%_50%_at_51%_0%,rgba(6,91,66,1)_0%,rgba(2,4,3,1)_100%)]" />
+          <div className="absolute w-full h-[30%] bottom-0 left-0 bg-[#00000066] backdrop-blur-[2px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(2px)_brightness(100%)]" />
 
           {/* Decorative graphic - hidden on small screens */}
           <div className="hidden md:flex flex-col w-[200px] lg:w-[403px] items-start gap-px absolute top-[93px] right-0 overflow-hidden opacity-[0.87] animate-pulse">
@@ -186,8 +170,8 @@ export const Metrics = (): JSX.Element => {
           </div>
 
           {/* Title and subtitle */}
-          <div className="absolute top-[40px] sm:top-[40px] md:top-[60px] lg:top-[100px] left-0 w-full flex flex-col items-center px-4 z-10">
-            <h2 className="font-medium text-white text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] px-4 sm:px-8 md:px-12 drop-shadow-2xl">
+          <div className="absolute top-[40px] sm:top-[40px] md:top-[60px] lg:top-[100px] left-0 w-full flex flex-col items-center px-4 ">
+            <h2 className="font-medium text-white text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] px-4 sm:px-8 md:px-12">
               Creating impact with every ride 
             </h2>
           </div>

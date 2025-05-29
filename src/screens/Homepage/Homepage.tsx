@@ -69,7 +69,7 @@ export const Homepage = (): JSX.Element => {
     
       
       
-      <TestimonialSections/>
+      {/* <TestimonialSections/> */}
       <PartnerEcosystem/> 
       <VideoCarouselSection/>
       </>

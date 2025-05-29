@@ -94,7 +94,7 @@ export default function DesktopGallery({ items }) {
                   style={style}
                   className="w-screen pl-[7.5vw] pr-[7.5vw] sm:w-[60vw] sm:p-0 md:w-[45vw] lg:w-[calc((100%-3rem)/3)] flex-shrink-0 snap-center"
                 >
-                  <div className="w-full bg-white/90 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl h-[492px]">
+                  <div className="w-full bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl h-[492px]">
                     <div className="aspect-w-16 aspect-h-8 sm:aspect-w-1 sm:aspect-h-1 relative">
                       <img
                         src={item.imageUrl}
@@ -122,8 +122,8 @@ export default function DesktopGallery({ items }) {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
+    <div className="relative w-full overflow-hidden mt-16">
+      <div className="absolute inset-0 ">
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 

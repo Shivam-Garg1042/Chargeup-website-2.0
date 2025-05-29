@@ -89,18 +89,15 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#0F9547]/20 to-[#3B82F6]/20 border border-[#0F9547]/30 rounded-full backdrop-blur-sm">
-              <div className="w-2 h-2 bg-[#0F9547] rounded-full animate-pulse mr-3"></div>
-              <span className="text-sm md:text-base font-medium text-[#0F9547]">Powering Last Mile Drivers with Higher Earnings</span>
-            </div>
+            
 
-            <div className="space-y-6">
+            <div className=" space-y-6">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   Driver First  
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-[#0F9547] via-[#3B82F6] to-[#8B5CF6] bg-clip-text text-transparent ">
+                <span className="bg-gradient-to-r from-[#0C7D49] via-[#07584D] to-[#033F4F] bg-clip-text text-transparent ">
                   Fi Ne Tech
                   {/* <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#0F9547] via-[#3B82F6] to-[#8B5CF6] rounded-full animate-pulse"></div> */}
                 </span>
@@ -108,6 +105,10 @@ export default function HeroSection() {
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   Platform
                 </span>
+                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#0F9547]/20 to-[#3B82F6]/20 border border-[#0F9547]/30 rounded-full backdrop-blur-sm">
+              <div className="w-2 h-2 bg-[#0F9547] rounded-full animate-pulse mr-3"></div>
+              <span className="text-sm md:text-base font-medium text-[#0F9547]">Powering Last Mile Drivers with Higher Earnings</span>
+            </div>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-2xl">
