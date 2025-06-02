@@ -94,7 +94,7 @@ export default function DesktopGallery({ items }) {
                   style={style}
                   className="w-screen pl-[7.5vw] pr-[7.5vw] sm:w-[60vw] sm:p-0 md:w-[45vw] lg:w-[calc((100%-3rem)/3)] flex-shrink-0 snap-center"
                 >
-                  <div className="w-full bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl h-[492px]">
+                  <div className="w-full bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl h-[355px]">
                     <div className="aspect-w-16 aspect-h-8 sm:aspect-w-1 sm:aspect-h-1 relative">
                       <img
                         src={item.imageUrl}

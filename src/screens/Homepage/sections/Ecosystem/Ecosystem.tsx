@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 export default function PartnerEcosystem() {
   // Partner logos data for mapping
   const partnerLogos = [
-      { src: "/oem3.png", alt: "Greenfuel", width: 200 },
-    { src: "/nbfc1.png", alt: "Ascend", width: 160 },
-    { src: "/oem4.jpg", alt: "Inverted", width: 80 },
-    { src: "/techpartner1.png", alt: "Oppo Logo", width: 150 },
-    { src: "/oem2.png", alt: "Eastman", width: 150 },
-    { src: "/recycler2.png", alt: "Samsung Logo", width: 150 }
+      { src: "/oem3.png", alt: "Greenfuel", width: 180 ,heigth : 200},
+    { src: "/nbfc1.png", alt: "Ascend", width: 200 ,heigth : 200},
+    { src: "/oem4.jpg", alt: "Inverted", width: 90,heigth : 100 },
+    { src: "/techpartner1.png", alt: "Oppo Logo", width: 150 ,heigth : 100},
+    { src: "/oem2.png", alt: "Eastman", width: 150,heigth : 100 },
+    { src: "/recycler2.png", alt: "Samsung Logo", width: 150,heigth : 130 }
   ];
 
   return (
@@ -58,7 +58,11 @@ export default function PartnerEcosystem() {
                     <img
                       src={logo.src}
                       alt={logo.alt}
-                      style={{ width: `${logo.width}px` }}
+                      style={{ 
+                        width: logo.width? `${logo.width}px`: 'auto',
+                        height: logo.heigth ? `${logo.heigth}px` : 'auto'
+                      }}
+                      loading="lazy"  
                       className="h-auto max-w-full object-contain"
                     />
                   </motion.div>

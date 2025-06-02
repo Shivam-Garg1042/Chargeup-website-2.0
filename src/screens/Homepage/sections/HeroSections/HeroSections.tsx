@@ -22,161 +22,82 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#0a0f1c] via-[#1a1f2e] to-[#0f172a] relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        {/* Floating Orbs */}
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute rounded-full blur-xl opacity-20 animate-pulse ${
-              i % 2 === 0 ? 'bg-[#0F9547]' : 'bg-[#3B82F6]'
-            }`}
-            style={{
-              width: `${60 + Math.random() * 120}px`,
-              height: `${60 + Math.random() * 120}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${4 + Math.random() * 4}s`
-            }}
-          />
-        ))}
-
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div 
-            className="w-full h-full"
-            style={{
-              backgroundImage: `
-                radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)
-              `,
-              backgroundSize: '40px 40px'
-            }}
-          />
-        </div>
-
-        {/* Animated Lines */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 1000">
-          <defs>
-            <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#0F9547" stopOpacity="0.6"/>
-              <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.4"/>
-              <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.2"/>
-            </linearGradient>
-          </defs>
-          <path 
-            d="M0,500 Q250,300 500,500 T1000,500" 
-            stroke="url(#lineGrad1)" 
-            strokeWidth="2" 
-            fill="none"
-            className="animate-pulse"
-          />
-          <path 
-            d="M0,300 Q500,100 1000,300" 
-            stroke="url(#lineGrad1)" 
-            strokeWidth="1" 
-            fill="none" 
-            opacity="0.5"
-            className="animate-pulse"
-            style={{ animationDelay: '1s' }}
-          />
-        </svg>
-      </div>
+    <section className="min-h-screen relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/homeImage.png')`,
+        }}
+      />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/80" />
 
       <div className="container mx-auto px-6 lg:px-8 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
           {/* Left Content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            {/* Badge */}
-            
-
-            <div className=" space-y-6">
+            <div className="space-y-6">
+              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#0F9547]/20 to-[#3B82F6]/20 border border-[#0F9547]/30 rounded-full backdrop-blur-sm">
+                <div className="w-2 h-2 bg-[#0F9547] rounded-full animate-pulse mr-3"></div>
+                <span className="text-sm md:text-base font-medium text-[#0F9547]">A single stop solution</span>
+              </div>
+              
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   Driver First  
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-[#0C7D49] via-[#07584D] to-[#033F4F] bg-clip-text text-transparent ">
+                <span className="bg-gradient-to-r from-[#0C7D49] via-[#07584D] to-[#033F4F] bg-clip-text text-transparent">
                   Fi Ne Tech
-                  {/* <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#0F9547] via-[#3B82F6] to-[#8B5CF6] rounded-full animate-pulse"></div> */}
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   Platform
                 </span>
-                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#0F9547]/20 to-[#3B82F6]/20 border border-[#0F9547]/30 rounded-full backdrop-blur-sm">
-              <div className="w-2 h-2 bg-[#0F9547] rounded-full animate-pulse mr-3"></div>
-              <span className="text-sm md:text-base font-medium text-[#0F9547]">Powering Last Mile Drivers with Higher Earnings</span>
-            </div>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-2xl">
-                Offering financial services and asset management integrated with   
-                <span className="text-[#0F9547] font-semibold"> NBFCs, OEMs and dealers, </span>, 
-                to offer a single stop solution.
+                Offering     
+                <span className="text-[#0F9547] font-semibold"> Financial services and Asset management </span>, 
+                Integrated with NBFCs, OEMs & dealers
               </p>
             </div>
-
-            {/* Feature Cards */}
-            {/* <div className="grid grid-cols-2 gap-4 my-8">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className={`p-4 rounded-xl backdrop-blur-sm border transition-all duration-500 hover:scale-105 ${
-                    currentSlide === index 
-                      ? 'bg-gradient-to-r from-[#0F9547]/20 to-[#3B82F6]/20 border-[#0F9547]/50 shadow-lg shadow-[#0F9547]/20' 
-                      : 'bg-white/5 border-white/10 hover:border-white/20'
-                  }`}
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className={`text-2xl p-2 rounded-lg bg-gradient-to-r ${feature.color}`}>
-                      {feature.icon}
-                    </div>
-                    <span className="text-white font-medium">{feature.text}</span>
-                  </div>
-                </div>
-              ))}
-            </div> */}
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-6">
               <Link to="/solutions#solutions">
-              <Button className="group bg-gradient-to-r from-[#0F9547] to-[#0D8948] hover:from-[#0D8948] hover:to-[#0A704A] text-white px-6 md:px-8 py-6 md:py-8 rounded-xl font-semibold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg relative overflow-hidden">
-                Know More
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Button>
+                <Button className="group bg-gradient-to-r from-[#0F9547] to-[#0D8948] hover:from-[#0D8948] hover:to-[#0A704A] text-white px-6 md:px-8 py-6 md:py-8 rounded-xl font-semibold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg relative overflow-hidden">
+                  Know More
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
               </Link>
-             
             </div>
-
-           
           </div>
 
           {/* Right Interactive Visualization */}
-          <div className={`relative lg:pl-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-            <div className="relative w-full max-w-lg mx-auto">
+          {/* <div className={`relative lg:pl-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <div className="relative w-full max-w-lg mx-auto"> */}
               {/* Central Hub */}
-              <div className="relative z-20 mx-auto w-fit">
-                <div className="relative">
+              {/* <div className="relative z-20 mx-auto w-fit">
+                <div className="relative"> */}
                   {/* Main Platform */}
-                  <div className="w-32 h-32 bg-gradient-to-br from-[#0F9547] via-[#0D8948] to-[#0A704A] rounded-3xl shadow-2xl relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                  {/* <div className="w-32 h-32 bg-gradient-to-br from-[#0F9547] via-[#0D8948] to-[#0A704A] rounded-3xl shadow-2xl relative overflow-hidden group hover:scale-105 transition-transform duration-300">
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
                     <div className="absolute inset-4 bg-gradient-to-br from-[#0D8948] to-[#08644B] rounded-2xl flex flex-col justify-center items-center">
                       <div className="text-white text-2xl mb-2">🚀</div>
                       <div className="text-xs text-white/80 font-medium">CORE</div>
-                    </div>
+                    </div> */}
                     
                     {/* Pulse Effect */}
-                    <div className="absolute inset-0 rounded-3xl border-2 border-[#0F9547] animate-ping opacity-20"></div>
-                  </div>
+                    {/* <div className="absolute inset-0 rounded-3xl border-2 border-[#0F9547] animate-ping opacity-20"></div>
+                  </div> */}
 
                   {/* Orbital Elements */}
-                  {[
+                  {/* {[
                     { icon: "💳", label: "Finance", angle: 0, color: "from-yellow-400 to-orange-500" },
                     { icon: "🚛", label: "Network", angle: 90, color: "from-blue-400 to-cyan-500" },
                     { icon: "📊", label: "Tech", angle: 180, color: "from-purple-400 to-pink-500" },
-                    // { icon: "🤝", label: "Partners", angle: 270, color: "from-green-400 to-emerald-500" }
                   ].map((item, index) => (
                     <div
                       key={index}
@@ -192,17 +113,17 @@ export default function HeroSection() {
                         <div className="text-xs font-medium">{item.label}</div>
                       </div>
                     </div>
-                  ))}
+                  ))} */}
 
                   {/* Connection Lines */}
-                  <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 200">
+                  {/* <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 200">
                     <defs>
                       <radialGradient id="connectionGrad">
                         <stop offset="0%" stopColor="#0F9547" stopOpacity="0.8"/>
                         <stop offset="100%" stopColor="#0F9547" stopOpacity="0.1"/>
                       </radialGradient>
                     </defs>
-                    {[0, 90, 180, 270].map((angle, index) => (
+                    {[0, 90, 180].map((angle, index) => (
                       <line
                         key={index}
                         x1="100"
@@ -215,11 +136,11 @@ export default function HeroSection() {
                       />
                     ))}
                   </svg>
-                </div>
+                </div> */}
 
                 {/* Floating Data Particles */}
-                <div className="absolute inset-0 pointer-events-none">
-                  {[...Array(20)].map((_, i) => (
+                {/* <div className="absolute inset-0 pointer-events-none">
+                  {[...Array(10)].map((_, i) => (
                     <div
                       key={i}
                       className="absolute w-2 h-2 bg-gradient-to-r from-[#0F9547] to-[#3B82F6] rounded-full animate-bounce opacity-60"
@@ -231,14 +152,14 @@ export default function HeroSection() {
                       }}
                     />
                   ))}
-                </div>
+                </div> */}
 
                 {/* Holographic Effect */}
-                <div className="absolute -inset-10 bg-gradient-to-r from-[#0F9547]/10 via-transparent to-[#3B82F6]/10 rounded-full blur-3xl animate-pulse"></div>
-              </div>
+                {/* <div className="absolute -inset-10 bg-gradient-to-r from-[#0F9547]/10 via-transparent to-[#3B82F6]/10 rounded-full blur-3xl animate-pulse"></div>
+              </div> */}
 
               {/* Side Cards */}
-              <div className="absolute -left-8 top-8 w-24 h-32 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl border border-gray-700 overflow-hidden group hover:scale-105 transition-transform duration-300">
+              {/* <div className="absolute -left-8 top-8 w-24 h-32 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-xl shadow-xl border border-gray-700/50 backdrop-blur-sm overflow-hidden group hover:scale-105 transition-transform duration-300">
                 <div className="h-full p-3 flex flex-col justify-between">
                   <div className="text-2xl">📱</div>
                   <div>
@@ -250,7 +171,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <div className="absolute -right-8 bottom-8 w-24 h-32 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl border border-gray-700 overflow-hidden group hover:scale-105 transition-transform duration-300">
+              <div className="absolute -right-8 bottom-8 w-24 h-32 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-xl shadow-xl border border-gray-700/50 backdrop-blur-sm overflow-hidden group hover:scale-105 transition-transform duration-300">
                 <div className="h-full p-3 flex flex-col justify-between">
                   <div className="text-2xl">💰</div>
                   <div>
@@ -260,13 +181,13 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
-      {/* Bottom Wave */}
+      {/* Bottom Wave - Made more subtle */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-20 fill-current text-white/5">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-20 fill-current text-white/10">
           <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21 0 0 1 0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"></path>
         </svg>
       </div>
