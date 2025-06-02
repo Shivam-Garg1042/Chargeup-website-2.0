@@ -16,7 +16,7 @@ export const CultureAtChargeUp = (): JSX.Element => {
     { 
       id: 3, 
       className: "w-full h-[200px] object-cover rounded-lg",
-      src: "/culture1.jpg",
+      src: "/culture1.jpeg",
       alt: "Team meeting"
     },
     { 

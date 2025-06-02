@@ -6,9 +6,9 @@ const DepartmentItem = ({ title, isActive, onClick, jobRoles, selectedRole }) =>
     <div 
       onClick={onClick}
       className={`
-        w-full p-3 rounded-full cursor-pointer transition-all duration-300 
+        w-full p-3 pl-5 rounded-full cursor-pointer transition-all duration-300 
         ${isActive 
-          ? 'bg-orange-500 text-white' 
+          ? 'bg-[#07584D] text-white' 
           : 'bg-white border border-gray-300 text-gray-800 hover:bg-gray-100'
         }
       `}
@@ -27,7 +27,7 @@ const DepartmentItem = ({ title, isActive, onClick, jobRoles, selectedRole }) =>
             p-3 ml-2 border-l-2 cursor-pointer rounded-r-lg mb-3 
             transition-all duration-200
             ${selectedRole === role.id 
-              ? 'border-orange-500 bg-orange-50 text-gray-800' 
+              ? 'border-[#07584D] bg-[#07584D]  text-gray-800 bg-gray-100' 
               : 'border-gray-200 hover:bg-gray-50'}
           `}
           onClick={() => role.onClick(role.id)}
@@ -46,7 +46,7 @@ const JobDetails = ({ title, location, requirements, responsibilities, skills, g
         <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
         <div className="text-gray-600">{location}</div>
       </div>
-      <button className="mt-4 md:mt-0 bg-[#0A704A] hover:bg-yellow-500 text-white font-medium py-2 px-6 rounded text-[18px]">
+      <button className="mt-4 md:mt-0 bg-[#07584D] hover:bg-[#023350] text-white font-medium py-2 px-6 rounded text-[18px]">
         Apply
       </button>
     </div>

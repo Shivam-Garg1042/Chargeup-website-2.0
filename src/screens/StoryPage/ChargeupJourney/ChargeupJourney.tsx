@@ -18,7 +18,7 @@ export default function ChargeUpTimeline() {
     },
     {
       year: "2021", 
-      title: "1,000 active drivers reached",
+      title: "1,000 active drivers ",
       description: "Early traction proved strong product-market fit",
       highlight: "1,000",
       icon: Users,
@@ -28,7 +28,7 @@ export default function ChargeUpTimeline() {
     },
     {
       year: "2022",
-      title: "$2.5M Pre-Series A funding raised",
+      title: "$2.5M funding raised",
       description: "Continued backing underscored investor confidence",
       highlight: "$2.5M",
       icon: DollarSign,
@@ -48,7 +48,7 @@ export default function ChargeUpTimeline() {
     },
     {
       year: "2024",
-      title: "Profitable at EBITDA level",
+      title: "Profitable  EBITDA level",
       description: "Scaled sustainably while deepening market presence",
       highlight: "7,000",
       icon: TrendingUp,

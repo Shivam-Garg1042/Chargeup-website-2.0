@@ -12,7 +12,7 @@ export default function VisionMission() {
         title: "Empowering Tomorrow's Drivers",
         description:
           "To become the largest driver platform, empowering millions of last-mile drivers with easy EV ownership and higher earnings making them financially independent.",
-        image: "/vission.png",
+        image: "/vission2.png",
         alt: "Vision - Empowering drivers with sustainable transportation",
         gradient: "from-[#0F9547] to-[#0C7D49]",
         accentColor: "#0F9547"

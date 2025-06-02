@@ -30,9 +30,16 @@
       const videoId = extractYouTubeId(url);
       return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0` : null;
     };
+    
 
     // Video data array
     const videos = [
+      {
+        id: 6,
+        title: "From financing e-rickshaw to i-rickshaws | chargeup x Shivakari",
+        description: "The inspiring story of Pratibha Das",
+        url: "https://youtu.be/a2QQYXzs2jQ"
+      },
       {
         id: 1,
         title: "How E-Rickshaw Drivers Drove a Greener Tomorrow",
@@ -46,6 +53,12 @@
         url: "https://youtu.be/vOfeJ8P95fw?si=_E7oKYEwtltgbWlu"
       },
       {
+        id: 5,
+        title: "Making EV lending hassle free and scalable with charegup platform",
+        description: "The inspiring story of Pratibha Das",
+        url: "https://youtu.be/OrrJxqMYgIQ"
+      },
+      {
         id: 3,
         title: "Azaadi Ki Awaaz: Chargeup Ka Vishwas #independenceday #78thindependenceday",
         description: "Celebrating freedom and independence with Chargeup",
@@ -56,7 +69,9 @@
         title: "Pratibha Das - Ek Atmanirbhar Mahila E-rickshaw chalak ki Kahani | Badlav Ki Lehar",
         description: "The inspiring story of Pratibha Das",
         url: "https://youtu.be/uxwZTdbwp2s?si=AZfA3Q8ALsF71CpA"
-      }
+      },
+      
+      
     ];
 
     // Calculate total pages based on slides per view

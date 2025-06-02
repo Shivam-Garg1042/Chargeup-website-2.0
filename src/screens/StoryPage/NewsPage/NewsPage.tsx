@@ -7,17 +7,21 @@ import { Button } from "../../../components/ui/button";
 const articlesData = [
   {
     id: 1,
-    title: "Chargeup teams up for E3W financing",   
+    title: "Chargeup forms new partnerships for EV financing",   
     date: "June 5, 2023",
-    imageUrl: "/news1.jpg",  
-    description: "Chargeup partners with Credit Fair and Ascend Capital to provide ₹100 crore in E3W financing for underserved drivers...",
-      link : "https: auto.economictimes.indiatimes.com/news/commercial-vehicle/chargeup-collaborates-with-credit-fair-and-ascend-capital-for-e3w-financing-solutions/107880159"
+    imageUrl: "/news5.png",  
+    imageWidth: "20px",
+    imageHeight: "20px", 
+    description: "Chargeup, being an asset management and financial services platform, is creating impact by enabling quick financing...",
+      link : "https://www.financialexpress.com/auto/commercial-vehicles/chargeup-forms-new-partnerships-for-ev-financing/3860046/"
   },
   {
     id: 2,
     title: "Electric vehicles: Only commitment, and no real deal",
     date: "June 5, 2023",
     imageUrl: "/news2.jpg",
+    imageWidth: "280px",
+    imageHeight: "220px",
     description: "India's budget backs EVs but lacks clear plans or new subsidies...",
     link : "https: www.forbesindia.com/amp/article/news/electric-vehicles-only-commitment-and-no-real-deal/91199/1"
 },
@@ -26,6 +30,8 @@ const articlesData = [
     title: "Chargeup to onboard 25,000 drivers in 17 cities by 2025",
     date: "June 5, 2023",
     imageUrl: "/news3.jpg",
+    imageWidth: "280px",
+    imageHeight: "240px",
     description: "Chargeup to onboard 25,000 drivers and expand battery stations across 17 cities...",
     link : "https: energy.economictimes.indiatimes.com/news/power/chargeup-to-onboard-25000-drivers-across-17-indian-cities-by-2025/109556468"
   },
@@ -34,6 +40,8 @@ const articlesData = [
     title: "Chargeup finalist at Aegis Graham Bell Awards",
     date: "June 5, 2023",
     imageUrl: "/news4.jpg",
+    imageWidth: "280px",
+    imageHeight: "200px",
     description: "Chargeup honored as finalist in 14th Aegis Graham Bell Awards for innovation...",
     link : "https: www.linkedin.com/posts/aegis-graham-bell-award_congratulations-to-chargeup-finalist-under-activity-7298635481326465025-1xTl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAA2bHUoBindJf1EnJhHgLL-nZm964iDkCvQ"
   },
@@ -44,25 +52,31 @@ const articlesData = [
     description:
       "Chargeup partners with Credit Fair and Ascend Capital to provide ₹100 crore in E3W financing for underserved drivers.",
     imageUrl: "/news4.jpg",
+    imageWidth: "280px",
+    imageHeight: "180px",
     link: "https://example.com/news/5"
   },
   {
     id: 6,
     date: "23 Jan, 2025",
-    title: "Chargeup teams up for E3W financing",
+    title: "Chargeup teams up with Mega Corp, Shivakari Finance to unlock Rs 50 Cr in EV financing",
     description:
-      "Chargeup partners with Credit Fair and Ascend Capital to provide ₹100 crore in E3W financing for underserved drivers.",
-    imageUrl: "/api/placeholder/326/360",
-    link: "https://example.com/news/6"
+      "The company aims to disburse the credit line to support the deployment of 4,000 commercial EVs over their next 12 months in the country.",
+    imageUrl: "/news6.png",
+    imageWidth: "280px",
+    imageHeight: "260px",
+    link: "https://yourstory.com/2025/05/chargeup-partners-mega-corp-shivakari-finance-50-crore-ev-financing"
   },
   {
     id: 7,
     date: "23 Jan, 2025",
-    title: "Chargeup teams up for E3W financing",
+    title: "Chargeup Joins Forces with Mega Corporation and Shivakari Finance to Unlock INR 50 Cr in EV Financing",
     description:
-      "Chargeup partners with Credit Fair and Ascend Capital to provide ₹100 crore in E3W financing for underserved drivers.",
-    imageUrl: "/api/placeholder/326/360",
-    link: "https://example.com/news/7"
+      "The collaboration aims to unlock a credit line of INR 50 crore and deploy 4,000 commercial EVs over the next year, primarily benefitting underserved last-mile drivers.",
+    imageUrl: "/news5.png",
+    imageWidth: "280px",
+    imageHeight: "200px",
+    link: "https://www.entrepreneur.com/en-in/news-and-trends/chargeup-joins-forces-with-mega-corporation-and-shivakari/492329"
   },
   {
     id: 8,
@@ -71,6 +85,8 @@ const articlesData = [
     description:
       "Chargeup partners with Credit Fair and Ascend Capital to provide ₹100 crore in E3W financing for underserved drivers.",
     imageUrl: "/api/placeholder/326/360",
+    imageWidth: "280px",
+    imageHeight: "220px",
     link: "https://example.com/news/8"
   }
 ];
@@ -106,16 +122,13 @@ export default function NewsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 w-full mb-12">
         {currentArticles.map((article) => (
           <div key={article.id} className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-10">
-            <Card className="w-full md:w-[181px] lg:w-[280px]  h-[200px] md:h-[240px] lg:h-[300px]  bg-[#333333] rounded-3xl  lg:rounded-3xl xl:rounded-[26px] p-4 md:p-5 lg:p-6 xl:p-[26px] flex flex-col justify-end overflow-hidden relative">
-              <CardContent className="p-0">
+            <Card className="w-full md:w-[181px] lg:w-[280px] h-[200px] md:h-[240px] lg:h-[300px] bg-[#333333] rounded-3xl lg:rounded-3xl xl:rounded-[26px] p-0 flex flex-col justify-end overflow-hidden relative">
+              <CardContent className="p-0 w-full h-full">
                 <img 
                   src={article.imageUrl} 
                   alt={article.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-90"
+                  className="w-full h-full object-cover"
                 />
-                {/* <Badge className="relative z-10 bg-white text-[#1b4748] font-normal rounded-[5px] px-3 py-2">
-                  {article.date}
-                </Badge> */}
               </CardContent>
             </Card>
             
@@ -130,7 +143,7 @@ export default function NewsPage() {
                 </p>
               </div>
               
-              <a href={article.link} className="mt-2 md:mb-4 flex items-center gap-2 md:gap-4 lg:gap-[21px] no-underline">
+              <a href={article.link} className="mt-2 md:mb-4 flex items-center gap-2 md:gap-4 lg:gap-[21px] no-underline " target = "_blank" rel="noopener noreferrer">
 
                 <span className=" font-semibold text-[#07584D] text-base md:text-lg lg:text-xl leading-6 whitespace-nowrap ">
                   Read Now

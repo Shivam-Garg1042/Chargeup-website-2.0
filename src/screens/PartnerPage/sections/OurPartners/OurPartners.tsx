@@ -96,7 +96,7 @@ export const OurPartners = (): JSX.Element => {
                     onClick={() => setActiveCategory(category.name)}
                     className={`h-14 px-8 py-3 rounded-full text-lg font-medium ${
                       activeCategory === category.name
-                        ? "bg-[#f48900] text-white hover:bg-[#e07d00]"
+                        ? "bg-[#07584D] text-white hover:bg-[#07584D]"
                         : "bg-transparent text-[#010101] border-2 border-[#1b4748] hover:bg-gray-100"
                     }`}
                   >

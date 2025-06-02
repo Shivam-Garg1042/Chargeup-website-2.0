@@ -22,16 +22,16 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen relative overflow-hidden">
+    <section className="h-[750px] relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-left bg-no-repeat object-fill w-[100%] h-[100%] z-0"
         style={{
-          backgroundImage: `url('/homeImage.png')`,
+          backgroundImage: `url('/hero.png')`,
         }}
       />
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/80" />
+      <div className="absolute inset-0 " />
 
       <div className="container mx-auto px-6 lg:px-8 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
@@ -39,27 +39,27 @@ export default function HeroSection() {
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="space-y-6">
               <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#0F9547]/20 to-[#3B82F6]/20 border border-[#0F9547]/30 rounded-full backdrop-blur-sm">
-                <div className="w-2 h-2 bg-[#0F9547] rounded-full animate-pulse mr-3"></div>
-                <span className="text-sm md:text-base font-medium text-[#0F9547]">A single stop solution</span>
+                <div className="w-2 h-2 bg-[#fff] rounded-full animate-pulse mr-3"></div>
+                <span className="text-sm md:text-base font-medium text-[#fff]">A single stop solution</span>
               </div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Driver First  
+                  India's first EV Driver Platform  
                 </span>
-                <br />
+                {/* <br />
                 <span className="bg-gradient-to-r from-[#0C7D49] via-[#07584D] to-[#033F4F] bg-clip-text text-transparent">
                   Fi Ne Tech
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   Platform
-                </span>
+                </span> */}
               </h1>
               
-              <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-2xl">
+              <p className="text-xl md:text-2xl text-gray-50 leading-relaxed max-w-2xl">
                 Offering     
-                <span className="text-[#0F9547] font-semibold"> Financial services and Asset management </span>, 
+                <span className="text-[#fff] font-semibold"> Financial services and Asset management </span>, 
                 Integrated with NBFCs, OEMs & dealers
               </p>
             </div>
