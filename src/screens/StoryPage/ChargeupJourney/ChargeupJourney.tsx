@@ -64,7 +64,7 @@ export default function ChargeUpTimeline() {
     
     const interval = setInterval(() => {
       setActiveIndex(prev => (prev + 1) % milestones.length);
-    }, 2500);
+    }, 1000);
     
     return () => clearInterval(interval);
   }, [isAutoPlay, milestones.length]);

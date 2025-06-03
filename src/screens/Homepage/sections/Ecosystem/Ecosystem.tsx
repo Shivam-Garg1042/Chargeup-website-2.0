@@ -6,12 +6,15 @@ import { Link } from "react-router-dom";
 export default function PartnerEcosystem() {
   // Partner logos data for mapping
   const partnerLogos = [
-      { src: "/oem3.png", alt: "Greenfuel", width: 180 ,heigth : 200},
+      { src: "/oem3.png", alt: "Greenfuel", width: 180 ,heigth : 150},
+      { src: "/techpartner1.png", alt: "Oppo Logo", width: 150 ,heigth : 100},
     { src: "/nbfc1.png", alt: "Ascend", width: 200 ,heigth : 200},
-    { src: "/oem4.jpg", alt: "Inverted", width: 90,heigth : 100 },
-    { src: "/techpartner1.png", alt: "Oppo Logo", width: 150 ,heigth : 100},
-    { src: "/oem2.png", alt: "Eastman", width: 150,heigth : 100 },
-    { src: "/recycler2.png", alt: "Samsung Logo", width: 150,heigth : 130 }
+   
+    
+    { src: "/oem2.png", alt: "Eastman", width: 160,heigth : 100 },
+     
+    { src: "/recycler2.png", alt: "Samsung Logo", width: 150,heigth : 130 },
+    { src: "/oem4.jpg", alt: "Inverted", width: 100,heigth : 100 },
   ];
 
   return (

@@ -15,7 +15,7 @@ export default function PartnersHome(): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section className="flex flex-col items-center justify-center pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-8 md:pb-12 lg:pb-16 px-4 sm:px-6 md:px-8 lg:px-8 relative ">
-      <Card className="relative  h-[300px]  md:h-[420px] rounded-2xl bg-[url(/mask-group.png)] bg-cover bg-center border-none overflow-hidden bg-[#054C4E] px-4 md:px-12 w-full">
+      <Card className="relative  h-[300px]  md:h-[400px] rounded-2xl bg-[url(/partnerhome.png)] bg-cover bg-left border-none overflow-hidden bg-[#054C4E] px-4 md:px-12 w-full">
         <CardContent className="p-0 h-full relative">
           {/* <div className="absolute top-6 sm:top-8 md:top-10 lg:top-12 left-4 sm:left-6 md:left-8 lg:left-12">
             <Breadcrumb>
@@ -47,7 +47,7 @@ export default function PartnersHome(): JSX.Element {
             </Breadcrumb>
           </div> */}
           
-          <div className="flex flex-col items-start gap-4 md:gap-4  absolute top-10 sm:top-14 md:top-20 lg:top-20 left-4 sm:left-6 md:left-8 lg:left-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 mt-3">
+          <div className="flex flex-col items-start gap-4 md:gap-4  absolute top-10 sm:top-14 md:top-16 lg:top-16 left-4 sm:left-6 md:left-8 lg:left-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 mt-3">
             <div className="flex flex-col items-start gap-2 sm:gap-3 md:gap-4 lg:gap-8">
               <h1 className="font-semibold text-white text-3xl sm:text-4xl md:text-5xl  tracking-tight">
                 Scaling growth with Our Partners
