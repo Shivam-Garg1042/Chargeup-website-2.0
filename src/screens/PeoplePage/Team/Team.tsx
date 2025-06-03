@@ -79,6 +79,7 @@ export default function Team() {
             className=" object-contain h-36 md:h-40 lg:h-64  rounded-t-lg w-36 md:w-60 lg:w-60 "
             alt={`${member.name} photo`}
             src={member.image}
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col items-center py-3 px-2 ">
@@ -92,7 +93,7 @@ export default function Team() {
         
         {/* Bio overlay that appears on hover */}
         <div 
-          className={`absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center p-4 transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center p-4 transition-opacity duration-300 ${
             isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >

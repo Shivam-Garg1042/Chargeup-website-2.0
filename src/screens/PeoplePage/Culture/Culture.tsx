@@ -63,6 +63,7 @@ export const CultureAtChargeUp = (): JSX.Element => {
                 src={galleryImages[0].src} 
                 alt={galleryImages[0].alt}
                 className={galleryImages[0].className}
+                loading="lazy"
               />
               <div className="flex flex-row gap-[20px] w-full">
                 <div className="w-1/2">
