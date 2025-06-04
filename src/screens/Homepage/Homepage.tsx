@@ -74,10 +74,10 @@ export const Homepage = (): JSX.Element => {
       </>
     }>
     </Route>
-    <Route path="/privacy-policy" element={<PrivacyPolicyContent />} />
-    <Route path="/refund-policy" element={<RefundCancellationContent />} />
-  <Route path="/terms-and-conditions" element={<TermsConditionsContent />} />
-  <Route path="/corporate-governance" element={<CorporateGovernanceContent />} />
+    <Route path="/privacy-policy" element={<section id="privacy-policy"><PrivacyPolicyContent /></section>} />
+    <Route path="/refund-policy" element={<section id="refund-policy"><RefundCancellationContent /></section>} />
+  <Route path="/terms-and-conditions" element={<section id="terms-and-conditions"><TermsConditionsContent /></section>} />
+  <Route path="/corporate-governance" element={<section id="corporate-governance"><CorporateGovernanceContent /></section>} />
     <Route path = "/solutions" element={
       <>
       <section id="solutions">
