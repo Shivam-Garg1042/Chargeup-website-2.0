@@ -21,10 +21,10 @@ export const Metrics = (): JSX.Element => {
   const metricCards = [
     {
       key: "co2",
-      value: "1",
-      suffix: " Lac+",
+      value: "13821",
+      suffix: " Tn",
       description: "CO₂ emission saved",
-      targetValue: 1,
+      targetValue: 13821,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
           <Leaf size={44} className="text-white" />
@@ -33,10 +33,10 @@ export const Metrics = (): JSX.Element => {
     },
     {
       key: "kms",
-      value: "8",
-      suffix: "K+",
+      value: "10",
+      suffix: "Cr",
       description: "KMs run",
-      targetValue: 8,
+      targetValue: 10,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
           <Route size={44} className="text-white" />
@@ -45,10 +45,10 @@ export const Metrics = (): JSX.Element => {
     },
     {
       key: "income",
-      value: "7.8",
-      suffix: "K+",
+      value: "119",
+      suffix: "Cr",
       description: "Driver income generated",
-      targetValue: 7.8,
+      targetValue: 119,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
           <Banknote size={44} className="text-white" />
