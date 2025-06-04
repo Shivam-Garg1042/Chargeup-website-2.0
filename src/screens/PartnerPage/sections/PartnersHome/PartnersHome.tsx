@@ -50,7 +50,7 @@ export default function PartnersHome(): JSX.Element {
           <div className="flex flex-col items-start gap-4 md:gap-4  absolute top-10 sm:top-14 md:top-16 lg:top-16 left-4 sm:left-6 md:left-8 lg:left-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 mt-3">
             <div className="flex flex-col items-start gap-2 sm:gap-3 md:gap-4 lg:gap-8">
               <h1 className="font-semibold text-white text-3xl sm:text-4xl md:text-5xl  tracking-tight">
-                Scaling growth with Our Partners
+                Scaling growth with our partners
               </h1>
               <p className="font-normal text-[#fcfcfc] text-sm sm:text-base md:text-xl  max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl">
                 Our impact goes beyond drivers — enabling growth for NBFCs, OEMs, and dealers who power the ecosystem with us.

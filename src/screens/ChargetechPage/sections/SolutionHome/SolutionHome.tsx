@@ -24,7 +24,7 @@ export const SolutionHome = (): JSX.Element => {
                 Fi Ne Tech Platform 
               </h1> */}
               <p className="w-full md:w-2/3 text-lg lg:px-[24px] sm:text-base md:text-2xl font-normal text-[#ffffff] leading-relaxed mt-6 md:mt-4">
-                Offering Financial services and Asset management Integrated with NBFCs, OEMs & dealers.
+                Offering Financial services and Asset management integrated with NBFCs, OEMs & dealers.
               </p>
             </div>
             <div className="flex items-start pt-4 md:pt-6 lg:px-[24px]">

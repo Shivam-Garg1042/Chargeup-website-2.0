@@ -5,6 +5,7 @@ import { useState } from "react";
 import { MapPin,Phone ,Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
 export const DivWrapper = (): JSX.Element => {
   
   // Navigation links data
@@ -23,10 +24,10 @@ export const DivWrapper = (): JSX.Element => {
 
   // Footer links data
   const footerLinks = [
-    { title: "Privacy Policy", id: "https://echargeup.com/privacy-policy/" },
-    { title: "Refund & Cancellation Policy", id: "https://echargeup.com/refund-and-cancellation-policy/" },
-    { title: "Terms & Conditions", id: "https://echargeup.com/terms_and_conditions/" },
-    { title : "Corporate Governance", id: "https://echargeup.com/corporate-governance/" },
+    { title: "Privacy Policy", id: "/privacy-policy" },
+    { title: "Refund & Cancellation Policy", id: "/refund-policy" },
+  { title: "Terms & Conditions", id: "/terms-and-conditions" },
+  { title: "Corporate Governance", id: "/corporate-governance" },
     
   ];
 
@@ -138,14 +139,14 @@ export const DivWrapper = (): JSX.Element => {
 
           <div className="flex flex-wrap gap-4 md:gap-8">
             {footerLinks.map((link) => (
-              <a
+              <Link
                 key={link.id}
-                href={`${link.id}`}
+                to={`${link.id}`}
                 target="_blank"
                 className="text-gray-800 hover:text-gray-900"
               >
                 {link.title}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

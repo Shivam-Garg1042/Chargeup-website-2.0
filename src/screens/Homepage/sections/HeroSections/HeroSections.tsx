@@ -34,7 +34,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 " />
 
       <div className="container mx-auto px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[70vh]">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[75vh]">
           {/* Left Content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="space-y-6">
@@ -57,10 +57,10 @@ export default function HeroSection() {
                 </span> */}
               </h1>
               
-              <p className="text-xl md:text-2xl text-gray-50 leading-relaxed max-w-2xl">
-                Offering     
+              <p className="text-xl md:text-2xl text-gray-50 leading-relaxed max-w-xl">
+                Offering        
                 <span className="text-[#f1ee8e] font-semibold"> Financial services and Asset management </span>, 
-                Integrated with NBFCs, OEMs & dealers
+                integrated with NBFCs, OEMs and dealers, to offer a single stop solution.
               </p>
             </div>
 
