@@ -26,9 +26,8 @@ export const DivWrapper = (): JSX.Element => {
   const footerLinks = [
     { title: "Privacy Policy", id: "/privacy-policy" },
     { title: "Refund & Cancellation Policy", id: "/refund-policy" },
-  { title: "Terms & Conditions", id: "/terms-and-conditions" },
-  { title: "Corporate Governance", id: "/corporate-governance" },
-    
+    { title: "Terms & Conditions", id: "/terms-and-conditions" },
+    { title: "Corporate Governance", id: "/corporate-governance" },
   ];
 
   // Social media links data
@@ -119,6 +118,7 @@ export const DivWrapper = (): JSX.Element => {
                   key={social.id} 
                   href={`${social.id}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-200 "
                 >
                   <img className="w-8 h-8" alt={social.alt} src={social.icon} />
@@ -141,8 +141,7 @@ export const DivWrapper = (): JSX.Element => {
             {footerLinks.map((link) => (
               <Link
                 key={link.id}
-                to={`${link.id}`}
-                target="_blank"
+                to={link.id}
                 className="text-gray-800 hover:text-gray-900"
               >
                 {link.title}
