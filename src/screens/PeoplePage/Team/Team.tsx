@@ -8,14 +8,14 @@ export default function Team() {
       name: "Varun Goenka", 
       position: "Chief Executive Officer", 
       image: "/5.png",
-      bio: "Oversees the business strategy, execution and vision for the organization",
+      bio: "Core expertise in Product, Strategy,Growth & Partnerships ",
       linkedin: "https://linkedin.com/in/username1"
     },
     { 
       name: "Satish Mittal", 
       position: "Chief Digital Officer", 
       image: "/1.png",
-      bio: "Passionate professional with over 10 years of experience in the industry.",
+      bio: "Core expertise in Data, Tech platform & Customer experience.",
       linkedin: "https://linkedin.com/in/username2"
     },
     // { 
@@ -29,14 +29,14 @@ export default function Team() {
       name: "Swati Mudgal", 
       position: "Chief Human Resource Officer", 
       image: "/2.png",
-      bio: "Results-driven professional with a background in both technical and managerial roles.",
+      bio: "Core expertise in People Management, Leadership Empowerment & employ engagement.",
       linkedin: "https://linkedin.com/in/username4"
     },
     { 
       name: "Anmol Chouksey", 
       position: "Chief of Staff", 
       image: "/3.png",
-      bio: "Former industry leader with expertise in digital transformation.",
+      bio: "Core expertise in Digital Business Transformation, Stratergy & Marketing.",
       linkedin: "https://linkedin.com/in/username5"
     },
     // { 
@@ -121,8 +121,8 @@ export default function Team() {
     <section className="flex flex-col items-center justify-center py-12 w-full bg-gray-50">
       <div className="flex flex-col items-center w-full max-w-7xl px-2 md:px-1 md:mb-7">
         <header className="mb-10">
-          <h2 className="font-medium text-gray-900 text-2xl md:text-3xl text-center leading-tight max-w-[400px] md:mb-4">
-            The Charge(d)up team
+          <h2 className="font-medium text-gray-900 text-2xl md:text-5xl text-center leading-tight max-w-[600px] md:mb-4">
+            The <span className = "text-[#0D8948] font-bold">Charge(d)up</span> Team
           </h2>
           
         </header>

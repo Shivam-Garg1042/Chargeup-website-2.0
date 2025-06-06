@@ -242,7 +242,7 @@ export const Challenges = () => {
             </div>
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-5">
             {challengesData.map((challenge, index) => (
               <div
                 key={index}
@@ -279,7 +279,7 @@ export const Challenges = () => {
             </div>
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-5">
             {solutionsData.map((solution, index) => (
               <div
                 key={index}

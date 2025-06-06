@@ -86,7 +86,7 @@ export default function NewsPage() {
 
   return (
     <section id="news-room" className="flex flex-col items-center justify-start px-4 md:px-8 lg:px-[134px] pb-16 md:pb-20 w-full bg-[#bec9b8]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-14 w-full mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-16 w-full mb-12">
         {currentArticles.map((article) => (
           <div key={article.id} className="flex flex-col sm:flex-row items-start gap-4 md:gap-6 lg:gap-8">
             {/* Image Container */}

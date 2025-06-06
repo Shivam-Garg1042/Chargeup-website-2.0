@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 
 export const Pillars = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -7,35 +7,55 @@ export const Pillars = () => {
   const pillars = [
     {
       id: "01",
-      title: "Platform Objective",
-      description: "Seamless EV battery leasing, acquisition, financing, and more—powered by an IoT + AI-first platform built for speed and scale.",
+      title: "Asset Management",
+      description: "Tech enabled predictive maintenance enabling zero downtime and quick service.",
       icon: "🚀",
       color: "#0F9547",
-      imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
+      imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      points: [
+        "365 days running assurance",
+        "Predictive failures in advance", 
+        "Controlling warranty violation"
+      ]
     },
     {
       id: "02", 
-      title: "Mobile-First Design",
-      description: "Native apps for drivers, dealers, and teams—fully integrated with ERP/CRM systems for smooth operations and control on the go.",
+      title: "Default Management",
+      description: "Securing EV underwriting with default prediction and real-time asset control on fingertips.",
       icon: "📱",
       color: "#0C7D49",
-      imageUrl: "https://images.unsplash.com/photo-1512941675424-b1c1e1dd2c45?w=400&h=300&fit=crop"
+      imageUrl: "https://images.unsplash.com/photo-1512941675424-b1c1e1dd2c45?w=400&h=300&fit=crop",
+      points: [
+        "Predicting payment failure",
+        "Remote tracking and mobilization",
+        "Driver profiling based on driving behavior"
+      ]
     },
     {
       id: "03",
-      title: "Smart Battery Features", 
-      description: "Real-time location, health, and performance insights—thanks to batteries equipped with Intellicar + MMI-powered IoT.",
+      title: "Digital underwriting beyond credit score ", 
+      description: "Enabling access to credits with no or low credit score.",
       icon: "🔋",
       color: "#0A704A",
-      imageUrl: "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=400&h=300&fit=crop"
+      imageUrl: "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=400&h=300&fit=crop",
+      points: [
+        "Generating qualified leads",
+        "Assessment based on digital footprint",
+        "Alternative credit scoring methods"
+      ]
     },
     {
       id: "04",
-      title: "ML-Powered Intelligence",
+      title: "Increased asset life and performance",
       description: "From predicting battery lifespan to credit risk scoring—we use machine learning to drive smarter decisions.",
       icon: "🧠",
       color: "#07584D",
-      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop"
+      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
+      points: [
+        "Predicting battery lifespan",
+        "Credit risk scoring",
+        "Driver profiling based on driving behavior"
+      ]
     }
   ];
 
@@ -54,7 +74,7 @@ export const Pillars = () => {
         {/* Mobile Header - Only visible on mobile */}
         <div className="lg:hidden px-4 mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Our Technology Pillars</h2>
-          <p className="text-gray-600 text-center">Discover the core technologies that power our platform</p>
+          {/* <p className="text-gray-600 text-center">Discover the core technologies that power our platform</p> */}
         </div>
 
         {/* Left Side - Large Creative Circles - Mobile: Horizontal scroll, Desktop: Vertical */}
@@ -113,7 +133,7 @@ export const Pillars = () => {
           </div>
 
           {/* Desktop: Animated background patterns */}
-          <div className="absolute inset-0 overflow-hidden hidden lg:block">
+          <div className="absolute inset-0 overflow-hidden hidden lg:block ">
             {/* Floating geometric shapes */}
             <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-[#0F9547]/10 to-[#0C7D49]/10 rounded-2xl rotate-45 animate-pulse"></div>
             <div className="absolute top-40 left-20 w-16 h-16 bg-gradient-to-br from-[#0C7D49]/10 to-[#0A704A]/10 rounded-full animate-bounce" style={{ animationDuration: '3s' }}></div>
@@ -143,7 +163,7 @@ export const Pillars = () => {
                   key={pillar.id}
                   className="absolute transition-all duration-700 ease-in-out cursor-pointer"
                   style={{
-                    left: `${x + 110}px`, // Center + offset
+                    left: `${x + 150}px`, // Center + offset
                     top: `${y + 180}px`, // Center + offset
                     transform: `translate(-50%, -50%) scale(${scale})`,
                     opacity,
@@ -234,7 +254,7 @@ export const Pillars = () => {
           </div>
 
           {/* Desktop: Vertical progress visualization */}
-          <div className="absolute left-12 top-32 bottom-32 w-2 rounded-full overflow-hidden hidden lg:block">
+          <div className="absolute left-24 top-32 bottom-32 w-2 rounded-full overflow-hidden hidden lg:block">
             <div className="w-full h-full bg-gradient-to-b from-[#0F9547]/20 via-[#0C7D49]/20 to-[#07584D]/20"></div>
             <div 
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-[#0F9547] via-[#0C7D49] to-[#07584D] rounded-full transition-all duration-700"
@@ -250,19 +270,19 @@ export const Pillars = () => {
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#07584D]/10 to-transparent rounded-tr-full hidden lg:block"></div>
         </div>
 
-        {/* Right Side - Content Card */}
-        <div className="flex-1 px-4 md:px-8 lg:px-16 flex items-center">
-          <div className="max-w-4xl w-full">
-            {/* Content Card */}
+        {/* Right Side - Fixed Size Content Box */}
+        <div className="flex-1 px-4 md:px-8 lg:px-16 flex items-center justify-center">
+          <div className="w-full max-w-4xl">
+            {/* Fixed Size Content Card */}
             <div 
-              className="bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 ease-in-out transform"
+              className="bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 ease-in-out transform w-full h-[480px]"
               style={{ 
                 boxShadow: `0 25px 50px -12px ${pillars[activeIndex].color}20, 0 0 0 1px ${pillars[activeIndex].color}10`
               }}
             >
-              <div className="grid lg:grid-cols-2 gap-0">
-                {/* Image Section */}
-                <div className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 h-48 md:h-64 lg:h-80">
+              <div className="grid lg:grid-cols-2 gap-0 h-full">
+                {/* Image Section - Fixed Height */}
+                <div className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 h-full">
                   <img 
                     src={pillars[activeIndex].imageUrl}
                     alt={pillars[activeIndex].title}
@@ -283,73 +303,32 @@ export const Pillars = () => {
                   </div>
                 </div>
 
-                {/* Text Content Section */}
-                <div className="p-6 md:p-8 lg:p-12 flex flex-col justify-center">
-                  {/* Category Badge */}
-                  <div className="mb-4">
-                    <span 
-                      className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold text-white"
-                      style={{ backgroundColor: pillars[activeIndex].color }}
-                    >
-                      <span className="mr-2">{pillars[activeIndex].icon}</span>
-                      Technology Pillar
-                    </span>
-                  </div>
-
+                {/* Text Content Section - Fixed Height with Scroll */}
+                <div className="p-6 md:p-8 lg:p-10 flex flex-col  h-full overflow-y-auto">
                   {/* Title */}
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-gray-900 leading-tight">
+                  <h3 className="text-xl md:text-2xl lg:text-4xl font-bold mb-3 md:mb-6 text-gray-900 leading-tight">
                     {pillars[activeIndex].title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8">
+                  <p className="text-sm md:text-xl text-gray-600 leading-relaxed mb-4 md:mb-8">
                     {pillars[activeIndex].description}
                   </p>
 
-                  {/* Feature highlights */}
-                  <div className="space-y-2 md:space-y-3 mb-6 md:mb-8">
-                    <div className="flex items-center space-x-3">
-                      <div 
-                        className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
-                      >
-                        <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
+                  {/* Feature highlights - Dynamic points from data */}
+                  <div className="space-y-2 md:space-y-4">
+                    {pillars[activeIndex].points.map((point, index) => (
+                      <div key={index} className="flex items-center space-x-4">
+                        <div 
+                          className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center flex-shrink-0"
+                          style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
+                        >
+                          <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
+                        </div>
+                        <span className="text-sm md:text-lg text-gray-700 font-medium">{point}</span>
                       </div>
-                      <span className="text-sm md:text-base text-gray-700 font-medium">Enterprise-grade security</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div 
-                        className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
-                      >
-                        <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
-                      </div>
-                      <span className="text-sm md:text-base text-gray-700 font-medium">Real-time analytics</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div 
-                        className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
-                      >
-                        <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
-                      </div>
-                      <span className="text-sm md:text-base text-gray-700 font-medium">Scalable infrastructure</span>
-                    </div>
+                    ))}
                   </div>
-
-                  {/* CTA Button */}
-                  <button 
-                    className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl text-white font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105 hover:shadow-xl text-sm md:text-base w-full sm:w-auto"
-                    style={{ 
-                      backgroundColor: pillars[activeIndex].color,
-                      boxShadow: `0 10px 25px ${pillars[activeIndex].color}30`
-                    }}
-                  >
-                    Learn More
-                    <svg className="ml-2 w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
                 </div>
               </div>
             </div>

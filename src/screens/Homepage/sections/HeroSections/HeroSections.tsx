@@ -60,7 +60,7 @@ export default function HeroSection() {
               <p className="text-xl md:text-2xl text-gray-50 leading-relaxed max-w-xl">
                 Offering        
                 <span className="text-[#f1ee8e] font-semibold"> Financial services and Asset management </span>, 
-                integrated with NBFCs, OEMs and dealers, to offer a single stop solution.
+                integrated with NBFCs, OEMs and dealers to offer a one stop solution.
               </p>
             </div>
 

@@ -51,8 +51,8 @@ export const CultureAtChargeUp = (): JSX.Element => {
       <section className="flex flex-col w-full items-start px-6 lg:px-[120px] py-[40px] lg:py-[100px] relative bg-[#041620]">
         <div className="flex flex-col w-full items-center gap-[40px] md:gap-[80px]">
           <div className="flex flex-col w-full items-center">
-            <h2 className="font-['Raleway',Helvetica] font-medium text-white text-[40px] md:text-[49px] text-center tracking-[-1px] leading-[60px] md:leading-[70px] md:mt-10">
-              How we roll
+            <h2 className="font-['Raleway',Helvetica] font-normal text-white text-[40px] md:text-[60px] text-center tracking-[-1px] leading-[60px] md:leading-[70px] md:mt-10">
+              Life @ <span className = "text-[#0D8948] font-bold">Chargeup</span>
             </h2>
           </div>
 

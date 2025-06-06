@@ -74,12 +74,12 @@ export const OurPartners = (): JSX.Element => {
 
   // Render dealer stats component
   const DealerStats = () => (
-    <div className="flex flex-col items-center justify-center w-full bg-gradient-to-r from-[#07584D] to-[#0a6b5c] rounded-2xl p-8 md:p-12 text-white shadow-lg">
+    <div className="flex flex-col items-center justify-center w-full bg-gradient-to-r from-[#07584D] to-[#0a6b5c] rounded-2xl p-8 md:p-8 text-white shadow-lg mt-10">
       <div className="text-center space-y-4">
-        <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+        <h3 className="text-2xl md:text-4xl font-bold tracking-tight">
           Authorized Dealer Presence
         </h3>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mt-6">
+        <div className="flex flex-row items-center justify-center gap-8 md:gap-16 mt-6">
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-white mb-2">
               100+
@@ -88,13 +88,14 @@ export const OurPartners = (): JSX.Element => {
               Dealers
             </div>
           </div>
+          
           <div className="hidden md:block w-px h-16 bg-green-200"></div>
           <div className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-white mb-2">
               180+
             </div>
             <div className="text-lg md:text-xl text-green-100">
-              Pincodes
+              Pincodes served
             </div>
           </div>
         </div>

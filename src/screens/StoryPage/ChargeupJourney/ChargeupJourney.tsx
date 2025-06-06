@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Battery, Users, DollarSign, Building, TrendingUp, Play, Pause, Zap } from 'lucide-react';
+import { Battery, Users, DollarSign, Building, TrendingUp, Play, Pause, Zap ,Handshake} from 'lucide-react';
 
 export default function ChargeUpTimeline() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,17 +38,17 @@ export default function ChargeUpTimeline() {
     },
     {
       year: "2024",
-      title: "Partnership with NBFC  ",
+      title: "First NBFC Partnership  ",
       description: "Unlocking financing access for thousands of drivers",
       highlight: "1st",
-      icon: Building,
+      icon: Handshake,
       value: "04",
       color: "#0d9488",
       gradient: "from-teal-600 to-teal-800"
     },
     {
       year: "2024",
-      title: "Profitable  EBITDA level",
+      title: "EBITDA Profitable ",
       description: "Scaled sustainably while deepening market presence",
       highlight: "7,000",
       icon: TrendingUp,

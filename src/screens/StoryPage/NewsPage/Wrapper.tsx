@@ -11,8 +11,8 @@ export default function Wrapper() {
           src="/rectangle-4146.svg"
         />
 
-        <div className="w-full px-6 md:px-[150px] flex flex-col justify-center pb-12">
-          <div className="max-w-4xl flex flex-col gap-5">
+        <div className="w-full px-6 md:px-[150px] flex flex-col justify-center pb-16">
+          <div className="max-w-4xl flex flex-col gap-5 text-right">
             <h2 className="font-bold text-4xl md:text-[50px] text-x-900 tracking-tight leading-tight md:leading-[80px]">
               Chargeup in the News
             </h2>

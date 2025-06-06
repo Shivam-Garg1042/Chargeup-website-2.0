@@ -21,10 +21,10 @@ export const Metrics = () => {
   const metricCards = [
     {
       key: "co2",
-      value: "13821",
-      suffix: " Tn",
+      value: "13.8",
+      suffix: " Mn Kg",
       description: "CO₂ emission saved",
-      targetValue: 13821,
+      targetValue: 13.8,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
           <Leaf size={44} className="text-white" />
@@ -143,9 +143,9 @@ export const Metrics = () => {
 
   return (
     <section id="metrics-section" className="relative w-full bg-white overflow-hidden ">
-      <div className="flex flex-col items-center w-full">
+      <div className="flex flex-col items-center w-full ">
         {/* Background with image */}
-        <div className="relative w-full py-16 sm:py-20 md:py-28 lg:py-32 lg:h-[420px]">
+        <div className="relative w-full py-16 sm:py-20 md:py-28 lg:py-32 lg:h-[420px] ">
           {/* Background image layer */}
           <div 
             className="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat"
@@ -205,11 +205,11 @@ export const Metrics = () => {
                 }}
               >
                 <CardContent className="flex flex-col items-center justify-center p-4 pt-8 gap-2">
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center gap-2">
                     <span className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-center tracking-[-0.5px] sm:tracking-[-0.8px] lg:tracking-[-1.2px] leading-[1.2] font-medium text-gray-950">
                       {isVisible ? formatCount(card.key, counts[card.key]) : "0"}
                     </span>
-                    <span className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-center tracking-[-0.5px] sm:tracking-[-0.8px] lg:tracking-[-1.2px] leading-[1.2] font-medium text-gray-600">
+                    <span className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-center tracking-[-0.5px] sm:tracking-[-0.8px] lg:tracking-[-1.2px] leading-[1.2] font-medium text-gray-950">
                       {card.suffix}
                     </span>
                   </div>
@@ -227,7 +227,7 @@ export const Metrics = () => {
         </div>
 
         {/* Heading moved below the cards */}
-        <div className="flex flex-col items-center px-4 mt-2 mb-4">
+        <div className="flex flex-col items-center px-4 mt-2 mb-1 md:mb-4">
           <h2 className="font-medium text-gray-900 text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] px-4 sm:px-8 md:px-12">
             Creating impact with every ride 
           </h2>

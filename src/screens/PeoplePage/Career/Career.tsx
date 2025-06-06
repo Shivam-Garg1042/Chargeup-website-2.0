@@ -95,7 +95,7 @@ export default function OpenPositions(){
 
   const departments = {
     sales: {
-      title: "Operations - Sales",
+      title: "Sales & Operations ",
       roles: [
         {
           id: 'field-exec-sales',
@@ -246,7 +246,7 @@ export default function OpenPositions(){
   return (
     <section id="careers" className="min-h-screen  py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl  text-center mb-16">Open Positions</h1>
+        <h1 className="text-6xl font-normal text-center mb-16"><span className = "text-[#0D8948] font-bold">Open</span> Positions</h1>
         
         <div className="flex flex-col md:flex-row gap-8 ">
           {/* Left sidebar with departments and roles */}

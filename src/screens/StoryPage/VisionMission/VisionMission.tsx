@@ -12,7 +12,7 @@ export default function VisionMission() {
         title: "Empowering Tomorrow's Drivers",
         description:
           "To become the largest driver platform, empowering millions of last-mile drivers with easy EV ownership and higher earnings making them financially independent.",
-        image: "/vission2.png",
+        image: "/driver2.png",
         alt: "Vision - Empowering drivers with sustainable transportation",
         gradient: "from-[#0F9547] to-[#0C7D49]",
         accentColor: "#0F9547"
@@ -92,7 +92,7 @@ export default function VisionMission() {
               </h2>
               
               {/* Description with better typography */}
-              <p className="font-normal text-gray-700 text-lg md:text-xl lg:text-2xl leading-relaxed">
+              <p className="  font-normal text-gray-700 text-lg md:text-xl lg:text-2xl leading-relaxed md:mr-14">
                 {activeContent?.description}
               </p>
               

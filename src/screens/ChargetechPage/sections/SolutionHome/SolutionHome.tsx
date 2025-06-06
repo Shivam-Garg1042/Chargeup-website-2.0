@@ -16,14 +16,14 @@ export const SolutionHome = (): JSX.Element => {
         <CardContent className="flex flex-col items-start p-10 sm:p-8 md:p-12 lg:py-24 lg:px-24">
           <div className="flex flex-col items-start gap-6 md:gap-8 w-full">
             <div className="flex flex-col items-start gap-1">
-              <p className="md:w-2/3 text-base lg:px-[24px] sm:text-base md:text-xl font-normal text-[#fcfcfc] leading-relaxed font-['Plus_Jakarta_Sans',Helvetica]">
-                A single stop solution,
+              <p className="md:w-2/3 text-base lg:px-[24px] font-semibold sm:text-base md:text-5xl  text-[#fcfcfc] leading-relaxed font-['Plus_Jakarta_Sans',Helvetica]">
+                A one stop solution
 
               </p>
               {/* <h1 className="md:w-full text-3xl lg:px-[24px] md:text-4xl xl:text-[44px] font-semibold text-white tracking-tight font-['Plus_Jakarta_Sans',Helvetica] mb-4">
                 Fi Ne Tech Platform 
               </h1> */}
-              <p className="w-full md:w-2/3 text-lg lg:px-[24px] sm:text-base md:text-2xl font-normal text-[#ffffff] leading-relaxed mt-6 md:mt-4">
+              <p className="w-full md:w-2/3 text-lg lg:px-[24px] sm:text-base md:text-xl font-normal text-[#ffffff] leading-relaxed mt-6 md:mt-6">
                 Offering Financial services and Asset management integrated with NBFCs, OEMs & dealers.
               </p>
             </div>
