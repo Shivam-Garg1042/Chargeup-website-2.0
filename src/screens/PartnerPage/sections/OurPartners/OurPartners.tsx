@@ -15,8 +15,7 @@ export const OurPartners = (): JSX.Element => {
     },
     { id: 2, name: "OEMs", description: "Enjoys uptime assurance with Chargeup" },
     { id: 3, name: "Dealers", description: "Enjoys accelerated growth with Chargeup" },
-    // { id: 4, name: "Insurers", description: "Enjoys accelerated growth with Chargeup" },
-    // { id: 5, name: "Recyclers", description: "Enjoys accelerated growth with Chargeup" },
+    
   ];
 
   // Partner logos data - organized by category
@@ -35,10 +34,10 @@ export const OurPartners = (): JSX.Element => {
       { id: 4, type: "image", imgUrl: "oem4.jpg" },
     ],
     "Dealers": [
-      { id: 1, type: "image", imgUrl: "/recycler1.png"},
-      { id: 2, type: "image", imgUrl: "/recycler2.png" },
-      { id: 3, type: "image", imgUrl: "/insurer1.png" },
-      { id: 4, type: "image", imgUrl: "/insurer2.png" },
+      // { id: 1, type: "image", imgUrl: "/recycler1.png"},
+      // { id: 2, type: "image", imgUrl: "/recycler2.png" },
+      // { id: 3, type: "image", imgUrl: "/insurer1.png" },
+      // { id: 4, type: "image", imgUrl: "/insurer2.png" },
       // { id: 5, type: "image", imgUrl: "/investor1.png" },
       
     ]
@@ -72,6 +71,36 @@ export const OurPartners = (): JSX.Element => {
       </div>
     );
   };
+
+  // Render dealer stats component
+  const DealerStats = () => (
+    <div className="flex flex-col items-center justify-center w-full bg-gradient-to-r from-[#07584D] to-[#0a6b5c] rounded-2xl p-8 md:p-12 text-white shadow-lg">
+      <div className="text-center space-y-4">
+        <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+          Authorized Dealer Presence
+        </h3>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mt-6">
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              100+
+            </div>
+            <div className="text-lg md:text-xl text-green-100">
+              Dealers
+            </div>
+          </div>
+          <div className="hidden md:block w-px h-16 bg-green-200"></div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              180+
+            </div>
+            <div className="text-lg md:text-xl text-green-100">
+              Pincodes
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
 
   return (
@@ -116,15 +145,32 @@ export const OurPartners = (): JSX.Element => {
 
           {/* Right Side - Partner Logos Grid */}
           <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-20 flex-1">
-            {logosByCategory[activeCategory].map((logo) => (
-              <div key={logo.id} className="flex items-center justify-center">
-                {logo.type === "inverted" ? (
-                  <InvertedLogo />
-                ) : (
-                  <LogoImage imgUrl={logo.imgUrl} />
-                )}
+            {activeCategory === "Dealers" ? (
+              <div className="w-full flex flex-col gap-8">
+                <DealerStats />
+                <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-20">
+                  {logosByCategory[activeCategory].map((logo) => (
+                    <div key={logo.id} className="flex items-center justify-center">
+                      {logo.type === "inverted" ? (
+                        <InvertedLogo />
+                      ) : (
+                        <LogoImage imgUrl={logo.imgUrl} />
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
+            ) : (
+              logosByCategory[activeCategory].map((logo) => (
+                <div key={logo.id} className="flex items-center justify-center">
+                  {logo.type === "inverted" ? (
+                    <InvertedLogo />
+                  ) : (
+                    <LogoImage imgUrl={logo.imgUrl} />
+                  )}
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

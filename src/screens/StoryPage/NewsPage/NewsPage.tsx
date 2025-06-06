@@ -22,14 +22,7 @@ const articlesData = [
     description: "Chargeup to onboard 25,000 drivers and expand battery stations across 17 cities...",
     link : "https://energy.economictimes.indiatimes.com/news/power/chargeup-to-onboard-25000-drivers-across-17-indian-cities-by-2025/109556468#:~:text=1%20min%20read-,Chargeup%20to%20onboard%2025%2C000%20drivers%20across%2017%20Indian%20cities%20by,like%20Haryana%20and%20Uttar%20Pradesh."
   },
-  {
-    id: 6,
-    date: "23 Jan, 2025",
-    title: "Chargeup teams up with Mega Corp, Shivakari Finance to unlock Rs 50 Cr in EV financing",
-    description: "The company aims to disburse the credit line to support the deployment of 4,000 commercial EVs over their next 12 months in the country.",
-    imageUrl: "/news6.png",
-    link: "https://yourstory.com/2025/05/chargeup-partners-mega-corp-shivakari-finance-50-crore-ev-financing"
-  },
+  
   {
     id: 4,
     title: "Chargeup finalist at Aegis Graham Bell Awards",
@@ -41,20 +34,27 @@ const articlesData = [
   {
     id: 5,
     date: "23 Jan, 2025",
-    title: "Chargeup partners with Credit Fair and Ascend Capital for E3W financing",
-    description: "The company aims to facilitate Rs 100 crore as quick and secured loans in FY25, the press release noted",
-    imageUrl: "/news6.png",
-    link: "https://www.autocarpro.in/news/chargeup-partners-with-credit-fair-and-ascend-capital-for-e3w-financing-119277"
+    title: "Charging up electric mobility for the gig economy: How Chargeup is writing its business playbook",
+    description: "Co-founded by a former META and Vodafone executive, Chargeup is looking to ease EV transition by partnering with OEMs and providing gig workers with tailored leasing and financing solutions.",
+    imageUrl: "/news7.png",
+    link: "https://yourstory.com/2025/06/charging-electric-mobility-gig-economy-chargeup-business-playbook"
   },
-  
   {
-    id: 7,
+    id: 6,
     date: "23 Jan, 2025",
-    title: "Chargeup Joins Forces with Mega Corporation and Shivakari Finance to Unlock INR 50 Cr in EV Financing",
-    description: "The collaboration aims to unlock a credit line of INR 50 crore and deploy 4,000 commercial EVs over the next year, primarily benefitting underserved last-mile drivers.",
-    imageUrl: "/news5.png",
-    link: "https://www.entrepreneur.com/en-in/news-and-trends/chargeup-joins-forces-with-mega-corporation-and-shivakari/492329"
+    title: "Chargeup teams up with Mega Corp, Shivakari Finance to unlock Rs 50 Cr in EV financing",
+    description: "The company aims to disburse the credit line to support the deployment of 4,000 commercial EVs over their next 12 months in the country.",
+    imageUrl: "/news8.png",
+    link: "https://yourstory.com/2025/05/chargeup-partners-mega-corp-shivakari-finance-50-crore-ev-financing"
   },
+  // {
+  //   id: 7,
+  //   date: "23 Jan, 2025",
+  //   title: "Chargeup Joins Forces with Mega Corporation and Shivakari Finance to Unlock INR 50 Cr in EV Financing",
+  //   description: "The collaboration aims to unlock a credit line of INR 50 crore and deploy 4,000 commercial EVs over the next year, primarily benefitting underserved last-mile drivers.",
+  //   imageUrl: "/news5.png",
+  //   link: "https://www.entrepreneur.com/en-in/news-and-trends/chargeup-joins-forces-with-mega-corporation-and-shivakari/492329"
+  // },
   
 ];
 

@@ -2,7 +2,7 @@ import { Card, CardContent } from "../../../../components/ui/card";
 import { useState, useEffect } from "react";
 import { Leaf, Route, Banknote, Users } from "lucide-react";
 
-export const Metrics = (): JSX.Element => {
+export const Metrics = () => {
   // Animation states for counting effect
   const [counts, setCounts] = useState({
     co2: 0,
@@ -184,13 +184,6 @@ export const Metrics = (): JSX.Element => {
               </div>
             </div>
           </div>
-
-          {/* Title and subtitle */}
-          <div className="absolute top-[40px] sm:top-[40px] md:top-[60px] lg:top-[100px] left-0 w-full flex flex-col items-center px-4 z-10">
-            {/* <h2 className="font-medium text-white text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] px-4 sm:px-8 md:px-12 drop-shadow-2xl">
-              Creating impact with every ride 
-            </h2> */}
-          </div>
         </div>
 
         {/* Metric cards */}
@@ -203,7 +196,7 @@ export const Metrics = (): JSX.Element => {
               </div>
               
               <Card
-                className={`w-full rounded-[20px] shadow-[1px_16px_16px_#3440541a] bg-background-colorswhite transform transition-all duration-500 hover:shadow-lg ${
+                className={`w-full rounded-[20px] shadow-[1px_16px_16px_#3440541a] bg-white transform transition-all duration-500 hover:shadow-lg ${
                   isVisible ? "opacity-100 translate-y-3" : "opacity-0 translate-y-10"
                 }`}
                 style={{ 
@@ -213,14 +206,14 @@ export const Metrics = (): JSX.Element => {
               >
                 <CardContent className="flex flex-col items-center justify-center p-4 pt-8 gap-2">
                   <div className="flex items-center justify-center">
-                    <span className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-center tracking-[-0.5px] sm:tracking-[-0.8px] lg:tracking-[-1.2px] leading-[1.2] font-['Plus_Jakarta_Sans',Helvetica] font-medium text-text-colors950">
+                    <span className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-center tracking-[-0.5px] sm:tracking-[-0.8px] lg:tracking-[-1.2px] leading-[1.2] font-medium text-gray-950">
                       {isVisible ? formatCount(card.key, counts[card.key]) : "0"}
                     </span>
-                    <span className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-center tracking-[-0.5px] sm:tracking-[-0.8px] lg:tracking-[-1.2px] leading-[1.2] font-['Plus_Jakarta_Sans',Helvetica] font-medium text-black-600">
+                    <span className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-center tracking-[-0.5px] sm:tracking-[-0.8px] lg:tracking-[-1.2px] leading-[1.2] font-medium text-gray-600">
                       {card.suffix}
                     </span>
                   </div>
-                  <div className="font-['Plus_Jakarta_Sans',Helvetica] font-normal text-text-colors500 text-sm sm:text-base md:text-lg lg:text-xl text-center tracking-[0] leading-6 lg:leading-7">
+                  <div className="font-normal text-gray-500 text-sm sm:text-base md:text-lg lg:text-xl text-center tracking-[0] leading-6 lg:leading-7">
                     {card.key === "co2" ? (
                       <>CO<sub>2</sub> emission saved</>
                     ) : (
@@ -232,23 +225,19 @@ export const Metrics = (): JSX.Element => {
             </div>
           ))}
         </div>
+
+        {/* Heading moved below the cards */}
+        <div className="flex flex-col items-center px-4 mt-2 mb-4">
+          <h2 className="font-medium text-gray-900 text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] px-4 sm:px-8 md:px-12">
+            Creating impact with every ride 
+          </h2>
+        </div>
         
         {/* Decorative elements */}
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-emerald-500 rounded-full opacity-50 animate-ping hidden md:block"></div>
         <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-emerald-300 rounded-full opacity-40 animate-ping hidden md:block" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-emerald-400 rounded-full opacity-60 animate-ping hidden md:block" style={{ animationDelay: '1.5s' }}></div>
       </div>
-      
-      {/* Add global styles for animations */}
-      <style jsx global>{`
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 1s ease forwards;
-        }
-      `}</style>
     </section>
   );
 };
