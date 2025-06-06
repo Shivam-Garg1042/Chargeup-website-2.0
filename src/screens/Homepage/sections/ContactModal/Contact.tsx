@@ -29,7 +29,7 @@ const ContactModal = ({ isOpen, onClose }) => {
   // Updated API service functions using fetch instead of axios
   const submitContactForm = async (formData) => {
     // Replace with your actual API URL
-    const API_BASE_URL = 'https://contact-forms-api-624167443867.us-central1.run.app';
+    const API_BASE_URL = 'https://contact-forms-api-624167443867.us-central1.run.app/api';
     
     const response = await fetch(`${API_BASE_URL}/contact`, {
       method: 'POST',
