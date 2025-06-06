@@ -123,13 +123,7 @@ export default function CorporateGovernanceContent() {
               Download
             </button>
             
-            {/* <button
-              onClick={() => handleEmbedPdf(doc)}
-              className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-purple-600 bg-purple-50 border border-purple-200 rounded hover:bg-purple-100 transition-colors"
-            >
-              <FileText className="w-3 h-3 mr-1" />
-              Embed
-            </button> */}
+           
           </div>
         </div>
       </div>
@@ -166,7 +160,7 @@ export default function CorporateGovernanceContent() {
           </section>
         </div>
 
-        {/* Right side - PDF Viewer */}
+        
         
       </div>
 

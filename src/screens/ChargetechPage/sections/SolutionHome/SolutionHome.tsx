@@ -10,7 +10,7 @@ export const SolutionHome = (): JSX.Element => {
     <section className="flex flex-col items-start justify-center p-2 md:p-8 lg:px-8 ">
       <Card className="w-full rounded-lg md:rounded-xl lg:rounded-2xl border-none overflow-hidden relative bg-cover bg-left bg-no-repeat  md:h-[370px]"
             style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0.2, 0, 1, 0.2)), url('/sol_home.png')`
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0.1, 0, 1, 0.2)), url('/solution.png')`
             }}>
         
         <CardContent className="flex flex-col items-start p-10 sm:p-8 md:p-12 lg:py-24 lg:px-24">
@@ -30,7 +30,7 @@ export const SolutionHome = (): JSX.Element => {
             <div className="flex items-start pt-4 md:pt-6 lg:px-[24px]">
               <Button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#0A704A] px-4 py-2 text-[#ffffff]  rounded-md md:rounded-lg text-base md:text-base lg:text-lg font-semibold font-['Plus_Jakarta_Sans',Helvetica] shadow-sm hover:bg-[#033F4F]/90"
+                className="bg-[#ffffff] px-4 py-2 text-grey-100  rounded-md md:rounded-lg text-base md:text-base lg:text-lg font-semibold font-['Plus_Jakarta_Sans',Helvetica] shadow-sm hover:text-white hover:bg-[#033F4F]/90"
               >
                 Partner with us
               </Button>

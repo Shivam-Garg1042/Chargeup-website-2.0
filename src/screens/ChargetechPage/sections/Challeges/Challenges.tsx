@@ -242,7 +242,7 @@ export const Challenges = () => {
             </div>
           </div>
 
-          <div className="grid gap-3">
+          <div className="grid gap-4">
             {challengesData.map((challenge, index) => (
               <div
                 key={index}
@@ -269,9 +269,9 @@ export const Challenges = () => {
         </div>
 
         {/* Solutions Side */}
-        <div className="space-y-4">
+        <div className="space-y-8">
           <div className="text-center">
-            <div className="inline-flex items-center gap-3 mb-6 p-4 bg-[#0F9547]/10 rounded-2xl">
+            <div className="inline-flex items-center gap-3 mb-2 p-4 bg-[#0F9547]/10 rounded-2xl">
               <div className="w-8 h-8 bg-[#0F9547] rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">✓</span>
               </div>
@@ -279,7 +279,7 @@ export const Challenges = () => {
             </div>
           </div>
 
-          <div className="grid gap-3">
+          <div className="grid gap-4">
             {solutionsData.map((solution, index) => (
               <div
                 key={index}

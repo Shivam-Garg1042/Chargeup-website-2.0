@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
-import axios from 'axios';
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const ConfirmationModal = ({ onClose }) => {
@@ -23,16 +22,37 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   const [loading, setLoading] = useState(false);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+  const [error, setError] = useState(null);
 
   if (!isOpen) return null;
+
+  // Updated API service functions using fetch instead of axios
+  const submitContactForm = async (formData) => {
+    // Replace with your actual API URL
+    const API_BASE_URL = 'https://contact-forms-api-624167443867.us-central1.run.app';
+    
+    const response = await fetch(`${API_BASE_URL}/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    return response.json();
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-      await axios.post(`${API_URL}/api/contact`, formData);
+      await submitContactForm(formData);
       setShowConfirmationModal(true);
       setTimeout(() => {
         setFormData({ name: "", contact: "", message: "" });
@@ -41,6 +61,7 @@ const ContactModal = ({ isOpen, onClose }) => {
       }, 3000);
     } catch (error) {
       console.error('Error submitting form:', error);
+      setError('Failed to send message. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -128,8 +149,13 @@ const ContactModal = ({ isOpen, onClose }) => {
               {/* Mobile-only header */}
               <div className="block md:hidden mb-4">
                 <h2 className="text-2xl font-bold text-white mb-2">Contact Us</h2>
-                {/* <p className="text-gray-300">Write to us & we'll get back to you shortly!</p> */}
               </div>
+              
+              {error && (
+                <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded text-red-200 text-sm">
+                  {error}
+                </div>
+              )}
               
               <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
                 <div>
@@ -183,7 +209,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 bg-[#0C7D49] text-gray-50 font-semibold rounded-lg flex items-center justify-center gap-2 hover:bg-[#023350] transition-colors text-base"
+                  className="w-full py-4 bg-[#0C7D49] text-gray-50 font-semibold rounded-lg flex items-center justify-center gap-2 hover:bg-[#023350] transition-colors text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? 'Sending...' : 'Send Message'} 
                   {!loading && <span className="ml-1">→</span>}

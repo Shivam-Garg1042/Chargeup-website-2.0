@@ -49,7 +49,7 @@ export const Pillars = () => {
   }, [pillars.length]);
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-white py-8 md:py-20 px-0 overflow-hidden min-h-screen flex items-center">
+    <section className="bg-gradient-to-br from-[#0F9547]/10 to-[#0C7D49]/10 py-8 md:py-20 px-0 overflow-hidden h-[830px] flex items-center">
       <div className="w-full flex flex-col lg:flex-row">
         {/* Mobile Header - Only visible on mobile */}
         <div className="lg:hidden px-4 mb-8">
@@ -58,7 +58,7 @@ export const Pillars = () => {
         </div>
 
         {/* Left Side - Large Creative Circles - Mobile: Horizontal scroll, Desktop: Vertical */}
-        <div className="relative lg:w-80 w-full lg:h-screen h-32 flex lg:items-center bg-gradient-to-br from-[#0F9547]/5 via-[#0C7D49]/3 to-[#07584D]/5">
+        <div className="relative lg:w-80 w-full lg:h-screen h-32 flex lg:items-center ">
           {/* Mobile: Horizontal scroll circles */}
           <div className="lg:hidden w-full overflow-x-auto px-4">
             <div className="flex space-x-6 pb-4">
@@ -73,7 +73,7 @@ export const Pillars = () => {
                   >
                     {/* Mobile Circle */}
                     <div 
-                      className={`mt-2 w-20 h-20 md:w-20 md:h-20 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold text-white shadow-2xl relative overflow-hidden transition-all duration-500 border-2 border-white/30 ${
+                      className={`mt-2  w-20 h-20 md:w-20 md:h-20 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold text-white shadow-2xl relative overflow-hidden transition-all duration-500 border-2 border-white/30 ${
                         isActive ? 'scale-110' : 'scale-95 opacity-70'
                       }`}
                       style={{ 
@@ -120,10 +120,7 @@ export const Pillars = () => {
             <div className="absolute bottom-32 left-5 w-12 h-12 bg-gradient-to-br from-[#0A704A]/10 to-[#07584D]/10 rounded-lg rotate-12 animate-pulse"></div>
             <div className="absolute bottom-20 left-32 w-8 h-8 bg-gradient-to-br from-[#07584D]/10 to-[#0F9547]/10 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
             
-            {/* Gradient overlay lines */}
-            {/* <div className="absolute top-0 left-16 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0F9547]/20 to-transparent"></div>
-            <div className="absolute top-0 left-32 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0C7D49]/15 to-transparent"></div>
-            <div className="absolute top-0 left-48 w-0.5 h-full bg-gradient-to-b from-transparent via-[#0A704A]/10 to-transparent"></div> */}
+   
           </div>
 
           {/* Desktop: Semi-circle container */}

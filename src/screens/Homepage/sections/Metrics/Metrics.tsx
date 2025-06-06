@@ -155,7 +155,7 @@ export const Metrics = (): JSX.Element => {
           />
           
           {/* Dark overlay for better text readability */}
-          <div className="absolute w-full h-full top-0 left-0 bg-black/60" />
+          <div className="absolute w-full h-full top-0 left-0 bg-black/20" />
           
           {/* Optional: Additional gradient overlay for enhanced visual effect */}
           <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-emerald-900/30 via-emerald-800/40 to-black/70" />
@@ -187,9 +187,9 @@ export const Metrics = (): JSX.Element => {
 
           {/* Title and subtitle */}
           <div className="absolute top-[40px] sm:top-[40px] md:top-[60px] lg:top-[100px] left-0 w-full flex flex-col items-center px-4 z-10">
-            <h2 className="font-medium text-white text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] px-4 sm:px-8 md:px-12 drop-shadow-2xl">
+            {/* <h2 className="font-medium text-white text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] font-['Plus_Jakarta_Sans',Helvetica] px-4 sm:px-8 md:px-12 drop-shadow-2xl">
               Creating impact with every ride 
-            </h2>
+            </h2> */}
           </div>
         </div>
 

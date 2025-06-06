@@ -22,19 +22,19 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="h-[750px] relative overflow-hidden">
+    <section className="h-[650px] relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-left bg-no-repeat object-fill w-[100%] h-[100%] z-0"
         style={{
-          backgroundImage: `url('/hero.png')`,
+          backgroundImage: `url('/hero2.png')`,
         }}
       />
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 " />
 
       <div className="container mx-auto px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[75vh]">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[70vh]">
           {/* Left Content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="space-y-6">
