@@ -11,7 +11,7 @@ export const Pillars = () => {
       description: "Tech enabled predictive maintenance enabling zero downtime and quick service.",
       icon: "🚀",
       color: "#0F9547",
-      imageUrl: "/pillar1.jpg",
+      imageUrl: "/pillar1.png",
       points: [
         "365 days running assurance",
         "Predictive failures in advance", 
@@ -24,7 +24,7 @@ export const Pillars = () => {
       description: "Securing EV underwriting with default prediction and real-time asset control on fingertips.",
       icon: "📱",
       color: "#0C7D49",
-      imageUrl: "/pillare2.png",
+      imageUrl: "/pillar4.png",
       points: [
         "Predicting payment failure",
         "Remote tracking and mobilization",
@@ -37,7 +37,7 @@ export const Pillars = () => {
       description: "Enabling access to credits with no or low credit score.",
       icon: "🔋",
       color: "#0A704A",
-      imageUrl: "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=400&h=300&fit=crop",
+      imageUrl: "pillar3.png",
       points: [
         "Generating qualified leads",
         "Assessment based on digital footprint",
@@ -50,7 +50,7 @@ export const Pillars = () => {
       description: "Through our predictive tech and network of resale, repair and replace.",
       icon: "🧠",
       color: "#07584D",
-      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
+      imageUrl: "pillar2.png",
       points: [
         "Reducing fault rates",
         "Increasing uptime",
@@ -296,12 +296,12 @@ export const Pillars = () => {
                   ></div>
                   
                   {/* Floating number badge */}
-                  <div 
+                  {/* <div 
                     className="absolute top-4 left-4 md:top-6 md:left-6 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center text-white font-bold text-base md:text-lg shadow-lg"
                     style={{ backgroundColor: pillars[activeIndex].color }}
                   >
                     {pillars[activeIndex].id}
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Text Content Section - Fixed Height with Scroll */}
