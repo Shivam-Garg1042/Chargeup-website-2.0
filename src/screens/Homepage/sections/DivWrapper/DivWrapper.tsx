@@ -132,12 +132,12 @@ export const DivWrapper = (): JSX.Element => {
         <Separator className="bg-gray-200" />
 
         {/* Footer bottom section */}
-        <div className="flex flex-col md:flex-row justify-between py-4 gap-4 text-sm md:text-[18px]">
+        <div className="flex flex-col md:flex-col justify-between py-4 gap-4 text-sm md:text-[18px] md:text-center ">
           <p className="text-gray-800">
             Copyright @ 2025 CHARGEUP, All rights reserved.
           </p>
 
-          <div className="flex flex-wrap gap-4 md:gap-8">
+          <div className="flex flex-wrap gap-4 md:gap-8 md:text-center md:justify-center">
             {footerLinks.map((link) => (
               <Link
                 key={link.id}
