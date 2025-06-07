@@ -172,6 +172,7 @@ export const Pillars = () => {
                   }}
                   onClick={() => setActiveIndex(index)}
                 >
+                  
                   {/* Outer glow ring */}
                   <div 
                     className={`absolute -inset-8 rounded-full transition-all duration-700 ${
@@ -273,7 +274,9 @@ export const Pillars = () => {
 
         {/* Right Side - Fixed Size Content Box */}
         <div className="flex-1 px-4 md:px-8 lg:px-16 flex items-center justify-center">
+          
           <div className="w-full max-w-4xl">
+            <h2 className="text-5xl font-bold text-gray-900 mb-16 text-center">Our Technology Pillars</h2>
             {/* Fixed Size Content Card */}
             <div 
               className="bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 ease-in-out transform w-full h-[480px]"
