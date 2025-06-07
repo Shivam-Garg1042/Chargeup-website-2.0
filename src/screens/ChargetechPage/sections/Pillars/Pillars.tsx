@@ -37,7 +37,7 @@ export const Pillars = () => {
       description: "Enabling access to credits with no or low credit score.",
       icon: "🔋",
       color: "#0A704A",
-      imageUrl: "pillar3.png",
+      imageUrl: "pillar3.0.png",
       points: [
         "Generating qualified leads",
         "Assessment based on digital footprint",
