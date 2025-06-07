@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X, MapPin, Phone, Mail } from "lucide-react";
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const ConfirmationModal = ({ onClose }) => {
   return (

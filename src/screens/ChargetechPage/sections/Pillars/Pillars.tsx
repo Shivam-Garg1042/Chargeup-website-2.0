@@ -11,7 +11,7 @@ export const Pillars = () => {
       description: "Tech enabled predictive maintenance enabling zero downtime and quick service.",
       icon: "🚀",
       color: "#0F9547",
-      imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      imageUrl: "/pillar1.jpg",
       points: [
         "365 days running assurance",
         "Predictive failures in advance", 
@@ -24,11 +24,11 @@ export const Pillars = () => {
       description: "Securing EV underwriting with default prediction and real-time asset control on fingertips.",
       icon: "📱",
       color: "#0C7D49",
-      imageUrl: "https://images.unsplash.com/photo-1512941675424-b1c1e1dd2c45?w=400&h=300&fit=crop",
+      imageUrl: "/pillare2.png",
       points: [
         "Predicting payment failure",
         "Remote tracking and mobilization",
-        "Driver profiling based on driving behavior"
+        "Profiling based on driving behavior"
       ]
     },
     {
@@ -41,20 +41,21 @@ export const Pillars = () => {
       points: [
         "Generating qualified leads",
         "Assessment based on digital footprint",
-        "Alternative credit scoring methods"
+        "Derisking EV financing"
       ]
     },
     {
       id: "04",
       title: "Increased asset life and performance",
-      description: "From predicting battery lifespan to credit risk scoring—we use machine learning to drive smarter decisions.",
+      description: "Through our predictive tech and network of resale, repair and replace.",
       icon: "🧠",
       color: "#07584D",
       imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
       points: [
-        "Predicting battery lifespan",
-        "Credit risk scoring",
-        "Driver profiling based on driving behavior"
+        "Reducing fault rates",
+        "Increasing uptime",
+        
+        "Simulating driver behavior ",
       ]
     }
   ];

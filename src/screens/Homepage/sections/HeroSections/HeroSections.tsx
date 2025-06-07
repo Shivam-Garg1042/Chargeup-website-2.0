@@ -43,9 +43,9 @@ export default function HeroSection() {
                 <span className="text-sm md:text-base font-medium text-[#fff]">A single stop solution</span>
               </div> */}
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  India's first EV Driver Platform  
+                  India's first<br></br> EV Driver Platform  
                 </span>
                 {/* <br />
                 <span className="bg-gradient-to-r from-[#0C7D49] via-[#07584D] to-[#033F4F] bg-clip-text text-transparent">
