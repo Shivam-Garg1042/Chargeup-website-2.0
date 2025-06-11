@@ -153,7 +153,7 @@ export default function Team() {
             <p className="text-base text-center mb-3">{member.bio}</p>
             
             {/* Company logos in overlay */}
-            <div className="flex items-center justify-center gap-3 mb-3">
+            {/* <div className="flex items-center justify-center gap-3 mb-3">
               {member.logos && member.logos.map((logo, logoIndex) => (
                 <div
                   key={logoIndex}
@@ -163,7 +163,7 @@ export default function Team() {
                   <LogoImage logo={logo} />
                 </div>
               ))}
-            </div>
+            </div> */}
             
             <a 
               href={member.linkedin} 
