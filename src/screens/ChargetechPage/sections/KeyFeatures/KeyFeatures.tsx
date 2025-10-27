@@ -33,8 +33,8 @@ export default function KeyFeatures() {
   return (
     <section className="flex flex-col w-full items-center justify-center py-8 md:py-16 px-4 bg-gray-50">
       {/* Section Title */}
-      <h2 className="text-3xl md:text-4xl font-medium text-center mb-16 md:mb-24">
-        How we unify the EV ecosystem to power<br></br> Drivers, NBFCs & OEMs
+      <h2 className="text-xl font-semibold md:text-5xl md:font-normal lg:font-normal text-center mb-16 md:mb-24">
+        How we unify the EV ecosystem to power<br></br><span className="bg-gradient-to-r from-[#0F9547] to-[#0C7D49] text-transparent bg-clip-text text-bold">Drivers, NBFCs & OEMs</span> 
       </h2>
 
       {/* Cards Container */}
@@ -71,7 +71,7 @@ export default function KeyFeatures() {
             </div>
             
             {/* Banner box below the card */}
-            <div className="w-full bg-[#0a7f68] h-[100px] text-white text-lg text-center py-6 px-2 font-medium italic rounded-b-lg mt-[-10px] justify-center items-center flex">
+            <div className="w-full bg-[#0a7f68] h-auto text-white text-lg text-center py-6 px-2 font-medium italic rounded-b-lg mt-[-10px] justify-center items-center flex">
               {card.banner}
             </div>
           </div>

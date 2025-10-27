@@ -97,12 +97,12 @@ export default function VisionMission() {
               </p>
               
               {/* Statistics or CTA could go here */}
-              <div className="flex items-center gap-4 mt-4">
+              {/* <div className="flex items-center gap-4 mt-4">
                 <div className={`w-12 h-1 bg-gradient-to-r ${activeContent?.gradient} rounded-full`}></div>
                 <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
                   {activeTab === "vision" ? "Our Future" : "Our Goal"}
                 </span>
-              </div>
+              </div> */}
             </div>
             
             {/* Dynamic image with enhanced styling */}

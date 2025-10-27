@@ -7,9 +7,9 @@ export default function Team() {
     { 
       name: "Varun Goenka", 
       position: "Chief Executive Officer", 
-      image: "/5.5.png",
+      image: "/2.png",
       bio: "Core expertise in Product, Strategy, Growth & Partnerships",
-      linkedin: "https://linkedin.com/in/username1",
+      linkedin: "https://www.linkedin.com/in/varun-goenka-a9755153/",
       logos: [
         { 
           name: "Atlanta Energy", 
@@ -21,9 +21,9 @@ export default function Team() {
     { 
       name: "Satish Mittal", 
       position: "Chief Digital Officer", 
-      image: "/1.1.png",
+      image: "/4.png",
       bio: "Core expertise in Data, Tech platform & Customer experience.",
-      linkedin: "https://linkedin.com/in/username2",
+      linkedin: "https://www.linkedin.com/in/satish-mittal/",
       logos: [
         { 
           name: "Meta", 
@@ -40,9 +40,9 @@ export default function Team() {
     { 
       name: "Swati Mudgal", 
       position: "Chief Human Resource Officer", 
-      image: "/2.png",
+      image: "/1.png",
       bio: "Core expertise in People Management, Leadership Empowerment & employee engagement.",
-      linkedin: "https://linkedin.com/in/username4",
+      linkedin: "https://www.linkedin.com/in/swati-mudgal-2b0b075/",
       logos: [
         { 
           name: "Wipro", 
@@ -59,9 +59,9 @@ export default function Team() {
     { 
       name: "Anmol Chouksey", 
       position: "Chief of Staff & Growth Head", 
-      image: "/3.3.png",
+      image: "/5.png",
       bio: "Core expertise in Digital Business Transformation, Strategy & Marketing.",
-      linkedin: "https://linkedin.com/in/username5",
+      linkedin: "https://www.linkedin.com/in/anmol-chouksey/",
       logos: [
         { 
           name: "Apple", 
@@ -77,10 +77,10 @@ export default function Team() {
     },
     { 
       name: "Chetan Guglani", 
-      position: "Haed of Product, Partnerships & Central Operations", 
-      image: "/4.png",
-      bio: "Core expertise in Technology Architecture, Innovation & Product Development.",
-      linkedin: "https://linkedin.com/in/username6",
+      position: "Head of Product, Partnerships & Central Operations", 
+      image: "/3.png",
+      bio: "Core expertise in designing partner-led growth engines with measurable ROI.",
+      linkedin: "https://www.linkedin.com/in/chetan-guglani-232471175/",
       logos: [
         { 
           name: "Google", 
@@ -180,38 +180,20 @@ export default function Team() {
         </header>
 
         <div className="flex flex-col gap-12 w-full">
-          {/* First row - 3 members with zig-zag effect */}
-          <div className="relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-              {/* Member 1 - Slightly elevated */}
-              <div className="transform lg:-translate-y-4">
-                <TeamMemberCard member={teamMembers[0]} index={0} />
-              </div>
-              
-              {/* Member 2 - Normal position */}
-              <div className="transform lg:translate-y-0">
-                <TeamMemberCard member={teamMembers[1]} index={1} />
-              </div>
-              
-              {/* Member 3 - Slightly lowered */}
-              <div className="transform lg:translate-y-4 sm:col-span-2 lg:col-span-1 sm:justify-self-center">
-                <TeamMemberCard member={teamMembers[2]} index={2} />
-              </div>
+          {/* First row - 3 members */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+            <TeamMemberCard member={teamMembers[0]} index={0} />
+            <TeamMemberCard member={teamMembers[1]} index={1} />
+            <div className="sm:col-span-2 lg:col-span-1 sm:justify-self-center">
+              <TeamMemberCard member={teamMembers[2]} index={2} />
             </div>
           </div>
 
-          {/* Second row - 2 members centered with wider spacing */}
+          {/* Second row - 2 members centered */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 w-full max-w-2xl">
-              {/* Member 4 - Elevated for zig-zag */}
-              <div className="transform lg:-translate-y-6">
-                <TeamMemberCard member={teamMembers[3]} index={3} />
-              </div>
-              
-              {/* Member 5 - Lowered for zig-zag */}
-              <div className="transform lg:translate-y-6">
-                <TeamMemberCard member={teamMembers[4]} index={4} />
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-3xl">
+              <TeamMemberCard member={teamMembers[3]} index={3} />
+              <TeamMemberCard member={teamMembers[4]} index={4} />
             </div>
           </div>
         </div>

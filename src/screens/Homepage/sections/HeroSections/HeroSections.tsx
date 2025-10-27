@@ -27,13 +27,13 @@ export default function HeroSection() {
       <div 
         className="absolute inset-0 bg-cover bg-left bg-no-repeat object-fill w-[100%] h-[100%] z-0"
         style={{
-          backgroundImage: `url('/hero2.png')`,
+          backgroundImage: `url('/hero.png')`,
         }}
       />
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 " />
 
-      <div className="container mx-auto px-6 lg:px-8 py-20 relative z-10">
+      <div className="container mx-auto px-6 lg:px-8 py-4 md:py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[70vh]">
           {/* Left Content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
@@ -68,7 +68,8 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-4 pt-6">
               <Link to="/solutions#solutions">
                 <Button className="group bg-gradient-to-r from-[#0F9547] to-[#0D8948] hover:from-[#0D8948] hover:to-[#0A704A] text-white px-6 md:px-8 py-6 md:py-8 rounded-xl font-semibold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg relative overflow-hidden">
-                  Know More
+                  <span className="md:hidden">Explore our Solutions</span>
+                  <span className="hidden md:inline">Know More</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
               </Link>

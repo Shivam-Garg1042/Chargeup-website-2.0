@@ -17,9 +17,10 @@ export const DivWrapper = (): JSX.Element => {
   ];
 
   const secondNavLinks = [
-    { title: "Careers", id: "/people#careers" },
-    { title: "News Room", id: "/story#news-room" },
     { title: "Our Solution", id: "/solutions/#solutions" },
+    { title: "Marketplace", id: "/people#careers" },
+    { title: "News Room", id: "/story#news-room" },
+    
   ];
 
   // Footer links data

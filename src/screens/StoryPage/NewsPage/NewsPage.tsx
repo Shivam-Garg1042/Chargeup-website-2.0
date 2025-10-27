@@ -14,14 +14,7 @@ const articlesData = [
     link : "https://www.financialexpress.com/auto/commercial-vehicles/chargeup-forms-new-partnerships-for-ev-financing/3860046/"
   },
   
-  {
-    id: 3,
-    title: "Chargeup to onboard 25,000 drivers in 17 cities by 2025",
-    date: "June 5, 2023",
-    imageUrl: "/news3.jpg",
-    description: "Chargeup to onboard 25,000 drivers and expand battery stations across 17 cities...",
-    link : "https://energy.economictimes.indiatimes.com/news/power/chargeup-to-onboard-25000-drivers-across-17-indian-cities-by-2025/109556468#:~:text=1%20min%20read-,Chargeup%20to%20onboard%2025%2C000%20drivers%20across%2017%20Indian%20cities%20by,like%20Haryana%20and%20Uttar%20Pradesh."
-  },
+  
   
   {
     id: 4,
@@ -38,6 +31,14 @@ const articlesData = [
     description: "Co-founded by a former META and Vodafone executive, Chargeup is looking to ease EV transition by partnering with OEMs and providing gig workers with tailored leasing and financing solutions.",
     imageUrl: "/news7.png",
     link: "https://yourstory.com/2025/06/charging-electric-mobility-gig-economy-chargeup-business-playbook"
+  },
+  {
+    id: 3,
+    title: "Chargeup Joins Forces with Mega Corporation and Shivakari Finance to Unlock INR 50 Cr in EV Financing",
+    date: "June 5, 2023",
+    imageUrl: "/news3.jpg",
+    description: "The collaboration aims to unlock a credit line of INR 50 crore and deploy 4,000 commercial EVs over the next year, primarily benefitting underserved last-mile drivers.",
+    link : "https://www.entrepreneur.com/en-in/news-and-trends/chargeup-joins-forces-with-mega-corporation-and-shivakari/492329"
   },
   {
     id: 6,

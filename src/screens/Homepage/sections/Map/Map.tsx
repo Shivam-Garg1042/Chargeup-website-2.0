@@ -348,10 +348,10 @@ export default function MapWithContentLayout() {
   }, [mapData]);
 
   return (
-    <section className="w-full max-w-[1400px] px-4 lg:pxl-44  bg-white sm:-mb-12 lg:-mb-24 mt-8 sm:mt-16 -mb-36 h-[830px]">
+    <section className={`w-full max-w-[1400px] px-4 lg:pxl-44 bg-white sm:-mb-12 lg:-mb-24 mt-8 sm:mt-16 ${isMobile ? 'py-8' : '-mb-36 h-[830px]'}`}>
       <div className={`relative w-full ${isMobile ? 'flex flex-col' : 'h-[750px]'}`}>
         {/* Map container with responsive design */}
-        <div className={`${isMobile ? 'relative w-full h-[400px] mb-8' : 'absolute inset-0'}`} 
+        <div className={`${isMobile ? 'hidden' : 'absolute inset-0'}`} 
           style={{
             clipPath: isMobile ? 'none' : isTablet ? 
               'polygon(0% 0%, 70% 0%, 70% 60%, 100% 60%, 100% 100%, 0% 100%)' : 
@@ -373,10 +373,10 @@ export default function MapWithContentLayout() {
         </div>
         
         {/* Content container with responsive design */}
-        <div className={`${isMobile ? 'relative w-full -top-8 ' : isTablet ? 'absolute top-0 right-0 w-3/5 h-3/5 p-4' : 'absolute top-0 right-0 w-2/5 h-[350px] p-6'} flex flex-col items-center justify-center space-y-8 bg-white`}>
+        <div className={`${isMobile ? 'relative w-full' : isTablet ? 'absolute top-0 right-0 w-3/5 h-3/5 p-4' : 'absolute top-0 right-0 w-2/5 h-[350px] p-6'} flex flex-col items-center justify-center space-y-6 bg-white`}>
           
           {/* Heading */}
-          <h2 className="hidden sm:block text-xl sm:text-4xl font-bold text-gray-800 md:mb-1">
+          <h2 className=" sm:block text-2xl sm:text-4xl font-bold text-gray-800 md:mb-1">
              Our Presence
           </h2>
           

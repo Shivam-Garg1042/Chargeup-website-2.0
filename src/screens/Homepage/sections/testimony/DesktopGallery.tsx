@@ -41,14 +41,15 @@ export default function DesktopGallery({ items }) {
   }));
 
   const Label = ({ text, color }) => (
-<div className="flex items-center justify-center sm:justify-start sm:self-center gap-2 bg-gradient-to-r sm:bg-gradient-to-b from-[#07584D] to-[#023350] text-white px-4 sm:px-3 py-4 sm:py-6 rounded-lg font-bold shadow-lg backdrop-blur-sm w-[80%] mx-auto sm:w-12 sm:h-[280px] sm:mx-0">
-      <div className="flex sm:flex-col items-center gap-2 w-full">
-        <div className={`w-2 h-2 rounded-full ${color} sm:hidden`}></div>
-        <div className="text-lg sm:text-base sm:mt-4 tracking-wider [writing-mode:horizontal-tb] sm:[writing-mode:vertical-rl] sm:rotate-180">
-          {text.toUpperCase()}
+    text ? (
+      <div className="flex items-center -center sm:self-center gap-2 bg-gradient-to-r sm:bg-gradient-to-b from-[#07584D] to-[#023350] text-white px-4 sm:px-3 py-4 sm:py-6 rounded-lg font-bold shadow-lg backdrop-blur-sm w-[80%] mx-auto sm:w-12 sm:h-[280px] sm:mx-0">
+        <div className="flex sm:flex-col items-center gap-2 w-full">
+          <div className="text-lg sm:text-base sm:mt-4 tracking-wider [writing-mode:horizontal-tb] sm:[writing-mode:vertical-rl] sm:rotate-180">
+            {text.toUpperCase()}
+          </div>
         </div>
       </div>
-    </div>
+    ) : null
   );
 
   const Row = ({ items, label, color, style, setStyle }) => {
@@ -78,7 +79,7 @@ export default function DesktopGallery({ items }) {
 
     return (
       <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-        <Label text={label} color={color} />
+        {label && <Label text={label} color={color} />}
         <div className="flex sm:flex-row items-center gap-4">
           <div 
             ref={scrollContainerRef}
@@ -122,7 +123,7 @@ export default function DesktopGallery({ items }) {
   };
 
   return (
-    <div className="relative w-full overflow-hidden mt-16">
+    <div className="relative w-full overflow-hidden mt-8">
       <div className="absolute inset-0 ">
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
           <svg 
@@ -160,9 +161,16 @@ export default function DesktopGallery({ items }) {
       
       <div className="relative w-full">
         <div className="max-w-7xl mx-auto py-6 sm:py-8 space-y-12">
+          {/* Main Heading */}
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold text-gray-900 leading-tight">
+              Empowering drivers with <br></br><span className="bg-gradient-to-r from-[#0F9547] to-[#0C7D49] text-transparent bg-clip-text text-bold">Safety, Security & Higher Earnings</span>
+            </h2>
+          </div>
+          
           <Row 
             items={row1} 
-            label="Driver Testimonials" 
+            label="" 
             color="bg-blue-400" 
             style={style1}
             setStyle={set1}

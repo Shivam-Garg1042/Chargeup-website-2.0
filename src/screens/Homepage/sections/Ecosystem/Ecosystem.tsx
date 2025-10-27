@@ -8,7 +8,7 @@ export default function PartnerEcosystem() {
   const partnerLogos = [
       { src: "/oem3.png", alt: "Greenfuel", width: 180 ,heigth : 150},
       { src: "/techpartner1.png", alt: "Oppo Logo", width: 150 ,heigth : 100},
-    { src: "/nbfc1.png", alt: "Ascend", width: 200 ,heigth : 200},
+    { src: "/nbfc1.png", alt: "Ascend", width: 150 ,heigth : 200},
    
     
     { src: "/oem2.png", alt: "Eastman", width: 160,heigth : 100 },
@@ -20,13 +20,13 @@ export default function PartnerEcosystem() {
   return (
     <section className="w-full bg-white overflow-hidden -mb-20">
       <div className="max-w-[1920px]  px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center py-12 sm:py-20 ">
+        <div className="flex flex-col items-center py-6 sm:py-20 ">
           {/* Title with dots */}
           <motion.div 
             initial={{ y: -20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-4 mb-4"
+            className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-4"
           >
             <div className="flex gap-2">
               <div className="w-2 h-2 mt-1 rounded-full bg-[#0D8948]"></div>
@@ -48,7 +48,7 @@ export default function PartnerEcosystem() {
           {/* Logos container */}
           <div className="w-full">
             <Card className="border-none shadow-none">
-              <CardContent className="flex flex-wrap justify-center lg:justify-between items-center gap-8 sm:gap-12 p-6 sm:p-8">
+              <CardContent className="flex flex-wrap justify-center lg:justify-between items-center gap-4 sm:gap-8 sm:gap-12 p-3 sm:p-6 sm:p-8">
                 {partnerLogos.map((logo, index) => (
                   <motion.div
                     key={index}

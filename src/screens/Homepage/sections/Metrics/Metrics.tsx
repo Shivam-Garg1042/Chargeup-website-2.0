@@ -155,13 +155,20 @@ export const Metrics = () => {
           />
           
           {/* Dark overlay for better text readability */}
-          <div className="absolute w-full h-full top-0 left-0 bg-black/20" />
+          <div className="absolute w-full h-full top-0 left-0 bg-black/30 sm:bg-black/20" />
           
           {/* Optional: Additional gradient overlay for enhanced visual effect */}
-          <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-emerald-900/30 via-emerald-800/40 to-black/70" />
+          <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-emerald-900/40 via-emerald-800/50 to-black/80 sm:from-emerald-900/30 sm:via-emerald-800/40 sm:to-black/70" />
           
           {/* Bottom blur effect */}
           <div className="absolute w-full h-[30%] bottom-0 left-0  backdrop-blur-[2px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(2px)_brightness(100%)]" />
+
+          {/* Mobile Heading - Only visible on mobile */}
+          <div className=" absolute inset-0 flex items-center justify-center px-4 z-10">
+            <h2 className="absolute sm:top-32 font-bold text-white text-[24px] sm:text-[52px] text-center tracking-[-0.5px] leading-[1.3] drop-shadow-lg ">
+              Creating impact with every ride
+            </h2>
+          </div>
 
           {/* Decorative graphic - hidden on small screens */}
           <div className="hidden md:flex flex-col w-[200px] lg:w-[403px] items-start gap-px absolute top-[93px] right-0 overflow-hidden opacity-[0.87] animate-pulse">
@@ -226,12 +233,7 @@ export const Metrics = () => {
           ))}
         </div>
 
-        {/* Heading moved below the cards */}
-        <div className="flex flex-col items-center px-4 mt-0 mb-1 md:mb-4">
-          <h2 className="font-medium text-gray-900 text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] px-4 sm:px-8 md:px-12">
-            Creating impact with every ride 
-          </h2>
-        </div>
+        
         
           
       </div>

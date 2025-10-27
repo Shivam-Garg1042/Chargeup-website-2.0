@@ -216,101 +216,118 @@ export const Challenges = () => {
   ];
 
   return (
-    <div className="mx-auto px-4 py-12 max-w-7xl">
+    <div className="mx-auto px-4 py-8 max-w-7xl">
       {/* Header with visual elements */}
       <div className="text-center mb-4 relative">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 w-32 h-32 bg-gradient-to-br from-[#0F9547]/10 to-[#0A704A]/5 rounded-full blur-3xl"></div>
-        <h1 className="text-5xl font-bold mb-4 relative z-10">
-          From <span className="text-red-500">Problems</span> to <span className="text-[#0F9547]">Solutions</span>
+        <h1 className="text-2xl md:text-5xl font-semibold mb-0 relative z-10 ">
+          How Chargeup solves for the EV ecosystem 
         </h1>
         <div className="flex items-center justify-center gap-4 mt-8">
-          <div className="w-16 h-1 bg-red-400 rounded-full"></div>
+          {/* <div className="w-16 h-1 bg-red-400 rounded-full"></div>
           <ArrowRight className="w-8 h-8 text-gray-400" />
-          <div className="w-16 h-1 bg-[#0F9547] rounded-full"></div>
+          <div className="w-16 h-1 bg-[#0F9547] rounded-full"></div> */}
         </div>
       </div>
 
       {/* Visual comparison */}
-      <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-16 items-start">
         
         {/* Problems Side */}
-        <div className="space-y-8">
+        <div className="space-y-3 lg:space-y-6">
           <div className="text-center">
-            <div className="inline-flex items-center gap-3 mb-2 p-4 bg-red-50 rounded-2xl">
-              <Zap className="w-8 h-8 text-red-500" />
-              <h2 className="text-2xl font-bold text-gray-800">Industry Problems</h2>
+            <div className="inline-flex items-center gap-2 lg:gap-3 mb-2 p-2 lg:p-4 bg-red-50 rounded-xl lg:rounded-2xl">
+              <Zap className="w-5 h-5 lg:w-8 lg:h-8 text-red-500" />
+              <h2 className="text-sm lg:text-2xl font-bold text-gray-800">Industry Problems</h2>
             </div>
           </div>
 
-          <div className="grid gap-5">
+          <div className="grid gap-3 lg:gap-5">
             {challengesData.map((challenge, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl border-2 border-red-100 hover:border-red-300 transition-all duration-300 hover:shadow-xl cursor-pointer overflow-visible h-[120px]"
+                className="group relative bg-white rounded-lg lg:rounded-2xl border lg:border-2 border-red-100 hover:border-red-300 transition-all duration-300 hover:shadow-xl cursor-pointer overflow-visible h-[60px] lg:h-[95px]"
                 onMouseEnter={() => setHoveredIndex(`challenge-${index}`)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* Visual Section - Positioned at top-left, overlapping border */}
-                <div className="absolute -top-4 -left-4 z-10">
-                  {challenge.visual}
+                {/* Visual Section - Smaller on mobile */}
+                <div className="absolute -top-2 -left-2 lg:-top-4 lg:-left-4 z-10">
+                  <div className="lg:hidden relative w-8 h-8 bg-gradient-to-br from-red-100 to-red-50 rounded-lg flex items-center justify-center">
+                    <div className="w-3 h-2 bg-red-400 rounded-sm"></div>
+                  </div>
+                  <div className="hidden lg:block">
+                    {challenge.visual}
+                  </div>
                 </div>
                 
-                {/* Text Section - Aligned consistently */}
-                <div className="pl-16 pr-4 pt-4 pb-4 h-full flex flex-col justify-center">
-                  <h3 className="font-bold text-xl text-gray-800 mb-2">{challenge.title}</h3>
-                  <p className="text-gray-600 font-medium">{challenge.subtitle}</p>
+                {/* Text Section - Mobile optimized */}
+                <div className="pl-8 lg:pl-16 pr-2 lg:pr-4 pt-2 lg:pt-4 pb-2 lg:pb-4 h-full flex flex-col justify-center">
+                  <h3 className="font-bold text-sm lg:text-xl text-gray-800 mb-1 lg:mb-2">{challenge.title}</h3>
+                  <p className="text-gray-600 font-medium text-xs lg:text-base hidden lg:block">{challenge.subtitle}</p>
                 </div>
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg lg:rounded-2xl"></div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Solutions Side */}
-        <div className="space-y-8">
+        <div className="space-y-3 lg:space-y-8">
           <div className="text-center">
-            <div className="inline-flex items-center gap-3 mb-2 p-4 bg-[#0F9547]/10 rounded-2xl">
-              <div className="w-8 h-8 bg-[#0F9547] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">✓</span>
+            <div className="inline-flex items-center gap-2 lg:gap-3 mb-2 p-2 lg:p-4 bg-[#0F9547]/10 rounded-xl lg:rounded-2xl">
+              <div className="w-5 h-5 lg:w-8 lg:h-8 bg-[#0F9547] rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-xs lg:text-sm">✓</span>
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">Our Solutions</h2>
+              <h2 className="text-sm lg:text-2xl font-bold text-gray-800">Our Solutions</h2>
             </div>
           </div>
 
-          <div className="grid gap-5">
+          <div className="grid gap-3 lg:gap-5">
             {solutionsData.map((solution, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl border-2 border-[#0F9547]/20 hover:border-[#0F9547] transition-all duration-300 hover:shadow-xl cursor-pointer overflow-visible h-[120px]"
+                className="group relative bg-white rounded-lg lg:rounded-2xl border lg:border-2 border-[#0F9547]/20 hover:border-[#0F9547] transition-all duration-300 hover:shadow-xl cursor-pointer overflow-visible h-[60px] lg:h-[95px]"
                 onMouseEnter={() => setHoveredIndex(`solution-${index}`)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* Visual Section - Positioned at top-left, overlapping border */}
-                <div className="absolute -top-4 -left-4 z-10">
-                  {solution.visual}
+                {/* Visual Section - Smaller on mobile */}
+                <div className="absolute -top-2 -left-2 lg:-top-4 lg:-left-4 z-10">
+                  <div className="lg:hidden relative w-8 h-8 bg-gradient-to-br from-[#0F9547]/20 to-[#0D8948]/10 rounded-lg flex items-center justify-center">
+                    <div className="w-3 h-2 bg-[#0F9547] rounded-sm"></div>
+                  </div>
+                  <div className="hidden lg:block">
+                    {solution.visual}
+                  </div>
                 </div>
                 
-                {/* Text Section - Aligned consistently */}
-                <div className="pl-16 pr-4 pt-4 pb-4 h-full flex flex-col justify-center">
-                  <h3 className="font-bold text-xl text-gray-800 mb-2">{solution.title}</h3>
-                  <p className="text-gray-600 font-medium">{solution.subtitle}</p>
+                {/* Text Section - Mobile optimized */}
+                <div className="pl-8 lg:pl-16 pr-2 lg:pr-4 pt-2 lg:pt-4 pb-2 lg:pb-4 h-full flex flex-col justify-center">
+                  <h3 className="font-bold text-sm lg:text-xl text-gray-800 mb-1 lg:mb-2">{solution.title}</h3>
+                  <p className="text-gray-600 font-medium text-xs lg:text-base hidden lg:block">{solution.subtitle}</p>
                 </div>
 
                 {/* Success indicator */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-6 h-6 bg-[#0F9547] rounded-full flex items-center justify-center">
+                <div className="absolute top-2 right-2 lg:top-4 lg:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-4 h-4 lg:w-6 lg:h-6 bg-[#0F9547] rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                 </div>
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-[#0F9547]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-[#0F9547]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg lg:rounded-2xl"></div>
               </div>
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Important tagline at the bottom */}
+      <div className="text-center mt-4 lg:mt-8">
+        <p className="text-lg lg:text-2xl italic text-[#0F9547] bg-gradient-to-r from-[#0F9547] to-[#0C7D49] bg-clip-text text-transparent">
+          Turning E-Rickshaw into Intelligent-Rickshaws
+        </p>
       </div>
     </div>
   );

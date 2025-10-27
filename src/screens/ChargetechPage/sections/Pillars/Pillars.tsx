@@ -40,7 +40,7 @@ export const Pillars = () => {
       icon: "🔋",
       color: "#0A704A",
       imageUrl: "pillar3.0.png",
-      highlightText: "Risk Score",
+      highlightText: "Risk Engine",
       points: [
         "Generating qualified leads",
         "Assessment based on digital footprint",
@@ -53,7 +53,7 @@ export const Pillars = () => {
       description: "Through our predictive tech and network of resale, repair and replace.",
       icon: "🧠",
       color: "#07584D",
-      imageUrl: "pillar2.png",
+      imageUrl: "pillar2.jpg",
       highlightText: "Ai Genie",
       points: [
         "Reducing fault rates",
@@ -316,77 +316,24 @@ export const Pillars = () => {
                       <div key={index} className="flex items-center space-x-4">
                         <div 
                           className="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center flex-shrink-0"
-                          style={{ backgroundColor: `${pillars[activeIndex].color}20` }}
+                          style={{ backgroundColor: pillars[activeIndex].color }}
                         >
-                          <span className="text-xs font-bold" style={{ color: pillars[activeIndex].color }}>✓</span>
+                          <span className="text-xs font-bold text-white">✓</span>
                         </div>
                         <span className="text-sm md:text-lg text-gray-700 font-medium">{point}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* Creative Highlighting Text Section */}
-                  <div className="mt-0 md:mt-3 pt-1">
-                    <div className="relative">
-                      {/* Background glow effect - Hidden on mobile */}
-                      <div 
-                        className="absolute inset-0 rounded-2xl blur-xl opacity-20 animate-pulse hidden md:block"
-                        style={{ backgroundColor: pillars[activeIndex].color }}
-                      ></div>
-                      
-                      {/* Main highlight container - Simplified on mobile */}
-                      <div 
-                        className="relative md:bg-gradient-to-r md:from-white md:via-gray-50 md:to-white md:rounded-2xl md:p-4 md:border-2 md:transition-all md:duration-700 md:shadow-lg"
-                        style={{ 
-                          borderColor: `${pillars[activeIndex].color}30`,
-                          boxShadow: `0 8px 32px ${pillars[activeIndex].color}15`
-                        }}
+                  {/* Highlight Text - Simplified */}
+                  <div className="mt-4 md:mt-6 pt-4 border-t border-gray-100">
+                    <div className="text-center lg:text-left">
+                      <h4 
+                        className=" text-lg md:text-2xl lg:text-3xl font-black tracking-tight"
+                        style={{ color: pillars[activeIndex].color }}
                       >
-                        {/* Highlight text with creative styling */}
-                        <div className="text-center">
-                          <h4 
-                            className="text-lg md:text-3xl lg:text-4xl font-black tracking-tight relative"
-                            style={{ color: pillars[activeIndex].color }}
-                          >
-                            {/* Text glow effect - Hidden on mobile */}
-                            <span 
-                              className="absolute inset-0 blur-sm opacity-50 hidden md:block"
-                              style={{ color: pillars[activeIndex].color }}
-                            >
-                              {pillars[activeIndex].highlightText}
-                            </span>
-                            
-                            {/* Main text */}
-                            <span className="relative z-10">
-                              {pillars[activeIndex].highlightText}
-                            </span>
-                            
-                            {/* Animated underline - Hidden on mobile */}
-                            <div 
-                              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 rounded-full animate-pulse transition-all duration-700 hidden md:block"
-                              style={{ 
-                                width: '80%',
-                                background: `linear-gradient(90deg, transparent, ${pillars[activeIndex].color}, transparent)`
-                              }}
-                            ></div>
-                          </h4>
-                        </div>
-                        
-                        {/* Decorative elements - Hidden on mobile */}
-                        <div className="hidden md:flex justify-center items-center mt-3 space-x-2">
-                          {[...Array(3)].map((_, i) => (
-                            <div
-                              key={i}
-                              className="w-2 h-2 rounded-full animate-bounce"
-                              style={{ 
-                                backgroundColor: pillars[activeIndex].color,
-                                animationDelay: `${i * 0.2}s`,
-                                animationDuration: '1.5s'
-                              }}
-                            ></div>
-                          ))}
-                        </div>
-                      </div>
+                        {pillars[activeIndex].highlightText}
+                      </h4>
                     </div>
                   </div>
                 </div>

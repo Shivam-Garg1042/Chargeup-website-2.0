@@ -21,33 +21,32 @@ export const SolutionHome = (): JSX.Element => {
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#0F9547]/10 to-[#0C7D49]/10 rounded-full border border-[#0F9547]/20 backdrop-blur-sm">
               <div className="w-2 h-2 bg-[#0F9547] rounded-full mr-3 animate-pulse"></div>
               <span className="text-sm font-bold text-[#0F9547] tracking-wide uppercase letter-spacing-wide">
-                Full Stack AI/ML Platform
+                Our Tech Solution
               </span>
             </div>
             
             {/* Main Heading with enhanced typography */}
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
-                <span className="block text-gray-900">Full Stack </span>
-                <span className="block bg-gradient-to-r from-[#0F9547] via-[#0C7D49] to-[#0A704A] bg-clip-text text-transparent">
-                  AI/ML Platform
+            <div className="space-y-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl  font-black leading-tight">
+                <span className="  bg-gradient-to-r from-[#0F9547] via-[#0C7D49] to-[#0A704A] bg-clip-text text-transparent py-4">Chargeup Intelligence </span>
+                <span className="block text-gray-900 font-normal">
+                  Powered by AI/ML
                 </span>
               </h1>
               
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-700 leading-relaxed">
-                For EV Finance & Asset Management
+              <h2 className="text-lg md:text-xl lg:text-2xl font-normal text-gray-700 leading-relaxed">
+                For NBFCs & OEMs
+
               </h2>
             </div>
 
             {/* Enhanced Description */}
             <div className="space-y-4">
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
-                This platform offers a seamless blend of financial services, asset management, and 
-                cutting-edge technology.
+                A seamless blend of financial services, asset management & cutting edge tech.
               </p>
               <p className="text-base md:text-lg text-gray-500 leading-relaxed">
-                Integrated with NBFCs, OEMs, and dealers to simplify complex operations into one unified, 
-                intelligent solution.
+                Built into your ecosystem to help you <span className="font-semibold">Understand, Communicate & Act for powerful growth.</span> 
               </p>
             </div>
 
@@ -59,7 +58,7 @@ export const SolutionHome = (): JSX.Element => {
                 onClick={() => setIsModalOpen(true)}
                 className="group bg-gradient-to-r from-[#0F9547] to-[#0C7D49] hover:from-[#0C7D49] hover:to-[#0A704A] text-white px-8 py-4 rounded-xl text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
               >
-                Partner with us
+                Book a Demo
                 <span className="ml-3 group-hover:translate-x-1 transition-transform duration-300 text-xl">→</span>
               </Button>
               
