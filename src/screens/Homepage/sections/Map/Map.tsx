@@ -132,7 +132,7 @@ export default function MapWithContentLayout() {
       {
         type: 'mappoint',
         name: 'Major Cities',
-        color: '#F8BB25',
+        color: '#063726',
         data: (isMobile ? mobileCitiesCoordinates : citiesCoordinates).slice(0, 10)
 
           .filter(city => city.importance === 'high')
@@ -145,7 +145,7 @@ export default function MapWithContentLayout() {
         marker: {
           radius: 7,
           symbol: 'circle',
-          fillColor: '#F8BB25',
+          fillColor: '#063726',
           lineWidth: 2,
           lineColor: '#ffffff'
         },
@@ -163,7 +163,7 @@ export default function MapWithContentLayout() {
       {
         type: 'mappoint',
         name: 'Medium Cities',
-        color: '#F8BB25',
+        color: '#063726',
         data: (isMobile ? mobileCitiesCoordinates : citiesCoordinates)
           .filter(city => city.importance === 'medium')
           .map(coord => ({
@@ -174,7 +174,7 @@ export default function MapWithContentLayout() {
         marker: {
           radius: 5,
           symbol: 'circle',
-          fillColor: '#F8BB25',
+          fillColor: '#063726',
           lineWidth: 1.5,
           lineColor: '#ffffff'
         },
@@ -192,7 +192,7 @@ export default function MapWithContentLayout() {
       {
         type: 'mappoint',
         name: 'Small Cities',
-        color: '#F8BB25',
+        color: '#063726',
         data: (isMobile ? mobileCitiesCoordinates : citiesCoordinates)
           .filter(city => city.importance === 'low')
           .map(coord => ({
@@ -203,7 +203,7 @@ export default function MapWithContentLayout() {
         marker: {
           radius: 3,
           symbol: 'circle',
-          fillColor: '#F8BB25',
+          fillColor: '#063726',
           lineWidth: 1,
           lineColor: '#ffffff'
         },
@@ -215,7 +215,7 @@ export default function MapWithContentLayout() {
       {
         type: 'mappoint',
         name: 'Pulse Effect',
-        color: 'rgba(248, 187, 37, 0.4)',
+        color: '#35611F',
         data: (isMobile ? mobileCitiesCoordinates : citiesCoordinates)
           .map(coord => ({
             lat: coord.lat,
@@ -227,7 +227,7 @@ export default function MapWithContentLayout() {
           symbol: 'circle',
           fillColor: 'rgba(248, 187, 37, 0)',
           lineWidth: 2,
-          lineColor: 'rgba(248, 187, 37, 0.4)'
+          lineColor: '#35611F'
         },
         animation: {
           duration: 2000
@@ -286,8 +286,8 @@ export default function MapWithContentLayout() {
               style={{ top: marker.top, left: marker.left }}
             >
               <div className="relative">
-                <div className={`${dotSize} bg-[#F8BB25] rounded-full border-2 border-white shadow-lg z-10`}></div>
-                <div className={`absolute inset-0 ${pulseSize} bg-[#F8BB25] rounded-full animate-ping opacity-75 ${pulseDelay}`}></div>
+                <div className={`${dotSize} bg-[#063726] rounded-full border-2 border-white shadow-lg z-10`}></div>
+                <div className={`absolute inset-0 ${pulseSize} bg-[#063726] rounded-full animate-ping opacity-75 ${pulseDelay}`}></div>
               </div>
             </div>
           );
@@ -373,10 +373,10 @@ export default function MapWithContentLayout() {
         </div>
         
         {/* Content container with responsive design */}
-        <div className={`${isMobile ? 'relative w-full -top-8 ' : isTablet ? 'absolute top-0 right-0 w-3/5 h-3/5 p-4' : 'absolute top-0 right-0 w-2/5 h-1/2 p-6'} flex flex-col items-start justify-center space-y-6`}>
+        <div className={`${isMobile ? 'relative w-full -top-8 ' : isTablet ? 'absolute top-0 right-0 w-3/5 h-3/5 p-4' : 'absolute top-0 right-0 w-2/5 h-[350px] p-6'} flex flex-col items-center justify-center space-y-8 bg-white`}>
           
           {/* Heading */}
-          <h2 className="hidden sm:block ext-xl sm:text-4xl font-bold text-gray-800 md:mb-1">
+          <h2 className="hidden sm:block text-xl sm:text-4xl font-bold text-gray-800 md:mb-1">
              Our Presence
           </h2>
           
@@ -404,7 +404,7 @@ export default function MapWithContentLayout() {
           </p>
 
           {/* CTA Button */}
-          <div className={`flex ${isMobile ? 'flex-row w-full justify-center' : 'flex-row w-full align-center justify-center '} gap-4`}>
+          {/* <div className={`flex ${isMobile ? 'flex-row w-full justify-center' : 'flex-row w-full align-center justify-center '} gap-4`}>
             <Button 
               className="bg-[#0A704A] hover:bg-[#0A704A] text-white px-4 py-3 text-lg font-medium rounded-lg transition-colors"
               onClick={() => setIsModalOpen(true)}
@@ -413,12 +413,12 @@ export default function MapWithContentLayout() {
             </Button>
             <PartnerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             
-            {/* <Button 
+            <Button 
               className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-3 text-base sm:text-lg font-medium rounded-lg transition-colors"
             >
               Become a Driver
-            </Button> */}
-          </div>
+            </Button>
+          </div> */}
         </div>
       </div>
     </section>

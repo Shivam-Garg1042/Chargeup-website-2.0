@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X, MapPin, Phone, Mail } from "lucide-react";
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import {  FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 const ConfirmationModal = ({ onClose }) => {
   return (
@@ -139,20 +139,30 @@ export default function PartnerModal({ isOpen, onClose }) {
                 <div className="mt-12">
                   <h3 className="font-semibold text-gray-900 mb-4">Follow Us :</h3>
                   <div className="flex space-x-3">
-                    {[
-                      { Icon: FaFacebook, color: "bg-blue-600" },
-                      { Icon: FaInstagram, color: "bg-pink-600" },
-                      { Icon: FaTwitter, color: "bg-blue-400" },
-                      { Icon: FaLinkedin, color: "bg-blue-700" }
-                    ].map(({ Icon, color }, index) => (
-                      <a
-                        key={index}
-                        href="#"
-                        className={`${color} text-white p-3 rounded-full hover:opacity-80 transition-opacity shadow-lg`}
-                      >
-                        <Icon size={18} />
-                      </a>
-                    ))}
+                    <a
+                      href="https://www.instagram.com/chargeup.india/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-pink-600 text-white p-3 rounded-full hover:opacity-80 transition-opacity shadow-lg"
+                    >
+                      <FaInstagram size={18} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/chargeup-in/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-blue-700 text-white p-3 rounded-full hover:opacity-80 transition-opacity shadow-lg"
+                    >
+                      <FaLinkedin size={18} />
+                    </a>
+                    <a
+                      href="https://www.youtube.com/@Chargeup_official"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-red-600 text-white p-3 rounded-full hover:opacity-80 transition-opacity shadow-lg"
+                    >
+                      <FaYoutube size={18} />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -281,25 +291,35 @@ export default function PartnerModal({ isOpen, onClose }) {
                   </div>
                 </div>
                 
-                <div>
+                {/* <div>
                   <p className="text-gray-400 text-sm mb-3">Follow Us:</p>
                   <div className="flex space-x-3">
-                    {[
-                      { Icon: FaFacebook, color: "bg-blue-600" },
-                      { Icon: FaInstagram, color: "bg-pink-600" },
-                      { Icon: FaTwitter, color: "bg-blue-400" },
-                      { Icon: FaLinkedin, color: "bg-blue-700" }
-                    ].map(({ Icon, color }, index) => (
-                      <a
-                        key={index}
-                        href="#"
-                        className={`${color} text-white p-2 rounded-full hover:opacity-80 transition-opacity`}
-                      >
-                        <Icon size={14} />
-                      </a>
-                    ))}
+                    <a
+                      href="https://www.instagram.com/chargeup.india/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-pink-600 text-white p-2 rounded-full hover:opacity-80 transition-opacity"
+                    >
+                      <FaInstagram size={14} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/chargeup-in/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-blue-700 text-white p-2 rounded-full hover:opacity-80 transition-opacity"
+                    >
+                      <FaLinkedin size={14} />
+                    </a>
+                    <a
+                      href="https://www.youtube.com/@Chargeup_official"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-red-600 text-white p-2 rounded-full hover:opacity-80 transition-opacity"
+                    >
+                      <FaYoutube size={14} />
+                    </a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

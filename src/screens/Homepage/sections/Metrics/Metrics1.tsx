@@ -54,10 +54,10 @@ export const Metrics = (): JSX.Element => {
     },
     {
       key: "drivers",
-      value: "5000",
+      value: "8000",
       suffix: "+",
       description: "Drivers",
-      targetValue: 5000,
+      targetValue: 8000,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
           <Users size={44} className="text-white" />

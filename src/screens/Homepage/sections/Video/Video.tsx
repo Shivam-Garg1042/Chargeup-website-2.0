@@ -12,6 +12,13 @@ export default function VideoCarouselSection() {
 
   // Function to extract YouTube video ID from URL
   const extractYouTubeId = (url) => {
+    // Handle YouTube Shorts URLs
+    if (url.includes('/shorts/')) {
+      const shortsMatch = url.match(/\/shorts\/([a-zA-Z0-9_-]{11})/);
+      return shortsMatch ? shortsMatch[1] : null;
+    }
+    
+    // Handle regular YouTube URLs
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     const match = url.match(regExp);
     return (match && match[2].length === 11) ? match[2] : null;
@@ -46,16 +53,56 @@ export default function VideoCarouselSection() {
       url: "https://youtu.be/mkLsnM9b_y8?si=elwqvXncaieKohSM"
     },
     {
+      id: 12,
+      title: "EV Podcast with Dr Satish Mittal | Chief Digital Officer, Chargeup",
+      description: "A story about sustainable transportation and environmental impact",
+      url: "https://www.youtube.com/watch?v=WaQ5zjNQ_gI"
+    },
+    
+    
+    {
+      id: 5,
+      title: "Making EV lending hassle free and scalable with charegup platform",
+      description: "The inspiring story of Pratibha Das",
+      url: "https://youtu.be/OrrJxqMYgIQ"
+    },
+    
+     {
+      id: 7,
+      title: "Powered by Bappa, Driven by chargeup | Sukhkarta Dukhharta ✨",
+      description: "The inspiring story of Pratibha Das",
+      url: "https://www.youtube.com/watch?v=hiSAWlagKgs"
+    },
+     {
+      id: 8,
+      title: "Enabling last mile drivers with upto 40% higher earnings, but how? ",
+      description: "The inspiring story of Pratibha Das",
+      url: "https://www.youtube.com/shorts/tl-m-a7gEzM"
+    },
+     
+     {
+      id: 10,
+      title: "Unhone rukawatein hatakar raaste banaye…",
+      description: "The inspiring story of Pratibha Das",
+      url: "https://www.youtube.com/shorts/6D7sqEHNeAg"
+    },
+    {
+      id: 11,
+      title: "Women Who Drive Change | A Tribute to Real-Life Devis | Devi | Trilok x Chargeup",
+      description: "The inspiring story of Pratibha Das",
+      url: "https://www.youtube.com/shorts/B773CNM3aY4"
+    },
+    {
       id: 2,
       title: "Jyoti Kashyab - An #Atmanirbhar woman earning 40,000/month by driving an E-Rickshaw| #BadlavKiLehar",
       description: "The journey of Jyoti becoming financially independent",
       url: "https://youtu.be/vOfeJ8P95fw?si=_E7oKYEwtltgbWlu"
     },
     {
-      id: 5,
-      title: "Making EV lending hassle free and scalable with charegup platform",
+      id: 9,
+      title: "How can a platform solve for the entire EV ecosystem as a single stop solution?",
       description: "The inspiring story of Pratibha Das",
-      url: "https://youtu.be/OrrJxqMYgIQ"
+      url: "https://www.youtube.com/shorts/sRpQnBrrGcM"
     },
     {
       id: 3,
@@ -69,7 +116,6 @@ export default function VideoCarouselSection() {
       description: "The inspiring story of Pratibha Das",
       url: "https://youtu.be/uxwZTdbwp2s?si=AZfA3Q8ALsF71CpA"
     },
-    
     
   ];
 
@@ -104,6 +150,7 @@ export default function VideoCarouselSection() {
 
   // Function to handle video thumbnail click
   const handleVideoClick = (videoIndex) => {
+    setCurrentIndex(videoIndex);
     setIsModalOpen(true);
     // Pause autoplay when modal is open
     clearInterval(intervalRef.current);
@@ -209,7 +256,8 @@ export default function VideoCarouselSection() {
                       alt={video.title}
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        e.target.src = "/thumbnail.png";
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/thumbnail.png";
                       }}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-60 transition-all duration-300">
@@ -268,7 +316,7 @@ export default function VideoCarouselSection() {
             <div className="aspect-video w-full">
               {getYouTubeEmbedUrl(videos[currentIndex].url) ? (
                 <iframe
-                  src={getYouTubeEmbedUrl(videos[currentIndex].url)}
+                  src={getYouTubeEmbedUrl(videos[currentIndex].url) || undefined}
                   title={videos[currentIndex].title}
                   className="w-full h-full"
                   frameBorder="0"
@@ -281,11 +329,14 @@ export default function VideoCarouselSection() {
                     {videos[currentIndex].title}
                   </h3>
                   <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 text-center">
-                    Unable to load video
+                    Unable to load video. Please check the video URL.
                   </p>
                   <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-orange-500 text-white">
                     <Play className="h-6 w-6 md:h-8 md:w-8 ml-1" />
                   </div>
+                  <p className="text-sm text-gray-400 mt-4">
+                    Video URL: {videos[currentIndex].url}
+                  </p>
                 </div>
               )}
             </div>

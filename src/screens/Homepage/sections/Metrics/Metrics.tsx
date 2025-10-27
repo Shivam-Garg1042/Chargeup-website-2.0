@@ -57,10 +57,10 @@ export const Metrics = () => {
     },
     {
       key: "drivers",
-      value: "5000",
+      value: "8000",
       suffix: "+",
       description: "Drivers",
-      targetValue: 5000,
+      targetValue: 8000,
       icon: (
         <div className="rounded-full bg-emerald-900 p-3">
           <Users size={44} className="text-white" />
@@ -227,16 +227,13 @@ export const Metrics = () => {
         </div>
 
         {/* Heading moved below the cards */}
-        <div className="flex flex-col items-center px-4 mt-2 mb-1 md:mb-4">
+        <div className="flex flex-col items-center px-4 mt-0 mb-1 md:mb-4">
           <h2 className="font-medium text-gray-900 text-[26px] sm:text-[28px] md:text-[36px] lg:text-[54px] text-center tracking-[-0.5px] sm:tracking-[-1px] lg:tracking-[-1.28px] leading-[1.2] lg:leading-[80px] px-4 sm:px-8 md:px-12">
             Creating impact with every ride 
           </h2>
         </div>
         
-        {/* Decorative elements */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-emerald-500 rounded-full opacity-50 animate-ping hidden md:block"></div>
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-emerald-300 rounded-full opacity-40 animate-ping hidden md:block" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-emerald-400 rounded-full opacity-60 animate-ping hidden md:block" style={{ animationDelay: '1.5s' }}></div>
+          
       </div>
     </section>
   );

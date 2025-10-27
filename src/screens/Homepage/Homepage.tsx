@@ -81,10 +81,10 @@ export const Homepage = (): JSX.Element => {
     <Route path = "/solutions" element={
       <>
       <section id="solutions">
-      <SolutionHome/>
-      </section>
-
       <FeaturesSection/>
+      </section>
+      <SolutionHome/>
+      
       <Challenges/>
       <Pillars/>
       

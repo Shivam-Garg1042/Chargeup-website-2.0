@@ -13,8 +13,8 @@ export default function PartnerEcosystem() {
     
     { src: "/oem2.png", alt: "Eastman", width: 160,heigth : 100 },
      
-    { src: "/recycler2.png", alt: "Samsung Logo", width: 150,heigth : 130 },
-    { src: "/oem4.jpg", alt: "Inverted", width: 100,heigth : 100 },
+    { src: "/oem5.jpg", alt: "zenfinity", width: 160,heigth : 130 },
+    { src: "/nbfc12.jpg", alt: "SVCL", width: 120,heigth : 100 },
   ];
 
   return (

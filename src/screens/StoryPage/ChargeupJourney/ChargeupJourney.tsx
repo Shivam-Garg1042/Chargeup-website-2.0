@@ -129,12 +129,8 @@ export default function ChargeUpTimeline() {
 
   return (
     <div className=" md:h-[750px] bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 py-8 px-4 md:py-12 md:px-6 relative overflow-hidden ">
-      {/* Background patterns */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-green-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-teal-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
-      </div>
+      
+    
 
       <div className="max-w-7xl mx-auto relative z-10 ">
         {/* Enhanced Header */}

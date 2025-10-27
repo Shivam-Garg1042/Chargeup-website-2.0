@@ -27,7 +27,7 @@ export const Navbar = (): JSX.Element => {
     // { name: "News Room", href: "/news" },
     { name: "Our Story", href: "/story" },
     { name: "People", href: "/people" },
-    //  { name: "About Us", href: "/" },
+    { name: "Marketplace ", href: "https://landing-page-624167443867.asia-southeast1.run.app/" },
     
   ];
   const handlePlayStoreClick = () => {
@@ -97,18 +97,45 @@ export const Navbar = (): JSX.Element => {
           <NavigationMenuList className="flex space-x-2">
             {navItems.map((item, index) => (
               <NavigationMenuItem key={index}>
-                <Link 
-                  to={item.href}
-                  className={`group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-lg text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300 ${
-                    activeLink === item.href ? 'text-emerald-600' : ''
-                  }`}
-                  onClick={() => setActiveLink(item.href)}
-                >
-                  {item.name}
-                  <span className={`absolute bottom-1 left-0 h-0.5 bg-emerald-600 transition-all duration-300 ${
-                    activeLink === item.href ? 'w-1/2 translate-x-1/2' : 'w-0 group-hover:w-1/2 group-hover:translate-x-1/2'
-                  }`}></span>
-                </Link>
+                {item.href.startsWith('http') ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-lg text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300"
+                  >
+                    
+                    {item.name}
+
+                    <svg 
+                      className="w-5 h-5 mr-1.5 opacity-60 ml-1" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                      />
+                    </svg>
+                    <span className="absolute bottom-1 left-0 h-0.5 bg-emerald-600 transition-all duration-300 w-0 group-hover:w-1/2 group-hover:translate-x-1/2"></span>
+                  </a>
+                ) : (
+                  <Link 
+                    to={item.href}
+                    className={`group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-lg text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300 ${
+                      activeLink === item.href ? 'text-emerald-600' : ''
+                    }`}
+                    onClick={() => setActiveLink(item.href)}
+                  >
+                    {item.name}
+                    <span className={`absolute bottom-1 left-0 h-0.5 bg-emerald-600 transition-all duration-300 ${
+                      activeLink === item.href ? 'w-1/2 translate-x-1/2' : 'w-0 group-hover:w-1/2 group-hover:translate-x-1/2'
+                    }`}></span>
+                  </Link>
+                )}
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -151,7 +178,7 @@ export const Navbar = (): JSX.Element => {
             className="hidden md:block bg-[#0D8948] text-white rounded-md md:rounded-lg px-4 py-2 lg:py-[7px] lg:px-[20px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-center lg:text-base shadow-[0px_1.33px_2.67px_#1018280d] hover:bg-[#023350] transition-all duration-300 hover:shadow-lg"
             onClick={() => setIsGetStartedOpen(true)}
           >
-            Get Started
+            Contact Us
           </button>
 
           {/* Hamburger menu for mobile */}
@@ -180,11 +207,14 @@ export const Navbar = (): JSX.Element => {
         >
           <div className="p-6">
             <div className="flex justify-between items-center mb-8">
+              <Link to="/">
               <img
                 className="h-[32px] object-cover"
                 alt="Chargeup logo"
                 src="/chargeup-logo-1-1.png"
+                onClick={() => setIsMobileMenuOpen(false)}
               />
+              </Link>
               <button 
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-gray-500 hover:text-gray-700"
@@ -207,16 +237,41 @@ export const Navbar = (): JSX.Element => {
                     transition: `transform 0.3s ease-in-out ${index * 0.05}s, opacity 0.3s ease-in-out ${index * 0.05}s` 
                   }}
                 >
-                  <Link 
-                    to={item.href} 
-                    className="block font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-lg text-gray-800 hover:text-emerald-600 transition-colors duration-200"
-                    onClick={() => {
-                      setActiveLink(item.href);
-                      setIsMobileMenuOpen(false);
-                    }}
-                  >
-                    {item.name}
-                  </Link>
+                  {item.href.startsWith('http') ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-lg text-gray-800 hover:text-emerald-600 transition-colors duration-200 flex items-center"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <svg 
+                        className="w-4 h-4 mr-2 opacity-60" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                        />
+                      </svg>
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link 
+                      to={item.href} 
+                      className="block font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-lg text-gray-800 hover:text-emerald-600 transition-colors duration-200"
+                      onClick={() => {
+                        setActiveLink(item.href);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

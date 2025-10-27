@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const ConfirmationModal = ({ onClose }) => {
@@ -131,15 +131,30 @@ const ContactModal = ({ isOpen, onClose }) => {
               <div className="mt-12">
                 <p className="font-medium text-gray-700 mb-4">Follow Us :</p>
                 <div className="flex space-x-4">
-                  {[FaFacebook, FaInstagram, FaTwitter, FaLinkedin].map((Icon, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="bg-[#0C7D49] text-white p-3 rounded-full hover:bg-[#023350] transition-colors"
-                    >
-                      <Icon size={20} />
-                    </a>
-                  ))}
+                  <a
+                    href="https://www.instagram.com/chargeup_in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0C7D49] text-white p-3 rounded-full hover:bg-[#023350] transition-colors"
+                  >
+                    <FaInstagram size={20} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/chargeup-solutions-pvt-ltd/posts/?feedView=all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0C7D49] text-white p-3 rounded-full hover:bg-[#023350] transition-colors"
+                  >
+                    <FaLinkedin size={20} />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@chargeup_india"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0C7D49] text-white p-3 rounded-full hover:bg-[#023350] transition-colors"
+                  >
+                    <FaYoutube size={20} />
+                  </a>
                 </div>
               </div>
             </div>
@@ -232,15 +247,30 @@ const ContactModal = ({ isOpen, onClose }) => {
                 <div className="mt-6">
                   <p className="text-gray-300 text-sm mb-3">Follow Us:</p>
                   <div className="flex space-x-3">
-                    {[FaFacebook, FaInstagram, FaTwitter, FaLinkedin].map((Icon, index) => (
-                      <a
-                        key={index}
-                        href="#"
-                        className="bg-[#0C7D49] text-white p-2 rounded-full hover:bg-[#023350] transition-colors"
-                      >
-                        <Icon size={16} />
-                      </a>
-                    ))}
+                    <a
+                      href="https://www.instagram.com/chargeup_in/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#0C7D49] text-white p-2 rounded-full hover:bg-[#023350] transition-colors"
+                    >
+                      <FaInstagram size={16} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/chargeup-solutions-pvt-ltd/posts/?feedView=all"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#0C7D49] text-white p-2 rounded-full hover:bg-[#023350] transition-colors"
+                    >
+                      <FaLinkedin size={16} />
+                    </a>
+                    <a
+                      href="https://www.youtube.com/@chargeup_india"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#0C7D49] text-white p-2 rounded-full hover:bg-[#023350] transition-colors"
+                    >
+                      <FaYoutube size={16} />
+                    </a>
                   </div>
                 </div>
               </div>

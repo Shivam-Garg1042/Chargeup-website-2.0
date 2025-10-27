@@ -25,16 +25,16 @@ export const DivWrapper = (): JSX.Element => {
   // Footer links data
   const footerLinks = [
     { title: "Privacy Policy", id: "/privacy-policy" },
-    { title: "Refund & Cancellation Policy", id: "/refund-policy" },
+    { title: "Refund & Cancellation Policy", id: "/refunxd-policy" },
     { title: "Terms & Conditions", id: "/terms-and-conditions" },
     { title: "Corporate Governance", id: "/corporate-governance" },
   ];
 
   // Social media links data
   const socialLinks = [
-    { icon: "/facebook.svg", alt: "Facebook", id: "https://www.facebook.com/echargeup" },
-    { icon: "/instagram.svg", alt: "Instagram", id: "https://www.instagram.com/e_chargeup/" },
-    { icon: "/twitter.svg", alt: "Twitter", id: "https://x.com/echargeup" },
+    { icon: "/linkedin.svg", alt: "LinkedIn", id: "https://www.linkedin.com/company/chargeup-solutions-pvt-ltd/posts/?feedView=all" },
+    { icon: "/instagram.svg", alt: "Instagram", id: "https://www.instagram.com/chargeup_in/" },
+    { icon: "/youtube.svg", alt: "YouTube", id: "https://www.youtube.com/@chargeup_india" },
   ];
 
   return (

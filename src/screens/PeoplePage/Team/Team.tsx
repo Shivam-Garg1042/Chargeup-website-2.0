@@ -7,7 +7,7 @@ export default function Team() {
     { 
       name: "Varun Goenka", 
       position: "Chief Executive Officer", 
-      image: "/5.png",
+      image: "/5.5.png",
       bio: "Core expertise in Product, Strategy, Growth & Partnerships",
       linkedin: "https://linkedin.com/in/username1",
       logos: [
@@ -21,7 +21,7 @@ export default function Team() {
     { 
       name: "Satish Mittal", 
       position: "Chief Digital Officer", 
-      image: "/1.png",
+      image: "/1.1.png",
       bio: "Core expertise in Data, Tech platform & Customer experience.",
       linkedin: "https://linkedin.com/in/username2",
       logos: [
@@ -58,8 +58,8 @@ export default function Team() {
     },
     { 
       name: "Anmol Chouksey", 
-      position: "Chief of Staff", 
-      image: "/3.png",
+      position: "Chief of Staff & Growth Head", 
+      image: "/3.3.png",
       bio: "Core expertise in Digital Business Transformation, Strategy & Marketing.",
       linkedin: "https://linkedin.com/in/username5",
       logos: [
@@ -75,10 +75,29 @@ export default function Team() {
         }
       ]
     },
+    { 
+      name: "Chetan Guglani", 
+      position: "Haed of Product, Partnerships & Central Operations", 
+      image: "/4.png",
+      bio: "Core expertise in Technology Architecture, Innovation & Product Development.",
+      linkedin: "https://linkedin.com/in/username6",
+      logos: [
+        { 
+          name: "Google", 
+          url: "https://logo.clearbit.com/google.com",
+          fallback: "G"
+        },
+        { 
+          name: "Microsoft", 
+          url: "https://logo.clearbit.com/microsoft.com",
+          fallback: "MS"
+        }
+      ]
+    },
   ];
 
   // Component for logo with fallback
-  const LogoImage = ({ logo }) => {
+  const LogoImage = ({ logo }: { logo: any }) => {
     const [imageError, setImageError] = useState(false);
     
     if (imageError) {
@@ -101,45 +120,26 @@ export default function Team() {
   };
 
   // Component for individual team member card with hover effect
-  const TeamMemberCard = ({ member, index }) => {
+  const TeamMemberCard = ({ member, index }: { member: any; index: number }) => {
     const [isHovered, setIsHovered] = useState(false);
     
     return (
       <div
         key={index}
-        className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 h-full relative"
+        className="flex flex-col bg-white rounded-xl shadow-lg hover:shadow-xl overflow-hidden transition-all duration-300 h-80 relative group"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onTouchStart={() => setIsHovered(!isHovered)} // Toggle for touch devices
       >
-        <div className="flex items-center justify-center w-full">
+        <div className="flex items-center justify-center w-full h-full relative overflow-hidden">
           <img
-            className="object-contain h-36 md:h-40 lg:h-60 rounded-t-lg w-36 md:w-60 lg:w-60"
+            className="object-cover h-full w-full rounded-xl transition-transform duration-300 group-hover:scale-105"
             alt={`${member.name} photo`}
             src={member.image}
             loading="lazy"
           />
-        </div>
-        <div className="flex flex-col items-center py-3 px-2">
-          {/* <h3 className="font-medium text-base text-center w-full">
-            {member.name}
-          </h3>
-          <p className="text-sm text-gray-500 text-center mb-2">
-            {member.position}
-          </p> */}
-          
-          {/* Company logos section */}
-          <div className="flex items-center justify-center gap-3 mt-3">
-            {member.logos && member.logos.map((logo, logoIndex) => (
-              <div
-                key={logoIndex}
-                className="flex items-center justify-center p-1  rounded-md hover:bg-gray-100 transition-colors"
-                title={logo.name}
-              >
-                <LogoImage logo={logo} />
-              </div>
-            ))}
-          </div>
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
         
         {/* Bio overlay that appears on hover */}
@@ -150,20 +150,8 @@ export default function Team() {
         >
           <div className="text-white flex flex-col items-center">
             <h3 className="font-medium text-lg mb-2 text-center">{member.name}</h3>
+            <p className="text-sm text-gray-300 text-center mb-3">{member.position}</p>
             <p className="text-base text-center mb-3">{member.bio}</p>
-            
-            {/* Company logos in overlay */}
-            {/* <div className="flex items-center justify-center gap-3 mb-3">
-              {member.logos && member.logos.map((logo, logoIndex) => (
-                <div
-                  key={logoIndex}
-                  className="flex items-center justify-center p-2 bg-white bg-opacity-20 rounded-md backdrop-blur-sm"
-                  title={logo.name}
-                >
-                  <LogoImage logo={logo} />
-                </div>
-              ))}
-            </div> */}
             
             <a 
               href={member.linkedin} 
@@ -191,19 +179,40 @@ export default function Team() {
           </h2>
         </header>
 
-        <div className="flex flex-col gap-6 w-full">
-          {/* First row of team members */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full md:h-[320px]">
-            {teamMembers.slice(0, 4).map((member, index) => (
-              <TeamMemberCard key={index} member={member} index={index} />
-            ))}
+        <div className="flex flex-col gap-12 w-full">
+          {/* First row - 3 members with zig-zag effect */}
+          <div className="relative">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+              {/* Member 1 - Slightly elevated */}
+              <div className="transform lg:-translate-y-4">
+                <TeamMemberCard member={teamMembers[0]} index={0} />
+              </div>
+              
+              {/* Member 2 - Normal position */}
+              <div className="transform lg:translate-y-0">
+                <TeamMemberCard member={teamMembers[1]} index={1} />
+              </div>
+              
+              {/* Member 3 - Slightly lowered */}
+              <div className="transform lg:translate-y-4 sm:col-span-2 lg:col-span-1 sm:justify-self-center">
+                <TeamMemberCard member={teamMembers[2]} index={2} />
+              </div>
+            </div>
           </div>
 
-          {/* Second row of team members */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full md:h-[320px]">
-            {teamMembers.slice(4, 8).map((member, index) => (
-              <TeamMemberCard key={index} member={member} index={index + 4} />
-            ))}
+          {/* Second row - 2 members centered with wider spacing */}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 w-full max-w-2xl">
+              {/* Member 4 - Elevated for zig-zag */}
+              <div className="transform lg:-translate-y-6">
+                <TeamMemberCard member={teamMembers[3]} index={3} />
+              </div>
+              
+              {/* Member 5 - Lowered for zig-zag */}
+              <div className="transform lg:translate-y-6">
+                <TeamMemberCard member={teamMembers[4]} index={4} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

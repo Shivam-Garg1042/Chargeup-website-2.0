@@ -10,7 +10,7 @@ export const CultureAtChargeUp = (): JSX.Element => {
     { 
       id: 2, 
       className: "w-full h-[200px] object-cover rounded-lg",
-      src: "/teamPhoto1.webp",
+      src: "/c3.jpg",
       alt: "Office environment"
     },
     { 
@@ -22,7 +22,7 @@ export const CultureAtChargeUp = (): JSX.Element => {
     { 
       id: 4, 
       className: "w-full h-[200px] object-cover rounded-lg",
-      src: "/c3.jpg",
+      src: "/c6.JPG",
       alt: "Work culture"
     },
     { 
@@ -40,7 +40,7 @@ export const CultureAtChargeUp = (): JSX.Element => {
     { 
       id: 7, 
       className: "w-full h-[200px] object-cover rounded-lg",
-      src: "/c2.jpeg",
+      src: "/c5.png",
       alt: "Workplace atmosphere"
     },
   ];

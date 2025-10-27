@@ -12,6 +12,7 @@ export const Pillars = () => {
       icon: "🚀",
       color: "#0F9547",
       imageUrl: "/pillar1.png",
+      highlightText: "Karma Index",
       points: [
         "365 days running assurance",
         "Predictive failures in advance", 
@@ -25,6 +26,7 @@ export const Pillars = () => {
       icon: "📱",
       color: "#0C7D49",
       imageUrl: "/pillar4.png",
+      highlightText: "Digital Twin",
       points: [
         "Predicting payment failure",
         "Remote tracking and mobilization",
@@ -38,6 +40,7 @@ export const Pillars = () => {
       icon: "🔋",
       color: "#0A704A",
       imageUrl: "pillar3.0.png",
+      highlightText: "Risk Score",
       points: [
         "Generating qualified leads",
         "Assessment based on digital footprint",
@@ -51,6 +54,7 @@ export const Pillars = () => {
       icon: "🧠",
       color: "#07584D",
       imageUrl: "pillar2.png",
+      highlightText: "Ai Genie",
       points: [
         "Reducing fault rates",
         "Increasing uptime",
@@ -70,66 +74,61 @@ export const Pillars = () => {
   }, [pillars.length]);
 
   return (
-    <section className="bg-gradient-to-br from-[#0F9547]/10 to-[#0C7D49]/10 py-8 md:py-20 px-0 overflow-hidden h-[830px] flex items-center">
+    <section className="bg-gradient-to-br from-[#0F9547]/10 to-[#0C7D49]/10 py-8 md:py-20 px-0 overflow-hidden h-auto lg:h-[830px] flex items-center">
       <div className="w-full flex flex-col lg:flex-row">
-        {/* Mobile Header - Only visible on mobile */}
-        <div className="lg:hidden px-4 mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Our Technology Pillars</h2>
-          {/* <p className="text-gray-600 text-center">Discover the core technologies that power our platform</p> */}
+      
+        {/* Mobile Header */}
+        <div className="lg:hidden w-full px-4 mb-6">
+          {/* <h2 className="text-2xl font-bold text-gray-900 text-center mb-4">Our Technology Pillars</h2> */}
+          
+          {/* Mobile Navigation Circles */}
+          <div className="flex justify-center space-x-4 mb-6">
+            {pillars.map((pillar, index) => {
+              const isActive = index === activeIndex;
+              
+              return (
+                <button
+                  key={pillar.id}
+                  className={`w-16 h-16 rounded-full flex items-center justify-center text-lg font-bold text-white shadow-lg relative overflow-hidden transition-all duration-300 ${
+                    isActive ? 'scale-110' : 'scale-90 opacity-70'
+                  }`}
+                  style={{ 
+                    backgroundColor: pillar.color,
+                    boxShadow: isActive ? 
+                      `0 0 20px ${pillar.color}60` : 
+                      `0 4px 12px ${pillar.color}30`
+                  }}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  <span className="relative z-10">{pillar.icon}</span>
+                  
+                  {/* Active indicator */}
+                  {isActive && (
+                    <div 
+                      className="absolute -inset-1 rounded-full border-2 opacity-50"
+                      style={{ borderColor: pillar.color }}
+                    ></div>
+                  )}
+                  
+                  {/* Number badge */}
+                  <div 
+                    className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-white shadow-md flex items-center justify-center text-xs font-bold"
+                    style={{ color: pillar.color }}
+                  >
+                    {pillar.id}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Left Side - Large Creative Circles - Mobile: Horizontal scroll, Desktop: Vertical */}
-        <div className="relative lg:w-80 w-full lg:h-screen h-32 flex lg:items-center ">
-          {/* Mobile: Horizontal scroll circles */}
+        {/* Left Side - Large Creative Circles - Desktop Only */}
+        <div className="relative lg:w-80 w-full lg:h-screen h-0 lg:flex lg:items-center hidden lg:block">
+          {/* Desktop: Horizontal scroll circles - Hidden */}
           <div className="lg:hidden w-full overflow-x-auto px-4">
-            <div className="flex space-x-6 pb-4">
-              {pillars.map((pillar, index) => {
-                const isActive = index === activeIndex;
-                
-                return (
-                  <div
-                    key={pillar.id}
-                    className="flex-shrink-0 relative transition-all duration-700 ease-in-out cursor-pointer"
-                    onClick={() => setActiveIndex(index)}
-                  >
-                    {/* Mobile Circle */}
-                    <div 
-                      className={`mt-2  w-20 h-20 md:w-20 md:h-20 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold text-white shadow-2xl relative overflow-hidden transition-all duration-500 border-2 border-white/30 ${
-                        isActive ? 'scale-110' : 'scale-95 opacity-70'
-                      }`}
-                      style={{ 
-                        backgroundColor: pillar.color,
-                        boxShadow: isActive ? 
-                          `0 0 30px ${pillar.color}80, 0 0 60px ${pillar.color}40` : 
-                          `0 10px 20px ${pillar.color}30`
-                      }}
-                    >
-                      <span className="relative z-10 drop-shadow-lg">{pillar.icon}</span>
-                      
-                      {/* Mobile active indicator */}
-                      {isActive && (
-                        <div 
-                          className="absolute -inset-2 rounded-full animate-ping opacity-30"
-                          style={{ 
-                            border: `2px solid ${pillar.color}`,
-                            animationDuration: '2s'
-                          }}
-                        ></div>
-                      )}
-                    </div>
-
-                    {/* Mobile number badge */}
-                    <div 
-                      className={`absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white shadow-lg flex items-center justify-center text-xs font-bold transition-all duration-500 ${
-                        isActive ? 'scale-110' : 'scale-90'
-                      }`}
-                      style={{ color: pillar.color }}
-                    >
-                      {pillar.id}
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="flex space-x-6 pb-0">
+              {/* Desktop content moved below */}
             </div>
           </div>
 
@@ -276,17 +275,17 @@ export const Pillars = () => {
         <div className="flex-1 px-4 md:px-8 lg:px-16 flex items-center justify-center">
           
           <div className="w-full max-w-4xl">
-            <h2 className="text-5xl font-bold text-gray-900 mb-16 text-center">Our Technology Pillars</h2>
+            <h2 className="text-5xl font-bold text-gray-900 mb-8 md:mb-16 text-center">Our Technology Pillars</h2>
             {/* Fixed Size Content Card */}
             <div 
-              className="bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 ease-in-out transform w-full h-[480px]"
+              className="bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 ease-in-out transform w-full h-full"
               style={{ 
                 boxShadow: `0 25px 50px -12px ${pillars[activeIndex].color}20, 0 0 0 1px ${pillars[activeIndex].color}10`
               }}
             >
               <div className="grid lg:grid-cols-2 gap-0 h-full">
-                {/* Image Section - Fixed Height */}
-                <div className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 h-full">
+                {/* Image Section - Hidden on mobile */}
+                <div className="hidden lg:block relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 h-full">
                   <img 
                     src={pillars[activeIndex].imageUrl}
                     alt={pillars[activeIndex].title}
@@ -297,25 +296,17 @@ export const Pillars = () => {
                   <div 
                     className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
                   ></div>
-                  
-                  {/* Floating number badge */}
-                  {/* <div 
-                    className="absolute top-4 left-4 md:top-6 md:left-6 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center text-white font-bold text-base md:text-lg shadow-lg"
-                    style={{ backgroundColor: pillars[activeIndex].color }}
-                  >
-                    {pillars[activeIndex].id}
-                  </div> */}
                 </div>
 
-                {/* Text Content Section - Fixed Height with Scroll */}
-                <div className="p-6 md:p-8 lg:p-10 flex flex-col  h-full overflow-y-auto">
+                {/* Text Content Section - Full width on mobile */}
+                <div className="lg:col-span-1 col-span-full p-6 md:p-8 lg:p-10 flex flex-col h-full overflow-y-auto">
                   {/* Title */}
-                  <h3 className="text-xl md:text-2xl lg:text-4xl font-bold mb-3 md:mb-6 text-gray-900 leading-tight">
+                  <h3 className="text-xl md:text-2xl lg:text-4xl font-bold mb-2 md:mb-4 text-gray-900 leading-tight">
                     {pillars[activeIndex].title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-sm md:text-xl text-gray-600 leading-relaxed mb-4 md:mb-8">
+                  <p className="text-sm md:text-xl text-gray-600 leading-relaxed mb-4 md:mb-4">
                     {pillars[activeIndex].description}
                   </p>
 
@@ -332,6 +323,71 @@ export const Pillars = () => {
                         <span className="text-sm md:text-lg text-gray-700 font-medium">{point}</span>
                       </div>
                     ))}
+                  </div>
+
+                  {/* Creative Highlighting Text Section */}
+                  <div className="mt-0 md:mt-3 pt-1">
+                    <div className="relative">
+                      {/* Background glow effect - Hidden on mobile */}
+                      <div 
+                        className="absolute inset-0 rounded-2xl blur-xl opacity-20 animate-pulse hidden md:block"
+                        style={{ backgroundColor: pillars[activeIndex].color }}
+                      ></div>
+                      
+                      {/* Main highlight container - Simplified on mobile */}
+                      <div 
+                        className="relative md:bg-gradient-to-r md:from-white md:via-gray-50 md:to-white md:rounded-2xl md:p-4 md:border-2 md:transition-all md:duration-700 md:shadow-lg"
+                        style={{ 
+                          borderColor: `${pillars[activeIndex].color}30`,
+                          boxShadow: `0 8px 32px ${pillars[activeIndex].color}15`
+                        }}
+                      >
+                        {/* Highlight text with creative styling */}
+                        <div className="text-center">
+                          <h4 
+                            className="text-lg md:text-3xl lg:text-4xl font-black tracking-tight relative"
+                            style={{ color: pillars[activeIndex].color }}
+                          >
+                            {/* Text glow effect - Hidden on mobile */}
+                            <span 
+                              className="absolute inset-0 blur-sm opacity-50 hidden md:block"
+                              style={{ color: pillars[activeIndex].color }}
+                            >
+                              {pillars[activeIndex].highlightText}
+                            </span>
+                            
+                            {/* Main text */}
+                            <span className="relative z-10">
+                              {pillars[activeIndex].highlightText}
+                            </span>
+                            
+                            {/* Animated underline - Hidden on mobile */}
+                            <div 
+                              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 rounded-full animate-pulse transition-all duration-700 hidden md:block"
+                              style={{ 
+                                width: '80%',
+                                background: `linear-gradient(90deg, transparent, ${pillars[activeIndex].color}, transparent)`
+                              }}
+                            ></div>
+                          </h4>
+                        </div>
+                        
+                        {/* Decorative elements - Hidden on mobile */}
+                        <div className="hidden md:flex justify-center items-center mt-3 space-x-2">
+                          {[...Array(3)].map((_, i) => (
+                            <div
+                              key={i}
+                              className="w-2 h-2 rounded-full animate-bounce"
+                              style={{ 
+                                backgroundColor: pillars[activeIndex].color,
+                                animationDelay: `${i * 0.2}s`,
+                                animationDuration: '1.5s'
+                              }}
+                            ></div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

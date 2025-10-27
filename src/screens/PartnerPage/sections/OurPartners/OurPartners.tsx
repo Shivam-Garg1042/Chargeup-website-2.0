@@ -25,13 +25,16 @@ export const OurPartners = (): JSX.Element => {
       { id: 2, type: "image",imgUrl: "/nbfc2.png"  },
       // { id: 3, type: "image", imgUrl:"/nbfc3.png"  },
       { id: 4,type: "image", imgUrl: "/nbfc5.png"  },
-      { id: 5, type: "image", imgUrl: "/nbfc4.png" },
+      { id: 5, type: "image", imgUrl: "/nbfc12.jpg" },
+      { id: 6, type: "image", imgUrl: "/nbfc4.png"  },
     ],
     "OEMs": [
       { id: 1, type: "image", imgUrl: "/oem1.png"  },
       { id: 2, type: "image", imgUrl: "oem2.png" },
       { id: 3, type: "image", imgUrl: "oem3.png" },
       { id: 4, type: "image", imgUrl: "oem4.jpg" },
+      { id: 5, type: "image", imgUrl: "oem7.jpg" },
+      {id: 6, type: "image", imgUrl: "oem5.jpg" },
     ],
     "Dealers": [
       // { id: 1, type: "image", imgUrl: "/recycler1.png"},

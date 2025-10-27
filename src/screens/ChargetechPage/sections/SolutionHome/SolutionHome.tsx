@@ -5,40 +5,105 @@ import { useState } from "react";
 
 export const SolutionHome = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+
   
   return (
-    <section className="flex flex-col items-start justify-center p-2 md:p-8 lg:px-8 ">
-      <Card className="w-full rounded-lg md:rounded-xl lg:rounded-2xl border-none overflow-hidden relative bg-cover bg-left bg-no-repeat  md:h-[370px]"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0.1, 0, 1, 0.2)), url('/solution.png')`
-            }}>
-        
-        <CardContent className="flex flex-col items-start p-10 sm:p-8 md:p-12 lg:py-24 lg:px-24">
-          <div className="flex flex-col items-start gap-6 md:gap-8 w-full">
-            <div className="flex flex-col items-start gap-1">
-              <p className="md:w-2/3 text-base lg:px-[24px] font-semibold sm:text-base md:text-5xl  text-[#fcfcfc] leading-relaxed font-['Plus_Jakarta_Sans',Helvetica]">
-                A one stop solution
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0F9547]/5 via-white to-[#ffffff]/5 py-10 md:py-16">
+      
 
+      <div className="relative container mx-auto px-4 md:px-8 lg:px-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
+          {/* Left Side - Enhanced Professional Content */}
+          <div className="space-y-8 lg:space-y-10">
+            {/* Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#0F9547]/10 to-[#0C7D49]/10 rounded-full border border-[#0F9547]/20 backdrop-blur-sm">
+              <div className="w-2 h-2 bg-[#0F9547] rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-bold text-[#0F9547] tracking-wide uppercase letter-spacing-wide">
+                Full Stack AI/ML Platform
+              </span>
+            </div>
+            
+            {/* Main Heading with enhanced typography */}
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
+                <span className="block text-gray-900">Full Stack </span>
+                <span className="block bg-gradient-to-r from-[#0F9547] via-[#0C7D49] to-[#0A704A] bg-clip-text text-transparent">
+                  AI/ML Platform
+                </span>
+              </h1>
+              
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-700 leading-relaxed">
+                For EV Finance & Asset Management
+              </h2>
+            </div>
+
+            {/* Enhanced Description */}
+            <div className="space-y-4">
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
+                This platform offers a seamless blend of financial services, asset management, and 
+                cutting-edge technology.
               </p>
-              {/* <h1 className="md:w-full text-3xl lg:px-[24px] md:text-4xl xl:text-[44px] font-semibold text-white tracking-tight font-['Plus_Jakarta_Sans',Helvetica] mb-4">
-                Fi Ne Tech Platform 
-              </h1> */}
-              <p className="w-full md:w-2/3 text-lg lg:px-[24px] sm:text-base md:text-xl font-normal text-[#ffffff] leading-relaxed mt-6 md:mt-6">
-                Offering Financial services and Asset management integrated with NBFCs, OEMs & dealers.
+              <p className="text-base md:text-lg text-gray-500 leading-relaxed">
+                Integrated with NBFCs, OEMs, and dealers to simplify complex operations into one unified, 
+                intelligent solution.
               </p>
             </div>
-            <div className="flex items-start pt-4 md:pt-6 lg:px-[24px]">
+
+            
+
+            {/* Enhanced CTA Section */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-6">
               <Button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#ffffff] px-4 py-2 text-grey-100  rounded-md md:rounded-lg text-base md:text-base lg:text-lg font-semibold font-['Plus_Jakarta_Sans',Helvetica] shadow-sm hover:text-white hover:bg-[#033F4F]/90"
+                className="group bg-gradient-to-r from-[#0F9547] to-[#0C7D49] hover:from-[#0C7D49] hover:to-[#0A704A] text-white px-8 py-4 rounded-xl text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
               >
                 Partner with us
+                <span className="ml-3 group-hover:translate-x-1 transition-transform duration-300 text-xl">→</span>
               </Button>
-              <PartnerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+              
+            
             </div>
           </div>
-        </CardContent>
-      </Card>
+
+          {/* Right Side - Image Placeholder */}
+          <div className="relative">
+            {/* Main image container */}
+            <div className="relative  ">
+              {/* Placeholder for your image */}
+              <div className=" w-full  flex items-center justify-center">
+                <img 
+                  src="/heroImage.png" 
+                  alt="AI/ML Platform Dashboard"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback placeholder if image doesn't exist
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement.innerHTML = `
+                      <div class="w-full h-full flex flex-col items-center justify-center text-gray-500 space-y-4">
+                        <div class="text-6xl md:text-8xl">🖼️</div>
+                        <div class="text-center">
+                          <p class="text-lg font-semibold text-gray-700">Platform Dashboard Image</p>
+                          <p class="text-sm text-gray-500">Replace with /solution-platform-image.png</p>
+                        </div>
+                      </div>
+                    `;
+                  }}
+                />
+              </div>
+              
+              
+              
+              
+            </div>
+
+           
+          </div>
+        </div>
+      </div>
+
+      <PartnerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

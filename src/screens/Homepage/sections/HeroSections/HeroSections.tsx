@@ -45,7 +45,7 @@ export default function HeroSection() {
               
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  India's first<br></br> EV Driver Platform  
+                  India's First<br></br> EV Tech Platform  
                 </span>
                 {/* <br />
                 <span className="bg-gradient-to-r from-[#0C7D49] via-[#07584D] to-[#033F4F] bg-clip-text text-transparent">
@@ -56,11 +56,11 @@ export default function HeroSection() {
                   Platform
                 </span> */}
               </h1>
-              
+                
               <p className="text-xl md:text-2xl text-gray-50 leading-relaxed max-w-xl">
-                Offering        
-                <span className="text-[#f1ee8e] font-semibold"> Financial services and Asset management </span>, 
-                integrated with NBFCs, OEMs and dealers to offer a one stop solution.
+                Chargeup unifies India’s 3-wheeler ecosystem empowering drivers, NBFCs, and OEMs through   <br></br> 
+                <span className="text-[#f1ee8e] font-semibold"> AI-driven financing and asset management solutions. </span>
+                
               </p>
             </div>
 

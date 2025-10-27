@@ -9,7 +9,7 @@ export default function KeyFeatures() {
       description:
         "Enabling paperless EV loans to last mile drivers with no or low credit score.",
       iconSrc: "/financel.png",
-      banner: "Pay as you earn finance"
+      banner: "Pay as you earn "
     },
     {
       id: 2,
@@ -31,10 +31,10 @@ export default function KeyFeatures() {
   ];
 
   return (
-    <section className="flex flex-col w-full items-center justify-center py-8 px-4 bg-gray-50">
+    <section className="flex flex-col w-full items-center justify-center py-8 md:py-16 px-4 bg-gray-50">
       {/* Section Title */}
-      <h2 className="text-3xl md:text-4xl font-medium text-center mb-16">
-        Chargeup <span className="text-[#0A704A]">Platform</span>
+      <h2 className="text-3xl md:text-4xl font-medium text-center mb-16 md:mb-24">
+        How we unify the EV ecosystem to power<br></br> Drivers, NBFCs & OEMs
       </h2>
 
       {/* Cards Container */}

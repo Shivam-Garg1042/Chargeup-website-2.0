@@ -25,7 +25,7 @@ export const Challenges = () => {
       )
     },
     {
-      title: "No Control",
+      title: "Zero Control",
       subtitle: "No real-time visibility or digital monitoring.",
       impact: "Blind Spots",
       visual: (
@@ -106,7 +106,7 @@ export const Challenges = () => {
 
   const solutionsData = [
     {
-      title: "365 Days",
+      title: "365 Days Running",
       subtitle: "Enabling driver to run more earn more.",
       benefit: "99.9% Uptime",
       visual: (
@@ -129,7 +129,7 @@ export const Challenges = () => {
       )
     },
     {
-      title: "Real-time",
+      title: "Active Intelligence",
       subtitle: "Enabling real time tracking and remote Immobilization.",
       benefit: "Full Visibility",
       visual: (
@@ -155,8 +155,8 @@ export const Challenges = () => {
       )
     },
     {
-      title: "AI Credit",
-      subtitle: "Enabling access to credit beyond Cibi.",
+      title: "Digital Underwriting",
+      subtitle: "Enabling access to credit beyond Cibil.",
       benefit: "Smart Scoring",
       visual: (
         <div className="relative w-16 h-16 bg-gradient-to-br from-[#0C7D49]/20 to-[#0A704A]/10 rounded-xl flex items-center justify-center">
@@ -185,7 +185,7 @@ export const Challenges = () => {
       )
     },
     {
-      title: "Complete",
+      title: "Established Network",
       subtitle: "One stop solution for repair resale and replacement.",
       benefit: "One-Stop Shop",
       visual: (
