@@ -84,10 +84,8 @@ export const Homepage = (): JSX.Element => {
       <FeaturesSection/>
       </section>
       <SolutionHome/>
-      
       <Challenges/>
       <Pillars/>
-      
       </>
     }></Route>
     <Route path = "/partners" element={

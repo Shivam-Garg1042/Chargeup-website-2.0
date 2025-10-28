@@ -45,7 +45,7 @@ const articlesData = [
     date: "23 Jan, 2025",
     title: "Chargeup teams up with Mega Corp, Shivakari Finance to unlock Rs 50 Cr in EV financing",
     description: "The company aims to disburse the credit line to support the deployment of 4,000 commercial EVs over their next 12 months in the country.",
-    imageUrl: "/news8.png",
+    imageUrl: "/news8.jpg",
     link: "https://yourstory.com/2025/05/chargeup-partners-mega-corp-shivakari-finance-50-crore-ev-financing"
   },
   // {
