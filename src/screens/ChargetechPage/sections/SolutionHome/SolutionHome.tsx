@@ -34,8 +34,8 @@ export const SolutionHome = (): JSX.Element => {
                 </span>
               </h1>
               
-              <h2 className="text-lg md:text-xl lg:text-2xl font-normal text-gray-700 leading-relaxed">
-                For NBFCs & OEMs
+              <h2 className="text-lg md:text-xl lg:text-xl font-normal text-gray-700 leading-relaxed">
+                For a holistic approach to EV adoption
 
               </h2>
             </div>

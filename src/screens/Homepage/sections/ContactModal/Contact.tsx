@@ -22,37 +22,40 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   const [loading, setLoading] = useState(false);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
-  // Updated API service functions using fetch instead of axios
-  const submitContactForm = async (formData) => {
-    // Replace with your actual API URL
-    const API_BASE_URL = 'https://contact-forms-api-624167443867.us-central1.run.app/api';
+  // Updated API service functions to submit to Google Forms
+  const submitToGoogleForm = async (formData: { name: string; contact: string; message: string }) => {
+    // Replace these with your actual Google Form field IDs
+    // To get these IDs: Create a Google Form, inspect the form fields, and copy the 'name' attributes
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSc-XXlbz_7L8HL8Fdk8bqG8F0P-jLgun04xbPB_w8ePIytCyw/formResponse';
     
-    const response = await fetch(`${API_BASE_URL}/contact`, {
+    // These are example field IDs - replace with your actual form field IDs
+    const formDataToSubmit = new FormData();
+    formDataToSubmit.append('entry.1420774100', formData.name); // Replace with your name field ID
+    formDataToSubmit.append('entry.2133010591', formData.contact); // Replace with your contact field ID
+    formDataToSubmit.append('entry.1391589279', formData.message); // Replace with your message field ID
+    
+    await fetch(GOOGLE_FORM_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
+      body: formDataToSubmit,
+      mode: 'no-cors' // Required for Google Forms submission
     });
     
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    return response.json();
+    // Note: With no-cors mode, we can't check response status
+    // We'll assume success if no error is thrown
+    return { success: true };
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
     try {
-      await submitContactForm(formData);
+      await submitToGoogleForm(formData);
       setShowConfirmationModal(true);
       setTimeout(() => {
         setFormData({ name: "", contact: "", message: "" });
@@ -67,7 +70,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -75,7 +78,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     }));
   };
 
-  const handleOverlayClick = (e) => {
+  const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
@@ -128,9 +131,9 @@ const ContactModal = ({ isOpen, onClose }) => {
                 </div>
               </div>
               
-              <div className="mt-12">
-                <p className="font-medium text-gray-700 mb-4">Follow Us :</p>
-                <div className="flex space-x-4">
+                <div className="mt-12">
+                  <p className="font-medium text-gray-700 mb-4">Follow Us :</p>
+                  <div className="flex space-x-4">
                   <a
                     href="https://www.instagram.com/chargeup_in/"
                     target="_blank"

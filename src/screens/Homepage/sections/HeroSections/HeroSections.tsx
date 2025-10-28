@@ -23,13 +23,22 @@ export default function HeroSection() {
 
   return (
     <section className="h-[650px] relative overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Overlay - Desktop */}
       <div 
-        className="absolute inset-0 bg-cover bg-left bg-no-repeat object-fill w-[100%] h-[100%] z-0"
+        className="hidden md:block absolute inset-0 bg-cover bg-left bg-no-repeat object-fill w-[100%] h-[100%] z-0"
         style={{
-          backgroundImage: `url('/hero.png')`,
+          backgroundImage: `url('/hero2.png')`, 
         }}
       />
+      
+      {/* Background Image with Overlay - Mobile */}
+      <div 
+        className="block md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat object-fill w-[100%] h-[100%] z-0"
+        style={{
+          backgroundImage: `url('/heroSample.jpg')`, // Mobile image - replace with your mobile image
+        }}
+      />
+      
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 " />
 

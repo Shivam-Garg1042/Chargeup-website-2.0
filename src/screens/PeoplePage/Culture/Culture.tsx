@@ -4,7 +4,7 @@ export const CultureAtChargeUp = (): JSX.Element => {
     { 
       id: 1, 
       className: "w-full h-[450px] object-cover rounded-lg",
-      src: "/TeamImage1.jpeg", // Replace with your actual image path
+      src: "/c8.jpg", // Replace with your actual image path
       alt: "Team collaboration"
     },
     { 
@@ -16,7 +16,7 @@ export const CultureAtChargeUp = (): JSX.Element => {
     { 
       id: 3, 
       className: "w-full h-[200px] object-cover rounded-lg",
-      src: "/culture1.jpeg",
+      src: "/c7.jpg",
       alt: "Team meeting"
     },
     { 
@@ -28,7 +28,7 @@ export const CultureAtChargeUp = (): JSX.Element => {
     { 
       id: 5, 
       className: "w-full h-[450px] object-cover rounded-lg",
-      src: "/c4.jpg",
+      src: "/c0.jpg",
       alt: "Team building"
     },
     { 

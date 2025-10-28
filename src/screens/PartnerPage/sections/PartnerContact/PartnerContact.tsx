@@ -23,28 +23,31 @@ export default function PartnerModal({ isOpen, onClose }) {
 
   const [loading, setLoading] = useState(false);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
-  // API service function for partner form submission
-  const submitPartnerForm = async (formData) => {
-    // Replace with your actual API URL
-    const API_BASE_URL = 'https://contact-forms-api-624167443867.us-central1.run.app/api';
+  // Google Forms submission function for partner form
+  const submitToGoogleForm = async (formData: { name: string; companyName: string; email: string; contact: string; message: string }) => {
+    // Using your Google Form URL
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdnyjAdv8mfOCB0mmueqVp1XwP-47Dl929eOybQXuDlMtniqg/formResponse';
     
-    const response = await fetch(`${API_BASE_URL}/partner`, {
+    // Map partner form fields to Google Form entries
+    // You'll need to replace these with actual field IDs from your Google Form
+    const formDataToSubmit = new FormData();
+    formDataToSubmit.append('entry.1420774100', formData.name); // Replace with name field ID
+    formDataToSubmit.append('entry.2133010591', formData.companyName); // Replace with company field ID  
+    formDataToSubmit.append('entry.158145381', formData.email); // Replace with email field ID
+    formDataToSubmit.append('entry.1541831499', formData.contact); // Replace with contact field ID
+    formDataToSubmit.append('entry.1391589279', formData.message); // Replace with message field ID
+    
+    await fetch(GOOGLE_FORM_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
+      body: formDataToSubmit,
+      mode: 'no-cors' // Required for Google Forms submission
     });
     
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    return response.json();
+    return { success: true };
   };
 
   const handleSubmit = async () => {
@@ -52,7 +55,7 @@ export default function PartnerModal({ isOpen, onClose }) {
     setError(null);
 
     try {
-      await submitPartnerForm(formData);
+      await submitToGoogleForm(formData);
       setShowConfirmationModal(true);
       setTimeout(() => {
         setFormData({ name: "", companyName: "", email: "", contact: "", message: "" });
@@ -67,7 +70,7 @@ export default function PartnerModal({ isOpen, onClose }) {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -75,7 +78,7 @@ export default function PartnerModal({ isOpen, onClose }) {
     }));
   };
 
-  const handleOverlayClick = (e) => {
+  const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
