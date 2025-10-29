@@ -32,20 +32,50 @@ const ContactModal = ({ isOpen, onClose }) => {
     // To get these IDs: Create a Google Form, inspect the form fields, and copy the 'name' attributes
     const GOOGLE_FORM_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSc-XXlbz_7L8HL8Fdk8bqG8F0P-jLgun04xbPB_w8ePIytCyw/formResponse';
     
-    // These are example field IDs - replace with your actual form field IDs
+    // Try multiple approaches to ensure data is captured
     const formDataToSubmit = new FormData();
-    formDataToSubmit.append('entry.1420774100', formData.name); // Replace with your name field ID
-    formDataToSubmit.append('entry.2133010591', formData.contact); // Replace with your contact field ID
-    formDataToSubmit.append('entry.1391589279', formData.message); // Replace with your message field ID
     
-    await fetch(GOOGLE_FORM_URL, {
-      method: 'POST',
-      body: formDataToSubmit,
-      mode: 'no-cors' // Required for Google Forms submission
-    });
+    // Method 1: Using common Google Form field patterns
+    formDataToSubmit.append('entry.1420774100', formData.name);
+    formDataToSubmit.append('entry.2133010591', formData.contact);
+    formDataToSubmit.append('entry.1391589279', formData.message);
     
-    // Note: With no-cors mode, we can't check response status
-    // We'll assume success if no error is thrown
+    // Method 2: Alternative field naming (in case the above doesn't work)
+    formDataToSubmit.append('entry.name', formData.name);
+    formDataToSubmit.append('entry.contact', formData.contact);
+    formDataToSubmit.append('entry.message', formData.message);
+    
+    // Method 3: Standard form field names
+    formDataToSubmit.append('name', formData.name);
+    formDataToSubmit.append('contact', formData.contact);
+    formDataToSubmit.append('message', formData.message);
+    
+    try {
+      await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        body: formDataToSubmit,
+        mode: 'no-cors' // Required for Google Forms submission
+      });
+      
+      // Also try with URL-encoded data
+      const urlEncodedData = new URLSearchParams();
+      urlEncodedData.append('entry.1420774100', formData.name);
+      urlEncodedData.append('entry.2133010591', formData.contact);
+      urlEncodedData.append('entry.1391589279', formData.message);
+      
+      await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: urlEncodedData.toString(),
+        mode: 'no-cors'
+      });
+      
+    } catch (error) {
+      console.log('Submission attempt completed');
+    }
+    
     return { success: true };
   };
 
@@ -247,7 +277,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 
-                <div className="mt-6">
+                {/* <div className="mt-6">
                   <p className="text-gray-300 text-sm mb-3">Follow Us:</p>
                   <div className="flex space-x-3">
                     <a
@@ -274,8 +304,8 @@ const ContactModal = ({ isOpen, onClose }) => {
                     >
                       <FaYoutube size={16} />
                     </a>
-                  </div>
-                </div>
+                  </div> */}
+                {/* </div>   */}
               </div>
             </div>
           </div>

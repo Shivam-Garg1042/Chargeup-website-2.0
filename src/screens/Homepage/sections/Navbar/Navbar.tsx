@@ -199,11 +199,13 @@ export const Navbar = (): JSX.Element => {
         className={`mobile-menu fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 lg:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
+        onClick={() => setIsMobileMenuOpen(false)}
       >
         <div 
           className={`bg-white w-4/5 max-w-sm h-screen overflow-y-auto transform transition-transform duration-300 ease-in-out ${
             isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
+          onClick={(e) => e.stopPropagation()}
         >
           <div className="p-6">
             <div className="flex justify-between items-center mb-8">
