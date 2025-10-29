@@ -1,0 +1,30 @@
+# Node modules and dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+
+# Env files
+.env
+.env.* 
+
+# Git
+.git
+.gitignore
+
+
+# OS/Editor-specific
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# Tests and coverage
+coverage
+*.test.js
+__tests__/

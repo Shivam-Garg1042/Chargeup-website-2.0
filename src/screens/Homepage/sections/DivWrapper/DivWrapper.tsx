@@ -17,16 +17,15 @@ export const DivWrapper = (): JSX.Element => {
   ];
 
   const secondNavLinks = [
-    { title: "Our Solution", id: "/solutions/#solutions" },
-    { title: "Marketplace", id: "/people#careers" },
-    { title: "News Room", id: "/story#news-room" },
-    
+    { title: "Our Solution", id: "/solutions/#solutions", external: false },
+    { title: "Marketplace", id: "https://nxtcross.com/echarge/", external: true },
+    { title: "News Room", id: "/story#news-room", external: false },
   ];
 
   // Footer links data
   const footerLinks = [
     { title: "Privacy Policy", id: "/privacy-policy" },
-    { title: "Refund & Cancellation Policy", id: "/refunxd-policy" },
+    { title: "Refund & Cancellation Policy", id: "/refund-policy" },
     { title: "Terms & Conditions", id: "/terms-and-conditions" },
     { title: "Corporate Governance", id: "/corporate-governance" },
   ];
@@ -66,9 +65,12 @@ export const DivWrapper = (): JSX.Element => {
             <Phone/> 18001230181
             </p>
             
-            <p className="text-base flex items-center gap-2 mt-1 ">
-            <Mail/> info@echargeup.com
-          </p>
+            <p className="text-base flex items-center gap-2">
+              <Mail className="flex-shrink-0"/> 
+              <a href="mailto:info@echargeup.com" className="hover:text-gray-600 transition-colors">
+                info@echargeup.com
+              </a>
+            </p>
           </div>
 
           {/* Navigation links - center columns */}
@@ -89,13 +91,38 @@ export const DivWrapper = (): JSX.Element => {
             {/* Second nav column */}
             <div className="flex flex-col gap-2">
               {secondNavLinks.map((link) => (
-                <Link
-                  key={link.id}
-                  to={link.id}
-                  className="text-gray-700 text-base md:text-lg hover:text-gray-900"
-                >
-                  {link.title}
-                </Link>
+                link.external ? (
+                  <a
+                    key={link.id}
+                    href={link.id}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 text-base md:text-lg hover:text-gray-900 flex items-center gap-1"
+                  >
+                    {link.title}
+                    <svg 
+                      className="w-3 h-3 opacity-60" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                      />
+                    </svg>
+                  </a>
+                ) : (
+                  <Link
+                    key={link.id}
+                    to={link.id}
+                    className="text-gray-700 text-base md:text-lg hover:text-gray-900"
+                  >
+                    {link.title}
+                  </Link>
+                )
               ))}
             </div>
           </div>
