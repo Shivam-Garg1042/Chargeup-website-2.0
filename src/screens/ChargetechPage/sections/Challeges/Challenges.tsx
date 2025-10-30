@@ -326,7 +326,7 @@ export const Challenges = () => {
       {/* Important tagline at the bottom */}
       <div className="text-center mt-4 lg:mt-8">
         <p className="text-lg lg:text-2xl italic text-[#0F9547] bg-gradient-to-r from-[#0F9547] to-[#0C7D49] bg-clip-text text-transparent">
-          Turning E-Rickshaw into Intelligent-Rickshaws
+          Turning e-Rickshaw into i-Rickshaws
         </p>
       </div>
     </div>

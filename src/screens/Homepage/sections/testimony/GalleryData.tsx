@@ -3,16 +3,16 @@
 
 export const galleryItems = [
   {
-    imageUrl: "/drivertesti5.jpg",
+    imageUrl: "/drivertesti2.jpg",
     
   },
   {
-    imageUrl: "/drivertesti3.jpg",
+    imageUrl: "/drivertesti5.jpg",
     
   },
   // Duplicate items to show scrolling
   {
-    imageUrl: "/drivertesti2.jpg",
+    imageUrl: "/drivertesti3.jpg",
     
   },
   {

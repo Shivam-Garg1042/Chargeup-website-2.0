@@ -43,7 +43,7 @@ export const SolutionHome = (): JSX.Element => {
             {/* Enhanced Description */}
             <div className="space-y-4">
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
-                A seamless blend of financial services, asset management & cutting edge tech.
+                A seamless blend of financial solutions, asset management & cutting edge tech.
               </p>
               <p className="text-base md:text-lg text-gray-500 leading-relaxed">
                 Built into your ecosystem to help you <span className="font-semibold">Understand, Communicate & Act for powerful growth.</span> 

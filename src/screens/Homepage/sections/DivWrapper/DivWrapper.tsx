@@ -67,8 +67,8 @@ export const DivWrapper = (): JSX.Element => {
             
             <p className="text-base flex items-center gap-2">
               <Mail className="flex-shrink-0"/> 
-              <a href="mailto:info@echargeup.com" className="hover:text-gray-600 transition-colors">
-                info@echargeup.com
+              <a href="mailto:connect@echargeup.com" className="hover:text-gray-600 transition-colors">
+                connect@echargeup.com
               </a>
             </p>
           </div>
