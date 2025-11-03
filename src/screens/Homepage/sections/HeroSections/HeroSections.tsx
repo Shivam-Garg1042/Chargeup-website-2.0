@@ -42,7 +42,7 @@ export default function HeroSection() {
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 " />
 
-      <div className="container mx-auto px-6 lg:px-8 py-4 md:py-20 relative z-10">
+      <div className="container mx-auto px-6 lg:px-8 py-4 md:py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[70vh]">
           {/* Left Content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
@@ -52,9 +52,9 @@ export default function HeroSection() {
                 <span className="text-sm md:text-base font-medium text-[#fff]">A single stop solution</span>
               </div> */}
               
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  India's First<br></br> EV Tech Platform  
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight md:mb-8">
+                <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent ">
+                   EV Tech Platform  
                 </span>
                 {/* <br />
                 <span className="bg-gradient-to-r from-[#0C7D49] via-[#07584D] to-[#033F4F] bg-clip-text text-transparent">

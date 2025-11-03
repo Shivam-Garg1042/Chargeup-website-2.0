@@ -12,14 +12,6 @@ export default function KeyFeatures() {
       banner: "Pay as you earn "
     },
     {
-      id: 2,
-      title: "Tech",
-      description:
-        "Predictive tech offering real-time asset management enabling EV uptime and increasing asset life.",
-      iconSrc: "/techl.png",
-      banner: "365 Days running assurance "
-    },
-    {
       id: 3,
       title: "Network",
       description:
@@ -27,6 +19,15 @@ export default function KeyFeatures() {
       iconSrc: "/networkl.png",
       banner: "Single point bundle solution"
     },
+    {
+      id: 2,
+      title: "Tech",
+      description:
+        "Predictive tech offering real-time asset management enabling EV uptime and increasing asset life.",
+      iconSrc: "/techl.png",
+      banner: "365 Days running assurance "
+    },
+    
     
   ];
 

@@ -8,6 +8,7 @@ import {
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ContactModal from "../ContactModal/Contact.tsx";
+import { FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
 
 export const Navbar = (): JSX.Element => {
   // State for mobile menu
@@ -33,7 +34,32 @@ export const Navbar = (): JSX.Element => {
   const handlePlayStoreClick = () => {
         
     window.open('https://play.google.com/store/apps/details?id=com.chargeup.isourse', '_blank');
-};
+  };
+
+  // Social media links
+  const socialLinks = [
+    { 
+      icon: FaLinkedin, 
+      href: "https://www.linkedin.com/company/chargeup-solutions-pvt-ltd/posts/?feedView=all", 
+      
+      color: "hover:text-[#0077B5]",
+      bgColor: "hover:bg-blue-50"
+    },
+    { 
+      icon: FaInstagram, 
+      href: "https://www.instagram.com/chargeup_in/", 
+      
+      color: "hover:text-[#E4405F]",
+      bgColor: "hover:bg-pink-50"
+    },
+    { 
+      icon: FaYoutube, 
+      href: "https://www.youtube.com/@chargeup_india", 
+      
+      color: "hover:text-[#FF0000]",
+      bgColor: "hover:bg-red-50"
+    },
+  ];
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -173,13 +199,29 @@ export const Navbar = (): JSX.Element => {
             Download App
             <img className="w-4 h-4 lg:w-6 lg:h-6" alt="Play store" src="/play-store.svg" />
           </Button>
-            {/* Get Started button */}
-          <button 
-            className="hidden md:block bg-[#0D8948] text-white rounded-md md:rounded-lg px-4 py-2 lg:py-[7px] lg:px-[20px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-center lg:text-base shadow-[0px_1.33px_2.67px_#1018280d] hover:bg-[#023350] transition-all duration-300 hover:shadow-lg"
-            onClick={() => setIsGetStartedOpen(true)}
-          >
-            Contact Us
-          </button>
+
+          {/* Social Media Icons */}
+          <div className="hidden md:flex items-center gap-2 ">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                
+                className={`
+                  p-2 rounded-full text-gray-600 ${social.color} ${social.bgColor}
+                  transition-all duration-300 hover:scale-110 transform
+                  hover:shadow-md border border-transparent hover:border-gray-200
+                  group relative
+                `}
+              >
+                <social.icon className="w-4 h-4 lg:w-5 lg:h-5" />
+                
+                
+              </a>
+            ))}
+          </div>
 
           {/* Hamburger menu for mobile */}
           <button 
@@ -246,7 +288,7 @@ export const Navbar = (): JSX.Element => {
                       rel="noopener noreferrer"
                       className="block font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-lg text-gray-800 hover:text-emerald-600 transition-colors duration-200 flex items-center"
                       onClick={() => setIsMobileMenuOpen(false)}
-                    >
+                    >{item.name}
                       <svg 
                         className="w-4 h-4 mr-2 opacity-60" 
                         fill="none" 
@@ -260,7 +302,7 @@ export const Navbar = (): JSX.Element => {
                           d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
                         />
                       </svg>
-                      {item.name}
+                      
                     </a>
                   ) : (
                     <Link 
@@ -297,6 +339,32 @@ export const Navbar = (): JSX.Element => {
                 Download App
                 <img className="w-5 h-5" alt="Play store" src="/play-store.svg" />
               </Button>
+
+              {/* Social Media Icons for Mobile */}
+              <div className="pt-6 border-t border-gray-200">
+                <p className="text-sm text-gray-600 mb-4 font-['Plus_Jakarta_Sans',Helvetica] font-medium text-center">
+                  Connect with us
+                </p>
+                <div className="flex justify-center gap-4">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className={`
+                        p-3 rounded-full text-gray-600 ${social.color} ${social.bgColor}
+                        transition-all duration-300 hover:scale-110 transform
+                        border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md
+                      `}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <social.icon className="w-5 h-5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

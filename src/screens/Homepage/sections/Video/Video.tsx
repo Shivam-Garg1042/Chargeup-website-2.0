@@ -7,6 +7,7 @@ export default function VideoCarouselSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAutoplay, setIsAutoplay] = useState(true);
   const [slidesPerView, setSlidesPerView] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(true);
   const carouselRef = useRef(null);
   const intervalRef = useRef(null);
 
@@ -39,7 +40,7 @@ export default function VideoCarouselSection() {
   
 
   // Video data array
-  const videos = [
+  const originalVideos = [
     {
       id: 6,
       title: "From financing e-rickshaw to i-rickshaws | chargeup x Shivakari",
@@ -119,6 +120,13 @@ export default function VideoCarouselSection() {
     
   ];
 
+  // Create extended array for infinite loop by duplicating videos
+  const extendedVideos = [
+    ...originalVideos.slice(-3), // Last 3 videos at the beginning for smooth backward transition
+    ...originalVideos,            // Original videos
+    ...originalVideos.slice(0, 3) // First 3 videos at the end for smooth forward transition
+  ];
+
   // Update slides per view based on screen size
   useEffect(() => {
     const handleResize = () => {
@@ -139,17 +147,51 @@ export default function VideoCarouselSection() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Handle navigation - now moves one video at a time
+  // Initialize to start from the first real video (after the duplicate videos at the beginning)
+  useEffect(() => {
+    setCurrentIndex(3); // Start at index 3 (after the 3 duplicate videos at the beginning)
+  }, []);
+
+  // Handle infinite scrolling by resetting position when reaching duplicates
+  useEffect(() => {
+    if (!isTransitioning) return;
+
+    const resetPosition = () => {
+      setIsTransitioning(false);
+      
+      // If we're at the beginning duplicates, jump to the end of real videos
+      if (currentIndex <= 0) {
+        setCurrentIndex(originalVideos.length);
+      }
+      // If we're at the end duplicates, jump to the beginning of real videos  
+      else if (currentIndex >= originalVideos.length + 3) {
+        setCurrentIndex(3);
+      }
+      
+      // Re-enable transitions after a brief delay
+      setTimeout(() => setIsTransitioning(true), 50);
+    };
+
+    const timer = setTimeout(resetPosition, 500); // Match CSS transition duration
+    return () => clearTimeout(timer);
+  }, [currentIndex, originalVideos.length]);
+
+  // Handle navigation for infinite loop
   const handlePrevious = () => {
-    setCurrentIndex(prev => (prev > 0 ? prev - 1 : videos.length - 1));
+    setCurrentIndex(prev => prev - 1);
   };
   
   const handleNext = () => {
-    setCurrentIndex(prev => (prev < videos.length - 1 ? prev + 1 : 0));
+    setCurrentIndex(prev => prev + 1);
   };
 
   // Function to handle video thumbnail click
   const handleVideoClick = (videoIndex) => {
+    // Calculate the real video index (accounting for the 3 duplicate videos at the beginning)
+    let realIndex = videoIndex - 3;
+    if (realIndex < 0) realIndex = originalVideos.length + realIndex;
+    if (realIndex >= originalVideos.length) realIndex = realIndex - originalVideos.length;
+    
     setCurrentIndex(videoIndex);
     setIsModalOpen(true);
     // Pause autoplay when modal is open
@@ -203,6 +245,14 @@ export default function VideoCarouselSection() {
     return currentIndex * slideWidth;
   };
 
+  // Get the real current video index for modal and indicator dots
+  const getRealCurrentIndex = () => {
+    let realIndex = currentIndex - 3;
+    if (realIndex < 0) realIndex = originalVideos.length + realIndex;
+    if (realIndex >= originalVideos.length) realIndex = realIndex - originalVideos.length;
+    return realIndex;
+  };
+
   return (
     <section className="w-full py-8 md:py-4 mb-6 md:mb-16">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -235,12 +285,12 @@ export default function VideoCarouselSection() {
           {/* Main carousel */}
           <div className="overflow-hidden">
             <div 
-              className="flex transition-transform duration-500 ease-in-out"
+              className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
               style={{ transform: `translateX(-${getTranslateX()}%)` }}
             >
-              {videos.map((video, index) => (
+              {extendedVideos.map((video, index) => (
                 <div 
-                  key={video.id} 
+                  key={`${video.id}-${index}`} 
                   className={`flex flex-col flex-shrink-0 px-2
                     ${slidesPerView === 1 ? 'w-full' : 
                     slidesPerView === 2 ? 'w-1/2' : 
@@ -278,20 +328,23 @@ export default function VideoCarouselSection() {
           </div>
         </div>
         
-        {/* Indicator dots - now shows dots for each video */}
+        {/* Indicator dots - shows dots only for original videos */}
         <div className="flex justify-center gap-2 mt-8">
-          {videos.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
-                index === currentIndex 
-                  ? "w-6 md:w-8 bg-[#002751]" 
-                  : "bg-gray-300 hover:bg-[#0F9547]"
-              }`}
-              aria-label={`Go to video ${index + 1}`}
-            />
-          ))}
+          {originalVideos.map((_, index) => {
+            const realCurrentIndex = getRealCurrentIndex();
+            return (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index + 3)} // Add 3 to account for duplicates at beginning
+                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
+                  index === realCurrentIndex
+                    ? "w-6 md:w-8 bg-[#002751]" 
+                    : "bg-gray-300 hover:bg-[#0F9547]"
+                }`}
+                aria-label={`Go to video ${index + 1}`}
+              />
+            );
+          })}
         </div>
       </div>
 
@@ -314,10 +367,10 @@ export default function VideoCarouselSection() {
             </button>
 
             <div className="aspect-video w-full">
-              {getYouTubeEmbedUrl(videos[currentIndex].url) ? (
+              {getYouTubeEmbedUrl(originalVideos[getRealCurrentIndex()]?.url) ? (
                 <iframe
-                  src={getYouTubeEmbedUrl(videos[currentIndex].url) || undefined}
-                  title={videos[currentIndex].title}
+                  src={getYouTubeEmbedUrl(originalVideos[getRealCurrentIndex()]?.url) || undefined}
+                  title={originalVideos[getRealCurrentIndex()]?.title}
                   className="w-full h-full"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -326,7 +379,7 @@ export default function VideoCarouselSection() {
               ) : (
                 <div className="w-full h-full flex flex-col items-center justify-center bg-gray-900 text-white p-4 md:p-8">
                   <h3 className="text-xl md:text-2xl font-semibold mb-4 text-center">
-                    {videos[currentIndex].title}
+                    {originalVideos[getRealCurrentIndex()]?.title}
                   </h3>
                   <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 text-center">
                     Unable to load video. Please check the video URL.
@@ -335,7 +388,7 @@ export default function VideoCarouselSection() {
                     <Play className="h-6 w-6 md:h-8 md:w-8 ml-1" />
                   </div>
                   <p className="text-sm text-gray-400 mt-4">
-                    Video URL: {videos[currentIndex].url}
+                    Video URL: {originalVideos[getRealCurrentIndex()]?.url}
                   </p>
                 </div>
               )}

@@ -1,9 +1,9 @@
 
 
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { animated, useSpring } from '@react-spring/web';
 import { useScroll } from '@use-gesture/react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 export default function DesktopGallery({ items }) {
   const distributeItems = (items) => {  
@@ -54,6 +54,34 @@ export default function DesktopGallery({ items }) {
 
   const Row = ({ items, label, color, style, setStyle }) => {
     const scrollContainerRef = useRef(null);
+    const [showScrollHint, setShowScrollHint] = useState(true);
+    const [canScrollRight, setCanScrollRight] = useState(true);
+    const [canScrollLeft, setCanScrollLeft] = useState(false);
+    
+    useEffect(() => {
+      const checkScrollPosition = () => {
+        if (scrollContainerRef.current) {
+          const container = scrollContainerRef.current;
+          const canScroll = container.scrollWidth > container.clientWidth;
+          const isAtEnd = container.scrollLeft >= container.scrollWidth - container.clientWidth - 10;
+          const isAtStart = container.scrollLeft <= 10;
+          
+          setCanScrollRight(canScroll && !isAtEnd);
+          setCanScrollLeft(canScroll && !isAtStart);
+        }
+      };
+
+      checkScrollPosition();
+      const container = scrollContainerRef.current;
+      if (container) {
+        container.addEventListener('scroll', checkScrollPosition);
+        window.addEventListener('resize', checkScrollPosition);
+        return () => {
+          container.removeEventListener('scroll', checkScrollPosition);
+          window.removeEventListener('resize', checkScrollPosition);
+        };
+      }
+    }, [items]);
     
     const bind = useScroll(({ delta: [deltaX] }) => {
       setStyle({
@@ -65,7 +93,7 @@ export default function DesktopGallery({ items }) {
       from: () => [0, 0],
     });
 
-    const scroll = () => {
+    const scrollRight = () => {
       if (scrollContainerRef.current) {
         const container = scrollContainerRef.current;
         const cardWidth = container.querySelector('[data-card]').offsetWidth;
@@ -74,18 +102,37 @@ export default function DesktopGallery({ items }) {
           left: cardWidth + gap, 
           behavior: 'smooth' 
         });
+        setShowScrollHint(false);
       }
+    };
+
+    const scrollLeft = () => {
+      if (scrollContainerRef.current) {
+        const container = scrollContainerRef.current;
+        const cardWidth = container.querySelector('[data-card]').offsetWidth;
+        const gap = 24;
+        container.scrollBy({ 
+          left: -(cardWidth + gap), 
+          behavior: 'smooth' 
+        });
+        setShowScrollHint(false);
+      }
+    };
+
+    const scroll = () => {
+      scrollRight();
     };
 
     return (
       <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
         {label && <Label text={label} color={color} />}
-        <div className="flex sm:flex-row items-center gap-4">
+        <div className="flex sm:flex-row items-center gap-4 relative">
           <div 
             ref={scrollContainerRef}
             className="overflow-x-auto scrollbar-hide flex-1 sm:px-0 snap-x snap-mandatory"
             style={{ touchAction: 'pan-x pan-y' }}
             {...bind()}
+            onScroll={() => setShowScrollHint(false)}
           >
             <div className="flex sm:space-x-6 pb-4">
               {items.map((item, index) => (
@@ -109,6 +156,31 @@ export default function DesktopGallery({ items }) {
               ))}
             </div>
           </div>
+          
+          {/* Mobile navigation buttons */}
+          <div className="block sm:hidden">
+            {/* Left button */}
+            {canScrollLeft && (
+              <button 
+                onClick={scrollLeft}
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg border border-gray-200 transition-all duration-300 hover:bg-white active:scale-95"
+              >
+                <ChevronLeft className="w-4 h-4 text-[#0F9547]" />
+              </button>
+            )}
+            
+            {/* Right button */}
+            {canScrollRight && (
+              <button 
+                onClick={scrollRight}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg border border-gray-200 transition-all duration-300 hover:bg-white active:scale-95"
+              >
+                <ChevronRight className="w-4 h-4 text-[#0F9547]" />
+              </button>
+            )}
+          </div>
+          
+          {/* Desktop scroll button */}
           <div className="hidden sm:block">
             <button 
               onClick={scroll}
@@ -167,7 +239,6 @@ export default function DesktopGallery({ items }) {
               Empowering drivers with <br></br><span className="bg-gradient-to-r from-[#0F9547] to-[#0C7D49] text-transparent bg-clip-text text-bold">Safety, Security & Higher Earnings</span>
             </h2>
           </div>
-          
           <Row 
             items={row1} 
             label="" 

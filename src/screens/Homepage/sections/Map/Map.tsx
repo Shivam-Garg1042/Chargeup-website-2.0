@@ -381,7 +381,7 @@ export default function MapWithContentLayout() {
           </h2>
           
           {/* Stats Cards */}
-          <div className={`flex ${isMobile ? 'flex-row' : 'flex-row'} gap-4 justify-center w-full`}>
+          <div className={`flex ${isMobile ? 'flex-row' : 'flex-row'} gap-4 justify-center w-1/2`}>
             
             <Card className="bg-white shadow-xl flex-1 h-28">
               <CardContent className="p-4 flex flex-col items-center justify-center h-full">
@@ -390,12 +390,12 @@ export default function MapWithContentLayout() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white shadow-xl flex-1 h-28">
+            {/* <Card className="bg-white shadow-xl flex-1 h-28">
               <CardContent className="p-4 flex flex-col items-center justify-center h-full">
                 <h3 className="text-3xl sm:text-4xl font-bold mb-1">9+</h3>
                 <p className="text-gray-500 text-base sm:text-xl">Planned Expansions</p>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
 
           {/* Description */}

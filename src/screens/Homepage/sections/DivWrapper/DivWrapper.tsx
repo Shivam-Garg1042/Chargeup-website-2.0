@@ -4,6 +4,7 @@ import ContactModal from "../ContactModal/Contact.tsx";
 import { useState } from "react";
 import { MapPin,Phone ,Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
 
 
 export const DivWrapper = (): JSX.Element => {
@@ -32,9 +33,27 @@ export const DivWrapper = (): JSX.Element => {
 
   // Social media links data
   const socialLinks = [
-    { icon: "/linkedin.svg", alt: "LinkedIn", id: "https://www.linkedin.com/company/chargeup-solutions-pvt-ltd/posts/?feedView=all" },
-    { icon: "/instagram.svg", alt: "Instagram", id: "https://www.instagram.com/chargeup_in/" },
-    { icon: "/youtube.svg", alt: "YouTube", id: "https://www.youtube.com/@chargeup_india" },
+    { 
+      icon: FaLinkedin, 
+      alt: "LinkedIn", 
+      id: "https://www.linkedin.com/company/chargeup-solutions-pvt-ltd/posts/?feedView=all",
+      color: "text-[#0077B5]",
+      hoverBg: "hover:bg-blue-50"
+    },
+    { 
+      icon: FaInstagram, 
+      alt: "Instagram", 
+      id: "https://www.instagram.com/chargeup_in/",
+      color: "text-[#E4405F]",
+      hoverBg: "hover:bg-pink-50"
+    },
+    { 
+      icon: FaYoutube, 
+      alt: "YouTube", 
+      id: "https://www.youtube.com/@chargeup_india",
+      color: "text-[#FF0000]",
+      hoverBg: "hover:bg-red-50"
+    },
   ];
 
   return (
@@ -140,16 +159,22 @@ export const DivWrapper = (): JSX.Element => {
                         onClose={() => setIsGetStartedOpen(false)} 
                       />
             
-            <div className="flex gap-2 md:gap-4">
+            <div className="flex gap-3 md:gap-4">
               {socialLinks.map((social) => (
                 <a 
                   key={social.id} 
                   href={`${social.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-200 "
+                  className={`
+                    w-12 h-12 flex items-center justify-center rounded-full 
+                    border border-gray-200 ${social.hoverBg}
+                    text-gray-600 ${social.color} 
+                    transition-all duration-300 hover:scale-110 hover:shadow-md
+                    group
+                  `}
                 >
-                  <img className="w-8 h-8" alt={social.alt} src={social.icon} />
+                  <social.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
@@ -160,12 +185,12 @@ export const DivWrapper = (): JSX.Element => {
         <Separator className="bg-gray-200" />
 
         {/* Footer bottom section */}
-        <div className="flex flex-col md:flex-col justify-between py-4 gap-4 text-sm md:text-[18px] md:text-center ">
+        <div className="flex flex-col md:flex-col justify-between py-4 gap-4 text-sm md:text-[18px] text-center ">
           <p className="text-gray-800">
             Copyright @ 2025 CHARGEUP, All rights reserved.
           </p>
 
-          <div className="flex flex-wrap gap-4 md:gap-8 md:text-center md:justify-center">
+          <div className="flex flex-wrap gap-4 md:gap-8 text-center justify-center">
             {footerLinks.map((link) => (
               <Link
                 key={link.id}
