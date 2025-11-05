@@ -19,7 +19,7 @@ export const DivWrapper = (): JSX.Element => {
 
   const secondNavLinks = [
     { title: "Our Solution", id: "/solutions/#solutions", external: false },
-    { title: "Marketplace", id: "https://nxtcross.com/echarge/", external: true },
+    { title: "Marketplace", id: "https://marketplace.echargeup.com", external: true },
     { title: "News Room", id: "/story#news-room", external: false },
   ];
 

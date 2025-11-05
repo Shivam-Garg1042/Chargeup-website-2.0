@@ -28,7 +28,7 @@ export const Navbar = (): JSX.Element => {
     // { name: "News Room", href: "/news" },
     { name: "Our Story", href: "/story" },
     { name: "People", href: "/people" },
-    { name: "Marketplace ", href: "https://nxtcross.com/echarge/" },
+    { name: "Marketplace ", href: "https://marketplace.echargeup.com" },
     
   ];
   const handlePlayStoreClick = () => {
