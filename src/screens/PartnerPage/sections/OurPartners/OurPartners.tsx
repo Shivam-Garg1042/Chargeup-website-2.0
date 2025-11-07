@@ -23,10 +23,11 @@ export const OurPartners = (): JSX.Element => {
     "NBFCs": [
       { id: 1, type: "image", imgUrl: "/nbfc1.png" },
       { id: 2, type: "image",imgUrl: "/nbfc2.png"  },
-      // { id: 3, type: "image", imgUrl:"/nbfc3.png"  },
+      
       { id: 4,type: "image", imgUrl: "/nbfc5.png"  },
       { id: 5, type: "image", imgUrl: "/nbfc12.jpg" },
       { id: 6, type: "image", imgUrl: "/nbfc4.png"  },
+      { id: 3, type: "image", imgUrl:"/nbfc0.png"  },
     ],
     "OEMs": [
       { id: 1, type: "image", imgUrl: "/oem1.png"  },
