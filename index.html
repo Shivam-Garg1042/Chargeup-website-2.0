@@ -32,9 +32,11 @@
     <link rel="canonical" href="https://www.echargeup.com" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/chargeup-logo.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/chargeup-logo.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/chargeup-logo.png" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:800,500,400,600,italic" as="style" />
@@ -53,7 +55,7 @@
       "name": "Chargeup Solutions Pvt Ltd",
       "alternateName": "Chargeup",
       "url": "https://www.echargeup.com",
-      "logo": "https://www.echargeup.com/chargeup-logo-1-1.png",
+      "logo": "https://www.echargeup.com/favicon.png",
       "description": "EV tech platform empowering drivers, NBFCs, and OEMs through AI-driven financing and asset management solutions",
       "foundingDate": "2020",
       "address": {
@@ -67,13 +69,58 @@
         "@type": "ContactPoint",
         "telephone": "+91-1800-123-0181",
         "contactType": "customer service",
-        "email": "info@echargeup.com"
+        "email": "connect@echargeup.com"
       },
       "sameAs": [
         "https://www.linkedin.com/company/chargeup-solutions-pvt-ltd",
         "https://www.instagram.com/chargeup_in/",
         "https://www.youtube.com/@chargeup_india"
       ]
+    }
+    </script>
+    
+    <!-- Website Navigation Structure for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Chargeup - EV Tech Platform",
+      "url": "https://www.echargeup.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.echargeup.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "url": [
+          {
+            "@type": "WebPage",
+            "name": "Our Solutions",
+            "url": "https://www.echargeup.com/solutions",
+            "description": "EV financing and asset management solutions"
+          },
+          {
+            "@type": "WebPage", 
+            "name": "Partners",
+            "url": "https://www.echargeup.com/partners",
+            "description": "Our NBFC, OEM and dealer partners"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Our Story", 
+            "url": "https://www.echargeup.com/story",
+            "description": "Company history, vision and mission"
+          },
+          {
+            "@type": "WebPage",
+            "name": "People",
+            "url": "https://www.echargeup.com/people", 
+            "description": "Our team, culture and career opportunities"
+          }
+        ]
+      }
     }
     </script>
   </head>

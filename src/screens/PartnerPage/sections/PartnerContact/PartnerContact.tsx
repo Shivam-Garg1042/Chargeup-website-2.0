@@ -44,13 +44,19 @@ export default function PartnerModal({ isOpen, onClose }) {
     await fetch(GOOGLE_FORM_URL, {
       method: 'POST',
       body: formDataToSubmit,
-      mode: 'no-cors' // Required for Google Forms submission
+      mode: 'no-cors' 
     });
     
     return { success: true };
   };
 
   const handleSubmit = async () => {
+    // Validate all fields are filled
+    if (!formData.name || !formData.companyName || !formData.email || !formData.contact || !formData.message) {
+      
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
@@ -134,7 +140,7 @@ export default function PartnerModal({ isOpen, onClose }) {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
-                      <p className="text-gray-600 text-sm">info@echargeup.com</p>
+                      <p className="text-gray-600 text-sm">connect@echargeup.com</p>
                     </div>
                   </div>
                 </div>
@@ -178,16 +184,12 @@ export default function PartnerModal({ isOpen, onClose }) {
                 <h1 className="text-3xl font-bold text-white mb-2">Partner with Us</h1>
               </div>
 
-              {error && (
-                <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded text-red-200 text-sm">
-                  {error}
-                </div>
-              )}
+              
 
               <div className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-0 text-gray-300">
-                    Your Name
+                    Your Name <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -196,14 +198,14 @@ export default function PartnerModal({ isOpen, onClose }) {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Name Name"
+                    placeholder="Full Name "
                     className="w-full px-0 py-2 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 text-lg transition-colors"
                   />
                 </div>
                 
                 <div>
                   <label htmlFor="companyName" className="block text-sm font-medium mb-0 text-gray-300">
-                    Company Name
+                    Company Name <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -219,7 +221,7 @@ export default function PartnerModal({ isOpen, onClose }) {
                 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-0 text-gray-300">
-                    Your Email
+                    Your Email <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="email"
@@ -235,7 +237,7 @@ export default function PartnerModal({ isOpen, onClose }) {
                 
                 <div>
                   <label htmlFor="contact" className="block text-sm font-medium mb-0 text-gray-300">
-                    Contact
+                    Contact <span className="text-red-400">*</span>
                   </label>
                   <div className="flex items-center border-b border-gray-600 focus-within:border-orange-400 transition-colors">
                     <div className="flex items-center gap-2 pr-3">
@@ -256,7 +258,7 @@ export default function PartnerModal({ isOpen, onClose }) {
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-0 text-gray-300">
-                    Message
+                    Message <span className="text-red-400">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -264,7 +266,7 @@ export default function PartnerModal({ isOpen, onClose }) {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    placeholder="Tell about your company"
+                    placeholder="Tell us more about your partnership interest"
                     rows={2}
                     className="w-full px-0 py-2 bg-transparent border-0 border-b border-gray-600 focus:outline-none focus:border-orange-400 text-white placeholder-gray-500 resize-none text-lg transition-colors"
                   />
@@ -290,7 +292,7 @@ export default function PartnerModal({ isOpen, onClose }) {
                   </div>
                   <div>
                     <p className="text-gray-400 mb-1">Email</p>
-                    <p className="text-white text-xs">info@echargeup.com</p>
+                    <p className="text-white text-xs">connect@echargeup.com</p>
                   </div>
                 </div>
                 

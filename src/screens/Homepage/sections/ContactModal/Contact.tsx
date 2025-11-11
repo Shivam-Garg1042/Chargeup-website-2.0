@@ -26,55 +26,20 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  // Updated API service functions to submit to Google Forms
+  // Submit form to Google Forms
   const submitToGoogleForm = async (formData: { name: string; contact: string; message: string }) => {
-    // Replace these with your actual Google Form field IDs
-    // To get these IDs: Create a Google Form, inspect the form fields, and copy the 'name' attributes
-    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSc-XXlbz_7L8HL8Fdk8bqG8F0P-jLgun04xbPB_w8ePIytCyw/formResponse';
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc-XXlbz_7L8HL8Fdk8bqG8F0P-jLgun04xbPB_w8ePIytCyw/formResponse';
     
-    // Try multiple approaches to ensure data is captured
     const formDataToSubmit = new FormData();
-    
-    // Method 1: Using common Google Form field patterns
     formDataToSubmit.append('entry.1420774100', formData.name);
     formDataToSubmit.append('entry.2133010591', formData.contact);
     formDataToSubmit.append('entry.1391589279', formData.message);
     
-    // Method 2: Alternative field naming (in case the above doesn't work)
-    formDataToSubmit.append('entry.name', formData.name);
-    formDataToSubmit.append('entry.contact', formData.contact);
-    formDataToSubmit.append('entry.message', formData.message);
-    
-    // Method 3: Standard form field names
-    formDataToSubmit.append('name', formData.name);
-    formDataToSubmit.append('contact', formData.contact);
-    formDataToSubmit.append('message', formData.message);
-    
-    try {
-      await fetch(GOOGLE_FORM_URL, {
-        method: 'POST',
-        body: formDataToSubmit,
-        mode: 'no-cors' // Required for Google Forms submission
-      });
-      
-      // Also try with URL-encoded data
-      const urlEncodedData = new URLSearchParams();
-      urlEncodedData.append('entry.1420774100', formData.name);
-      urlEncodedData.append('entry.2133010591', formData.contact);
-      urlEncodedData.append('entry.1391589279', formData.message);
-      
-      await fetch(GOOGLE_FORM_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: urlEncodedData.toString(),
-        mode: 'no-cors'
-      });
-      
-    } catch (error) {
-      console.log('Submission attempt completed');
-    }
+    await fetch(GOOGLE_FORM_URL, {
+      method: 'POST',
+      body: formDataToSubmit,
+      mode: 'no-cors'
+    });
     
     return { success: true };
   };
@@ -87,11 +52,13 @@ const ContactModal = ({ isOpen, onClose }) => {
     try {
       await submitToGoogleForm(formData);
       setShowConfirmationModal(true);
+      
       setTimeout(() => {
         setFormData({ name: "", contact: "", message: "" });
         setShowConfirmationModal(false);
         onClose();
       }, 3000);
+      
     } catch (error) {
       console.error('Error submitting form:', error);
       setError('Failed to send message. Please try again.');
@@ -137,7 +104,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <MapPin className="text-gray-500 mt-1" size={24} />
+                  <MapPin className="text-gray-500 mt-1" size={32} />
                   <div>
                     <p className="font-medium text-gray-700">Address</p>
                     <p className="text-gray-600">300/3, 1st Floor, MG Road, Sultanpur, New Delhi - 110030</p>
@@ -156,7 +123,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   <Mail className="text-gray-500 mt-1" size={24} />
                   <div>
                     <p className="font-medium text-gray-700">Email Us</p>
-                    <p className="text-gray-600">info@echargeup.com</p>
+                    <p className="text-gray-600">connect@echargeup.com</p>
                   </div>
                 </div>
               </div>
@@ -208,7 +175,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
-                    Your Name
+                    Your Name <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -217,14 +184,14 @@ const ContactModal = ({ isOpen, onClose }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Name Name"
+                    placeholder="Full Name "
                     className="w-full px-4 py-3 bg-transparent border-b border-gray-600 focus:outline-none focus:border-white text-white placeholder-gray-500"
                   />
                 </div>
                 
                 <div>
                   <label htmlFor="contact" className="block text-sm font-medium mb-2 text-gray-300">
-                    Contact
+                    Contact <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -240,7 +207,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-300">
-                    Message
+                    Message <span className="text-red-400">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -273,7 +240,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="text-gray-400" size={16} />
-                    <span className="text-gray-300">info@echargeup.com</span>
+                    <span className="text-gray-300">connect@echargeup.com</span>
                   </div>
                 </div>
                 

@@ -170,27 +170,6 @@ export const Metrics = () => {
             </h2>
           </div>
 
-          {/* Decorative graphic - hidden on small screens */}
-          <div className="hidden md:flex flex-col w-[200px] lg:w-[403px] items-start gap-px absolute top-[93px] right-0 overflow-hidden opacity-[0.87] animate-pulse">
-            <div className="relative w-[250px] lg:w-[458px] h-[150px] lg:h-[323.74px] mr-[-55.00px]">
-              <div className="relative h-[250px] lg:h-[324px]">
-                <img
-                  className="absolute w-[200px] md:w-[250px] lg:w-[421px] h-auto top-0 left-[37px]"
-                  alt="Vector"
-                  src="/vector-5.svg"
-                />
-                <div className="absolute w-[40px] md:w-[50px] lg:w-[98px] h-[40px] md:h-[50px] lg:h-[98px] top-[100px] md:top-[150px] lg:top-[225px] left-0 rounded-full border-[8px] md:border-[10px] lg:border-[16.38px] border-solid border-black" />
-                <div className="absolute w-[40px] md:w-[50px] lg:w-[98px] h-[40px] md:h-[50px] lg:h-[98px] top-[100px] md:top-[150px] lg:top-[225px] left-[160px] md:left-[200px] lg:left-[335px] rounded-full border-[8px] md:border-[10px] lg:border-[16.38px] border-solid border-black" />
-                <div className="absolute w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 top-[115px] md:top-[170px] lg:top-[266px] left-[15px] md:left-[25px] lg:left-[39px] bg-[#043a2a] rounded-[8px] lg:rounded-[10.08px]" />
-                <div className="absolute w-3 md:w-4 lg:w-5 h-3 md:h-4 lg:h-5 top-[115px] md:top-[170px] lg:top-[266px] left-[175px] md:left-[220px] lg:left-[374px] bg-[#043a2a] rounded-[8px] lg:rounded-[10.08px]" />
-                <img
-                  className="absolute w-[50px] md:w-[70px] lg:w-[114px] h-auto top-[90px] md:top-[130px] lg:top-[190px] left-0"
-                  alt="Vector"
-                  src="/vector-4.svg"
-                />
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Metric cards */}
