@@ -31,7 +31,7 @@ import { useLocation } from "react-router-dom";
 import VideoCarouselSection from './sections/Video/Video.tsx';
 import GalleryWrapper from './sections/testimony/GalleryWrapper.tsx';
 import ScrollToTop from './ScrollToTop.tsx';
-
+import PassportPage from '../PassportPage/PassportPage.tsx';
 
 
 const ScrollToHash = () => {
@@ -102,6 +102,13 @@ export const Homepage = (): JSX.Element => {
       
       </>
     }></Route>
+    <Route path="/passport" element={
+          <>
+            <section id="passport">
+              <PassportPage />
+            </section>
+          </>
+        } />
     <Route path = "/story" element={
       <>
       <section id="story">

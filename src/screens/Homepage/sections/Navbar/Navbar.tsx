@@ -28,6 +28,7 @@ export const Navbar = (): JSX.Element => {
     // { name: "News Room", href: "/news" },
     { name: "Our Story", href: "/story" },
     { name: "People", href: "/people" },
+    { name: "Battery Passport", href: "/passport" },
     { name: "Marketplace ", href: "https://marketplace.echargeup.com" },
     
   ];
@@ -128,7 +129,7 @@ export const Navbar = (): JSX.Element => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-lg text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300"
+                    className="group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-[16px] text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300"
                   >
                     
                     {item.name}
@@ -151,7 +152,7 @@ export const Navbar = (): JSX.Element => {
                 ) : (
                   <Link 
                     to={item.href}
-                    className={`group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-lg text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300 ${
+                    className={`group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-[16px] text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300 ${
                       activeLink === item.href ? 'text-emerald-600' : ''
                     }`}
                     onClick={() => setActiveLink(item.href)}
