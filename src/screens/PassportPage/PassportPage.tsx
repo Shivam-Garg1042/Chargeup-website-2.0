@@ -102,6 +102,29 @@ export const PassportPage = (): JSX.Element => {
 
           {/* Right Side - Enhanced image presentation */}
           <div className="relative lg:justify-self-end">
+            {/* Partnership section above the image */}
+            <div className="mb-6 lg:mb-8 flex flex-col items-center space-y-4">
+              <div className="flex items-center space-x-4">
+                <img 
+                  src="/chargeup-logo-1-1.png" 
+                  alt="ChargeUp"
+                  className="h-8 md:h-8 object-contain"
+                />
+                <span className="text-2xl md:text-3xl font-bold text-gray-700">×</span>
+                <img 
+                  src="/Zenfinity.png" 
+                  alt="Zenfinity Energy"
+                  className="h-8 md:h-10 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
+              <p className="text-lg md:text-xl font-bold text-center bg-gradient-to-r from-[#0F9547] to-[#033F4F] bg-clip-text text-transparent">
+                India's First Blockchain-Enabled Battery Passport
+              </p>
+            </div>
+
             {/* Image container with professional frame */}
             <div className="relative bg-white/60 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-4 lg:p-6 shadow-2xl border border-white/40">
               <div className="relative overflow-hidden rounded-xl lg:rounded-2xl bg-gradient-to-br from-gray-50 to-white">
@@ -116,27 +139,6 @@ export const PassportPage = (): JSX.Element => {
                 
                 {/* Enhanced glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#0F9547]/10 via-transparent to-[#033F4F]/10 rounded-xl lg:rounded-2xl"></div>
-              </div>
-              
-              
-            </div>
-
-            {/* Enhanced partnership section */}
-            <div className="mt-6 lg:mt-8 flex flex-col items-center space-y-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-                <p className="text-gray-600 text-sm font-medium px-3">In partnership with</p>
-                <div className="w-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl px-4 py-3 shadow-md border border-gray-200/60">
-                <img 
-                  src="/Zenfinity.png" 
-                  alt="Zenfinity"
-                  className="h-6 md:h-8 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
               </div>
             </div>
           </div>
