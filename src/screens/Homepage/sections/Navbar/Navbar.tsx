@@ -129,7 +129,7 @@ export const Navbar = (): JSX.Element => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-[16px] text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300"
+                    className="group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-[17px] text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300"
                   >
                     
                     {item.name}
@@ -152,7 +152,7 @@ export const Navbar = (): JSX.Element => {
                 ) : (
                   <Link 
                     to={item.href}
-                    className={`group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-[16px] text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300 ${
+                    className={`group inline-flex h-12 items-center justify-center px-2 py-0 font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base xl:text-[17px] text-text-colors600 leading-[26.7px] relative hover:text-emerald-600 transition-colors duration-300 ${
                       activeLink === item.href ? 'text-emerald-600' : ''
                     }`}
                     onClick={() => setActiveLink(item.href)}
@@ -195,10 +195,10 @@ export const Navbar = (): JSX.Element => {
           <Button
             onClick={handlePlayStoreClick}
             variant="outline"
-            className="hidden md:flex gap-2 px-3 md:py-2 lg:px-[12px] lg:py-[14px] rounded-md lg:rounded-[10.67px] border border-solid border-[#0e0e0e] lg:border-2 shadow-[0px_1.33px_2.67px_#1018280d] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base lg:text-[18px] text-[#0e0e0e] leading-normal lg:leading-8 hover:bg-gray-100 transition-all duration-300"
+            className="hidden md:flex gap-2 px-3 md:py-2 lg:px-[12px] lg:py-[14px] font-['Plus_Jakarta_Sans',Helvetica] font-semibold text-base lg:text-[18px] text-[#0e0e0e] leading-normal lg:leading-8 hover:bg-gray-100 transition-all duration-300"
           >
-            Download App
-            <img className="w-4 h-4 lg:w-6 lg:h-6" alt="Play store" src="/play-store.svg" />
+            
+            <img className="w-4 h-4 lg:w-7 lg:h-7" alt="Play store" src="/playstore.svg" />
           </Button>
 
           {/* Social Media Icons */}
@@ -338,7 +338,7 @@ export const Navbar = (): JSX.Element => {
                 onClick={handlePlayStoreClick}
               >
                 Download App
-                <img className="w-5 h-5" alt="Play store" src="/play-store.svg" />
+                <img className="w-5 h-5" alt="Play store" src="/playstore.svg" />
               </Button>
 
               {/* Social Media Icons for Mobile */}

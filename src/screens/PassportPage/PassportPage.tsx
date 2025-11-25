@@ -60,14 +60,23 @@ export const PassportPage = (): JSX.Element => {
               {/* Enhanced CTA Button */}
               <div className="flex flex-col sm:flex-row gap-4 items-start">
                 <Button 
-                  className="group bg-gradient-to-r from-[#0F9547] to-[#0C7D49] hover:from-[#0C7D49] hover:to-[#07584D] text-white px-8 py-4 rounded-xl text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-0.5 min-w-[200px]"
+                  className="group bg-gradient-to-r from-[#0F9547] to-[#0C7D49] hover:from-[#0C7D49] hover:to-[#07584D] text-white px-8 py-6 rounded-xl text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-0.5 min-w-[200px]"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/batterypassport.pdf';
+                    link.download = 'batterypassport.pdf';
+                    link.target = '_blank';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
                 >
-                  Know more
+                  Sample Passport
                   <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300 text-lg">→</span>
                 </Button>
                 <div className="flex items-center space-x-2 text-sm text-gray-500 pt-2 sm:pt-3">
-                  <div className="w-2 h-2 bg-[#0F9547] rounded-full animate-pulse"></div>
-                  <span>Powered by blockchain technology</span>
+                  {/* <div className="w-2 h-2 bg-[#0F9547] rounded-full animate-pulse"></div>
+                  <span>Powered by blockchain technology</span> */}
                 </div>
               </div>
             </div>
