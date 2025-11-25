@@ -31,13 +31,13 @@ export const PassportPage = (): JSX.Element => {
           {/* Left Side - Enhanced content with professional layout */}
           <div className="space-y-8   max-w-2xl">
             {/* Brand header with improved styling */}
-            <div className="space-y-6">
-              <div className="inline-flex items-center space-x-2">
+            <div className="space-y-0">
+              {/* <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-8 bg-gradient-to-b from-[#0F9547] to-[#033F4F] rounded-full"></div>
                 <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#0F9547] via-[#0C7D49] to-[#033F4F] bg-clip-text text-transparent tracking-wide">
                   Voltchain
                 </span>
-              </div>
+              </div> */}
               
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-gray-900">
                 Battery <span className="bg-gradient-to-r from-[#0F9547] to-[#033F4F] bg-clip-text text-transparent">Aadhaar</span>

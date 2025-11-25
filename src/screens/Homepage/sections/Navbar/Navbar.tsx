@@ -28,8 +28,9 @@ export const Navbar = (): JSX.Element => {
     // { name: "News Room", href: "/news" },
     { name: "Our Story", href: "/story" },
     { name: "People", href: "/people" },
-    { name: "Battery Passport", href: "/passport" },
+    
     { name: "Marketplace ", href: "https://marketplace.echargeup.com" },
+    { name: "Battery Passport", href: "/passport" },
     
   ];
   const handlePlayStoreClick = () => {
