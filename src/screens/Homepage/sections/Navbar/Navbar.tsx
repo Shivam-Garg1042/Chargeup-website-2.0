@@ -30,7 +30,7 @@ export const Navbar = (): JSX.Element => {
     { name: "People", href: "/people" },
     
     { name: "Marketplace ", href: "https://marketplace.echargeup.com" },
-    { name: "Battery Passport", href: "/passport" },
+    // { name: "Battery Passport", href: "/passport" },
     
   ];
   const handlePlayStoreClick = () => {

@@ -32,6 +32,7 @@ import VideoCarouselSection from './sections/Video/Video.tsx';
 import GalleryWrapper from './sections/testimony/GalleryWrapper.tsx';
 import ScrollToTop from './ScrollToTop.tsx';
 import PassportPage from '../PassportPage/PassportPage.tsx';
+import PageTitle from '../../components/PageTitle.tsx';
 
 
 const ScrollToHash = () => {
@@ -58,6 +59,10 @@ export const Homepage = (): JSX.Element => {
     <Routes>
     <Route path="/" element={
       <>
+      <PageTitle 
+        title="Chargeup - India's Leading EV Tech Platform"
+        description="Transform your EV journey with Chargeup's battery management solutions, and comprehensive ecosystem for electric vehicle owners across India."
+      />
       <HeroSections/>
       
       {/* <WhyChooseUs/> */}
@@ -74,12 +79,48 @@ export const Homepage = (): JSX.Element => {
       </>
     }>
     </Route>
-    <Route path="/privacy-policy" element={<PrivacyPolicyContent />} />
-    <Route path="/refund-policy" element={<RefundCancellationContent />} />
-  <Route path="/terms-and-conditions" element={<TermsConditionsContent />} />
-  <Route path="/corporate-governance" element={<CorporateGovernanceContent />} />
+    <Route path="/privacy-policy" element={
+      <>
+        <PageTitle 
+          title="Privacy Policy - Chargeup Data Protection & User Privacy"
+          description="Learn about Chargeup's commitment to protecting your privacy and data security. Read our comprehensive privacy policy for EV platform users."
+        />
+        <PrivacyPolicyContent />
+      </>
+    } />
+    <Route path="/refund-policy" element={
+      <>
+        <PageTitle 
+          title="Refund & Cancellation Policy - Chargeup Terms & Conditions"
+          description="Review Chargeup's refund and cancellation policy for EV charging services, subscriptions, and platform usage terms."
+        />
+        <RefundCancellationContent />
+      </>
+    } />
+  <Route path="/terms-and-conditions" element={
+    <>
+      <PageTitle 
+        title="Terms & Conditions - Chargeup Service Agreement & User Terms"
+        description="Read Chargeup's terms and conditions for using our EV platform, services, and digital solutions. User agreement and service terms."
+      />
+      <TermsConditionsContent />
+    </>
+  } />
+  <Route path="/corporate-governance" element={
+    <>
+      <PageTitle 
+        title="Corporate Governance - Chargeup Leadership & Business Ethics"
+        description="Learn about Chargeup's corporate governance practices, leadership principles, and commitment to ethical business operations in the EV industry."
+      />
+      <CorporateGovernanceContent />
+    </>
+  } />
     <Route path = "/solutions" element={
       <>
+      <PageTitle 
+        title="EV Solutions - Smart Charging & Battery Technology | Chargeup"
+        description="Discover Chargeup's innovative EV solutions including infrastructure, battery management systems, and technology platforms for electric mobility."
+      />
       <section id="solutions">
       <FeaturesSection/>
       </section>
@@ -90,6 +131,10 @@ export const Homepage = (): JSX.Element => {
     }></Route>
     <Route path = "/partners" element={
       <>
+      <PageTitle 
+        title="Partners & OEMs - Join Chargeup's EV Ecosystem | Strategic Partnerships"
+        description="Partner with Chargeup to accelerate EV adoption. Explore benefits for OEMs, charging partners, and stakeholders in India's growing electric vehicle ecosystem."
+      />
       
       <section id="partners">
   <PartnersHome />
@@ -102,15 +147,23 @@ export const Homepage = (): JSX.Element => {
       
       </>
     }></Route>
-    <Route path="/passport" element={
+        {/* <Route path="/passport" element={
           <>
+            <PageTitle 
+              title="Battery Passport - India's First Blockchain-Enabled Platform | Chargeup"
+              description="Experience India's first blockchain-enabled battery passport platform. Track, verify, and optimize battery lifecycle with unprecedented transparency and security."
+            />
             <section id="passport">
               <PassportPage />
             </section>
           </>
-        } />
+        } /> */}
     <Route path = "/story" element={
       <>
+        <PageTitle 
+          title="Our Story - Chargeup Journey, Vision & Mission | EV Tech Platform"
+          description="Learn about Chargeup's journey in transforming India's EV ecosystem, our vision for sustainable mobility, and mission to empower drivers and partners."
+        />
       <section id="story">
       <ChargeupJourney />
     </section>
@@ -123,6 +176,10 @@ export const Homepage = (): JSX.Element => {
     }></Route>
     <Route path = "/people" element={
       <>
+        <PageTitle 
+          title="People & Careers - Join the Chargeup Team | EV Innovation"
+          description="Meet the Chargeup team driving EV innovation in India. Explore career opportunities, company culture, and join us in transforming sustainable mobility."
+        />
       
       
       <section id="people">
