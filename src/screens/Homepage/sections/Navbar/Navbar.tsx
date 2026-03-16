@@ -27,7 +27,8 @@ export const Navbar = (): JSX.Element => {
     { name: "Partners", href: "/partners" },
     // { name: "News Room", href: "/news" },
     { name: "Our Story", href: "/story" },
-    { name: "People", href: "/people" },
+    { name: "About Us", href: "/about-chargeup" },
+    { name: "FAQs", href: "/chargeup-faq" },
     
     { name: "Marketplace ", href: "https://marketplace.echargeup.com" },
     // { name: "Battery Passport", href: "/passport" },
@@ -113,7 +114,7 @@ export const Navbar = (): JSX.Element => {
         <div className="relative h-[40px] transition-transform duration-300 hover:scale-105">
           <Link to="/">
             <img
-              className="h-[36px] lg:px-4 object-cover"
+              className="h-[36px] lg:px-4 object-fill"
               alt="Chargeup logo"
               src="/chargeup-logo-1-1.png"
             />

@@ -24,6 +24,8 @@ import OpenPositions from '../PeoplePage/Career/Career.tsx';
 import TermsConditionsContent from '../FooterPages/Terms.tsx';
 import {CultureAtChargeUp} from '../PeoplePage/Culture/Culture.tsx';
 import Team from '../PeoplePage/Team/Team.tsx';
+import AboutChargeup from '../PeoplePage/About/AboutChargeup.tsx';
+import ChargeupFaq from '../Faq/ChargeupFaq.tsx';
 import ChargeupJourney from '../StoryPage/ChargeupJourney/ChargeupJourney.tsx';
 import RefundCancellationContent from '../FooterPages/Refund.tsx';
 import { useEffect } from "react";
@@ -31,7 +33,6 @@ import { useLocation } from "react-router-dom";
 import VideoCarouselSection from './sections/Video/Video.tsx';
 import GalleryWrapper from './sections/testimony/GalleryWrapper.tsx';
 import ScrollToTop from './ScrollToTop.tsx';
-import PassportPage from '../PassportPage/PassportPage.tsx';
 import PageTitle from '../../components/PageTitle.tsx';
 
 
@@ -174,19 +175,31 @@ export const Homepage = (): JSX.Element => {
       
       </>
     }></Route>
-    <Route path = "/people" element={
+    <Route path = "/about-chargeup" element={
       <>
         <PageTitle 
-          title="People & Careers - Join the Chargeup Team | EV Innovation"
-          description="Meet the Chargeup team driving EV innovation in India. Explore career opportunities, company culture, and join us in transforming sustainable mobility."
+          title="About Us - Chargeup's Driver-First EV Platform"
+          description="Learn how Chargeup de-risks EV financing, connects drivers with partners, and powers the driver economy in India."
         />
       
       
-      <section id="people">
+      <section id="about-chargeup">
+  <AboutChargeup />
   <Team />
-</section> 
+      </section> 
       <CultureAtChargeUp/>
       <OpenPositions/>
+      
+      </>
+    }></Route>
+    <Route path = "/chargeup-faq" element={
+      <>
+        <PageTitle 
+          title="FAQs - Chargeup Platform, Impact, and Ecosystem"
+          description="Find answers about Chargeup's Fi-Ne-Tech platform, products, and impact across the EV ecosystem."
+        />
+      
+      <ChargeupFaq />
       
       </>
     }></Route>

@@ -52,9 +52,9 @@ export default function HeroSection() {
                 <span className="text-sm md:text-base font-medium text-[#fff]">A single stop solution</span>
               </div> */}
               
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight md:mb-8">
+              <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold text-white leading-tight md:mb-8">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent ">
-                   EV Tech Platform  
+                     Driver First <span className="text-[#f1ee8e]">Fi-Ne-Tech</span> Platform 
                 </span>
                 {/* <br />
                 <span className="bg-gradient-to-r from-[#0C7D49] via-[#07584D] to-[#033F4F] bg-clip-text text-transparent">
@@ -67,14 +67,14 @@ export default function HeroSection() {
               </h1>
                 
               <p className="text-xl md:text-2xl text-gray-50 leading-relaxed max-w-xl">
-                Chargeup unifies India’s 3-wheeler ecosystem empowering drivers, NBFCs, and OEMs through   <br></br> 
-                <span className="text-[#f1ee8e] font-semibold"> AI-driven financing and asset management solutions. </span>
+                Empowering drivers to run more, earn more for better tomorrow.   <br></br> 
+                {/* <span className="text-[#f1ee8e] font-semibold"> AI-driven financing and asset management solutions. </span> */}
                 
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-6">
+            <div className="flex flex-wrap gap-4 pt-6 ">
               <Link to="/solutions#solutions">
                 <Button className="group bg-gradient-to-r from-[#0F9547] to-[#0D8948] hover:from-[#0D8948] hover:to-[#0A704A] text-white px-6 md:px-8 py-6 md:py-8 rounded-xl font-semibold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg relative overflow-hidden">
                   <span className="md:hidden">Explore our Solutions</span>

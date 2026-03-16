@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import Highcharts from "highcharts/highmaps";
 import HighchartsReact from "highcharts-react-official";
-import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import PartnerModal from "../../../PartnerPage/sections/PartnerContact/PartnerContact";
 
 export default function MapWithContentLayout() {
   const [mapData, setMapData] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
 
   useEffect(() => {
@@ -81,7 +78,8 @@ export default function MapWithContentLayout() {
       backgroundColor: 'transparent',
       events: {
         load: function () {
-          const chart = this;
+          const chart = this as unknown as { mapView?: { setView: (center: [number, number], zoom: number) => void } };
+          if (!chart.mapView) return;
           // Adjust view based on screen size
           if (isMobile) {
             chart.mapView.setView([80, 25], 4.1);
@@ -302,7 +300,7 @@ export default function MapWithContentLayout() {
     
     // Animation function for pulse effect - now for ALL dots
     const animatePulse = () => {
-      const chart = Highcharts.charts.find(c => c && c.options.chart.map);
+      const chart = Highcharts.charts.find(c => c && c.options?.chart?.map);
       if (!chart) return;
       
       const pulseSeries = chart.series.find(s => s.name === 'Pulse Effect');
@@ -320,7 +318,7 @@ export default function MapWithContentLayout() {
       });
     };
     
-    const animatePoint = (point) => {
+    const animatePoint = (point: any) => {
       if (!point || !point.graphic) return;
       
       point.graphic.animate({
@@ -403,22 +401,7 @@ export default function MapWithContentLayout() {
             Serving 180+ pincodes through our dealer network
           </p>
 
-          {/* CTA Button */}
-          {/* <div className={`flex ${isMobile ? 'flex-row w-full justify-center' : 'flex-row w-full align-center justify-center '} gap-4`}>
-            <Button 
-              className="bg-[#0A704A] hover:bg-[#0A704A] text-white px-4 py-3 text-lg font-medium rounded-lg transition-colors"
-              onClick={() => setIsModalOpen(true)}
-            >
-              Partner with us
-            </Button>
-            <PartnerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-            
-            <Button 
-              className="bg-[#F8BB25] hover:bg-[#F48900] text-black px-4 py-3 text-base sm:text-lg font-medium rounded-lg transition-colors"
-            >
-              Become a Driver
-            </Button>
-          </div> */}
+          
         </div>
       </div>
     </section>
