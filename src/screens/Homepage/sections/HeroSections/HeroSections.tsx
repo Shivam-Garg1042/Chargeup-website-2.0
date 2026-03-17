@@ -70,7 +70,7 @@ export default function HeroSection() {
               </h1>
                 
               <p className="text-lg md:text-2xl text-gray-50 leading-relaxed ">
-                Empowering drivers to run more, earn more <br></br>for better tomorrow.   <br></br> 
+                Empowering drivers to run more, earn more <br></br>for a better tomorrow.   <br></br> 
                 {/* <span className="text-[#f1ee8e] font-semibold"> AI-driven financing and asset management solutions. </span> */}
                 
               </p>
