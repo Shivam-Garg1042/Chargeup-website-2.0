@@ -8,7 +8,7 @@ const AboutChargeup = (): JSX.Element => {
 
       <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div className="flex flex-col gap-5">
-          <h2 className="text-4xl sm:text-5xl font-semibold text-[#041620]">About Us</h2>
+          <h2 className="text-4xl sm:text-5xl font-semibold text-[#041620]">About Chargeup</h2>
 
           <p className="text-base sm:text-lg text-[#041620]/80 leading-relaxed">
             India has over <span className=" text-[#0D8948]">10 million commercial drivers moving 200 million people every day</span> , yet the financial
@@ -40,7 +40,7 @@ const AboutChargeup = (): JSX.Element => {
             <div className="absolute -right-6 top-4 h-28 w-28 rounded-2xl bg-[#002751]/12"></div>
             <div className="absolute right-6 bottom-6 h-20 w-20 rounded-2xl bg-[#07584D]/16"></div>
 
-            <div className="relative overflow-hidden rounded-3xl border border-[#0D8948]/20 bg-white shadow-[0_24px_60px_rgba(6,40,48,0.15)]">
+            <div className="relative overflow-hidden rounded-3xl border border-[#0D8948]/20 bg-white shadow-[0_24px_60px_rgba(6,40,48,0.15)] md:mt-20 ">
               <img
                 src="/aboutus.jpeg"
                 alt="Chargeup team and driver ecosystem"

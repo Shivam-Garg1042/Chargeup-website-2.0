@@ -174,7 +174,7 @@ export default function Team() {
     <section className="flex flex-col items-center justify-center py-12 w-full bg-gray-50">
       <div className="flex flex-col items-center w-full max-w-7xl px-2 md:px-1 md:mb-7">
         <header className="mb-10">
-          <h2 className="font-medium text-gray-900 text-2xl md:text-5xl text-center leading-tight max-w-[600px] md:mb-4">
+          <h2 className="font-medium text-gray-900 text-2xl md:text-5xl text-center max-w-[600px] md:mb-4">
             The <span className="text-[#0D8948] font-bold">Charge(d)up</span> Team
           </h2>
         </header>

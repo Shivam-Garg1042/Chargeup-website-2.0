@@ -13,12 +13,12 @@ const faqs = [
   },
   {
     question: "When was Chargeup founded?",
-    answer: "Chargeup was founded in 2019 in Delhi by Varun Goenka and Satish Mittal.",
+    answer: "Chargeup was founded in 2019 in Delhi by Varun Goenka.",
   },
   {
     question: "Who uses Chargeup?",
     answer:
-      "Chargeup is used by multiple participants across the EV ecosystem including commercial EV drivers such as e-rickshaw drivers and delivery riders, NBFCs and lenders financing EV vehicles, OEMs and vehicle manufacturers, dealers and ecosystem partners. The platform currently supports 10,000 active drivers across 12 cities in India.",
+      "Chargeup is used by multiple participants across the EV ecosystem including commercial EV drivers such as e-rickshaw drivers and delivery riders, NBFCs and lenders financing EV vehicles, OEMs and vehicle manufacturers, dealers and ecosystem partners. The platform currently supports 10,000 active drivers across 16 cities in India.",
   },
   {
     question: "How many drivers use Chargeup?",
@@ -28,12 +28,12 @@ const faqs = [
   {
     question: "How many cities does Chargeup operate in?",
     answer:
-      "Chargeup currently operates across 12 cities in India and plans to expand to 40 cities.",
+      "Chargeup currently operates across 16 cities in India and plans to expand to 40 cities.",
   },
   {
     question: "What is the Chargeup platform?",
     answer:
-      "Chargeup is a Fi-Ne-Tech platform that integrates financing, energy management, asset monitoring, and resale infrastructure to support EV drivers and the broader mobility ecosystem.",
+      "Chargeup is a Fi-Ne-Tech platform that integrates finance, energy, service, and resale to support EV drivers and the broader mobility ecosystem.",
   },
   {
     question: "What products make up the Chargeup platform?",
@@ -69,7 +69,7 @@ const faqs = [
   {
     question: "What is Chargeup Risk Engine?",
     answer:
-      "The Chargeup Risk Engine uses behavioural data, financial insights, and asset performance to generate a Karma Index, helping predict potential loan defaults and monitor portfolio risk.",
+      "A SMART Digital Score that helps NBFCs assess borrower intent using identity & digital footprint for secured lending.",
   },
   {
     question: "How accurate is Chargeup's risk prediction?",
@@ -79,7 +79,7 @@ const faqs = [
   {
     question: "How does Chargeup help gig workers?",
     answer:
-      "Chargeup helps gig and last-mile drivers by improving earning predictability through better asset uptime, operational visibility, and access to financing and resale infrastructure. Drivers on the platform have seen around 30% increase in annual income.",
+      "Chargeup helps gig and last-mile drivers by empowering them with higher earnings and income predictability, enabling them to run more, earn more. By providing better asset uptime, operational visibility, and access to financing and resale infrastructure. Drivers on the platform have seen up to 40% increase in annual income.",
   },
   {
     question: "How does Chargeup help lenders?",
@@ -94,7 +94,7 @@ const faqs = [
   {
     question: "What impact has Chargeup created so far?",
     answer:
-      "Chargeup has demonstrated measurable impact including a 30% increase in driver income, 50% reduction in OEM service costs, 7% uplift in NBFC return on assets, and 35% of new drivers joining through referrals.",
+      "Chargeup has demonstrated measurable impact including up to 40% increase in driver income, 50% reduction in OEM service costs, 7% uplift in NBFC return on assets, with less than 2% NPA, and 35% of new drivers joining through referrals.",
   },
   {
     question: "What is Chargeup's mission?",

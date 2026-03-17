@@ -52,7 +52,7 @@ export const CultureAtChargeUp = (): JSX.Element => {
         <div className="flex flex-col w-full items-center gap-[40px] md:gap-[80px]">
           <div className="flex flex-col w-full items-center">
             <h2 className=" font-normal text-white text-[40px] md:text-[60px] text-center tracking-[-1px] leading-[60px] md:leading-[70px] md:mt-10">
-              Life @ <span className = "text-[#0D8948] font-bold">Chargeup</span>
+              Life at <span className = "text-[#0D8948] font-bold">Chargeup</span>
             </h2>
           </div>
 
