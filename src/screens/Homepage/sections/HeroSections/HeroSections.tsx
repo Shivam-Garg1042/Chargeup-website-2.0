@@ -53,7 +53,7 @@ export default function HeroSection() {
               </div> */}
               
               <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold text-white leading-tight md:mb-8">
-                <span className="block text-lg md:text-2xl font-semibold tracking-[0.2em] text-white/80 uppercase">
+                <span className="block text-lg md:text-2xl font-semibold tracking-[0.1em]">
                   Driver First
                 </span>
                 <span className=" text-4xl md:text-6xl  font-bold text-[#f1ee8e] ">
