@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "What is Chargeup?",
     answer:
-      "Chargeup solves this through its driver-first Fi-Ne-Tech platform, designed to control the variables that determine repayment: energy, uptime, and asset performance. Using deep IoT integration and real-time data, the platform brings earning security for drivers, loan security for lenders, and asset security for OEMs, empowering drivers to run more and earn more for a better tomorrow.",
+      "Chargeup is a driver-first Fi-Ne-Tech platform, designed to control the variables that determine repayment: energy, uptime, and asset performance. Using deep IoT integration and real-time data, the platform brings earning security for drivers, loan security for lenders, and asset security for OEMs, empowering drivers to run more and earn more for a better tomorrow.",
   },
   {
     question: "When was Chargeup founded?",
@@ -105,9 +105,9 @@ const faqs = [
 
 const ChargeupFaq = (): JSX.Element => {
   return (
-    <section id="chargeup-faq" className="w-full bg-white py-12 sm:py-14">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6">
-        <div className="flex flex-col gap-1">
+    <section id="chargeup-faq" className="w-full bg-white py-10">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 ">
+        <div className="flex flex-col gap-1 items-center text-center">
           <h2 className="text-4xl sm:text-7xl font-bold text-[#041620] mb-4">FAQs</h2>
           <p className="text-xs uppercase tracking-[0.18em] text-gray-500">Frequently asked questions</p>
           <p className="text-sm sm:text-base text-gray-500">

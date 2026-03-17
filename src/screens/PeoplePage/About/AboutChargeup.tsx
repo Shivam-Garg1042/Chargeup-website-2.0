@@ -11,30 +11,34 @@ const AboutChargeup = (): JSX.Element => {
           <h2 className="text-4xl sm:text-5xl font-semibold text-[#041620]">About Us</h2>
 
           <p className="text-base sm:text-lg text-[#041620]/80 leading-relaxed">
-            India has over 10 million commercial drivers moving 200 million people every day, yet the financial
+            India has over <span className=" text-[#0D8948]">10 million commercial drivers moving 200 million people every day</span> , yet the financial
             system continues to treat them as high-risk borrowers. The real risk is not the driver. It is the
             volatility of the vehicle, energy costs, and daily earnings.
           </p>
 
           <p className="text-base sm:text-lg text-[#041620]/80 leading-relaxed">
-            Chargeup solves this through its driver-first Fi-Ne-Tech platform, designed to control the
-            variables that determine repayment: energy, uptime, and asset performance. Using deep IoT
-            integration and real-time data, the platform brings earning security for drivers, loan security
-            for lenders, and asset security for OEMs, empowering drivers to run more and earn more for a
+            Chargeup solves this through its <span className="  text-[#0D8948]">driver-first Fi-Ne-Tech platform</span>, designed to control the
+            variables that determine repayment:<span className="  text-[#0D8948]"> energy, uptime, and asset performance</span>. Using deep IoT
+            integration and real-time data, the platform brings <span className="  text-[#0D8948]">earning security for drivers, loan security
+            for lenders, and asset security for OEMs</span>, empowering drivers to run more and earn more for a
             better tomorrow.
           </p>
 
           <p className="text-base sm:text-lg text-[#041620]/80 leading-relaxed">
-            By de-risking EV financing and seamlessly connecting drivers, OEMs, dealers, and lenders,
+            By de-risking EV financing and seamlessly connecting <span className="  text-[#0D8948]">drivers, OEMs, dealers, and lenders</span>,
             Chargeup is building a Fi-Ne-Tech platform powering the EV ecosystem and the driver economy.
           </p>
 
-          <div className="rounded-xl border border-[#0D8948]/20 bg-[#0D8948]/5 px-5 py-4">
+          <p className="text-base sm:text-lg text-[#041620]/80 leading-relaxed">
+            Chargeup’s mission is to <span className=" text-[#0D8948]">enable 1 million driver entrepreneurs with higher earnings by 2030</span> while accelerating the electrification of last-mile mobility in India.
+          </p>
+
+          {/* <div className="rounded-xl border border-[#0D8948]/20 bg-[#0D8948]/5 px-5 py-4">
             <p className="text-sm uppercase tracking-[0.25em] text-[#0D8948]">Mission</p>
-            <p className="mt-2 text-lg font-semibold text-[#041620]">
+            <p className="mt-2 text-lg   text-[#041620]">
               Enable 1 million driver entrepreneurs by 2030 while accelerating last-mile electrification.
             </p>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex items-center justify-center">

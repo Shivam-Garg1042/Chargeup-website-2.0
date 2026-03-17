@@ -53,9 +53,12 @@ export default function HeroSection() {
               </div> */}
               
               <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold text-white leading-tight md:mb-8">
-                <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent ">
-                     Driver First <span className="text-[#f1ee8e]">Fi-Ne-Tech</span> Platform 
+                <span className="block text-lg md:text-2xl font-semibold tracking-[0.2em] text-white/80 uppercase">
+                  Driver First
                 </span>
+                <span className=" text-4xl md:text-6xl  font-bold text-[#f1ee8e] ">
+                  Fi-Ne-Tech 
+                </span> Platform
                 {/* <br />
                 <span className="bg-gradient-to-r from-[#0C7D49] via-[#07584D] to-[#033F4F] bg-clip-text text-transparent">
                   Fi Ne Tech
@@ -66,8 +69,8 @@ export default function HeroSection() {
                 </span> */}
               </h1>
                 
-              <p className="text-xl md:text-2xl text-gray-50 leading-relaxed max-w-xl">
-                Empowering drivers to run more, earn more for better tomorrow.   <br></br> 
+              <p className="text-lg md:text-2xl text-gray-50 leading-relaxed ">
+                Empowering drivers to run more, earn more <br></br>for better tomorrow.   <br></br> 
                 {/* <span className="text-[#f1ee8e] font-semibold"> AI-driven financing and asset management solutions. </span> */}
                 
               </p>

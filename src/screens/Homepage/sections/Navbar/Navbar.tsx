@@ -28,7 +28,7 @@ export const Navbar = (): JSX.Element => {
     // { name: "News Room", href: "/news" },
     { name: "Our Story", href: "/story" },
     { name: "About Us", href: "/about-chargeup" },
-    { name: "FAQs", href: "/chargeup-faq" },
+    
     
     { name: "Marketplace ", href: "https://marketplace.echargeup.com" },
     // { name: "Battery Passport", href: "/passport" },

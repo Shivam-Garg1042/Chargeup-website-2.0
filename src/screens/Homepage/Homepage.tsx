@@ -185,10 +185,11 @@ export const Homepage = (): JSX.Element => {
       
       <section id="about-chargeup">
   <AboutChargeup />
-  <Team />
       </section> 
+      <Team />
       <CultureAtChargeUp/>
       <OpenPositions/>
+      <ChargeupFaq/>
       
       </>
     }></Route>
