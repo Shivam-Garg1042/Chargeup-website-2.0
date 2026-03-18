@@ -16,16 +16,19 @@ export const DivWrapper = (): JSX.Element => {
     { title: "Partners", id: "/partners#partners" },
     { title: "About Us", id: "/about-chargeup#about-chargeup" },
     { title: "FAQs", id: "/about-chargeup#chargeup-faq" },
+    // { title: "Blogs", id: "/chargeup-blog" },
   ];
 
   const secondNavLinks = [
     { title: "Our Solution", id: "/solutions/#solutions", external: false },
     { title: "Marketplace", id: "https://marketplace.echargeup.com", external: true },
     { title: "News Room", id: "/story#news-room", external: false },
+    
   ];
 
   // Footer links data
   const footerLinks = [
+    
     { title: "Privacy Policy", id: "/privacy-policy" },
     { title: "Refund & Cancellation Policy", id: "/refund-policy" },
     { title: "Terms & Conditions", id: "/terms-and-conditions" },

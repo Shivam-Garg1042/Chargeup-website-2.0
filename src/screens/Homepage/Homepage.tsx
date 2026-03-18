@@ -34,6 +34,8 @@ import VideoCarouselSection from './sections/Video/Video.tsx';
 import GalleryWrapper from './sections/testimony/GalleryWrapper.tsx';
 import ScrollToTop from './ScrollToTop.tsx';
 import PageTitle from '../../components/PageTitle.tsx';
+// import BlogSection from './sections/BlogSection/BlogSection.tsx';
+// import ChargeupBlog from '../BlogPage/ChargeupBlog.tsx';
 
 
 const ScrollToHash = () => {
@@ -61,8 +63,8 @@ export const Homepage = (): JSX.Element => {
     <Route path="/" element={
       <>
       <PageTitle 
-        title="Chargeup - India's Leading EV Tech Platform"
-        description="Transform your EV journey with Chargeup's battery management solutions, and comprehensive ecosystem for electric vehicle owners across India."
+        title="Driver First Fi-Ne-Tech Platform | Finance . Network . Tech"
+        description="Chargeup is a driver-first Fi-Ne-Tech platform designed to control repayment variables - energy, uptime, and re-sale - bringing earning security for drivers and loan security for lenders."
       />
       <HeroSections/>
       
@@ -77,6 +79,7 @@ export const Homepage = (): JSX.Element => {
       {/* <TestimonialSections/> */}
       <PartnerEcosystem/> 
       <VideoCarouselSection/>
+      {/* <BlogSection /> */}
       </>
     }>
     </Route>
@@ -204,6 +207,24 @@ export const Homepage = (): JSX.Element => {
       
       </>
     }></Route>
+    {/* <Route path="/chargeup-blog" element={
+      <>
+        <PageTitle
+          title="Chargeup Blog - Updates, Stories, and EV Insights"
+          description="Explore Chargeup updates, driver-first EV stories, and insights from the team building India's EV ecosystem."
+        />
+        <ChargeupBlog />
+      </>
+    }></Route> */}
+    {/* <Route path="/chargeup-blog/:slug" element={
+      <>
+        <PageTitle
+          title="Chargeup Blog - Updates, Stories, and EV Insights"
+          description="Explore Chargeup updates, driver-first EV stories, and insights from the team building India's EV ecosystem."
+        />
+        <ChargeupBlog />
+      </>
+    }></Route> */}
     </Routes>
       
     <DivWrapper/>

@@ -48,6 +48,22 @@ const articlesData = [
     imageUrl: "/news8.jpg",
     link: "https://yourstory.com/2025/05/chargeup-partners-mega-corp-shivakari-finance-50-crore-ev-financing"
   },
+  {
+    id: 7,
+    date: "18 March, 2026",
+    title: "Chargeup Wins Prestigious Aegis Graham Bell Award for AI driven Innovation in EV",
+    description: "hargeup, India's driver-first Fi-Ne-Tech platform, has won the Innovation in EV category at the 16th Aegis Graham Bell Awards, one of the country's most respected platforms celebrating breakthrough innovation in deep tech and artificial intelligence.",
+    imageUrl: "/news9.png",
+    link: "https://www.business-standard.com/content/press-releases-ani/chargeup-wins-prestigious-aegis-graham-bell-award-for-ai-driven-innovation-in-ev-126031800589_1.html"
+  },
+  {
+    id: 8,
+    date: "26 Nov, 2025",
+    title: "Chargeup and Eleven commit ₹50 crore to EV loans and health cover for 10,000 drivers",
+    description: "The initiative targets 10,000 drivers and aims to address two key barriers to EV adoption: high upfront ownership costs and limited access to affordable healthcare.",
+    imageUrl: "/news10.png",
+    link: "https://www.cnbctv18.com/business/chargeup-and-eleven-commit-%E2%82%B950-crore-to-ev-loans-and-health-cover-for-10000-drivers-19773285.htm"
+  },
   // {
   //   id: 7,
   //   date: "23 Jan, 2025",
