@@ -34,8 +34,8 @@ import VideoCarouselSection from './sections/Video/Video.tsx';
 import GalleryWrapper from './sections/testimony/GalleryWrapper.tsx';
 import ScrollToTop from './ScrollToTop.tsx';
 import PageTitle from '../../components/PageTitle.tsx';
-// import BlogSection from './sections/BlogSection/BlogSection.tsx';
-// import ChargeupBlog from '../BlogPage/ChargeupBlog.tsx';
+import BlogSection from './sections/BlogSection/BlogSection.tsx';
+import ChargeupBlog from '../BlogPage/ChargeupBlog.tsx';
 
 
 const ScrollToHash = () => {
@@ -79,7 +79,6 @@ export const Homepage = (): JSX.Element => {
       {/* <TestimonialSections/> */}
       <PartnerEcosystem/> 
       <VideoCarouselSection/>
-      {/* <BlogSection /> */}
       </>
     }>
     </Route>
@@ -175,7 +174,6 @@ export const Homepage = (): JSX.Element => {
       <Investor/>
       <Wrapper/>
       <NewsPage/>
-      
       </>
     }></Route>
     <Route path = "/about-chargeup" element={
@@ -207,7 +205,16 @@ export const Homepage = (): JSX.Element => {
       
       </>
     }></Route>
-    {/* <Route path="/chargeup-blog" element={
+    <Route path="/chargeup-blog" element={
+      <>
+        <PageTitle
+          title="Chargeup Blog - Updates, Stories, and EV Insights"
+          description="Explore Chargeup updates, driver-first EV stories, and insights from the team building India's EV ecosystem."
+        />
+        <BlogSection variant="page" />
+      </>
+    }></Route>
+    <Route path="/blog/:slug" element={
       <>
         <PageTitle
           title="Chargeup Blog - Updates, Stories, and EV Insights"
@@ -215,16 +222,7 @@ export const Homepage = (): JSX.Element => {
         />
         <ChargeupBlog />
       </>
-    }></Route> */}
-    {/* <Route path="/chargeup-blog/:slug" element={
-      <>
-        <PageTitle
-          title="Chargeup Blog - Updates, Stories, and EV Insights"
-          description="Explore Chargeup updates, driver-first EV stories, and insights from the team building India's EV ecosystem."
-        />
-        <ChargeupBlog />
-      </>
-    }></Route> */}
+    }></Route>
     </Routes>
       
     <DivWrapper/>

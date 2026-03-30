@@ -6,7 +6,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   server: {
     host: '0.0.0.0',     // Allow access from any device
-    port: 5173,          // Optional: default Vite port
+    port: 5174,          // Optional: default Vite port
     proxy: {
       "/api": "http://localhost:4000",
       "/uploads": "http://localhost:4000",

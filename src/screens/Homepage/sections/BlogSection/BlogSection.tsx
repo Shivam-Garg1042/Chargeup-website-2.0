@@ -39,8 +39,8 @@ export default function BlogSection({ variant = "home" }: BlogSectionProps) {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                to="/chargeup-blog"
-                    className="group inline-flex items-center gap-2 rounded-full border border-[#0F9547]/60 px-6 py-4 text-base font-semibold text-[#0F9547] transition hover:border-[#0A704A] hover:text-[#0A704A]"
+                to={`/blog/${posts[0]?.slug}`}
+                className="group inline-flex items-center gap-2 rounded-full border border-[#0F9547]/60 px-6 py-4 text-base font-semibold text-[#0F9547] transition hover:border-[#0A704A] hover:text-[#0A704A]"
               >
                 View all updates
               </Link>
@@ -58,16 +58,19 @@ export default function BlogSection({ variant = "home" }: BlogSectionProps) {
                   <span>{post.readTime}</span>
                   <span className="h-1 w-1 rounded-full bg-[#0F9547]"></span>
                   <span>{post.date}</span>
+                  <span className="h-1 w-1 rounded-full bg-[#0F9547]"></span>
+                  <span className="justify-left">By {post.createdBy}</span>
                 </div>
                 <div className="mt-4 flex items-start justify-between gap-6">
                   <div className="space-y-3">
                     <h3 className="text-xl font-semibold text-[#111827] md:text-2xl">
                       {post.title}
                     </h3>
+                    {/* <div className="text-xs text-[#0F9547] font-medium">By {post.createdBy}</div> */}
                     <p className="text-sm text-[#4B5563] md:text-base">{post.excerpt}</p>
                   </div>
                   <Link
-                    to={`/chargeup-blog/${post.slug}`}
+                    to={`/blog/${post.slug}`}
                     className="group inline-flex items-center gap-2 rounded-full border border-[#0F9547]/40 px-4 py-2 text-sm font-semibold text-[#0F9547] transition hover:border-[#0A704A] hover:text-[#0A704A]"
                   >
                     Learn More

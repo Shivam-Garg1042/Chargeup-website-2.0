@@ -16,7 +16,7 @@ export const DivWrapper = (): JSX.Element => {
     { title: "Partners", id: "/partners#partners" },
     { title: "About Us", id: "/about-chargeup#about-chargeup" },
     { title: "FAQs", id: "/about-chargeup#chargeup-faq" },
-    // { title: "Blogs", id: "/chargeup-blog" },
+    { title: "Blogs", id: "/chargeup-blog" },
   ];
 
   const secondNavLinks = [

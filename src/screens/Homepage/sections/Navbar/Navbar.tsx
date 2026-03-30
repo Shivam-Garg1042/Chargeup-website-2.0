@@ -22,17 +22,12 @@ export const Navbar = (): JSX.Element => {
 
   // Navigation menu items from smaller component
   const navItems = [
-   
     { name: "Our Solutions", href: "/solutions" },
     { name: "Partners", href: "/partners" },
-    // { name: "News Room", href: "/news" },
+    { name: "Blogs", href: "/chargeup-blog" },
     { name: "Our Story", href: "/story" },
     { name: "About Us", href: "/about-chargeup" },
-    
-    
     { name: "Marketplace ", href: "https://marketplace.echargeup.com" },
-    // { name: "Battery Passport", href: "/passport" },
-    
   ];
   const handlePlayStoreClick = () => {
         

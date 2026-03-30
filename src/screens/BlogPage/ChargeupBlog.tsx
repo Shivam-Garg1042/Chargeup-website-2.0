@@ -17,16 +17,19 @@ export default function ChargeupBlog() {
   };
 
   useEffect(() => {
-    fetch("/api/blogs?status=published")
-      .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((data) => {
-        if (Array.isArray(data) && data.length) {
-          setPosts(data);
-        }
-      })
-      .catch(() => {
-        setPosts(blogPosts);
-      });
+    // Optionally, you can remove this effect if you don't fetch from API
+    // fetch("/api/blogs?status=published")
+    //   .then((res) => (res.ok ? res.json() : Promise.reject()))
+    //   .then((data) => {
+    //     if (Array.isArray(data) && data.length) {
+    //       setPosts(data);
+    //     }
+    //   })
+    //   .catch(() => {
+    //     setPosts(blogPosts);
+    //   });
+    // For now, just use local blogPosts
+    setPosts(blogPosts);
   }, []);
 
   useEffect(() => {
@@ -35,19 +38,9 @@ export default function ChargeupBlog() {
       setActivePost(fallback);
       return;
     }
-
-    fetch(`/api/blogs/${slug}`)
-      .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((data) => {
-        if (data && data.slug) {
-          setActivePost(data);
-        } else {
-          setActivePost(fallback);
-        }
-      })
-      .catch(() => {
-        setActivePost(fallback);
-      });
+    // Find the blog post by slug from local data
+    const found = posts.find((b) => b.slug === slug);
+    setActivePost(found || fallback);
   }, [slug, posts]);
 
   return (
@@ -60,10 +53,15 @@ export default function ChargeupBlog() {
               <span>{activePost.readTime}</span>
               <span className="h-1 w-1 rounded-full bg-[#0F9547]"></span>
               <span>{activePost.date}</span>
+              <span className="h-1 w-1 rounded-full bg-[#0F9547]"></span>
+              <span>By {activePost.createdBy}</span>
             </div>
             <h1 className="mt-4 text-3xl font-semibold text-[#111827] md:text-4xl">
               {activePost.title}
             </h1>
+            {/* <div className="mt-2 text-sm text-[#0F9547] font-medium">
+              By {activePost.createdBy}
+            </div> */}
 
             <img
               src={activePost.image}
@@ -103,7 +101,7 @@ export default function ChargeupBlog() {
                 return (
                   <Link
                     key={post.slug}
-                    to={`/chargeup-blog/${post.slug}`}
+                    to={`/blog/${post.slug}`}
                     className={`block py-4 transition ${
                       isActive
                         ? "text-[#0F9547]"
