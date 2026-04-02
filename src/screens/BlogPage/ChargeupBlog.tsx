@@ -63,11 +63,13 @@ export default function ChargeupBlog() {
               By {activePost.createdBy}
             </div> */}
 
-            <img
-              src={activePost.image}
-              alt={activePost.title}
-              className="h-64 w-full rounded-2xl object-cover mt-4"
-            />
+            <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden mt-4">
+              <img
+                src={activePost.image}
+                alt={activePost.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <p className="mt-4 text-base text-[#4B5563] md:text-lg">
               {activePost.excerpt}
