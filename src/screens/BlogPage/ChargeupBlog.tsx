@@ -49,14 +49,41 @@ export default function ChargeupBlog() {
         <div className="grid md:gap-10 lg:grid-cols-[2fr,1fr] gap-2">
           <article className="rounded-2xl bg-white/50 p-8 shadow-[0_20px_45px_rgba(13,137,72,0.18)] backdrop-blur">
             
-            <div className="flex flex-wrap items-center gap-4 text-xs font-semibold uppercase tracking-[0.15em] text-[#6B7280]">
-              <span>{activePost.readTime}</span>
-              <span className="h-1 w-1 rounded-full bg-[#0F9547]"></span>
-              <span>{activePost.date}</span>
-              <span className="h-1 w-1 rounded-full bg-[#0F9547]"></span>
-              <span>By {activePost.createdBy}</span>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-2 mb-2 gap-2">
+              <div className="flex flex-wrap items-center gap-4 text-xs font-semibold uppercase tracking-[0.15em] text-[#6B7280]">
+                <span>{activePost.readTime}</span>
+                <span className="h-1 w-1 rounded-full bg-[#0F9547]"></span>
+                <span>{activePost.date}</span>
+                <span className="h-1 w-1 rounded-full bg-[#0F9547]"></span>
+                <span>By {activePost.createdBy}</span>
+              </div>
+              <div className="sm:ml-4 sm:self-auto self-start sm:w-auto">
+                <button
+                  onClick={() => {
+                    const url = window.location.href;
+                    if (navigator.share) {
+                      navigator.share({
+                        title: activePost.title,
+                        text: activePost.excerpt,
+                        url,
+                      });
+                    } else {
+                      navigator.clipboard.writeText(url);
+                      alert('Blog link copied to clipboard!');
+                    }
+                  }}
+                  className="flex items-center gap-2 rounded-full border border-[#0F9547]/60 px-3 py-1 text-sm font-semibold text-[#0F9547] bg-white shadow hover:bg-[#ECFFF3] transition w-full sm:w-auto justify-center"
+                  aria-label="Share this blog"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-9A2.25 2.25 0 002.25 5.25v13.5A2.25 2.25 0 004.5 21h9a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
+                  </svg>
+                  <span className="inline sm:hidden">Share</span>
+                  {/* <span className="hidden sm:inline">Share</span> */}
+                </button>
+              </div>
             </div>
-            <h1 className="mt-4 text-3xl font-semibold text-[#111827] md:text-4xl">
+            <h1 className="mt-2 text-3xl font-semibold text-[#111827] md:text-4xl">
               {activePost.title}
             </h1>
             {/* <div className="mt-2 text-sm text-[#0F9547] font-medium">

@@ -63,9 +63,13 @@ export default function BlogSection({ variant = "home" }: BlogSectionProps) {
                 </div>
                 <div className="mt-4 flex items-start justify-between gap-6">
                   <div className="space-y-3">
-                    <h3 className="text-xl font-semibold text-[#111827] md:text-2xl">
+                    <Link
+                    to={`/blog/${post.slug}`}
+                      className="text-xl font-semibold text-[#111827] md:text-2xl"
+                    >
                       {post.title}
-                    </h3>
+                    
+                    </Link>
                     {/* <div className="text-xs text-[#0F9547] font-medium">By {post.createdBy}</div> */}
                     <p className="text-sm text-[#4B5563] md:text-base">{post.excerpt}</p>
                   </div>
