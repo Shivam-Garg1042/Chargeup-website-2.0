@@ -43,6 +43,63 @@ export default function ChargeupBlog() {
     setActivePost(found || fallback);
   }, [slug, posts]);
 
+  const renderContentBlock = (line: string, index: number) => {
+    if (line.startsWith("## ")) {
+      return (
+        <h2
+          key={`${index}-${line}`}
+          className=" text-xl text-[#111827] md:text-[1.5rem]"
+        >
+          {line.slice(3)}
+        </h2>
+      );
+    }
+
+    if (line.startsWith("> ")) {
+      return (
+        <blockquote
+          key={`${index}-${line}`}
+          className="rounded-2xl border-l-4 border-[#0F9547] bg-[#ECFFF3] px-4 py-4 text-[1.05rem] font-medium italic text-[#14532D]"
+        >
+          {line.slice(2)}
+        </blockquote>
+      );
+    }
+
+    if (line.startsWith("- ")) {
+      return (
+        <div key={`${index}-${line}`} className="flex items-start gap-3 pl-1">
+          <span className="mt-[0.65rem] h-2 w-2 rounded-full bg-[#0F9547]" />
+          <p className="flex-1">{line.slice(2)}</p>
+        </div>
+      );
+    }
+
+    if (/^\*\*.*\*\*$/.test(line)) {
+      return (
+        <p
+          key={`${index}-${line}`}
+          className="inline-block rounded-full bg-[#0F9547]/10 px-4 py-2 text-sm font-bold tracking-[0.04em] text-[#0A704A] md:text-base"
+        >
+          {line.slice(2, -2)}
+        </p>
+      );
+    }
+
+    if (/^\*\*[^*]+:\*\*\s+/.test(line)) {
+      const [, label = "", rest = ""] =
+        line.match(/^\*\*([^*]+):\*\*\s+(.*)$/) ?? [];
+
+      return (
+        <p key={`${index}-${line}`}>
+          <span className="font-bold text-[#111827]">{label}:</span> {rest}
+        </p>
+      );
+    }
+
+    return <p key={`${index}-${line}`}>{line}</p>;
+  };
+
   return (
     <main className="min-h-screen ">
       <section className="mx-auto w-full max-w-7xl px-4 py-8  md:py-16">
@@ -98,14 +155,11 @@ export default function ChargeupBlog() {
               />
             </div>
 
-            <p className="mt-4 text-base text-[#4B5563] md:text-lg">
-              {activePost.excerpt}
-            </p>
             
             <div className="mt-6 space-y-4 text-base leading-7 text-[#4B5563] md:text-lg">
-              {activePost.content.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              {activePost.content.map((line, index) =>
+                renderContentBlock(line, index)
+              )}
             </div>
           </article>
 
